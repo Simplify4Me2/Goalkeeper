@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import MatchScore from './Score';
+import Match from './Score';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MatchScore />
+    <Match />
   </React.StrictMode>,
   document.getElementById('root')
 );

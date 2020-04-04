@@ -3,19 +3,23 @@ import './Score.css';
 
 class Score extends React.Component {
     render() {
-    return <span>{this.props.value}</span>
+    return <span className="score" >{this.props.value}</span>
     }
 }
 
-class MatchScore extends React.Component {
+class Match extends React.Component {
     render() {
         return ( 
             <div>
-                <Score value={0} />
-                <Score value={1} />
+                <span className="team">OHL Leuven</span>
+                <div>
+                    <Score value={0} />
+                    <Score value={2} />
+                </div>
+                <span className="team">KV Mechelen</span>
             </div>
         );
     }
 }
 
-export default MatchScore
+export default Match
