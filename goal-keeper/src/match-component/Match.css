@@ -13,3 +13,17 @@
     font-size: 3rem;
     width: 50%;
 }
+
+.flex {
+    display: flex;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.match {
+    background-color: grey;
+    margin: 0.2rem auto;
+    align-items: center;
+}

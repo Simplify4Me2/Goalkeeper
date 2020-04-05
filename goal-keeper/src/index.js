@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-import Match from './Score';
+import Match from './match-component/Match';
+import Ranking from './Ranking.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Match />
+    <Match />
+    <Match />
+    <Ranking />
   </React.StrictMode>,
   document.getElementById('root')
 );
