@@ -1,5 +1,5 @@
 import React from 'react';
-import './Score.css';
+import './Match.css';
 
 class Score extends React.Component {
     render() {
@@ -10,13 +10,13 @@ class Score extends React.Component {
 class Match extends React.Component {
     render() {
         return ( 
-            <div>
+            <div className="flex match">
                 <span className="team">OHL Leuven</span>
                 <div>
                     <Score value={0} />
                     <Score value={2} />
                 </div>
-                <span className="team">KV Mechelen</span>
+                <span className="team align-right">KV Mechelen</span>
             </div>
         );
     }
