@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Match from './match-component/Match';
-import Ranking from './Ranking.js';
+import Match from './match/Match';
+import Ranking from './ranking-table/Ranking.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
