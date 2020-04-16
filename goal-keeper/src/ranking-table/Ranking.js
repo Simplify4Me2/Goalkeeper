@@ -1,4 +1,7 @@
 import React from 'react';
+import './Ranking.css';
+
+// https://css-tricks.com/complete-guide-table-element/
 
 class Ranking extends React.Component {
     render() {

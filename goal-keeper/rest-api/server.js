@@ -4,7 +4,7 @@ var express = require('express'),
 var cors = require('cors');
 
 const corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: 'http://localhost:3000',
     methods: [
         'GET'
     ],
