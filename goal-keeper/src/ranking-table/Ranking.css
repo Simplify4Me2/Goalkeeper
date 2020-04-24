@@ -1,6 +1,10 @@
+/* https://www.w3schools.com/react/react_sass.asp */
+/* https://css-tricks.com/react-code-style-guide/ */
+/* https://css-tricks.com/learning-react-container-components/ */
+
 table {
-    /* border-spacing: 5rem; */
     border-collapse: collapse;
+    background-color: lightgray;
 }
 
 td, th {
@@ -10,5 +14,9 @@ td, th {
 }
 
 tbody tr:hover {
-    background-color: lightgray;
+    background-color: whitesmoke;
+}
+
+#ranking {
+    display: block;
 }
