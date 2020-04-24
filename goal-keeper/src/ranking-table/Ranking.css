@@ -3,7 +3,6 @@
 /* https://css-tricks.com/learning-react-container-components/ */
 
 table {
-    /* border-spacing: 5rem; */
     border-collapse: collapse;
     background-color: lightgray;
 }
@@ -15,32 +14,9 @@ td, th {
 }
 
 tbody tr:hover {
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 
 #ranking {
     display: block;
-    /* background-color: red; */
 }
-
-/* Container */
-/* 
-.container {
-    margin: 0 auto;
-    max-width: calc(100% - 4rem);
-    width: 35rem;
-    background-color: white;
-}
-
-@media screen and (max-width: 980px) {
-    .container {
-        width: 80% !important;
-        max-width: 100% !important;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .container {
-        width: 100% !important;
-    }
-} */

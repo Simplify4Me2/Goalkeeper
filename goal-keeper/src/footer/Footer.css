@@ -1,15 +1,7 @@
-/* #footer {
-    min-height: 100vh;
-    padding: 0 0 12rem 0;
-    position: relative;
-    text-align: center;
-} */
-
 footer {
     bottom: 2rem;
     color: lightgray;
     left: 0;
-    /* position: absolute; */
     text-align: center;
     width: 100%;
 }
@@ -35,12 +27,12 @@ footer .copyright li:first-child {
 
 /* Icons */
 
-.icons {
+/* .icons {
     display: flex;
     justify-content: center;
     border-top: 1px #777 solid;
     padding-top: 1.25rem;
-}
+} */
 
 ul.icons {
     cursor: default;
@@ -66,7 +58,7 @@ ul.icons li .icon:before {
 .icon {
     text-decoration: none;
     border-bottom: none;
-    position: relative;
+    /* position: relative; */
 }
 
 .icon:before {

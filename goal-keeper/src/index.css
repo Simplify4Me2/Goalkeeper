@@ -4,9 +4,6 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  display: flex;
-  flex-direction: column;
 }
 
 code {
@@ -19,7 +16,6 @@ html {
   background-position: top left, center center;
   background-repeat: repeat, none;
   background-size: auto, cover;
-  /* background-color: #313a3d; */
 }
 
 .wrapper {
@@ -31,19 +27,6 @@ html {
 .wrapper > * {
   padding: 10px;
   flex: 1 100%;
-}
-
-section {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-section, footer {
-  display: block;
 }
 
 /* Container */
