@@ -1,6 +1,7 @@
 import React from 'react';
 import './Ranking.css';
 
+
 class Ranking extends React.Component {
     constructor(props) {
         super(props);
@@ -30,6 +31,7 @@ class Ranking extends React.Component {
             )
     }
 
+    // https://reactjs.org/docs/thinking-in-react.html
     render() {
         const { error, isLoaded, rankings } = this.state;
         if (error) {
@@ -38,27 +40,29 @@ class Ranking extends React.Component {
             return <div>Loading</div>;
         } else {
             return (
-                <div>
-                    <h1>Ranking</h1>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Team</th>
-                                <th>Points</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {rankings.map(item => (
-                                <tr key={item.position}>
-                                    <td>{item.position}</td>
-                                    <td>{item.team}</td>
-                                    <td>{item.points}</td>
+                <section id="ranking">
+                    <div className="container">
+                        <h1>Ranking</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Team</th>
+                                    <th>Points</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                {rankings.map(item => (
+                                    <tr key={item.position}>
+                                        <td>{item.position}</td>
+                                        <td>{item.team}</td>
+                                        <td>{item.points}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
             );
         }
     }

@@ -17,6 +17,7 @@ class Match extends React.Component {
         }
     }
 
+    // https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
     componentDidMount() {
         fetch("http://localhost:5000/match")
             .then(res => res.json())
@@ -44,18 +45,20 @@ class Match extends React.Component {
             return <div>Loading...</div>
         } else {
             return (
-                <div>
-                    {matches.map(item => (
-                        <div key={item.nr} className="flex match">
-                            <span className="team">{item.homeTeam}</span>
-                            <div>
-                                <Score value={item.homeScore} />
-                                <Score value={item.awayScore} />
+                <section>
+                    <div className="container">
+                        {matches.map(item => (
+                            <div key={item.nr} className="flex match">
+                                <span className="team">{item.homeTeam}</span>
+                                <div>
+                                    <Score value={item.homeScore} />
+                                    <Score value={item.awayScore} />
+                                </div>
+                                <span className="team align-right">{item.awayTeam}</span>
                             </div>
-                            <span className="team align-right">{item.awayTeam}</span>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                </section>
             );
         }
     }

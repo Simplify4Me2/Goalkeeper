@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Match from './match/Match';
-import Ranking from './ranking-table/Ranking.js';
+import Header from './header/Header';
+import Home from './home/Home';
+import Footer from './footer/Footer';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Match />
-    <Ranking />
+    <div className="wrapper">
+      <Header />
+      <Home />
+      <Footer />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
