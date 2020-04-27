@@ -45,10 +45,11 @@ class Match extends React.Component {
             return <div>Loading...</div>
         } else {
             return (
-                <section>
-                    <div className="container">
+                <section id="fixture">
+                    <div>
+                        <h1>Fixture</h1>
                         {matches.map(item => (
-                            <div key={item.nr} className="flex match">
+                            <div key={item.nr} className="match">
                                 <span className="team">{item.homeTeam}</span>
                                 <div>
                                     <Score value={item.homeScore} />
