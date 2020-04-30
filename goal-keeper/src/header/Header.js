@@ -11,11 +11,11 @@ class Header extends Component {
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
         var renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(450, 450);
+        renderer.setSize(300, 300);
         // document.body.appendChild(renderer.domElement);
         this.mount.appendChild( renderer.domElement );
 
-        var geometry = new THREE.BoxGeometry();
+        var geometry = new THREE.BoxGeometry(3, 3, 3);
         var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);

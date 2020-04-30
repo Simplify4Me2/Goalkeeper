@@ -15,5 +15,7 @@
     color: lightgrey;
     font-weight: bold;
 
+
+    flex-shrink: 3;
 }
 
