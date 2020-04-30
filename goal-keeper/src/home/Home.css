@@ -28,3 +28,17 @@
       max-width: 100% !important;
     }
   }
+
+.headlights {
+  width: auto;
+
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+}
+
+.flex-column {
+  display: flex;
+  flex: 1;
+}
