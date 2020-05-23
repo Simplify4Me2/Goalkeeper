@@ -22,5 +22,5 @@ steps:
 - script: |
     npm install
     npm run build
-  workingDirectory: $(Agent.BuildDirectory)/goal-keeper/
+  workingDirectory: goal-keeper
   displayName: 'npm install and build'
