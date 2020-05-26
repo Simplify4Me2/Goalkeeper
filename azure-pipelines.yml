@@ -25,10 +25,14 @@ steps:
   workingDirectory: goal-keeper
   displayName: 'npm install and build'
 
+- script: ls -a
+  displayName: 'Where am I dude?'
+  workingDirectory: goal-keeper
+
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
-  workingDirectory: goal-keeper
   inputs:
+    workingDirectory: goal-keeper
     Contents: 'build/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
