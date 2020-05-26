@@ -27,11 +27,15 @@ steps:
 
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
+  workingDirectory: goal-keeper
   inputs:
-    workingDirectory: goal-keeper
     Contents: 'build/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
+
+- script: ls -a
+  displayName: 'Where am I now?'
+  workingDirectory: goal-keeper
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
