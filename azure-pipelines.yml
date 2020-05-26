@@ -24,3 +24,18 @@ steps:
     npm run build
   workingDirectory: goal-keeper
   displayName: 'npm install and build'
+
+- task: CopyFiles@2
+  displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
+  inputs:
+    workingDirectory: goal-keeper
+    Contents: 'build/**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
+  inputs: 
+    pathtoPublish: $(Build.ArtifactStagingDirectory)
+    ArtifactName: 'www'
