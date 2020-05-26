@@ -32,8 +32,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
   inputs:
-    workingDirectory: goal-keeper
-    Contents: 'build/**'
+    Contents: 'goal-keeper/build/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
 
