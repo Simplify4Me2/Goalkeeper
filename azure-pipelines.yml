@@ -16,29 +16,22 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: ls -a
-  displayName: 'Where am I ?'
-
 - script: |
     npm install
     npm run build
   workingDirectory: goal-keeper
   displayName: 'npm install and build'
 
-- script: ls -a
-  displayName: 'Where am I dude?'
+- script:
+    npm run test
   workingDirectory: goal-keeper
+  displayName: 'test'
 
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
   inputs:
     Contents: 'goal-keeper/build/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: true
-
-- script: ls -a
-  displayName: 'Where am I now?'
-  workingDirectory: goal-keeper
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
