@@ -23,9 +23,11 @@ steps:
   displayName: 'npm install and build'
 
 - script:
-    npm test
+    npm test -- --coverage --ci --reporters=default --reporters=jest-unit --coverageReporters=cobertura
   workingDirectory: goal-keeper
   displayName: 'test'
+  env:
+    CI: true
 
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
