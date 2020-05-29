@@ -23,7 +23,7 @@ steps:
   displayName: 'npm install and build'
 
 - script:
-    npm run test
+    npm test
   workingDirectory: goal-keeper
   displayName: 'test'
 
