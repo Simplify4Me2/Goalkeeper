@@ -30,7 +30,7 @@ steps:
 #   env:
 #     CI: true
 - script:
-    npm test:CI
+    npm run test:CI
   workingDirectory: goal-keeper
   displayName: 'test'
   env:
