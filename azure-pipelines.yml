@@ -29,18 +29,33 @@ steps:
 #   displayName: 'test'
 #   env:
 #     CI: true
+
+# This works, but try to do it in 2 steps
+# - script:
+#     npm run test:coverage
+#   workingDirectory: goal-keeper
+#   displayName: 'Run unit tests - Release & create code coverage report'
+#   env:
+#     CI: true
+
 - script:
     npm run test:coverage
   workingDirectory: goal-keeper
-  displayName: 'test'
+  displayName: 'Run unit tests - Release'
   env:
     CI: true
 
-# - task: PublishCodeCoverageResults@1
-#   displayName: 'Publish code coverage report'
-#   inputs:
-#     codeCoverageTool: 'cobertura'
-#     summaryFileLocation: '$('
+- script:
+    ls -a
+  workingDirectory: goal-keeper
+  displayName: 'What is in the folder?'
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage report'
+  workingDirectory: goal-keeper
+  inputs:
+    codeCoverageTool: 'cobertura'
+    summaryFileLocation: 'coverage/cobertura-coverage.xml'
 
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
