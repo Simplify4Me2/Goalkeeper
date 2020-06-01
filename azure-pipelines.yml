@@ -54,7 +54,7 @@ steps:
   displayName: 'Publish code coverage report'
   inputs:
     codeCoverageTool: 'cobertura'
-    summaryFileLocation: 'coverage/cobertura-coverage.xml'
+    summaryFileLocation: 'goal-keeper/coverage/cobertura-coverage.xml' 
 
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
