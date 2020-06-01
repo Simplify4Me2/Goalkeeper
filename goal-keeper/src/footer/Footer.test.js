@@ -4,6 +4,6 @@ import Footer from './Footer';
 
 test('renders Copyright', () => {
     const { getByText } = render(<Footer />);
-    const linkElement = getByText(/© Simon/i)
+    const linkElement = getByText(/© Simonito/i)
     expect(linkElement).toBeInTheDocument();
 })
