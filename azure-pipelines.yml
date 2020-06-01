@@ -29,7 +29,7 @@ steps:
 #   displayName: 'test'
 #   env:
 #     CI: true
--script:
+- script:
     npm test:CI
   workingDirectory: goal-keeper
   displayName: 'test'
