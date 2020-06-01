@@ -22,8 +22,15 @@ steps:
   workingDirectory: goal-keeper
   displayName: 'npm install and build'
 
-- script:
-    npm test -- --coverage --ci --reporters=default --reporters=jest-unit --coverageReporters=cobertura
+  # https://medium.com/@chgian77/execute-react-tests-with-azure-devops-6b95212f4160
+# - script:
+#     npm test -- --coverage --ci --reporters=default --reporters=jest-unit --coverageReporters=cobertura
+#   workingDirectory: goal-keeper
+#   displayName: 'test'
+#   env:
+#     CI: true
+-script:
+    npm test:CI
   workingDirectory: goal-keeper
   displayName: 'test'
   env:
