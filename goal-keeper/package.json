@@ -21,8 +21,10 @@
     "build": "react-scripts build",
     "test": "set CI=true && react-scripts test",
     "test:watch": "react-scripts test",
-    "test:coverage": "set CI=true && react-scripts test --coverage",
-    "test:CI": "react-scripts test --testResultsProcessor ./node_modules/jest-junit-reporter",
+    "test:coverage": "set CI=true && react-scripts test --coverage --coverageReporters=cobertura",
+    "test:CICD": "react-scripts test --testResultsProcessor ./node_modules/jest-junit-reporter",
+    "test:CI": "jest --coverage --coverageReporters=cobertura",
+    "test:jest": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

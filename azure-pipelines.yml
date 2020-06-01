@@ -30,11 +30,17 @@ steps:
 #   env:
 #     CI: true
 - script:
-    npm run test:CI
+    npm run test:coverage
   workingDirectory: goal-keeper
   displayName: 'test'
   env:
     CI: true
+
+# - task: PublishCodeCoverageResults@1
+#   displayName: 'Publish code coverage report'
+#   inputs:
+#     codeCoverageTool: 'cobertura'
+#     summaryFileLocation: '$('
 
 - task: CopyFiles@2
   displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
