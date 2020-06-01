@@ -52,7 +52,6 @@ steps:
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
-  workingDirectory: goal-keeper
   inputs:
     codeCoverageTool: 'cobertura'
     summaryFileLocation: 'coverage/cobertura-coverage.xml'
