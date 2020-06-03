@@ -10,6 +10,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  buildConfiguration: 'Release'
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -22,33 +25,16 @@ steps:
   workingDirectory: goal-keeper
   displayName: 'npm install and build'
 
-  # https://medium.com/@chgian77/execute-react-tests-with-azure-devops-6b95212f4160
-# - script:
-#     npm test -- --coverage --ci --reporters=default --reporters=jest-unit --coverageReporters=cobertura
-#   workingDirectory: goal-keeper
-#   displayName: 'test'
-#   env:
-#     CI: true
-
-# This works, but try to do it in 2 steps
-# - script:
-#     npm run test:coverage
-#   workingDirectory: goal-keeper
-#   displayName: 'Run unit tests - Release & create code coverage report'
-#   env:
-#     CI: true
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+  displayName: 'Write build info'
+  workingDirectory: goal-keeper
 
 - script:
     npm run test:coverage
   workingDirectory: goal-keeper
-  displayName: 'Run unit tests - Release'
+  displayName: 'Run unit tests - $(buildConfiguration)'
   env:
     CI: true
-
-- script:
-    ls -a
-  workingDirectory: goal-keeper
-  displayName: 'What is in the folder?'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
