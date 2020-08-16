@@ -99,10 +99,10 @@ stages:
                 ls -a
               displayName: 'debug'
 
-            # - task: AzureWebApp@1
-            #   displayName: 'Azure App Service Deploy: website'
-            #   inputs:
-            #     azureSubscription: 'Resource Manager - GoalKeeper'
-            #     appName: '$(WebAppNameFront)'
-            #     appType: 'webApp'
-            #     package: '$(Pipeline.Workspace)/www/*'
+            - task: AzureWebApp@1
+              displayName: 'Azure App Service Deploy: website'
+              inputs:
+                azureSubscription: 'Resource Manager - GoalKeeper'
+                appName: '$(WebAppNameFront)'
+                appType: 'webApp'
+                package: '$(Pipeline.Workspace)/www/*'
