@@ -55,8 +55,10 @@ stages:
     - task: CopyFiles@2
       displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
       inputs:
-        Contents: 'goal-keeper/build/**'
+        sourceFolder: 'goal-keeper/build'
+        Contents: '**/*'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        cleanTargetFolder: true
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
@@ -90,6 +92,10 @@ stages:
           steps:
             - download: current
               artifact: www
+
+            - script: |
+                ls -a
+              displayName: 'debug'
 
             - task: AzureWebApp@1
               displayName: 'Azure App Service Deploy: website'
