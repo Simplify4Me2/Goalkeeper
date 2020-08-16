@@ -70,7 +70,7 @@ stages:
         replaceExistingArchive: true
 
     - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: drop'
+      displayName: 'Publish Artifact: wwww'
       condition: succeeded()
       inputs: 
         pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
@@ -95,12 +95,14 @@ stages:
 
             - script: |
                 ls -a
+                cd $(Pipeline.Workspace)
+                ls -a
               displayName: 'debug'
 
-            - task: AzureWebApp@1
-              displayName: 'Azure App Service Deploy: website'
-              inputs:
-                azureSubscription: 'Resource Manager - GoalKeeper'
-                appName: '$(WebAppNameFront)'
-                appType: 'webApp'
-                package: '$(Pipeline.Workspace)/www/*'
+            # - task: AzureWebApp@1
+            #   displayName: 'Azure App Service Deploy: website'
+            #   inputs:
+            #     azureSubscription: 'Resource Manager - GoalKeeper'
+            #     appName: '$(WebAppNameFront)'
+            #     appType: 'webApp'
+            #     package: '$(Pipeline.Workspace)/www/*'
