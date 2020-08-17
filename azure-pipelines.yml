@@ -76,6 +76,8 @@ stages:
         pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         ArtifactName: 'www'
 
+    
+
 - stage: 'Deploy'
   displayName: 'Deploy to the development environment'
   dependsOn: Build
@@ -106,3 +108,7 @@ stages:
                 appName: '$(WebAppNameFront)'
                 appType: 'webApp'
                 package: '$(Pipeline.Workspace)/www/*'
+
+# https://www.kevinboosten.dev/how-to-use-angular-environment-files-in-your-azure-devops-multi-stage-yml-release-pipeline
+# https://medium.com/@trekinbami/using-environment-variables-in-react-6b0a99d83cf5
+# https://medium.com/javascript-in-plain-english/deploying-node-js-app-using-azure-devops-part1-74cb13a6bd02

@@ -1,7 +1,7 @@
 import React from 'react';
 import './upcoming-match.css';
-import awayTeamLogoPlaceholder from '../../away-team-logo-placeholder.png';
-import homeTeamLogoPlaceholder from '../../home-team-logo-placeholder.png';
+import awayTeamLogoPlaceholder from '../../images/away-team-logo-placeholder.png';
+import homeTeamLogoPlaceholder from '../../images/home-team-logo-placeholder.png';
 
 // https://sporza.be/nl/matches/voetbal/jupiler-pro-league/2019-2020/regulier/30/waasland-beveren-kaa-gent~1562002561980/
 
