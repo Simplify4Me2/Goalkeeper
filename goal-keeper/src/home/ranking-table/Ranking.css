@@ -1,0 +1,41 @@
+/* https://www.w3schools.com/react/react_sass.asp */
+/* https://css-tricks.com/react-code-style-guide/ */
+/* https://css-tricks.com/learning-react-container-components/ */
+
+/* https://css-tricks.com/accessible-simple-responsive-tables/ */
+
+table {
+    border-collapse: collapse;
+    background-color: lightgray;
+
+    /* width: 100%; */
+    table-layout: fixed;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+tbody tr:hover {
+    background-color: whitesmoke;
+}
+
+#ranking {
+    /* display: block; */
+    /* width: 30%; */
+    padding: 0.5rem;
+
+    border-style: solid;
+    border-color: green;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    margin: 0.1rem;
+    /* background-color: cyan; */
+    /* display: flex; */
+    /* flex: 1; */
+    /* width: 30%; */
+}
+
+

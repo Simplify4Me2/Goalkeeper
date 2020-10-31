@@ -5,17 +5,110 @@
 
 trigger:
 - master
+- feat/*
+- feature/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+variables:
+  buildConfiguration: 'Release'
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+stages:
+- stage: 'Build'
+  displayName: 'Build the web application'
+  jobs:
+  - job: 'Build'
+    displayName: 'Build job'
+    pool:
+      vmImage: 'ubuntu-18.04'
+
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install
+        npm run build
+      workingDirectory: goal-keeper
+      displayName: 'npm install and build'
+
+    - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+      displayName: 'Write build info'
+      workingDirectory: $(Build.ArtifactStagingDirectory)
+
+    - script:
+        npm run test:coverage
+      workingDirectory: goal-keeper
+      displayName: 'Run unit tests - $(buildConfiguration)'
+      env:
+        CI: true
+
+    - task: PublishCodeCoverageResults@1
+      displayName: 'Publish code coverage report'
+      inputs:
+        codeCoverageTool: 'cobertura'
+        summaryFileLocation: 'goal-keeper/coverage/cobertura-coverage.xml' 
+
+    - task: CopyFiles@2
+      displayName: 'Copy the build files to $(Build.ArtifactStagingDirectory)'
+      inputs:
+        sourceFolder: 'goal-keeper/build'
+        Contents: '**/*'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        cleanTargetFolder: true
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: wwww'
+      condition: succeeded()
+      inputs: 
+        pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        ArtifactName: 'www'
+
+    
+
+- stage: 'Deploy'
+  displayName: 'Deploy to the development environment'
+  dependsOn: Build
+  jobs:
+  - deployment: Deploy
+    pool:
+      vmImage: 'ubuntu-18.04'
+    environment: development
+    variables:
+    - group: Release
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - download: current
+              artifact: www
+
+            - script: |
+                ls -a
+                cd $(Pipeline.Workspace)
+                ls -a
+              displayName: 'debug'
+
+            - task: AzureWebApp@1
+              displayName: 'Azure App Service Deploy: website'
+              inputs:
+                azureSubscription: 'Resource Manager - GoalKeeper'
+                appName: '$(WebAppNameFront)'
+                appType: 'webApp'
+                package: '$(Pipeline.Workspace)/www/*'
+
+# https://www.kevinboosten.dev/how-to-use-angular-environment-files-in-your-azure-devops-multi-stage-yml-release-pipeline
+# https://medium.com/@trekinbami/using-environment-variables-in-react-6b0a99d83cf5
+# https://medium.com/javascript-in-plain-english/deploying-node-js-app-using-azure-devops-part1-74cb13a6bd02

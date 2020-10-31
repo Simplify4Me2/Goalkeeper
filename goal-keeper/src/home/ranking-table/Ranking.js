@@ -41,9 +41,9 @@ class Ranking extends React.Component {
         } else {
             return (
                 <section id="ranking">
-                    <div className="container">
+                    <div>
                         <h1>Ranking</h1>
-                        <table>
+                        <table >
                             <thead>
                                 <tr>
                                     <th>#</th>
