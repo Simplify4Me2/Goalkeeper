@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using GoalKeeper.MApi.WebApi.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace GoalKeeper.MApi.WebApi
 {
@@ -25,6 +19,8 @@ namespace GoalKeeper.MApi.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            SwaggerConfig.Configure(services);
+            IocConfig.Configure(services);
             services.AddControllers();
         }
 
@@ -35,6 +31,13 @@ namespace GoalKeeper.MApi.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "GoalKeeper.MApi");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 
