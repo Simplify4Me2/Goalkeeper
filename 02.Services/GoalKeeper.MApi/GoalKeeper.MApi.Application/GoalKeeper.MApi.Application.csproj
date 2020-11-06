@@ -4,4 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GoalKeeper.MApi.Application.IO\GoalKeeper.MApi.Application.IO.csproj" />
+    <ProjectReference Include="..\GoalKeeper.MApi.Domain\GoalKeeper.MApi.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
