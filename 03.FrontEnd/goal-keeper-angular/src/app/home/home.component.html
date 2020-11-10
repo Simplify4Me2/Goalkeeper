@@ -1,8 +1,8 @@
 <p>home works!</p>
 
 <h1>Fixture</h1>
-<div class="flex">
-    <span>OHL</span>
-    <div>0 - 0</div>
-    <span>Anderlecht</span>
+<div class="flex border" *ngFor="let fixture of fixtures" >
+    <span>{{ fixture.homeTeam }}</span>
+    <div>{{ fixture.homeScore }} - {{ fixture.awayScore }}</div>
+    <span>{{ fixture.awayTeam }}</span>
 </div>
