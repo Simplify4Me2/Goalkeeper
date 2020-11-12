@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Fixture } from './fixture.model';
+import { Store } from '@ngrx/store';
+
+import { Fixture } from '../models/fixture.model';
+import { getFixtures } from '../store/home.actions';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +15,9 @@ export class HomeComponent implements OnInit {
     { homeTeam: 'Club Brugge', homeScore: 4, awayTeam: 'Zulte Waregem', awayScore: 1 },
   ];
 
-  constructor() {}
+  constructor(private store: Store) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+      this.store.dispatch(getFixtures());
+  }
 }

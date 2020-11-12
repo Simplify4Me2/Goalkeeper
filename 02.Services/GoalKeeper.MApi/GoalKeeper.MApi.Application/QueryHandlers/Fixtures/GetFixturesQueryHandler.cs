@@ -10,16 +10,7 @@ namespace GoalKeeper.MApi.Application.QueryHandlers.Fixtures
 {
     public class GetFixturesQueryHandler : IRequestHandler<GetFixturesQuery, List<Fixture>>
     {
-        //public async Task<List<object>> Handle(GetFixturesQuery request, CancellationToken cancellationToken)
-        //{
-        //    //var foo = new Fixture();
-        //    return await Task.Run(() => new List<object>());
-        //}
-
-        //Task<List<Fixture>> IRequestHandler<GetFixturesQuery, List<Fixture>>.Handle(GetFixturesQuery request, CancellationToken cancellationToken)
-        //{
-        //    throw new System.NotImplementedException();
-        //}
+        
         public async Task<List<Fixture>> Handle(GetFixturesQuery request, CancellationToken cancellationToken)
         {
             var foo = new List<Fixture>
