@@ -13,7 +13,7 @@ export class FixturesService {
         { homeTeam: 'Club Brugge', homeScore: 4, awayTeam: 'Zulte Waregem', awayScore: 1 },
       ];
 
-    constructor(private http: HttpClient) { }
+    // constructor(private http: HttpClient) { }
 
     get(): Observable<Fixture[]> {
         return of(this.fixtures);
