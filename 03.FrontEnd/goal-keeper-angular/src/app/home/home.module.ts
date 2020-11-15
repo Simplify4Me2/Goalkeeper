@@ -5,7 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { FixtureComponent } from './components/fixture/fixture.component';
-import { HomeComponent } from './containers/home.component';
+import { HomeComponent } from './containers/home.container';
 import * as fromHome from './store';
 import { HomeEffects } from './store/home.effects';
 

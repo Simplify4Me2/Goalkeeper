@@ -8,15 +8,11 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass'],
+  templateUrl: './home.container.html',
+  styleUrls: ['./home.container.sass'],
 })
 export class HomeComponent implements OnInit {
   fixtures: Observable<Fixture[]>;
-  //  = [
-  //   { homeTeam: 'OHL', homeScore: 0, awayTeam: 'Anderlecht', awayScore: 1 },
-  //   { homeTeam: 'Club Brugge', homeScore: 4, awayTeam: 'Zulte Waregem', awayScore: 1 },
-  // ];
 
   constructor(private store: Store) {}
 

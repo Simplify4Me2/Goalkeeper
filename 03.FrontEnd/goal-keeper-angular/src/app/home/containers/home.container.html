@@ -1,6 +1,6 @@
 <p>home works!</p>
 
 <h1>Fixtures</h1>
-<div class="flex border" *ngFor="let fixture of fixtures | async" >
+<div *ngFor="let fixture of fixtures | async" >
     <app-fixture [fixture]="fixture"></app-fixture>
 </div>
