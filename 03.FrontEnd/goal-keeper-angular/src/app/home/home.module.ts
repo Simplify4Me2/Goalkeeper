@@ -8,10 +8,11 @@ import { FixtureComponent } from './components/fixture/fixture.component';
 import { HomeComponent } from './containers/home.container';
 import * as fromHome from './store';
 import { HomeEffects } from './store/home.effects';
+import { RankingComponent } from './components/ranking/ranking.component';
 
 @NgModule({
     declarations: [
-        HomeComponent, FixtureComponent
+        HomeComponent, FixtureComponent, RankingComponent
     ],
     imports: [
         CommonModule,
