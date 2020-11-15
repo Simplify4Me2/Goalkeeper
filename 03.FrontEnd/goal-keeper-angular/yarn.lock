@@ -1443,24 +1443,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jasmine@*":
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.6.1.tgz#f8b95def0016411c58c7adb4791dff29bc62992c"
-  integrity sha512-eeSCVhBsgwHNS1FmaMu4zrLxfykCTWJMLFZv7lmyrZQjw7foUUXoPu4GukSN9v7JvUw7X+/aDH3kCaymirBSTg==
-
-"@types/jasmine@~3.5.0":
-  version "3.5.14"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.5.14.tgz#f41a14e8ffa939062a71cf9722e5ee7d4e1f94af"
-  integrity sha512-Fkgk536sHPqcOtd+Ow+WiUNuk0TSo/BntKkF8wSvcd6M2FvPjeXcUE6Oz/bwDZiUZEaXLslAgw00Q94Pnx6T4w==
-
-"@types/jasminewd2@~2.0.3":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@types/jasminewd2/-/jasminewd2-2.0.8.tgz#67afe5098d5ef2386073a7b7384b69a840dfe93b"
-  integrity sha512-d9p31r7Nxk0ZH0U39PTH0hiDlJ+qNVGjlt1ucOoTUptxb2v+Y5VMnsxfwN+i3hK4yQnqBi3FMmoMFcd1JHDxdg==
-  dependencies:
-    "@types/jasmine" "*"
-
-"@types/jest@26.x", "@types/jest@^26.0.15":
+"@types/jest@26.x":
   version "26.0.15"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.15.tgz#12e02c0372ad0548e07b9f4e19132b834cb1effe"
   integrity sha512-s2VMReFXRg9XXxV+CW9e5Nz8fH2K1aEhwgjUqPPbQd7g95T0laAcvLv032EhFHIa5GHsZ8W7iJEQVaJq6k3Gog==
@@ -2905,11 +2888,6 @@ color@^3.0.0:
   dependencies:
     color-convert "^1.9.1"
     color-string "^1.5.4"
-
-colors@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
-  integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
 
 combined-stream@^1.0.6, combined-stream@~1.0.6:
   version "1.0.8"
@@ -5393,18 +5371,6 @@ jasmine-core@~2.8.0:
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.8.0.tgz#bcc979ae1f9fd05701e45e52e65d3a5d63f1a24e"
   integrity sha1-vMl5rh+f0FcB5F5S5l06XWPxok4=
 
-jasmine-core@~3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.5.0.tgz#132c23e645af96d85c8bca13c8758b18429fc1e4"
-  integrity sha512-nCeAiw37MIMA9w9IXso7bRaLl+c/ef3wnxsoSAlYrzS+Ot0zTG6nU8G/cIfGkqpkjX2wNaIW9RFG0TwIFnG6bA==
-
-jasmine-spec-reporter@~5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/jasmine-spec-reporter/-/jasmine-spec-reporter-5.0.2.tgz#b61288ab074ad440dc2477c4d42840b0e74a6b95"
-  integrity sha512-6gP1LbVgJ+d7PKksQBc2H0oDGNRQI3gKUsWlswKaQ2fif9X5gzhQcgM5+kiJGCQVurOG09jqNhk7payggyp5+g==
-  dependencies:
-    colors "1.4.0"
-
 jasmine@2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-2.8.0.tgz#6b089c0a11576b1f16df11b80146d91d4e8b8a3e"
@@ -6842,10 +6808,10 @@ object-keys@^1.0.12, object-keys@^1.1.1:
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
   integrity sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==
 
-object-path@0.11.5:
-  version "0.11.5"
-  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.5.tgz#d4e3cf19601a5140a55a16ad712019a9c50b577a"
-  integrity sha512-jgSbThcoR/s+XumvGMTMf81QVBmah+/Q7K7YduKeKVWL7N111unR2d6pZZarSk6kY/caeNxUDyxOvMWyzoU2eg==
+object-path@0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
+  integrity sha1-NwrnUvvzfePqcKhhwju6iRVpGUk=
 
 object-visit@^1.0.0:
   version "1.0.1"
