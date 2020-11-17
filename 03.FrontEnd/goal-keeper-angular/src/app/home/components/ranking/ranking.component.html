@@ -1,1 +1,17 @@
 <p>ranking works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ranking of rankings">
+            <td>{{ ranking.position }}</td>
+            <td>{{ ranking.team }}</td>
+            <td>{{ ranking.points }}</td>
+        </tr>
+    </tbody>
+</table>
