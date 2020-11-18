@@ -4,7 +4,7 @@ namespace GoalKeeper.MApi.Domain.Models
 {
     public class Fixture
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         public string HomeTeam { get; set; }
 
