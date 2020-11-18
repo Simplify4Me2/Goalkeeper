@@ -30,7 +30,7 @@ namespace GoalKeeper.MApi.Application.QueryHandlers.Fixtures
 
             var data = await _repository.GetFixtures(cancellationToken);
 
-            return await Task.Run(() => foo);
+            return await _repository.GetFixtures(cancellationToken);
         }
     }
 }

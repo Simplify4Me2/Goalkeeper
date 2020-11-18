@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GoalKeeper.MApi.Application.IO\GoalKeeper.MApi.Application.IO.csproj" />
     <ProjectReference Include="..\GoalKeeper.MApi.Application\GoalKeeper.MApi.Application.csproj" />
+    <ProjectReference Include="..\GoalKeeper.MApi.Infrastructure\GoalKeeper.MApi.Infrastructure.csproj" />
   </ItemGroup>
 
 
