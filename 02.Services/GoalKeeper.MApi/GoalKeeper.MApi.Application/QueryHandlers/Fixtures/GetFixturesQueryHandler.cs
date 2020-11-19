@@ -1,4 +1,6 @@
-﻿using GoalKeeper.MApi.Application.IO.Queries.Fixtures;
+﻿using GoalKeeper.MApi.Application.IO.DTOs;
+using GoalKeeper.MApi.Application.IO.Queries.Fixtures;
+using GoalKeeper.MApi.Application.Mappers;
 using GoalKeeper.MApi.Application.Ports;
 using GoalKeeper.MApi.Domain.Models;
 using MediatR;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GoalKeeper.MApi.Application.QueryHandlers.Fixtures
 {
-    public class GetFixturesQueryHandler : IRequestHandler<GetFixturesQuery, List<Fixture>>
+    public class GetFixturesQueryHandler : IRequestHandler<GetFixturesQuery, List<FixtureDTO>>
     {
         private readonly IGoalKeeperRepository _repository;
 
@@ -18,7 +20,7 @@ namespace GoalKeeper.MApi.Application.QueryHandlers.Fixtures
             _repository = goalKeeperRepository;
         }
 
-        public async Task<List<Fixture>> Handle(GetFixturesQuery request, CancellationToken cancellationToken)
+        public async Task<List<FixtureDTO>> Handle(GetFixturesQuery request, CancellationToken cancellationToken)
         {
             var foo = new List<Fixture>
             {
@@ -30,7 +32,7 @@ namespace GoalKeeper.MApi.Application.QueryHandlers.Fixtures
 
             var data = await _repository.GetFixtures(cancellationToken);
 
-            return await _repository.GetFixtures(cancellationToken);
+            return data.MapOut();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GoalKeeper.MApi.Application.IO;
+using GoalKeeper.MApi.Application.IO.DTOs;
 using GoalKeeper.MApi.Application.IO.Queries.Fixtures;
 using GoalKeeper.MApi.Domain.Models;
 using MediatR;
@@ -27,10 +28,10 @@ namespace GoalKeeper.MApi.WebApi.Controllers
         [ProducesResponseType(typeof(List<object>), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<List<Fixture>>> GetFixtures()
+        public async Task<Result<List<FixtureDTO>>> GetFixtures()
         {
             var query = new GetFixturesQuery();
-            return new Result<List<Fixture>>(await _mediator.Send(query));
+            return new Result<List<FixtureDTO>>(await _mediator.Send(query));
         }
 
         //[HttpGet]
