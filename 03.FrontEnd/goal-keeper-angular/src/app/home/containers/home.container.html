@@ -1,7 +1,12 @@
-<h1>Fixtures</h1>
-<div *ngFor="let fixture of fixtures | async" >
-    <app-fixture [fixture]="fixture"></app-fixture>
+<div class="dashboard-overview">
+    <section class="fixtures">
+        <h1>Fixtures</h1>
+        <div *ngFor="let fixture of fixtures | async" >
+            <app-fixture [fixture]="fixture"></app-fixture>
+        </div>
+    </section>
+    <section class="ranking">
+        <h1>Ranking</h1>
+        <app-ranking [rankings]="rankings | async" ></app-ranking>
+    </section>
 </div>
-
-<h1>Ranking</h1>
-<app-ranking [rankings]="rankings | async" ></app-ranking>

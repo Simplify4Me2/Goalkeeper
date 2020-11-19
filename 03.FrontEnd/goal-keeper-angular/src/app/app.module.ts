@@ -10,10 +10,12 @@ import { reducers, metaReducers } from './store';
 import { environment } from 'src/environments/environment';
 import { HomeModule } from './home/home.module';
 import { EffectsModule } from '@ngrx/effects';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,11 +11,13 @@ export class RankingComponent implements OnInit {
 
   @Input() rankings: Ranking[];
 
-  // rankings: Ranking[] = [{ position: 1, team: 'onwheel', points: 5 }, { position: 1, team: 'onwheel', points: 5 }]
-
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectTeam() {
+    console.log('Team selected');
   }
 
 }
