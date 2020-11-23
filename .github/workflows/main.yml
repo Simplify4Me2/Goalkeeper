@@ -37,7 +37,9 @@ jobs:
         
     # Runs a single command using the runners shell
     - name: Debug
-      run: ls -a
+      run: |
+        ls -a
+        cd ./02.Services/GoalKeeper.MApi
     
-    - run: dotnet build GoalKeeper.MApi.sln
+    - run: dotnet build GoalKeeper.MApi
       working-directory: './03.Services/GoalKeeper.MApi'
