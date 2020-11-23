@@ -39,8 +39,8 @@ jobs:
     - name: Debug
       run: |
         ls -a
-        cd ./02.Services/GoalKeeper.MApi
+        cd ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
         ls -a
     
-    - run: dotnet build
+    - run: dotnet build GoalKeeper.MApi.WebApi
       working-directory: './03.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
