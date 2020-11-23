@@ -21,6 +21,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with: 
+        dotnet-version: '5.0.x'
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
@@ -35,3 +38,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Debug
       run: ls -a
+    
+    - run: dotnet build GoalKeeper.MApi.sln
+      working-directory: './03.Services/GoalKeeper.MApi'
