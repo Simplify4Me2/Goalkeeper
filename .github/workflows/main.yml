@@ -41,6 +41,4 @@ jobs:
         ls -a
         cd ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
         ls -a
-    
-    - run: dotnet build --configuration Release
-      working-directory: './03.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
+        dotnet build --configuration Release
