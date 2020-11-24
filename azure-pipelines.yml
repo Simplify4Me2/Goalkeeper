@@ -17,7 +17,14 @@ steps:
   displayName: 'Restore project dependencies'
   inputs:
       command: restore
-      projects: ./02.Services/**/*.csproj'
+      projects: './02.Services/**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build the project'
+  inputs: 
+    command: build
+    arguments: '--no-retore --configuration Release'
+    projects: './02.Services/**/*.csproj'
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
