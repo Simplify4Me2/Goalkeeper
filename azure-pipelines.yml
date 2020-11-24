@@ -17,7 +17,7 @@ steps:
   displayName: 'Restore project dependencies'
   inputs:
       command: restore
-      projects: ./02.Services.**/*.csproj'
+      projects: ./02.Services/**/*.csproj'
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
