@@ -20,10 +20,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    - uses: actions/setup-dotnet@v1
-      with: 
-        dotnet-version: '5.0.x'
+    #- uses: actions/checkout@v2
+    #- uses: actions/setup-dotnet@v1
+    #  with: 
+    #    dotnet-version: '5.0.x'
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
@@ -40,5 +40,5 @@ jobs:
       run: |
         ls -a
         cd ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
-        ls -a
-        dotnet build --configuration Release
+    #    ls -a
+    #    dotnet build --configuration Release
