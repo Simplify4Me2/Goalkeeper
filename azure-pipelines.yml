@@ -13,20 +13,20 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreCLI@2
-  displayName: 'Restore project dependencies'
-  inputs:
-      command: restore
-      projects: '**/*.csproj'
-      workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
+# - task: DotNetCoreCLI@2
+#   displayName: 'Restore project dependencies'
+#   inputs:
+#       command: restore
+#       projects: '**/*.csproj'
+#       workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build the project'
-  inputs: 
-    command: build
-    arguments: '--no-restore --configuration Release'
-    projects: '**/*.csproj'
-    workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
+# - task: DotNetCoreCLI@2
+#   displayName: 'Build the project'
+#   inputs: 
+#     command: build
+#     arguments: '--no-restore --configuration Release'
+#     projects: '**/*.csproj'
+#     workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
 
 - template: './Build templates/build-and-test.yml'
   parameters:

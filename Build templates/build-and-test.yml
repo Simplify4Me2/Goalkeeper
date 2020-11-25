@@ -15,5 +15,5 @@ steps:
   displayName: 'Restore project dependencies'
   inputs:
       command: restore
-      projects: parameters.project
-      # workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
+      projects: '**/*.csproj'
+      workingDirectory: parameters.project
