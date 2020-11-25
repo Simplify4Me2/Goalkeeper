@@ -1,4 +1,12 @@
+parameters:
+  name: project
+  displayName: path
+  type: string
+  default: 'default'
+
+
 steps:
 - script: |
     echo 'hello world!'
     ls -a
+    echo ${{ parameters.project }}
