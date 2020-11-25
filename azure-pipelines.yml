@@ -30,7 +30,7 @@ steps:
 
 - template: './Build templates/build-and-test.yml'
   parameters:
-    path: ./02.Services/GoalKeeper.MApi/
+    path: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi/
 
 # - script: dotnet build --configuration $(buildConfiguration)
 #   displayName: 'dotnet build $(buildConfiguration)'
