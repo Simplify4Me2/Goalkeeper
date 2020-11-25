@@ -21,7 +21,7 @@ steps:
   inputs:
       command: restore
       # projects: '**/*.csproj'
-      workingDirectory: parameters.project
+      restoreDirectory: parameters.path
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project'
