@@ -22,7 +22,8 @@ steps:
       command: restore
       # projects: '**/*.csproj'
       # projects: '*.MApi.WebApi.csproj'
-      restoreDirectory: parameters.path
+      # restoreDirectory: parameters.path
+      workingDirectory: parameters.path
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project'
