@@ -14,6 +14,7 @@ steps:
     echo 'hello world!'
     ls -a
     echo ${{ parameters.path }}
+    ls -a ${{ parameters.path }}
 
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
