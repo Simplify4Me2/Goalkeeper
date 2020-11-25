@@ -20,10 +20,9 @@ steps:
   displayName: 'Restore project dependencies'
   inputs:
       command: restore
-      # projects: '**/*.csproj'
+      projects: '*.csproj'
       # projects: '*.MApi.WebApi.csproj'
-      # restoreDirectory: parameters.path
-      workingDirectory: parameters.path
+      restoreDirectory: parameters.path
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project'
