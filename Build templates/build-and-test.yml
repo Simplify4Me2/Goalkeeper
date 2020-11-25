@@ -1,6 +1,6 @@
 parameters:
-- name: project
-  displayName: path
+- name: path
+  displayName: workingDirectory
   type: string
   default: 'default'
 - name: buildConfiguration
@@ -13,7 +13,7 @@ steps:
 - script: |
     echo 'hello world!'
     ls -a
-    echo ${{ parameters.project }}
+    echo ${{ parameters.path }}
 
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
@@ -28,4 +28,4 @@ steps:
     command: build
     arguments: '--no-restore --configuration ${{ parameters.buildConfiguration }}'
     projects: '*.csproj'
-    workingDirectory: parameters.project
+    workingDirectory: parameters.path
