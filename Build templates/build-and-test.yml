@@ -10,3 +10,10 @@ steps:
     echo 'hello world!'
     ls -a
     echo ${{ parameters.project }}
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restore project dependencies'
+  inputs:
+      command: restore
+      projects: parameters.project
+      # workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
