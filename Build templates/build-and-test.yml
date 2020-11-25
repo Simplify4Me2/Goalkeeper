@@ -20,7 +20,7 @@ steps:
   displayName: 'Restore project dependencies'
   inputs:
       command: restore
-      projects: '**/*.csproj'
+      # projects: '**/*.csproj'
       workingDirectory: parameters.project
 
 - task: DotNetCoreCLI@2
@@ -28,5 +28,5 @@ steps:
   inputs: 
     command: build
     arguments: '--no-restore --configuration ${{ parameters.buildConfiguration }}'
-    projects: '**.csproj'
+    # projects: '**.csproj'
     workingDirectory: parameters.path
