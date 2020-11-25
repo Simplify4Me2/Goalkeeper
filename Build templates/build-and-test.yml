@@ -8,7 +8,6 @@ parameters:
   type: string
   default: release
 
-
 steps:
 - script: |
     echo 'hello world!'
