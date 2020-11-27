@@ -12,10 +12,25 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-- task: UseDotNet@2
-  inputs:
-    version: '5.0.x'
+jobs:
+  - job: Services
+    displayName: Services
+    steps:
+      - task: UseDotNet@2
+        inputs:
+            version: '5.0.x'
+
+      - template: ./02.Services/azure-pipelines.yml
+
+  - job: FrontEnd
+    displayName: FrontEnd
+    steps:
+      - template: ./03.FrontEnd/azure-pipelines.yml
+
+# steps:
+# - task: UseDotNet@2
+#   inputs:
+#     version: '5.0.x'
 
 # - task: DotNetCoreCLI@2
 #   displayName: 'Restore project dependencies'
@@ -36,7 +51,7 @@ steps:
 #   parameters:
 #     path: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
 
-- template: ./02.Services/azure-pipelines.yml
+# - template: ./02.Services/azure-pipelines.yml
 
 
 # - script: dotnet build --configuration $(buildConfiguration)
