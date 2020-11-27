@@ -7,7 +7,7 @@ steps:
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
   - script: yarn build
-    displayName: 'Build app'
+    displayName: 'Build application'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
   - script: yarn test
