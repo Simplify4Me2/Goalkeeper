@@ -1,0 +1,12 @@
+parameters:
+  - name: buildConfiguration
+    displayName: buildConfiguration
+    type: string
+    default: release
+
+steps:
+  - script: |
+      echo ${{ parameters.buildConfiguration }}
+      ls -a
+
+  - template: ./dotnet-build.yml
