@@ -6,6 +6,14 @@ steps:
     displayName: 'Install dependencies'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
+  - script: yarn build
+    displayName: 'Build app'
+    workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+
   - script: yarn test
     displayName: 'Run unit tests'
+    workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+
+  - script: yarn cypress:ci
+    displayName: 'Run E2E tests'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
