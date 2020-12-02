@@ -9,7 +9,8 @@ steps:
     # projects: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.Application/GoalKeeper.MApi.Application.csproj'
     # projects: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.Application/*.csproj'
     # projects: './02.Services/GoalKeeper.MApi/**/*.csproj'
-    projects: './02.Services/GoalKeeper.MApi/**/GoalKeeper.MApi.Application.csproj'
+    projects: "./02.Services/GoalKeeper.MApi/**/*.csproj"
+    # projects: './02.Services/GoalKeeper.MApi/**/GoalKeeper.MApi.Application.csproj'
     # projects: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi/**/*.csproj'
     # workingDirectory: ./02.Services/GoalKeeper.MApi/
 
