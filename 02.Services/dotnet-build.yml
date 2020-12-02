@@ -5,7 +5,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: restore
-    projects: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.*/*.csproj'
+    projects: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.Application/GoalKeeper.MApi.Application.csproj'
     # workingDirectory: ./02.Services/GoalKeeper.MApi/
 
 - task: DotNetCoreCLI@2
