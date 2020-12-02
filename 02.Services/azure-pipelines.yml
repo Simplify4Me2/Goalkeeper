@@ -1,0 +1,13 @@
+parameters:
+  - name: buildConfiguration
+    displayName: buildConfiguration
+    type: string
+    default: release
+
+steps:
+  - script: |
+      echo ${{ parameters.buildConfiguration }}
+      ls -a
+    displayName: 'Services azure-pipelines'
+
+  - template: ./dotnet-build.yml

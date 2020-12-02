@@ -1,0 +1,19 @@
+steps:
+  - script: echo angular-build
+    displayName: 'Angular build'
+
+  - script: yarn
+    displayName: 'Install dependencies'
+    workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+
+  - script: yarn build
+    displayName: 'Build application'
+    workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+
+  - script: yarn test
+    displayName: 'Run unit tests'
+    workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+
+  - script: yarn cypress:ci
+    displayName: 'Run E2E tests'
+    workingDirectory: ./03.FrontEnd/goal-keeper-angular 

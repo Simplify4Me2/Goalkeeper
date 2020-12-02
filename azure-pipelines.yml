@@ -1,0 +1,91 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+jobs:
+  - job: Services
+    displayName: Services
+    steps:
+      - task: UseDotNet@2
+        inputs:
+            version: '5.0.x'
+
+      - template: ./02.Services/azure-pipelines.yml
+
+  - job: FrontEnd
+    displayName: FrontEnd
+    steps:
+      - template: ./03.FrontEnd/azure-pipelines.yml
+
+# steps:
+# - task: UseDotNet@2
+#   inputs:
+#     version: '5.0.x'
+
+# - task: DotNetCoreCLI@2
+#   displayName: 'Restore project dependencies'
+#   inputs:
+#       command: restore
+#       projects: '**/*.csproj'
+#       workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
+
+# - task: DotNetCoreCLI@2
+#   displayName: 'Build the project'
+#   inputs: 
+#     command: build
+#     arguments: '--no-restore --configuration Release'
+#     projects: '**/*.csproj'
+#     workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
+
+# - template: './Build templates/build-and-test.yml'
+#   parameters:
+#     path: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
+
+# - template: ./02.Services/azure-pipelines.yml
+
+
+# - script: dotnet build --configuration $(buildConfiguration)
+#   displayName: 'dotnet build $(buildConfiguration)'
+#   workingDirectory: './02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi'
+
+# - task: DotNetCoreCLI@2
+#   displayName: 'Run unit tests'
+#   inputs:
+#     command: test
+#     arguments: '--no-build --configuration 5.0.x /p:CollectCoverage=trie /p:CoverletOutputFormat=cobertura /p:CoverletOuput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+#     publishTestResults: true
+#     projects: '**/*.Tests.csproj'
+    
+# - script: |
+#     reportgenerator -reports:$(Build.SourcesDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/CodeCoverage -reporttypes:HtmlInline_AzurePipelines
+#   displayName: 'Create code coverage report'
+
+  
+# - task: PublishCodeCoverageResults@1
+#   displayName: 'Publish code coverage report'
+#   inputs:
+#     codeCoverageTool: 'cobertura'
+#     summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
+
+# - task: DotNetCoreCLI@2
+#   displayName: 'Publish the project - $(buildConfiguration)'
+#   inputs:
+#     command: 'publish'
+#     projects: '**/*.csproj'
+#     publishWebProjects: false
+#     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+#     zipAfterPublish: true
+
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish Artifact: drop'
+#   condition: succeeded()

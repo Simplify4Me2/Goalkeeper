@@ -11,11 +11,13 @@ import { environment } from 'src/environments/environment';
 import { HomeModule } from './home/home.module';
 import { EffectsModule } from '@ngrx/effects';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

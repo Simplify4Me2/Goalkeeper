@@ -1,0 +1,36 @@
+parameters:
+- name: path
+  displayName: workingDirectory
+  type: string
+  default: 'default'
+- name: buildConfiguration
+  displayName: buildConfiguration
+  type: string
+  default: release
+
+steps:
+- script: |
+    echo 'hello world!'
+    ls -a
+    echo ${{ parameters.path }}
+    ls -a ${{ parameters.path }}
+
+# - task: DotNetCoreCLI@2
+#   displayName: 'Restore project dependencies'
+#   inputs:
+#       command: restore
+#       # projects: '**/*.csproj'
+#       # projects: '*.MApi.WebApi.csproj'
+#       restoreDirectory: parameters.path
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build the project'
+  inputs: 
+    command: build
+    arguments: '--no-restore --configuration ${{ parameters.buildConfiguration }}'
+    # projects: '**.csproj'
+    workingDirectory: parameters.path
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
