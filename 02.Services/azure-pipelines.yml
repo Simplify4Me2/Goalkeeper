@@ -5,9 +5,9 @@ parameters:
     default: release
 
 steps:
-  - script: |
-      echo ${{ parameters.buildConfiguration }}
-      ls -a
-    displayName: 'Services azure-pipelines'
+  # - script: |
+  #     echo ${{ parameters.buildConfiguration }}
+  #     ls -a
+  #   displayName: 'Services azure-pipelines'
 
   - template: ./dotnet-build.yml

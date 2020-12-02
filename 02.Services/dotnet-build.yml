@@ -2,9 +2,9 @@ steps:
 - script: echo dotnet-build
   displayName: 'Build project'
 
-# - task: DotNetCoreCLI@2
-#   displayName: 'Build MApi'
-#   inputs:
-#     command: build
-#     arguments: '--no-restore --configuration release'
-#     workingDirectory: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
+- task: DotNetCoreCLI@2
+  displayName: 'Build MApi'
+  inputs:
+    command: build
+    arguments: '--no-restore --configuration release'
+    workingDirectory: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi

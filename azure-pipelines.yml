@@ -12,6 +12,10 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
+# stages:
+#   - stage: Build
+#   job
+
 jobs:
   - job: Services
     displayName: Services
