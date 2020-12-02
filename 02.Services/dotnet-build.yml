@@ -15,7 +15,7 @@ steps:
     # workingDirectory: ./02.Services/GoalKeeper.MApi/
 
 - task: DotNetCoreCLI@2
-  displayName: 'Build MApi'
+  displayName: Build
   inputs:
     command: build
     arguments: '--no-restore --configuration release'
@@ -24,4 +24,4 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: test
-    projects: './02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj'
+    projects: 02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj
