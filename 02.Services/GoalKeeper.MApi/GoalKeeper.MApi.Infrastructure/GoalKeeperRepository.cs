@@ -1,8 +1,9 @@
-﻿using GoalKeeper.MApi.Application.Ports;
+﻿using Dapper;
+using GoalKeeper.MApi.Application.Ports;
 using GoalKeeper.MApi.Domain.Models;
-using System;
+using GoalKeeper.MApi.Infrastructure.Entities;
 using System.Collections.Generic;
-using System.Text;
+using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -10,6 +11,13 @@ namespace GoalKeeper.MApi.Infrastructure
 {
     public class GoalKeeperRepository : IGoalKeeperRepository
     {
+        private readonly IDbConnection _connection;
+
+        public GoalKeeperRepository(IDbConnection connection)
+        {
+            _connection = connection;
+        }
+
         public async Task<List<Fixture>> GetFixtures(CancellationToken cancellationToken)
         {
             var foo = new List<Fixture>
@@ -21,6 +29,13 @@ namespace GoalKeeper.MApi.Infrastructure
             };
 
             return await Task.Run(() => foo);
+        }
+
+        public async Task<List<Domain.Models.Team>> GetTeams(CancellationToken cancellation)
+        {
+            var foo = await _connection.QueryAsync<TeamEntity>("SELECT * FROM GoalKeeper.Teams");
+
+            return TeamEntity.MapOut(foo);
         }
     }
 }

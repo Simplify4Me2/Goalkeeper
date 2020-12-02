@@ -45,36 +45,36 @@ namespace GoalKeeper.MApi.Database
                 return -1;
             }
 
-            Console.WriteLine("Would you like to seed the database? (y/N)");
-            var key = Console.ReadKey();
-            Console.WriteLine();
-            Console.WriteLine(key.KeyChar);
+//            Console.WriteLine("Would you like to seed the database? (y/N)");
+//            var key = Console.ReadKey();
+//            Console.WriteLine();
+//            Console.WriteLine(key.KeyChar);
 
-            if (key.KeyChar == 'y')
-            {
-                var seeder =
-                DeployChanges.To
-                    .SqlDatabase(connectionString)
-                    .JournalToSqlTable("GoalKeeper", "Seeds")
-                    .WithScriptsFromFileSystem("./Seeds")
-                    .WithTransactionPerScript()
-                    .LogToConsole()
-                    .Build();
+//            if (key.KeyChar == 'y')
+//            {
+//                var seeder =
+//                DeployChanges.To
+//                    .SqlDatabase(connectionString)
+//                    .JournalToSqlTable("GoalKeeper", "Seeds")
+//                    .WithScriptsFromFileSystem("./Seeds")
+//                    .WithTransactionPerScript()
+//                    .LogToConsole()
+//                    .Build();
 
-                Console.WriteLine("Seeding the database...");
-                var seedResult = seeder.PerformUpgrade();
+//                Console.WriteLine("Seeding the database...");
+//                var seedResult = seeder.PerformUpgrade();
 
-                if (!seedResult.Successful)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(result.Error);
-                    Console.ResetColor();
-#if DEBUG
-                    Console.ReadLine();
-#endif
-                    return -1;
-                }
-            }
+//                if (!seedResult.Successful)
+//                {
+//                    Console.ForegroundColor = ConsoleColor.Red;
+//                    Console.WriteLine(result.Error);
+//                    Console.ResetColor();
+//#if DEBUG
+//                    Console.ReadLine();
+//#endif
+//                    return -1;
+//                }
+//            }
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Success!");
