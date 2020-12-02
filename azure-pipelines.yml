@@ -22,15 +22,12 @@ jobs:
     steps:
       - template: ./02.Services/azure-pipelines.yml
 
-  - job: FrontEnd
-    displayName: FrontEnd
-    steps:
-      - template: ./03.FrontEnd/azure-pipelines.yml
+  # - job: FrontEnd
+  #   displayName: FrontEnd
+  #   steps:
+  #     - template: ./03.FrontEnd/azure-pipelines.yml
 
-# steps:
-# - task: UseDotNet@2
-#   inputs:
-#     version: '5.0.x'
+
 
 # - task: DotNetCoreCLI@2
 #   displayName: 'Restore project dependencies'
