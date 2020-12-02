@@ -20,10 +20,6 @@ jobs:
   - job: Services
     displayName: Services
     steps:
-      - task: UseDotNet@2
-        inputs:
-            version: '5.0.x'
-
       - template: ./02.Services/azure-pipelines.yml
 
   - job: FrontEnd
