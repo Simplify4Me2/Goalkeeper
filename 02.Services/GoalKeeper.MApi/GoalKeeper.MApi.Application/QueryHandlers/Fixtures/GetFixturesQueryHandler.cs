@@ -32,7 +32,9 @@ namespace GoalKeeper.MApi.Application.QueryHandlers.Fixtures
 
             var data = await _repository.GetFixtures(cancellationToken);
 
-            return data.MapOut();
+            var test = await Task.Run(() => _repository.GetTeams(cancellationToken));
+
+            return foo.MapOut();
         }
     }
 }

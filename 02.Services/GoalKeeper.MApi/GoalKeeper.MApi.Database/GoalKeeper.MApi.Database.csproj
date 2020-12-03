@@ -14,7 +14,10 @@
     <None Update="Migrations\202011022114_EnsureSchemaExists.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Seeds\202011192229_Teams.sql">
+    <None Update="Migrations\202011281841_CreateTeamsTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Seeds\202011192229_Teams_1A_2020-21.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

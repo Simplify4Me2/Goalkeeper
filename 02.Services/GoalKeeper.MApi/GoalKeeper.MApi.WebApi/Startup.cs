@@ -20,7 +20,7 @@ namespace GoalKeeper.MApi.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             SwaggerConfig.Configure(services);
-            IocConfig.Configure(services);
+            IocConfig.Configure(services, Configuration);
             services.AddControllers();
         }
 
