@@ -1,12 +1,18 @@
 <div class="dashboard-overview">
-    <section class="fixtures">
-        <h1>Fixtures</h1>
-        <div *ngFor="let fixture of fixtures | async" >
-            <app-fixture [fixture]="fixture"></app-fixture>
-        </div>
+    <section class="main-content">
+        <article>
+            <h1>Fixtures</h1>
+            <div *ngFor="let fixture of fixtures | async" >
+                <app-fixture [fixture]="fixture"></app-fixture>
+            </div>
+        </article>
+        <article>
+            <h1>News</h1>
+            <app-news-item></app-news-item>
+        </article>
     </section>
-    <section class="ranking">
+    <aside class="side-content">
         <h1>Ranking</h1>
         <app-ranking [rankings]="rankings | async" ></app-ranking>
-    </section>
+    </aside>
 </div>
