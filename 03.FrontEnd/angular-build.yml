@@ -10,10 +10,15 @@ steps:
     displayName: 'Build application'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
-  - script: yarn test
+  - script: yarn test:ci
     displayName: 'Run unit tests'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
+  - task: PublishTestResults@2
+    condition: succeededOrFailed()
+    inputs:
+      testRunner: JUnit
+      testResultsFiles: '**/junit.xml'
   # - script: yarn cypress:ci
   #   displayName: 'Run E2E tests'
   #   workingDirectory: ./03.FrontEnd/goal-keeper-angular 
