@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page should compile 1`] = `
+<app-home
+  fixtures={[Function Store]}
+  rankings={[Function Store]}
+  store={[Function MockStore]}
+>
+  <div
+    class="dashboard-overview"
+  >
+    <section
+      class="main-content"
+    >
+      <article>
+        <h1>
+          Fixtures
+        </h1>
+        
+      </article>
+      <article>
+        <h1>
+          News
+        </h1>
+        <app-news-item>
+          <p>
+            news-item works!
+          </p>
+          <picture>
+            <img
+              src="/assets/news-item.jpg"
+            />
+          </picture>
+        </app-news-item>
+      </article>
+    </section>
+    <aside
+      class="side-content"
+    >
+      <h1>
+        Ranking
+      </h1>
+      <app-ranking>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Position
+              </th>
+              <th>
+                Team
+              </th>
+              <th>
+                Points
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </app-ranking>
+    </aside>
+  </div>
+</app-home>
+`;
