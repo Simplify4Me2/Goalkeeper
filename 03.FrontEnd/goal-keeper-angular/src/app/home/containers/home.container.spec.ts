@@ -54,7 +54,7 @@ describe('Home Page', () => {
         expect(store.dispatch).toHaveBeenCalledWith(action);
     });
 
-    it('should dispatch a getFixtures on init', () => {
+    it('should dispatch a getRankings on init', () => {
         const action = getRankings();
 
         fixture.detectChanges();

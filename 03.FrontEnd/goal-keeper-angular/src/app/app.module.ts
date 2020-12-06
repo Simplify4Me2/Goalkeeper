@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { reducers, metaReducers } from './store';
 import { environment } from 'src/environments/environment';
 import { HomeModule } from './home/home.module';
+import { TeamModule } from './team/team.module';
 import { EffectsModule } from '@ngrx/effects';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -32,6 +33,7 @@ import { FooterComponent } from './footer/footer.component';
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot(),
     HomeModule,
+    TeamModule
   ],
   providers: [],
   bootstrap: [AppComponent]

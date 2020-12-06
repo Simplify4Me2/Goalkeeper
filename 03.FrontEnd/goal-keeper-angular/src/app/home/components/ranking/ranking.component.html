@@ -9,7 +9,7 @@
     <tbody>
         <tr *ngFor="let ranking of rankings">
             <td>{{ ranking.position }}</td>
-            <td class="team" (click)="selectTeam()">{{ ranking.team }}</td>
+            <td class="team" (click)="selectTeam()" routerLink="/team">{{ ranking.team }}</td>
             <td>{{ ranking.points }}</td>
         </tr>
     </tbody>

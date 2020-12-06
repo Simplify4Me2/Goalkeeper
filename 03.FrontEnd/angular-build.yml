@@ -19,6 +19,7 @@ steps:
     inputs:
       testRunner: JUnit
       testResultsFiles: '**/junit.xml'
+      
   # - script: yarn cypress:ci
   #   displayName: 'Run E2E tests'
   #   workingDirectory: ./03.FrontEnd/goal-keeper-angular 
