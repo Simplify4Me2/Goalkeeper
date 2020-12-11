@@ -33,7 +33,6 @@ import { FooterComponent } from './footer/footer.component';
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot(),
     HomeModule,
-    TeamModule
   ],
   providers: [],
   bootstrap: [AppComponent]
