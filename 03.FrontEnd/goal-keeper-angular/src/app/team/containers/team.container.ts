@@ -8,7 +8,8 @@ import { Team } from '../models/team.model';
 
 @Component({
     selector: 'app-team',
-    template: `<h1>Team container</h1>`
+    template: `<h1>Team container</h1>
+                <app-team-info></app-team-info>`
 })
 export class TeamComponent implements OnInit {
 
