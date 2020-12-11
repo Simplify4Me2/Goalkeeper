@@ -8,9 +8,10 @@ import { TeamComponent } from './containers/team.container';
 import * as fromTeam from './store';
 import { TeamEffects } from './store/team.effects';
 import { TeamInfoComponent } from './components/team-info/team-info.component';
+import { TeamPlayersComponent } from './components/team-players/team-players.component';
 
 @NgModule({
-  declarations: [TeamComponent, TeamInfoComponent],
+  declarations: [TeamComponent, TeamInfoComponent, TeamPlayersComponent],
   imports: [
     CommonModule,
     TeamRoutingModule,

@@ -10,12 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
     selector: 'app-team',
     template: `<h1>Team container</h1>
-                <app-team-info [team]='team | async' ></app-team-info>`
+                <app-team-info [team]='team | async' ></app-team-info>
+                <app-team-players></app-team-players>`
 })
 export class TeamComponent implements OnInit {
 
     team: Observable<Team>;
-    // team: Observable<string>;
 
     constructor(private store: Store, private route: ActivatedRoute) {}
 
