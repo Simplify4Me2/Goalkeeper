@@ -1,15 +1,17 @@
-import { Action, createFeatureSelector, createReducer, createSelector } from '@ngrx/store';
+import { Action, createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 import * as fromRoot from '../../store';
+import { Team } from '../../shared/models/team.model';
+import { getTeamSuccess } from './team.actions';
 
 export const teamFeatureKey = 'team';
 
 export interface TeamState {
-    team: string;
+    team: Team;
     playerId: number;
 }
 
 export const initialState: TeamState = {
-    team: 'Foo',
+    team: null,
     playerId: 1,
 }
 
@@ -18,6 +20,7 @@ export interface State extends fromRoot.State {
 }
 
 const teamReducer = createReducer(initialState,
+    on(getTeamSuccess, (state, { team }) => ({ ...state, team: team })),
     );
 
 export function reducer(state: TeamState, action: Action) {

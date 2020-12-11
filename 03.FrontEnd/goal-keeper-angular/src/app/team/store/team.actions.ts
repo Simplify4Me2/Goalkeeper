@@ -1,8 +1,9 @@
 import { createAction, props } from "@ngrx/store";
-import { Team } from "../models/team.model";
+import { Team } from "../../shared/models/team.model";
 
 export const getTeam = createAction(
-    '[TeamPage] Get Team'
+    '[TeamPage] Get Team',
+    props<{ id: number }>()
 );
 
 

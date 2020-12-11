@@ -5,7 +5,7 @@ import { TeamComponent } from './containers/team.container';
 
 
 const routes: Routes = [
-    { path: '', component: TeamComponent },
+    { path: ':id', component: TeamComponent },
 ]
 
 @NgModule({
