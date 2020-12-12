@@ -9,10 +9,11 @@ import { HomeComponent } from './containers/home.container';
 import * as fromHome from './store';
 import { HomeEffects } from './store/home.effects';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { NewsItemComponent } from './components/news-item/news-item.component';
 
 @NgModule({
     declarations: [
-        HomeComponent, FixtureComponent, RankingComponent
+        HomeComponent, FixtureComponent, RankingComponent, NewsItemComponent
     ],
     imports: [
         CommonModule,

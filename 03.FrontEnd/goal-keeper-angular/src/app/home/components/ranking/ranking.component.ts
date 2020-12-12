@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Team } from 'src/app/shared/models/team.model';
 
 import { Ranking } from '../../models/ranking.model';
 
@@ -11,13 +13,15 @@ export class RankingComponent implements OnInit {
 
   @Input() rankings: Ranking[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  selectTeam() {
-    console.log('Team selected');
+  selectTeam(team: Team) {
+    console.log('Team selected: ', team);
+    // this.router.navigate
+    // this.router.navigate(['/team', { id: team.id }]);
   }
 
 }
