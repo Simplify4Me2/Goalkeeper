@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Team Container should compile 1`] = `
+<app-team
+  route={[Function Object]}
+  store={[Function MockStore]}
+  team={[Function Store]}
+>
+  <h1>
+    Team container
+  </h1><app-team-info>
+    
+  </app-team-info><app-team-players>
+    <p>
+      team-players works!
+    </p>
+  </app-team-players>
+</app-team>
+`;

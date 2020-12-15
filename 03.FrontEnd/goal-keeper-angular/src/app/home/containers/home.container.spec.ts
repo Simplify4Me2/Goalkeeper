@@ -9,13 +9,12 @@ import { FixtureComponent } from '../components/fixture/fixture.component';
 import { RankingComponent } from '../components/ranking/ranking.component';
 import { NewsItemComponent } from '../components/news-item/news-item.component';
 
-describe('Home Page', () => {
+describe('Home Container', () => {
     let fixture: ComponentFixture<HomeComponent>;
-    let store: MockStore;
     let instance: HomeComponent;
+    let store: MockStore;
 
     beforeEach(() => {
-
         TestBed.configureTestingModule({
             imports: [
                 RouterTestingModule
