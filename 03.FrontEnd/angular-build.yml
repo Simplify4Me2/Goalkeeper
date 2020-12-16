@@ -20,6 +20,12 @@ steps:
       testRunner: JUnit
       testResultsFiles: '**/junit.xml'
       
+  - task: PublishCodeCoverageResults@1
+    inputs: 
+      codeCoverageTool: Cobertura
+      summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
+      reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+      
   # - script: yarn cypress:ci
   #   displayName: 'Run E2E tests'
   #   workingDirectory: ./03.FrontEnd/goal-keeper-angular 

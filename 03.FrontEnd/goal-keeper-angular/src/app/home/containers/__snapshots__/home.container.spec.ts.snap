@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page should compile 1`] = `
+exports[`Home Container should compile 1`] = `
 <app-home
   fixtures={[Function Store]}
   rankings={[Function Store]}

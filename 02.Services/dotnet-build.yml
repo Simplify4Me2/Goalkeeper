@@ -19,5 +19,27 @@ steps:
   displayName: Test
   inputs:
     command: test
+    arguments: '--configuration release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+    publishTestResults: true
     projects: 02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj
-  continueOnError: true
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage report'
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
+    failIfCoverageEmpty: true
+
+#   MSBuild
+# - task: DotNetCoreCLI@2
+#   displayName: Test
+#   inputs:
+#     command: test
+#     projects: 02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj
+#     arguments: '--configuration release --collect "Code coverage"'
+
+# - script: dotnet test 02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj --logger trx --collect "Code coverage"  
+# - task: PublishTestResults@2
+#   inputs:
+#     testRunner: VSTest
+#     testResultsFiles: '**/*.trx'
