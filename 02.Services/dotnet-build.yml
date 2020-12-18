@@ -32,7 +32,7 @@ steps:
 - script: |
     ls -a
     echo $(Build.SourcesDirectory)
-    ls -a
+    ls -a $(Build.SourcesDirectory)
   displayName: debug
 
 #   MSBuild
