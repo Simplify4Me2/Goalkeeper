@@ -31,7 +31,7 @@ steps:
 
 - script: |
     ls -a
-    cd TestResults/Coverage
+    echo $(Build.SourcesDirectory)
     ls -a
   displayName: debug
 
