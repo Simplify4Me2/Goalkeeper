@@ -23,6 +23,12 @@ steps:
     publishTestResults: true
     projects: 02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj
 
+# - task: Palmmedia.reportgenerator.reportgenerator-build-release-task.reportgenerator@1
+#   displayName: 'Generate code coverage report'
+#   inputs:
+#     reports: '${{ parameters.SourceFolder }}/**/*coverage*.xml'
+#     targetdir: '$(System.DefaultWorkingDirectory)/${{ parameters.ModuleName }}/coveragereport'
+
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
   inputs:

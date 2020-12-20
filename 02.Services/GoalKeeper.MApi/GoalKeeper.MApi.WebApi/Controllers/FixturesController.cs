@@ -25,7 +25,7 @@ namespace GoalKeeper.MApi.WebApi.Controllers
 
         [HttpGet]
         [Route("")]
-        [ProducesResponseType(typeof(List<object>), 200)]
+        [ProducesResponseType(typeof(List<FixtureDTO>), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
         public async Task<Result<List<FixtureDTO>>> GetFixtures()
