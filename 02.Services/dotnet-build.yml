@@ -36,6 +36,12 @@ steps:
     summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
     failIfCoverageEmpty: true
 
+- script: |
+    ls -a
+    echo $(Build.SourcesDirectory)
+    ls -a $(Build.SourcesDirectory)
+  displayName: debug
+
 #   MSBuild
 # - task: DotNetCoreCLI@2
 #   displayName: Test
