@@ -29,18 +29,18 @@ steps:
 #     reports: '${{ parameters.SourceFolder }}/**/*coverage*.xml'
 #     targetdir: '$(System.DefaultWorkingDirectory)/${{ parameters.ModuleName }}/coveragereport'
 
-- task: PublishCodeCoverageResults@1
-  displayName: 'Publish code coverage report'
-  inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
-    failIfCoverageEmpty: true
+# - task: PublishCodeCoverageResults@1
+#   displayName: 'Publish code coverage report'
+#   inputs:
+#     codeCoverageTool: 'Cobertura'
+#     summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
+#     failIfCoverageEmpty: true
 
-- script: |
-    ls -a
-    echo $(Build.SourcesDirectory)
-    ls -a $(Build.SourcesDirectory)
-  displayName: debug
+# - script: |
+#     ls -a
+#     echo $(Build.SourcesDirectory)
+#     ls -a $(Build.SourcesDirectory)
+#   displayName: debug
 
 #   MSBuild
 # - task: DotNetCoreCLI@2

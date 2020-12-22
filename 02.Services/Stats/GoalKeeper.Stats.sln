@@ -3,25 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Statistics.WebApi", "GoalKeeper.Statistics.WebApi\GoalKeeper.Statistics.WebApi.csproj", "{BFA770F3-68ED-4F0D-A9DB-F7B1CD6A2F5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.WebApi", "GoalKeeper.Stats.WebApi\GoalKeeper.Stats.WebApi.csproj", "{BFA770F3-68ED-4F0D-A9DB-F7B1CD6A2F5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Statistics.Domain", "GoalKeeper.Statistics.Domain\GoalKeeper.Statistics.Domain.csproj", "{E7155F49-1FF8-4AC3-9BFB-5A681B6A3054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.Domain", "GoalKeeper.Stats.Domain\GoalKeeper.Stats.Domain.csproj", "{E7155F49-1FF8-4AC3-9BFB-5A681B6A3054}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71B97398-0E12-4594-B0E0-F4A14B711803}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Statistics.WebApi.UnitTests", "GoalKeeper.Statistics.WebApi.UnitTests\GoalKeeper.Statistics.WebApi.UnitTests.csproj", "{1D87EE0B-4B98-46B4-9D8E-47DE8B88D6CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.WebApi.UnitTests", "GoalKeeper.Stats.WebApi.UnitTests\GoalKeeper.Stats.WebApi.UnitTests.csproj", "{1D87EE0B-4B98-46B4-9D8E-47DE8B88D6CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1591F51F-7FE7-4AF0-806D-421EAC7C21F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Statistics.Application", "GoalKeeper.Statistics.Application\GoalKeeper.Statistics.Application.csproj", "{A7BACE94-AB5A-4833-AF40-16ACA52B8322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.Application", "GoalKeeper.Stats.Application\GoalKeeper.Stats.Application.csproj", "{A7BACE94-AB5A-4833-AF40-16ACA52B8322}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Statistics.Application.IO", "GoalKeeper.Statistics.Application.IO\GoalKeeper.Statistics.Application.IO.csproj", "{1D6D1259-944E-4666-A5C5-AE5C035FC915}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.Application.IO", "GoalKeeper.Stats.Application.IO\GoalKeeper.Stats.Application.IO.csproj", "{1D6D1259-944E-4666-A5C5-AE5C035FC915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Statistics.Infrastructure", "GoalKeeper.Statistics.Infrastructure\GoalKeeper.Statistics.Infrastructure.csproj", "{13A9EF1F-C07E-4E05-9FC8-3323118CDE64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.Infrastructure", "GoalKeeper.Stats.Infrastructure\GoalKeeper.Stats.Infrastructure.csproj", "{13A9EF1F-C07E-4E05-9FC8-3323118CDE64}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{1BA57AEB-2CF3-473B-8895-2D3E3B0207C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Common.Application.IO", "..\..\..\01.Common\GoalKeeper.Common\GoalKeeper.Common.Application.IO\GoalKeeper.Common.Application.IO.csproj", "{1CC4CBD6-8A18-41FE-A47F-B4333089133A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Common.Application.IO", "..\..\01.Common\GoalKeeper.Common\GoalKeeper.Common.Application.IO\GoalKeeper.Common.Application.IO.csproj", "{34308114-D7C1-4E41-9359-BDCF43F42A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Stats.Database", "GoalKeeper.Stats.Database\GoalKeeper.Stats.Database.csproj", "{81E5A528-426E-4297-A8E6-D102374F7604}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +55,14 @@ Global
 		{13A9EF1F-C07E-4E05-9FC8-3323118CDE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13A9EF1F-C07E-4E05-9FC8-3323118CDE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13A9EF1F-C07E-4E05-9FC8-3323118CDE64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CC4CBD6-8A18-41FE-A47F-B4333089133A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CC4CBD6-8A18-41FE-A47F-B4333089133A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CC4CBD6-8A18-41FE-A47F-B4333089133A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CC4CBD6-8A18-41FE-A47F-B4333089133A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34308114-D7C1-4E41-9359-BDCF43F42A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34308114-D7C1-4E41-9359-BDCF43F42A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34308114-D7C1-4E41-9359-BDCF43F42A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34308114-D7C1-4E41-9359-BDCF43F42A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E5A528-426E-4297-A8E6-D102374F7604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E5A528-426E-4297-A8E6-D102374F7604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E5A528-426E-4297-A8E6-D102374F7604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E5A528-426E-4297-A8E6-D102374F7604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,7 +74,8 @@ Global
 		{A7BACE94-AB5A-4833-AF40-16ACA52B8322} = {71B97398-0E12-4594-B0E0-F4A14B711803}
 		{1D6D1259-944E-4666-A5C5-AE5C035FC915} = {71B97398-0E12-4594-B0E0-F4A14B711803}
 		{13A9EF1F-C07E-4E05-9FC8-3323118CDE64} = {71B97398-0E12-4594-B0E0-F4A14B711803}
-		{1CC4CBD6-8A18-41FE-A47F-B4333089133A} = {1BA57AEB-2CF3-473B-8895-2D3E3B0207C7}
+		{34308114-D7C1-4E41-9359-BDCF43F42A33} = {1BA57AEB-2CF3-473B-8895-2D3E3B0207C7}
+		{81E5A528-426E-4297-A8E6-D102374F7604} = {71B97398-0E12-4594-B0E0-F4A14B711803}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFC88E3E-09E0-43C1-B9FD-44BF0B9A1DA7}

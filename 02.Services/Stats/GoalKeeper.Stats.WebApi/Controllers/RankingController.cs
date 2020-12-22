@@ -1,13 +1,12 @@
 ﻿using GoalKeeper.Common.Application.IO;
-using GoalKeeper.Statistics.Application.IO.Queries;
+using GoalKeeper.Stats.Application.IO.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace Statistics.MApi.WebApi.Controllers
+namespace GoalKeeper.Stats.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
