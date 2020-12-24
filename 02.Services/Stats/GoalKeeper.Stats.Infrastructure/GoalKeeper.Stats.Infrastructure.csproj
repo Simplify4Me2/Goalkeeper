@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GoalKeeper.Stats.Application\GoalKeeper.Stats.Application.csproj" />
+  </ItemGroup>
+
 </Project>

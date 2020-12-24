@@ -1,6 +1,7 @@
 ﻿using GoalKeeper.Stats.Application.IO.DTOs;
 using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.Mappers;
+using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Domain.Models;
 using MediatR;
 using System.Collections.Generic;
@@ -11,15 +12,17 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 {
     public class GetRankingQueryHandler : IRequestHandler<GetRankingQuery, RankingDTO>
     {
+        private readonly IStatsRepository _repository;
+
+        public GetRankingQueryHandler(IStatsRepository repository)
+        {
+            _repository = repository;
+        }
+
         public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
-            Ranking ranking = new Ranking
-            {
-                Id = 1,
-                Name = "Jupiler Pro League",
-                Teams = new List<string> { "RSC Anderlecht", "Antwerp", "KRC Genk", "Club Brugge" }
-            };
-            return ranking.MapOut();
+            var data = await _repository.Get(cancellationToken);
+            return data.MapOut();
         }
     }
 }
