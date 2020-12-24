@@ -1,17 +1,25 @@
-﻿using GoalKeeper.Stats.Application.IO.Queries;
+﻿using GoalKeeper.Stats.Application.IO.DTOs;
+using GoalKeeper.Stats.Application.IO.Queries;
+using GoalKeeper.Stats.Application.Mappers;
+using GoalKeeper.Stats.Domain.Models;
 using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace GoalKeeper.Stats.Application.QueryHandlers
 {
-    public class GetRankingQueryHandler : IRequestHandler<GetRankingQuery, List<object>>
+    public class GetRankingQueryHandler : IRequestHandler<GetRankingQuery, RankingDTO>
     {
-        public Task<List<object>> Handle(GetRankingQuery request, CancellationToken cancellationToken)
+        public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            Ranking ranking = new Ranking
+            {
+                Id = 1,
+                Name = "Jupiler Pro League",
+                Teams = new List<string> { "RSC Anderlecht", "Antwerp", "KRC Genk", "Club Brugge" }
+            };
+            return ranking.MapOut();
         }
     }
 }
