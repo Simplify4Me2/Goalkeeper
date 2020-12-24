@@ -58,3 +58,14 @@ steps:
 #   inputs:
 #     testRunner: VSTest
 #     testResultsFiles: '**/*.trx'
+
+# Publish projects to specified folder.
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: 02.Services/GoalKeeper.MApi/**/*.csproj
+    arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
+    zipAfterPublish: true
+    modifyOutputPath: true
