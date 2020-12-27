@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GoalKeeper.Stats.Domain.Models
+namespace GoalKeeper.Stats.Domain.Entities
 {
     public class Ranking
     {

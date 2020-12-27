@@ -2,9 +2,7 @@
 using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.Models;
 using MediatR;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,7 +19,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.Get(cancellationToken);
+            var data = await _repository.GetRanking(cancellationToken);
             return data.MapOut();
         }
     }

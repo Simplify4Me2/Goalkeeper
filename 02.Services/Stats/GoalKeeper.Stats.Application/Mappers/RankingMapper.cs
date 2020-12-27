@@ -4,7 +4,7 @@ namespace GoalKeeper.Stats.Application.Mappers
 {
     public static class RankingMapper
     {
-        public static RankingDTO MapOut(this Domain.Models.Ranking ranking)
+        public static RankingDTO MapOut(this Domain.Entities.Ranking ranking)
         {
             return new RankingDTO
             {
