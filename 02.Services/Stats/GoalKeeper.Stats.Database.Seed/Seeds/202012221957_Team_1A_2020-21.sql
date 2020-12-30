@@ -1,4 +1,4 @@
-﻿INSERT INTO GoalKeeper.Teams
+﻿INSERT INTO Stats.Teams
 ([Name], CreatedOn, CreatedBy, ModifiedOn, ModifiedBy)
 VALUES
   ('Royal Antwerp FC', GETDATE(), 'Seed', GETDATE(), 'Seed')
