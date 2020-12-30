@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Player } from '../../models';
 
 @Component({
   selector: 'app-team-players',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team-players.component.sass']
 })
 export class TeamPlayersComponent implements OnInit {
+
+  @Input() players: Player[];
 
   constructor() { }
 

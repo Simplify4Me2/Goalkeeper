@@ -4,7 +4,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
-import { getTeam } from '../store/team.actions';
+import { getPlayers, getTeam } from '../store/team.actions';
 import { TeamComponent } from './team.container';
 import { TeamInfoComponent } from '../components/team-info/team-info.component';
 import { TeamPlayersComponent } from '../components/team-players/team-players.component';
@@ -45,10 +45,18 @@ describe('Team Container', () => {
         fixture.detectChanges();
 
         expect(fixture).toMatchSnapshot();
-    })
+    });
 
     it('should dispatch a getTeam on init', () => {
         const action = getTeam({ id: 112 });
+
+        fixture.detectChanges();
+
+        expect(store.dispatch).toHaveBeenLastCalledWith(action);
+    });
+
+    it('should dispatch a getPlayers on init', () => {
+        const action = getPlayers({ teamId: 112 });
 
         fixture.detectChanges();
 

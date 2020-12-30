@@ -8,15 +8,11 @@ import { getFixtures, getFixturesSuccess, getRankingsSuccess } from './home.acti
 export const homeFeatureKey = 'home';
 
 export interface HomeState {
-    // home: number;
-    // away: number;
     fixtures: Fixture[];
     rankings: Ranking[];
 };
 
 export const initialState: HomeState = {
-    // home: 0,
-    // away: 0,
     fixtures: [],
     rankings: [],
 };
@@ -26,7 +22,6 @@ export interface State extends fromRoot.State {
 }
 
 const testReducer = createReducer(initialState,
-    // on(getFixtures, state => ({ ...state, home: state.home + 1 })),
     on(getFixturesSuccess, (state, { fixtures }) => ({ ...state, fixtures: fixtures })),
     on(getRankingsSuccess, (state, { rankings }) => ({ ...state, rankings: rankings })),
     );
