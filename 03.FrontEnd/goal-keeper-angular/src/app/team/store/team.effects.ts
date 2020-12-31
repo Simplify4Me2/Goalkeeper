@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { Team } from '../../shared/models/team.model';
 
+import { Player, Team } from '../models';
 import { TeamsService } from '../store/services/teams.service';
-import { getTeam, getTeamFail, getTeamSuccess } from '../store/team.actions';
+import * as fromActions from '../store/team.actions';
 
 @Injectable()
 export class TeamEffects {
@@ -14,11 +14,23 @@ export class TeamEffects {
 
     getTeam = createEffect(() =>
         this.actions.pipe(
-            ofType(getTeam),
+            ofType(fromActions.getTeam),
             switchMap((props) =>
-                this.service.get(props.id).pipe(
-                    map((team: Team) => getTeamSuccess({ team })),
-                    catchError(() => of(getTeamFail())
+                this.service.getTeam(props.id).pipe(
+                    map((team: Team) => fromActions.getTeamSuccess({ team })),
+                    catchError(() => of(fromActions.getTeamFail())
+                    ))
+            )
+        )
+    );
+
+    getPlayers = createEffect(() =>
+        this.actions.pipe(
+            ofType(fromActions.getPlayers),
+            switchMap((props) =>
+                this.service.getPlayers(props.teamId).pipe(
+                    map((players: Player[]) => fromActions.getPlayersSuccess({ players })),
+                    catchError(() => of(fromActions.getPlayersFail())
                     ))
             )
         )

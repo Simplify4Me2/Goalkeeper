@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Team } from '../../../shared/models/team.model';
+import { Team } from '../../../home/models/team.model';
 
 @Component({
   selector: 'app-team-info',

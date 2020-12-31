@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Team } from 'src/app/shared/models/team.model';
+import { Team } from 'src/app/home/models/team.model';
 
 import { Ranking } from '../../models/ranking.model';
 
