@@ -1,35 +1,35 @@
 INSERT INTO Stats.Players
-(TeamId, FirstName, LastName, ShirtNumber, Position, CreatedOn, CreatedBy, ModifiedOn, ModifiedBy)
+(TeamId, FirstName, LastName, ShirtNumber, Position, CreatedUtc, CreatedBy, ModifiedUtc, ModifiedBy)
 VALUES
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Jean', 'Butez', 46, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Davor', 'Matijaš', 71, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Alireza', 'Beiranvand', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Bruny', 'Nsimba', 22, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Guy', 'Mbenza Kamboleke', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Didier', 'Lamkel Ze', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Ivo', 'Rodrigues', 8, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Dieumerci', 'Mbokani', 70, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Christian', 'Benavente Bristol', 24, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Birger', 'Verstraete', 5, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Nana', 'Ampomah', 23, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Nill', 'De Pauw', 14, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Manuel', 'Benson', 28, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Koji', 'Miyoshi', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Pieter', 'Gerkens', 16, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Louis', 'Verstraete', 33, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Sander', 'Cooman', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Alexis', 'De Sart', 25, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Lior', 'Refaelov', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Faris', 'Haroun', 38, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Dragan', 'Lausberg', 64, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Luete Ava', 'Dongo', 12, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Jordan', 'Lukaku', 94, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Jérémy', 'Gelin', 26, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Frank', 'Boya', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Ritchie', 'De Laet', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Júnior', 'Pius', 40, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Abdoulaye', 'Seck', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Aurélio', 'Buta', 30, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Dylan', 'Batubinsika', 21, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Jean', 'Butez', 46, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Davor', 'Matijaš', 71, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Alireza', 'Beiranvand', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Bruny', 'Nsimba', 22, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Guy', 'Mbenza Kamboleke', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Didier', 'Lamkel Ze', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Ivo', 'Rodrigues', 8, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Dieumerci', 'Mbokani', 70, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Christian', 'Benavente Bristol', 24, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Birger', 'Verstraete', 5, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Nana', 'Ampomah', 23, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Nill', 'De Pauw', 14, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Manuel', 'Benson', 28, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Koji', 'Miyoshi', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Pieter', 'Gerkens', 16, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Louis', 'Verstraete', 33, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Sander', 'Cooman', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Alexis', 'De Sart', 25, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Lior', 'Refaelov', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Faris', 'Haroun', 38, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Dragan', 'Lausberg', 64, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Luete Ava', 'Dongo', 12, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Jordan', 'Lukaku', 94, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Jérémy', 'Gelin', 26, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Frank', 'Boya', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Ritchie', 'De Laet', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Júnior', 'Pius', 40, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Abdoulaye', 'Seck', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Aurélio', 'Buta', 30, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Dylan', 'Batubinsika', 21, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Simen', 'Juklerød', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
 --   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Simen', 'Juklerød', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')

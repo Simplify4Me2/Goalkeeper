@@ -14,6 +14,9 @@
     <None Update="Seeds\202012221957_Team_1A_2020-21.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Seeds\202012302245_Players_1A_2020_21.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

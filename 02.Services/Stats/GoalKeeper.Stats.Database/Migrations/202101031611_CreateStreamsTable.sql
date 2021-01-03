@@ -1,18 +1,10 @@
-﻿SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE [EventStore].[StreamStates](
+﻿CREATE TABLE [EventStore].[Streams](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[AggregateId] [bigint](max) NOT NULL,
 	[Type] [nvarchar](max) NOT NULL,
-	[Data] [nvarchar](max) NULL,
-	[Version] [int](max) NULL,
+	[Version] [int] NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL,
 	[CreatedBy] [nvarchar](max) NULL,
- CONSTRAINT [PK_StreamStates] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_Streams] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]

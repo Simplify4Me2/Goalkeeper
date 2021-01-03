@@ -1,5 +1,6 @@
 ﻿using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace GoalKeeper.Stats.Infrastructure
                 Name = "Jupiler Pro League",
                 Teams = new List<string> { "RSC Anderlecht", "Antwerp", "KRC Genk", "Club Brugge" }
             };
+
+            var foo = new EventSourcingRepository();
+            var result = Task.Run(() => foo.SaveAsync(new Guid()));
 
             return ranking;
         }

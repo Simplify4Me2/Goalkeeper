@@ -1,5 +1,5 @@
 ﻿INSERT INTO Stats.Teams
-([Name], CreatedOn, CreatedBy, ModifiedOn, ModifiedBy)
+([Name], CreatedUtc, CreatedBy, ModifiedUtc, ModifiedBy)
 VALUES
   ('Royal Antwerp FC', GETDATE(), 'Seed', GETDATE(), 'Seed')
 , ('Club Brugge', GETDATE(), 'Seed', GETDATE(), 'Seed') 
