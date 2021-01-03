@@ -2,6 +2,7 @@
 
 exports[`Team Container should compile 1`] = `
 <app-team
+  players={[Function Store]}
   route={[Function Object]}
   store={[Function MockStore]}
   team={[Function Store]}
@@ -11,9 +12,7 @@ exports[`Team Container should compile 1`] = `
   </h1><app-team-info>
     
   </app-team-info><app-team-players>
-    <p>
-      team-players works!
-    </p>
+    
   </app-team-players>
 </app-team>
 `;

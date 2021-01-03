@@ -52,7 +52,7 @@ describe('Team Container', () => {
 
         fixture.detectChanges();
 
-        expect(store.dispatch).toHaveBeenLastCalledWith(action);
+        expect(store.dispatch).toHaveBeenCalledWith(action);
     });
 
     it('should dispatch a getPlayers on init', () => {

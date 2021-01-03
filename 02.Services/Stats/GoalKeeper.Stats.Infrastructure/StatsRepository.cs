@@ -19,7 +19,7 @@ namespace GoalKeeper.Stats.Infrastructure
             };
 
             var foo = new EventSourcingRepository();
-            var result = Task.Run(() => foo.SaveAsync(new Guid()));
+            await foo.SaveAsync(new Guid());
 
             return ranking;
         }

@@ -31,190 +31,189 @@ VALUES
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Abdoulaye', 'Seck', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Aurélio', 'Buta', 30, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Dylan', 'Batubinsika', 21, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Simen', 'Juklerød', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 'Simen', 'Juklerød', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Ethan', 'Horvath', 22, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Nick', 'Shinton', 33, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Simon', 'Mignolet', 88, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Senne', 'Lammens', 91, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Ethan', 'Horvath', 22, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Nick', 'Shinton', 33, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Simon', 'Mignolet', 88, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Senne', 'Lammens', 91, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Eduard', 'Sobol', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Odilon', 'Kossounou', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Matej', 'Mitrovic', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Simon', 'Deli', 17, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Federico', 'Ricca', 18, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Ignace', 'Van Der Brempt', 28, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Brandon', 'Mechele', 44, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Clinton', 'Mata', 77, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Éder', 'Balanta', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Krépin', 'Diatta', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Hans', 'Vanaken', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Ruud', 'Vormer', 25, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Mats', 'Rits', 26, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Maxim', 'De Cuyper', 55, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Charles', 'De Ketelaere', 90, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Thomas', 'Van Den Keybus', 97, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Amadou', 'Sagna', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Michael', 'krmenčík', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Noa', 'Lang', 10, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Siebe', 'Schrijvers', 16, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'David', 'Okereke', 21, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Youssouph', 'Badji', 27, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Emmanuel B.', 'Dennis', 42, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Eduard', 'Sobol', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Odilon', 'Kossounou', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Matej', 'Mitrovic', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Simon', 'Deli', 17, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Federico', 'Ricca', 18, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Ignace', 'Van Der Brempt', 28, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Brandon', 'Mechele', 44, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Clinton', 'Mata', 77, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Éder', 'Balanta', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Krépin', 'Diatta', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Hans', 'Vanaken', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Ruud', 'Vormer', 25, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Mats', 'Rits', 26, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Maxim', 'De Cuyper', 55, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Charles', 'De Ketelaere', 90, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Thomas', 'Van Den Keybus', 97, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Amadou', 'Sagna', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Michael', 'krmenčík', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Noa', 'Lang', 10, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Siebe', 'Schrijvers', 16, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'David', 'Okereke', 21, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Youssouph', 'Badji', 27, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 'Emmanuel B.', 'Dennis', 42, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Sinan', 'Bolat', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Colin', 'Coosemans', 26, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Davy', 'Roef', 33, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Andreas', 'Hanche-Olsen', 0, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Michael', 'Ngadeu', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Alessio', 'Castro-Montes', 14, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Milad', 'Mohammadi', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Jordan', 'Botaka', 17, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Nurio', 'Fortuna', 25, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Ibrahima', 'Cissé', 28, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Bruno', 'Godeau', 31, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Igor', 'Plastun', 32, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Dino', 'Arslanagic', 36, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Elisha', 'Owusu', 6, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Vadis', 'Odjidja-Ofoe', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Roman', 'Bezus', 9, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Giorgi', 'Chakvetadze', 10, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Wouter', 'George', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Alexandre', 'De Bruyn', 12, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Matisse', 'Samoise', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Sulayman', 'Marreh', 22, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Sven', 'Kums', 24, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Mathéo', 'Parmentier', 27, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Niklas', 'Dorsch', 30, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Roman', 'Yaremchuk', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Anderson', 'Niangbo', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Dylan', 'Mbayo', 18, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Osman', 'Bukari', 20, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Laurent', 'Depoitre', 29, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Tim', 'Kleindienst', 34, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Sinan', 'Bolat', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Colin', 'Coosemans', 26, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Davy', 'Roef', 33, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Andreas', 'Hanche-Olsen', 0, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Michael', 'Ngadeu', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Alessio', 'Castro-Montes', 14, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Milad', 'Mohammadi', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Jordan', 'Botaka', 17, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Nurio', 'Fortuna', 25, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Ibrahima', 'Cissé', 28, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Bruno', 'Godeau', 31, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Igor', 'Plastun', 32, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Dino', 'Arslanagic', 36, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Elisha', 'Owusu', 6, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Vadis', 'Odjidja-Ofoe', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Roman', 'Bezus', 9, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Giorgi', 'Chakvetadze', 10, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Wouter', 'George', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Alexandre', 'De Bruyn', 12, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Matisse', 'Samoise', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Sulayman', 'Marreh', 22, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Sven', 'Kums', 24, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Mathéo', 'Parmentier', 27, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Niklas', 'Dorsch', 30, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Roman', 'Yaremchuk', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Anderson', 'Niangbo', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Dylan', 'Mbayo', 18, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Osman', 'Bukari', 20, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Laurent', 'Depoitre', 29, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 'Tim', 'Kleindienst', 34, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Thomas', 'Didillon', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Sébastien', 'Bruzzese', 89, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Miguel', 'Van Damme', 16, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Merveille', 'Goblet', 18, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Warleson', 'Steillon Oliveira', 21, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Victor Alexander', 'da Silva (Vitinho)', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Alexander', 'Corryn', 25, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Serge-Philippe', 'Raux-Yao', 17, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'David', 'Bates', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Jean Harisson', 'Marcelin', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Jérémy', 'Taravel', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Naomichi', 'Ueda', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Dimitar', 'Velkovski', 19, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Arne', 'Cassaert', 32, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Robbe', 'Decostere', 8, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Giulian', 'Biancone', 41, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Aldom', 'Deuro', 6, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Franck', 'Kanouté', 98, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Leonardo', 'Da Silva Lopes', 42, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Johanna', 'Omolo', 15, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Kevin', 'Hoggas', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Charles', 'Vanhoutte', 14, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Calvin', 'Dekuyper', 26, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Andi', 'Koshi', 44, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Thibo', 'Somers', 34, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Kylian', 'Hazard', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Iké', 'Ugbo', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Anthony', 'Musaba', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Dino', 'Hotic', 10, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Olivier', 'Deman', 23, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Thomas', 'Didillon', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Sébastien', 'Bruzzese', 89, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Miguel', 'Van Damme', 16, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Merveille', 'Goblet', 18, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Warleson', 'Steillon Oliveira', 21, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Victor Alexander', 'da Silva (Vitinho)', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Alexander', 'Corryn', 25, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Serge-Philippe', 'Raux-Yao', 17, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'David', 'Bates', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Jean Harisson', 'Marcelin', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Jérémy', 'Taravel', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Naomichi', 'Ueda', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Dimitar', 'Velkovski', 19, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Arne', 'Cassaert', 32, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Robbe', 'Decostere', 8, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Giulian', 'Biancone', 41, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Aldom', 'Deuro', 6, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Franck', 'Kanouté', 98, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Leonardo', 'Da Silva Lopes', 42, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Johanna', 'Omolo', 15, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Kevin', 'Hoggas', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Charles', 'Vanhoutte', 14, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Calvin', 'Dekuyper', 26, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Andi', 'Koshi', 44, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Thibo', 'Somers', 34, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Kylian', 'Hazard', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Iké', 'Ugbo', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Anthony', 'Musaba', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Dino', 'Hotic', 10, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 'Olivier', 'Deman', 23, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Wouter', 'Biebauw', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Mike', 'Vanhamel', 31, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Antoine', 'Lejoly', 72, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Jan', 'Van Den Bergh', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Denis', 'Prychynenko', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Frédéric', 'Frans', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Dario', 'Van Den Buijs', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Pierre', 'Bourdin', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Yan', 'Vorogovskiy', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Réda', 'Halaimia', 27, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Ayrton', 'Mboko', 79, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Grégory', 'Grisez', 89, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Joren', 'Dom', 5, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Raphael', 'Holzhauser', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Tom', 'Pietermaat', 16, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Ryan', 'Sanusi', 18, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Keres', 'Masangu', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Ismaila', 'Coulibaly', 28, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Blessing', 'Eleke', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Marius', 'Noubissi', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Musashi', 'Suzuki', 10, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Abdoulie', 'Sanyang', 22, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Tarik', 'Tissoudali', 34, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Loris', 'Brogno', 92, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Micael', 'Felipe', 99, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Wouter', 'Biebauw', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Mike', 'Vanhamel', 31, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Antoine', 'Lejoly', 72, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Jan', 'Van Den Bergh', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Denis', 'Prychynenko', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Frédéric', 'Frans', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Dario', 'Van Den Buijs', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Pierre', 'Bourdin', 15, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Yan', 'Vorogovskiy', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Réda', 'Halaimia', 27, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Ayrton', 'Mboko', 79, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Grégory', 'Grisez', 89, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Joren', 'Dom', 5, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Raphael', 'Holzhauser', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Tom', 'Pietermaat', 16, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Ryan', 'Sanusi', 18, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Keres', 'Masangu', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Ismaila', 'Coulibaly', 28, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Blessing', 'Eleke', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Marius', 'Noubissi', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Musashi', 'Suzuki', 10, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Abdoulie', 'Sanyang', 22, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Tarik', 'Tissoudali', 34, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Loris', 'Brogno', 92, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 'Micael', 'Felipe', 99, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Jean-François', 'Gillet', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Arnaud', 'Bodart', 16, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Laurent', 'Henkinet', 30, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Zinho', 'Vanheusden', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Moussa', 'Sissako', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Noë', 'Dusenne', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Collins', 'Fai', 21, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Nicolas', 'Gavory', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Laurent', 'Jans', 27, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Damjan', 'Pavlovic', 33, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Konstantinos', 'Laifis', 34, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Gojko', 'Cimirot', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Mehdi', 'Carcela-Gonzalez', 10, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'William', 'Balikwisha', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Eddy', 'Sylvestre', 12, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Eden', 'Shamir', 15, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Aleksander', 'Boljević', 18, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Selim', 'Amallah', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Merveille Bope', 'Bokadi', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Maxime', 'Lestienne', 22, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Nicolas', 'Raskin', 26, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Samuel', 'Bastien', 28, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Joachim', 'Carcela-Gonzalez', 29, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Duje', 'Cop', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Obbi', 'Oulare', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Jackson', 'Muleka', 17, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Abdoul Fessal', 'Tapsoba', 23, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Felipe', 'Avenatti', 25, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Michel-Ange', 'Balikwisha', 32, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Jean-François', 'Gillet', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Arnaud', 'Bodart', 16, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Laurent', 'Henkinet', 30, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Zinho', 'Vanheusden', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Moussa', 'Sissako', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Noë', 'Dusenne', 6, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Collins', 'Fai', 21, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Nicolas', 'Gavory', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Laurent', 'Jans', 27, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Damjan', 'Pavlovic', 33, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Konstantinos', 'Laifis', 34, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Gojko', 'Cimirot', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Mehdi', 'Carcela-Gonzalez', 10, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'William', 'Balikwisha', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Eddy', 'Sylvestre', 12, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Eden', 'Shamir', 15, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Aleksander', 'Boljević', 18, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Selim', 'Amallah', 19, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Merveille Bope', 'Bokadi', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Maxime', 'Lestienne', 22, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Nicolas', 'Raskin', 26, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Samuel', 'Bastien', 28, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Joachim', 'Carcela-Gonzalez', 29, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Duje', 'Cop', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Obbi', 'Oulare', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Jackson', 'Muleka', 17, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Abdoul Fessal', 'Tapsoba', 23, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Felipe', 'Avenatti', 25, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 'Michel-Ange', 'Balikwisha', 32, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Oregan', 'Ravet', 38, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Daniel', 'Iversen', 21, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Rafael', 'Romo', 90, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Frédéric', 'Duplus', 19, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Kenneth', 'Schuermans', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Derrick', 'Tshimanga', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Sascha', 'Kotysch', 23, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Pierre-Yves', 'Ngawa', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Jordy', 'Gillekens', 27, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Toon', 'Raemaekers', 28, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Barnabás', 'Bese', 18, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Vaclav', 'Jemelka', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Casper', 'De Norre', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'David', 'Hubert', 6, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Samy', 'Kehli', 17, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Mathieu', 'Maertens', 33, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Olivier', 'Myny', 22, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Kamal', 'Sowah', 14, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Aboubakar', 'Keita', 99, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Xavier', 'Mercier', 10, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Tom', 'Van Hyfte', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Isaac', 'Asante', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Thibault', 'Vlietinck', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Kristiyan', 'Malinov', 29, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Yanick', 'Aguemon', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Thomas', 'Henry', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Milan', 'Tucic', 30, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Jérémy', 'Perbet', 43, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Tristan', 'Borges', 24, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Stallone', 'Limbombe', 12, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Yohan', 'Croizet', 77, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Daan', 'Vekemans', 32, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Arthur', 'Allemeersch', 39, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Jonah', 'Oasbutey', 45, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Josh', 'Eppiah', 26, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Oregan', 'Ravet', 38, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Daniel', 'Iversen', 21, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Rafael', 'Romo', 90, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Frédéric', 'Duplus', 19, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Kenneth', 'Schuermans', 4, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Derrick', 'Tshimanga', 3, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Sascha', 'Kotysch', 23, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Pierre-Yves', 'Ngawa', 5, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Jordy', 'Gillekens', 27, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Toon', 'Raemaekers', 28, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Barnabás', 'Bese', 18, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Vaclav', 'Jemelka', 2, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Casper', 'De Norre', 24, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'David', 'Hubert', 6, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Samy', 'Kehli', 17, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Mathieu', 'Maertens', 33, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Olivier', 'Myny', 22, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Kamal', 'Sowah', 14, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Aboubakar', 'Keita', 99, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Xavier', 'Mercier', 10, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Tom', 'Van Hyfte', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Isaac', 'Asante', 20, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Thibault', 'Vlietinck', 11, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Kristiyan', 'Malinov', 29, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Yanick', 'Aguemon', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Thomas', 'Henry', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Milan', 'Tucic', 30, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Jérémy', 'Perbet', 43, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Tristan', 'Borges', 24, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Stallone', 'Limbombe', 12, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Yohan', 'Croizet', 77, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Daan', 'Vekemans', 32, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Arthur', 'Allemeersch', 39, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Jonah', 'Oasbutey', 45, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Josh', 'Eppiah', 26, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 'Mousa', 'Tamari', 13, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
 
 --   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Kortrijk%'), 'Mousa', 'Tamari', 13, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
