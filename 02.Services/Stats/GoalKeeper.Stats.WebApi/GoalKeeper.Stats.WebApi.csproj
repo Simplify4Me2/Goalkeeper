@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\..\01.Common\GoalKeeper.Common\GoalKeeper.Common.Application.IO\GoalKeeper.Common.Application.IO.csproj" />
     <ProjectReference Include="..\GoalKeeper.Stats.Application.IO\GoalKeeper.Stats.Application.IO.csproj" />
     <ProjectReference Include="..\GoalKeeper.Stats.Application\GoalKeeper.Stats.Application.csproj" />
+    <ProjectReference Include="..\GoalKeeper.Stats.EventStore\GoalKeeper.Stats.EventStore.csproj" />
     <ProjectReference Include="..\GoalKeeper.Stats.Infrastructure\GoalKeeper.Stats.Infrastructure.csproj" />
   </ItemGroup>
 

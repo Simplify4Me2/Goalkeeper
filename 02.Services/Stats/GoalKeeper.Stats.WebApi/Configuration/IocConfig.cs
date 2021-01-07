@@ -2,6 +2,8 @@
 using GoalKeeper.Stats.Application.IO;
 using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Infrastructure;
+using GoalKeeper.Stats.Infrastructure.EventStore;
+using GoalKeeper.Stats.EventStore;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,7 @@ namespace GoalKeeper.Stats.WebApi.Configuration
             services.AddMediatR(typeof(IAmApplication), typeof(IAmApplicationIO), typeof(Startup));
 
             services.AddTransient<IStatsRepository, StatsRepository>();
+            services.AddTransient<IEventStore, MyEventStore>();
 
             services.AddTransient<IDbConnection>(db => new SqlConnection(configuration.GetConnectionString("GoalKeeperDB")));
         }

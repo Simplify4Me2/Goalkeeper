@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Statistics.MApi.WebApi.UnitTests
+namespace GoalKeeper.Stats.Application.UnitTests
 {
     public class UnitTest1
     {

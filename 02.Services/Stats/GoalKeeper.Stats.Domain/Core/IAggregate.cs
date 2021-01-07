@@ -1,7 +1,13 @@
-﻿namespace GoalKeeper.Stats.Domain.Core
+﻿using System.Collections.Generic;
+
+namespace GoalKeeper.Stats.Domain.Core
 {
-    public interface IAggregate<T>
+    public interface IAggregate
     {
-        T Id { get; }
+        long Id { get; }
+
+        int Version { get; }
+
+        IEnumerable<object> DequeueUncommittedEvents();
     }
 }
