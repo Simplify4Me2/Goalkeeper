@@ -42,7 +42,7 @@ namespace GoalKeeper.Stats.EventStore.UnitTests
 
         private readonly Mock<IDbConnection> _connection;
 
-        public Stats.EventStore eventStore { get; }
+        public MyEventStore eventStore { get; }
 
         public EventStoreTests()
         {

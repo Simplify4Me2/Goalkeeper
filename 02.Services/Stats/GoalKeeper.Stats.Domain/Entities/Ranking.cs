@@ -9,7 +9,7 @@ namespace GoalKeeper.Stats.Domain.Entities
 
         public string Name { get; set; }
 
-        public List<string> Teams { get; set; }
+        public List<TeamRanking> TeamRankings { get; set; }
 
         //private Ranking() { }
 

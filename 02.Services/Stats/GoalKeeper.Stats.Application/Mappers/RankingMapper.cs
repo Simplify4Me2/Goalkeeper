@@ -9,8 +9,8 @@ namespace GoalKeeper.Stats.Application.Mappers
             return new RankingDTO
             {
                 Id = ranking.Id,
-                CompetitionName = ranking.Name,
-                Teams = ranking.Teams
+                CompetitionName = ranking.Name
+                //Teams = ranking.TeamRankings
             };
         }
     }

@@ -4,7 +4,6 @@ using GoalKeeper.Stats.Application.IO.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GoalKeeper.Stats.WebApi.Controllers
@@ -22,7 +21,7 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("")]
-        [ProducesResponseType(typeof(List<object>), 200)]
+        [ProducesResponseType(typeof(RankingDTO), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
         public async Task<Result<RankingDTO>> GetRanking()
