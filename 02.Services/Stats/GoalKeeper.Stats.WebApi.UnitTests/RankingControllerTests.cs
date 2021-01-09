@@ -26,7 +26,6 @@ namespace GoalKeeper.Stats.WebApi.UnitTests
         public async Task GetRanking_CallsQuery()
         {
             await controller.GetRanking();
-            var query = new GetRankingQuery();
             _mediatr.Verify(p => p.Send(It.IsAny<GetRankingQuery>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }

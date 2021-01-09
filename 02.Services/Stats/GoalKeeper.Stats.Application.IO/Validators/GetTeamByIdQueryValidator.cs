@@ -7,7 +7,6 @@ namespace GoalKeeper.Stats.Application.IO.Validators
     {
         public GetTeamByIdQueryValidator()
         {
-            RuleFor(q => q.Id).NotNull();
             RuleFor(q => q.Id).NotEqual(0);
         }
     }
