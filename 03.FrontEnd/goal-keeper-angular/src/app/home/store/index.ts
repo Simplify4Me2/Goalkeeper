@@ -3,18 +3,18 @@ import { Action, createFeatureSelector, createReducer, createSelector, on } from
 import * as fromRoot from '../../store';
 import { Fixture } from '../models/fixture.model';
 import { Ranking } from '../models/ranking.model';
-import { getFixtures, getFixturesSuccess, getRankingsSuccess } from './home.actions';
+import * as fromActions from './home.actions';
 
 export const homeFeatureKey = 'home';
 
 export interface HomeState {
     fixtures: Fixture[];
-    rankings: Ranking[];
+    ranking: Ranking;
 };
 
 export const initialState: HomeState = {
     fixtures: [],
-    rankings: [],
+    ranking: null,
 };
 
 export interface State extends fromRoot.State {
@@ -22,8 +22,8 @@ export interface State extends fromRoot.State {
 }
 
 const testReducer = createReducer(initialState,
-    on(getFixturesSuccess, (state, { fixtures }) => ({ ...state, fixtures: fixtures })),
-    on(getRankingsSuccess, (state, { rankings }) => ({ ...state, rankings: rankings })),
+    on(fromActions.getFixturesSuccess, (state, { fixtures }) => ({ ...state, fixtures: fixtures })),
+    on(fromActions.getRankingSuccess, (state, { ranking }) => ({ ...state, ranking: ranking })),
     );
 
 export function reducer(state: HomeState | undefined, action: Action) {
@@ -35,4 +35,4 @@ export const selectHomeState = createFeatureSelector<State, HomeState>(
 );
 
 export const selectFixtures = createSelector(selectHomeState, (state) => state.fixtures);
-export const selectRankings = createSelector(selectHomeState, (state) => state.rankings);
+export const selectRanking = createSelector(selectHomeState, (state) => state.ranking);

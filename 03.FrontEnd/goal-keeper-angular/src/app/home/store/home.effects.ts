@@ -5,34 +5,34 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { Fixture } from '../models/fixture.model';
 import { Ranking } from '../models/ranking.model';
-import { getFixtures, getFixturesSuccess, getFixturesFail, getRankings, getRankingsSuccess, getRankingsFail } from './home.actions';
+import * as fromActions from './home.actions';
 import { FixturesService } from './services/fixtures.service';
-import { RankingsService } from './services/rankings.service';
+import { RankingService } from './services/ranking.service';
 
 @Injectable()
 export class HomeEffects {
 
-    constructor(private actions: Actions, private fixturesService: FixturesService, private rankingsService: RankingsService) {}
+    constructor(private actions: Actions, private fixturesService: FixturesService, private rankingService: RankingService) { }
 
-    getFixtures = createEffect(() => 
+    getFixtures = createEffect(() =>
         this.actions.pipe(
-            ofType(getFixtures),
-            switchMap(() => 
+            ofType(fromActions.getFixtures),
+            switchMap(() =>
                 this.fixturesService.get().pipe(
-                    map((fixtures: Fixture[]) => getFixturesSuccess({ fixtures })),
-                    catchError(() => of(getFixturesFail()))
+                    map((fixtures: Fixture[]) => fromActions.getFixturesSuccess({ fixtures })),
+                    catchError(() => of(fromActions.getFixturesFail()))
                 )
             )
         )
     );
 
-    getRankings = createEffect(() => 
+    getRanking = createEffect(() =>
         this.actions.pipe(
-            ofType(getRankings),
-            switchMap(() => 
-                this.rankingsService.get().pipe(
-                    map((rankings: Ranking[]) => getRankingsSuccess({ rankings })),
-                    catchError(() => of(getRankingsFail()))
+            ofType(fromActions.getRanking),
+            switchMap(() =>
+                this.rankingService.get().pipe(
+                    map((ranking: Ranking) => fromActions.getRankingSuccess({ ranking })),
+                    catchError(() => of(fromActions.getRankingFail()))
                 )
             )
         )

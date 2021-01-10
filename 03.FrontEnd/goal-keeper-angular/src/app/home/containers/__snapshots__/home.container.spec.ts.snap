@@ -3,7 +3,7 @@
 exports[`Home Container should compile 1`] = `
 <app-home
   fixtures={[Function Store]}
-  rankings={[Function Store]}
+  ranking={[Function Store]}
   store={[Function MockStore]}
 >
   <div

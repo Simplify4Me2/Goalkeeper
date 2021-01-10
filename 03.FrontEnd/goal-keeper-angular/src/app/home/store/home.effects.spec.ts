@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 import { hot, cold } from 'jasmine-marbles';
 
 import { HomeEffects } from './home.effects';
-import { RankingsService } from './services/rankings.service';
-import { getRankings, getRankingsSuccess } from './home.actions';
+import { RankingService } from './services/ranking.service';
+import { getRanking, getRankingSuccess } from './home.actions';
+import { Ranking } from '../models/ranking.model';
 
 describe('HomeEffects', () => {
 
@@ -19,7 +20,7 @@ describe('HomeEffects', () => {
             providers: [
                 HomeEffects,
                 {
-                    provide: RankingsService,
+                    provide: RankingService,
                     useValue: {
                         get: jest.fn()
                     }
@@ -30,18 +31,22 @@ describe('HomeEffects', () => {
 
         actions = TestBed.inject(Actions);
         effects = TestBed.inject(HomeEffects);
-        service = TestBed.inject(RankingsService);
+        service = TestBed.inject(RankingService);
         
     });
 
     describe('getRankings', () => {
         it('should return a getRankingsSuccess, with data, on success', () => {
-            const ranking = [
-                { position: 1, team: 'Club Brugge', points: 70 },
-                { position: 2, team: 'KAA Gent', points: 55 },]
+            // const ranking: Ranking = [
+            //     { position: 1, team: 'Club Brugge', points: 70 },
+            //     { position: 2, team: 'KAA Gent', points: 55 },]
             
-            const action = getRankings();
-            const completion = getRankingsSuccess({ rankings: ranking });
+            const ranking: Ranking = {
+                teams: []
+            }
+
+            const action = getRanking();
+            const completion = getRankingSuccess({ ranking: ranking });
 
             actions = hot('--a', { a: action });
             const response = cold('--b|', { b: ranking });
@@ -49,7 +54,7 @@ describe('HomeEffects', () => {
             service.get = jest.fn(() => response);
 
 
-            expect(effects.getRankings).toBeObservable(expected)
+            expect(effects.getRanking).toBeObservable(expected)
         })
     });
 });

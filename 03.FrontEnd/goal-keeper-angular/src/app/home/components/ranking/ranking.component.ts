@@ -11,7 +11,7 @@ import { Ranking } from '../../models/ranking.model';
 })
 export class RankingComponent implements OnInit {
 
-  @Input() rankings: Ranking[];
+  @Input() ranking: Ranking;
 
   constructor(private router: Router) { }
 

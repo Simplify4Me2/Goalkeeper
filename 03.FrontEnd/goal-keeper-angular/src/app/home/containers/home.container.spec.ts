@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
-import { selectFixtures } from '../store';
-import { getFixtures, getRankings } from '../store/home.actions';
+import { selectFixtures, selectRanking } from '../store';
+import { getFixtures, getRanking } from '../store/home.actions';
 import { HomeComponent } from '../containers/home.container';
 import { FixtureComponent } from '../components/fixture/fixture.component';
 import { RankingComponent } from '../components/ranking/ranking.component';
@@ -27,7 +27,7 @@ describe('Home Container', () => {
             ],
             providers: [
                 provideMockStore({
-                    selectors: [{ selector: selectFixtures, value: [] }],
+                    selectors: [{ selector: selectFixtures, value: [] }, { selector: selectRanking, value: [] },],
                 }),
             ],
         });
@@ -54,7 +54,7 @@ describe('Home Container', () => {
     });
 
     it('should dispatch a getRankings on init', () => {
-        const action = getRankings();
+        const action = getRanking();
 
         fixture.detectChanges();
 

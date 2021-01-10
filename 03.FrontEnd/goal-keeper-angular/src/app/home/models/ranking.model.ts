@@ -1,5 +1,5 @@
+import { Team } from "./team.model";
+
 export interface Ranking {
-    position: number;
-    team: string;
-    points: number;
+    teams: Team[];
 }

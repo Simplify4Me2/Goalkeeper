@@ -15,15 +15,15 @@ export const getFixturesFail = createAction(
     '[Home/API] Get Fixtures Success',
 );
 
-export const getRankings = createAction(
-    '[Home/Container] Get Rankings'
+export const getRanking = createAction(
+    '[Home/Container] Get Ranking'
 );
 
-export const getRankingsSuccess = createAction(
-    '[Home/API] Get Rankings Success',
-    props<{ rankings: Ranking[] }>()
+export const getRankingSuccess = createAction(
+    '[Home/API] Get Ranking Success',
+    props<{ ranking: Ranking }>()
 );
 
-export const getRankingsFail = createAction(
-    '[Home/API] Get Rankings Success',
+export const getRankingFail = createAction(
+    '[Home/API] Get Ranking Success',
 );
