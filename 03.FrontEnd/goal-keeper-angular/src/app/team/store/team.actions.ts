@@ -17,18 +17,18 @@ export const getTeamFail = createAction(
     '[Team API] Get Team Fail'
 );
 
-export const getPlayers = createAction(
-    '[TeamPage] Get Players',
-    props<{ teamId: number }>()
-);
+// export const getPlayers = createAction(
+//     '[TeamPage] Get Players',
+//     props<{ teamId: number }>()
+// );
 
 
-export const getPlayersSuccess = createAction(
-    '[Team API] Get Players Success',
-    props<{ players: Player[] }>()
-);
+// export const getPlayersSuccess = createAction(
+//     '[Team API] Get Players Success',
+//     props<{ players: Player[] }>()
+// );
 
 
-export const getPlayersFail = createAction(
-    '[Team API] Get Players Fail'
-);
+// export const getPlayersFail = createAction(
+//     '[Team API] Get Players Fail'
+// );

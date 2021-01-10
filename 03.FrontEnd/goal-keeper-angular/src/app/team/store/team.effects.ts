@@ -24,15 +24,15 @@ export class TeamEffects {
         )
     );
 
-    getPlayers = createEffect(() =>
-        this.actions.pipe(
-            ofType(fromActions.getPlayers),
-            switchMap((props) =>
-                this.service.getPlayers(props.teamId).pipe(
-                    map((players: Player[]) => fromActions.getPlayersSuccess({ players })),
-                    catchError(() => of(fromActions.getPlayersFail())
-                    ))
-            )
-        )
-    );
+    // getPlayers = createEffect(() =>
+    //     this.actions.pipe(
+    //         ofType(fromActions.getPlayers),
+    //         switchMap((props) =>
+    //             this.service.getPlayers(props.teamId).pipe(
+    //                 map((players: Player[]) => fromActions.getPlayersSuccess({ players })),
+    //                 catchError(() => of(fromActions.getPlayersFail())
+    //                 ))
+    //         )
+    //     )
+    // );
 }

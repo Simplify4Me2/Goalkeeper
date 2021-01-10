@@ -1,4 +1,18 @@
-<div *ngFor="let player of players">
-    <span>{{ player.firstName }}</span>
-    <span>{{ player.lastName }}</span>
-</div>
+<table>
+    <thead>
+        <tr>
+            <th>ShirtNumber</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let player of players">
+            <td>{{ player.shirtNumber }}</td>
+            <td>{{ player.firstName }}</td>
+            <td>{{ player.lastName }}</td>
+            <td>{{ player.position }}</td>
+        </tr>
+    </tbody>
+</table>

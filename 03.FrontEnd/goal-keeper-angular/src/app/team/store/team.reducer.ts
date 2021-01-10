@@ -8,14 +8,14 @@ export const teamFeatureKey = 'team';
 
 export interface TeamState {
     team: Team;
-    playerId: number;
-    players: Player[];
+    // playerId: number;
+    // players: Player[];
 }
 
 export const initialState: TeamState = {
     team: null,
-    playerId: 1,
-    players: [],
+    // playerId: 1,
+    // players: [],
 }
 
 export interface State extends fromRoot.State {
@@ -24,7 +24,7 @@ export interface State extends fromRoot.State {
 
 const teamReducer = createReducer(initialState,
     on(fromActions.getTeamSuccess, (state, { team }) => ({ ...state, team: team })),
-    on(fromActions.getPlayersSuccess, (state, { players }) => ({ ...state, players: players })),
+    // on(fromActions.getPlayersSuccess, (state, { players }) => ({ ...state, players: players })),
     );
 
 export function reducer(state: TeamState, action: Action) {
