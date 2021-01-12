@@ -20,6 +20,13 @@ namespace GoalKeeper.Stats.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             IocConfig.Configure(services, Configuration);
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200");
+                });
+            });
             services.AddControllers();
             SwaggerConfig.Configure(services);
         }
@@ -41,6 +48,8 @@ namespace GoalKeeper.Stats.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
