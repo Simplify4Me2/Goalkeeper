@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Ranking } from '../../models/ranking.model';
+import { Team } from '../../models/team.model';
+import { RequestResult } from './request-result';
 
 @Injectable({
     providedIn: 'root'
@@ -33,10 +35,11 @@ export class RankingService {
     }
 
     get(): Observable<Ranking> {
-        this.http.get('localhost:5000/api/team').subscribe(foo => {
+        this.http.get<RequestResult<Team>>('https://localhost:44393/api/team').subscribe(foo => {
             console.log(foo);
         });
         return of(this.ranking);
+        // return this.http.get<Ranking>('https://localhost:44393/api/team');
     }
     // TODO: https://www.football-data.org/documentation/quickstart
 }
