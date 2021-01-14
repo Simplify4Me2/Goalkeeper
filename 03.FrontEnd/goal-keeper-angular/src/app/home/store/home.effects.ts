@@ -30,7 +30,7 @@ export class HomeEffects {
         this.actions.pipe(
             ofType(fromActions.getRanking),
             switchMap(() =>
-                this.rankingService.get().pipe(
+                this.rankingService.deprecatedGet().pipe(
                     map((ranking: Ranking) => fromActions.getRankingSuccess({ ranking })),
                     catchError(() => of(fromActions.getRankingFail()))
                 )
