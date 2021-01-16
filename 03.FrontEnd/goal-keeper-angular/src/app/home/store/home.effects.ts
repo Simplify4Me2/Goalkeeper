@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
+import { RequestResult } from 'src/app/shared/request-result';
 import { Fixture } from '../models/fixture.model';
 import { Ranking } from '../models/ranking.model';
 import * as fromActions from './home.actions';
@@ -30,8 +31,8 @@ export class HomeEffects {
         this.actions.pipe(
             ofType(fromActions.getRanking),
             switchMap(() =>
-                this.rankingService.deprecatedGet().pipe(
-                    map((ranking: Ranking) => fromActions.getRankingSuccess({ ranking })),
+                this.rankingService.get().pipe(
+                    map((result: RequestResult<Ranking>) => fromActions.getRankingSuccess({ ranking: result.data })),
                     catchError(() => of(fromActions.getRankingFail()))
                 )
             )

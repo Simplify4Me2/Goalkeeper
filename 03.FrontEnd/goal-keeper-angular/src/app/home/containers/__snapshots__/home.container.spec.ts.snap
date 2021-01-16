@@ -55,6 +55,7 @@ exports[`Home Container should compile 1`] = `
               </th>
             </tr>
           </thead>
+          
           <tbody>
             
           </tbody>

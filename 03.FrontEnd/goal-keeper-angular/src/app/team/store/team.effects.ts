@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
+import { RequestResult } from 'src/app/shared/request-result';
 import { Player, Team } from '../models';
 import { TeamsService } from '../store/services/teams.service';
 import * as fromActions from '../store/team.actions';
@@ -16,8 +17,8 @@ export class TeamEffects {
         this.actions.pipe(
             ofType(fromActions.getTeam),
             switchMap((props) =>
-                this.service.deprecatedGetTeam(props.id).pipe(
-                    map((team: Team) => fromActions.getTeamSuccess({ team })),
+                this.service.getTeam(props.id).pipe(
+                    map((request: RequestResult<Team>) => fromActions.getTeamSuccess({ team: request.data })),
                     catchError(() => of(fromActions.getTeamFail())
                     ))
             )

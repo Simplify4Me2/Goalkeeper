@@ -36,15 +36,16 @@ export class RankingService {
         ]
     }
 
-    get(): Observable<Ranking> {
+    get(): Observable<RequestResult<Ranking>> {
         // this.http.get<RequestResult<Ranking>>('https://localhost:44393/api/team').subscribe(foo => {
         //     console.log(foo);
         // });
-        this.http.get<RequestResult<Ranking>>('https://localhost:5001/api/ranking').subscribe(foo => {
-            console.log(foo);
-        });
+        // this.http.get<RequestResult<Ranking>>('https://localhost:5001/api/ranking').subscribe(foo => {
+        //     console.log(foo);
+        // });
         
-        return of(this.ranking);
+        // return of(this.ranking);
+        return this.http.get<RequestResult<Ranking>>('https://localhost:5001/api/ranking');
         // return this.http.get<Ranking>('https://localhost:44393/api/team');
     }
     // TODO: https://www.football-data.org/documentation/quickstart

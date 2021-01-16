@@ -221,7 +221,7 @@ export class TeamsService {
     }
 
     getTeam(id: number): Observable<RequestResult<Team>> {
-        return this.http.get<RequestResult<Team>>(`https://localhost:44393/api/team/${id}`);
+        return this.http.get<RequestResult<Team>>(`https://localhost:5001/api/team/${id}`);
     }
 
     getPlayers(teamId: number): Observable<Player[]> {

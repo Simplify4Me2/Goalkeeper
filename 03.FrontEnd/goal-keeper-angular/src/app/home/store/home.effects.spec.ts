@@ -8,6 +8,7 @@ import { HomeEffects } from './home.effects';
 import { RankingService } from './services/ranking.service';
 import { getRanking, getRankingSuccess } from './home.actions';
 import { Ranking } from '../models/ranking.model';
+import { RequestResult } from 'src/app/shared/request-result';
 
 describe('HomeEffects', () => {
 
@@ -41,15 +42,20 @@ describe('HomeEffects', () => {
             //     { position: 1, team: 'Club Brugge', points: 70 },
             //     { position: 2, team: 'KAA Gent', points: 55 },]
             
-            const ranking: Ranking = {
-                teams: []
+            const request: RequestResult<Ranking> = {
+                data: {
+                    id: 1,
+                    competitionName: 'Test League',
+                    teams: []
+                },
+                messages: []
             }
 
             const action = getRanking();
-            const completion = getRankingSuccess({ ranking: ranking });
+            const completion = getRankingSuccess({ ranking: request.data });
 
             actions = hot('--a', { a: action });
-            const response = cold('--b|', { b: ranking });
+            const response = cold('--b|', { b: request });
             const expected = cold('----c', { c: completion });
             service.get = jest.fn(() => response);
 
