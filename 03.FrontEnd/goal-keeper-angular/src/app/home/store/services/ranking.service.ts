@@ -14,6 +14,8 @@ export class RankingService {
     constructor(private http: HttpClient) {}
 
     ranking: Ranking = {
+        id: 1,
+        competitionName: 'Jupiler Pro League',
         teams: [
             { id: 5, name: 'Club Brugge' },
             { id: 98, name: 'KAA Gent' },
@@ -35,9 +37,13 @@ export class RankingService {
     }
 
     get(): Observable<Ranking> {
-        this.http.get<RequestResult<Team>>('https://localhost:44393/api/team').subscribe(foo => {
+        // this.http.get<RequestResult<Ranking>>('https://localhost:44393/api/team').subscribe(foo => {
+        //     console.log(foo);
+        // });
+        this.http.get<RequestResult<Ranking>>('https://localhost:5001/api/ranking').subscribe(foo => {
             console.log(foo);
         });
+        
         return of(this.ranking);
         // return this.http.get<Ranking>('https://localhost:44393/api/team');
     }

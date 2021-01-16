@@ -8,6 +8,6 @@ namespace GoalKeeper.Stats.Application.IO.DTOs
 
         public string CompetitionName { get; set; }
 
-        public List<object> Teams { get; set; }
+        public List<TeamDTO> Teams { get; set; }
     }
 }
