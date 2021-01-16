@@ -10,7 +10,7 @@ import { Team } from '../../team/models';
     selector: 'app-team',
     template: `<h1>Team container</h1>
                 <app-team-info [team]='team | async' ></app-team-info>
-                <app-team-players [players]='(team | async).players' ></app-team-players>`
+                <app-team-players [players]='(team | async)?.players' ></app-team-players>`
 })
 export class TeamComponent implements OnInit {
 
