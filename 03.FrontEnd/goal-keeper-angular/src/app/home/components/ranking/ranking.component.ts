@@ -18,10 +18,10 @@ export class RankingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectTeam(team: Team) {
-    console.log('Team selected: ', team);
+  // selectTeam(team: Team) {
+    // console.log('Team selected: ', team);
     // this.router.navigate
     // this.router.navigate(['/team', { id: team.id }]);
-  }
+  // }
 
 }

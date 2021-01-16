@@ -9,7 +9,7 @@
     <tbody *ngIf="ranking as ranking" >
         <tr *ngFor="let team of ranking.teams">
             <td>1</td>
-            <td class="team" [routerLink]="['/team', team.id]" (click)="selectTeam(team)" >{{ team.name }}</td>
+            <td class="team" [routerLink]="['/team', team.id]">{{ team.name }}</td>
             <td>0</td>
         </tr>
     </tbody>
