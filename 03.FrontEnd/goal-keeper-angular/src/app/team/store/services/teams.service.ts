@@ -1,11 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+
 import { Player, Team } from '../../models';
+import { RequestResult } from '../../../shared/request-result';
 
 @Injectable({
     providedIn: 'root'
 })
 export class TeamsService {
+
+    constructor(private http: HttpClient) {}
+
     teams = {
         5: {
             id: 5,
@@ -210,8 +216,12 @@ export class TeamsService {
         { id: 6, firstName: 'Lukas', lastName: 'Nmecha', shirtNumber: 9, position: 'ATT' },
     ]
 
-    getTeam(id: number): Observable<Team> {
+    deprecatedGetTeam(id: number): Observable<Team> {
         return of(this.teams[id]);
+    }
+
+    getTeam(id: number): Observable<RequestResult<Team>> {
+        return this.http.get<RequestResult<Team>>(`https://localhost:44393/api/team/${id}`);
     }
 
     getPlayers(teamId: number): Observable<Player[]> {

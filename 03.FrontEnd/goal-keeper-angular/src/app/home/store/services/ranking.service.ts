@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import { Ranking } from '../../models/ranking.model';
 import { Team } from '../../models/team.model';
-import { RequestResult } from './request-result';
+import { RequestResult } from '../../../shared/request-result';
 
 @Injectable({
     providedIn: 'root'
@@ -48,4 +48,8 @@ export class RankingService {
         // return this.http.get<Ranking>('https://localhost:44393/api/team');
     }
     // TODO: https://www.football-data.org/documentation/quickstart
+
+    // get(): Observable<RequestResult<Ranking>> {
+    //     return this.http.get<RequestResult<Ranking>>('https://localhost:44393/api/team');
+    // }
 }
