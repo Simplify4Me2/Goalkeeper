@@ -1,4 +1,5 @@
 ﻿using GoalKeeper.Stats.Application.IO.DTOs;
+using System.Linq;
 
 namespace GoalKeeper.Stats.Application.Mappers
 {
@@ -9,7 +10,8 @@ namespace GoalKeeper.Stats.Application.Mappers
             return new RankingDTO
             {
                 Id = ranking.Id,
-                CompetitionName = ranking.Name
+                CompetitionName = ranking.Name,
+                Teams = ranking.Teams.MapOut().ToList()
                 //Teams = ranking.TeamRankings
             };
         }

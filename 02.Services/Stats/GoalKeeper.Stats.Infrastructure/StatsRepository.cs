@@ -22,9 +22,9 @@ namespace GoalKeeper.Stats.Infrastructure
             _eventStore = eventStore ?? throw new ArgumentNullException(nameof(eventStore));
         }
 
-        public Task<Ranking> GetRanking(CancellationToken cancellationToken)
+        public async Task<Ranking> GetRanking(CancellationToken cancellationToken)
         {
-            var ranking = _eventStore.AggregateStream<Ranking>(1);
+            //var ranking = _eventStore.AggregateStream<Ranking>(1);
 
             //Ranking ranking = new Ranking
             //{
@@ -36,7 +36,21 @@ namespace GoalKeeper.Stats.Infrastructure
             //var foo = new EventSourcingRepository();
             //await foo.SaveAsync(new Guid());
 
-            return Task.Run(() => ranking);
+            //return Task.Run(() => ranking);
+
+            string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
+
+            var result = await _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
+
+            Ranking ranking = new Ranking
+            {
+                //Id = 1,
+                Name = "Jupiler Pro League",
+                //Teams = new List<string> { "RSC Anderlecht", "Antwerp", "KRC Genk", "Club Brugge" }
+                Teams = result.ToList()
+            };
+
+            return ranking;
         }
 
         public async Task<Team> GetTeamById(long id, CancellationToken cancellationToken)
