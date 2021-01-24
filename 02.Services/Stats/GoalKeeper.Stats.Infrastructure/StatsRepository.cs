@@ -36,17 +36,13 @@ namespace GoalKeeper.Stats.Infrastructure
             //var foo = new EventSourcingRepository();
             //await foo.SaveAsync(new Guid());
 
-            //return Task.Run(() => ranking);
-
             string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
 
             var result = await _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
 
             Ranking ranking = new Ranking
             {
-                //Id = 1,
                 Name = "Jupiler Pro League",
-                //Teams = new List<string> { "RSC Anderlecht", "Antwerp", "KRC Genk", "Club Brugge" }
                 Teams = result.ToList()
             };
 
