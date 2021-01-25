@@ -6,12 +6,14 @@ exports[`Team Container should compile 1`] = `
   store={[Function MockStore]}
   team={[Function Store]}
 >
-  <h1>
-    Team container
-  </h1><app-team-info>
+  <app-team-info>
     
-  </app-team-info><app-team-players>
-    <table>
+  </app-team-info><span>
+    Fixtures | Squad | Stats
+  </span><app-team-players>
+    <table
+      class="players-table"
+    >
       <thead>
         <tr>
           <th>
