@@ -8,8 +8,8 @@ import { Team } from '../../team/models';
 
 @Component({
     selector: 'app-team',
-    template: `<h1>Team container</h1>
-                <app-team-info [team]='team | async' ></app-team-info>
+    template: ` <app-team-info [team]='team | async' ></app-team-info>
+                <span>Fixtures | Squad | Stats</span>
                 <app-team-players [players]='(team | async)?.players' ></app-team-players>`
 })
 export class TeamComponent implements OnInit {
