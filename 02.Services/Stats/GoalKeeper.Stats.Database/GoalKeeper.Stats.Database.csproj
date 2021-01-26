@@ -26,6 +26,9 @@
     <None Update="Migrations\202012302247_CreatePlayersTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Migrations\202101261857_CreateStadiumsTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
