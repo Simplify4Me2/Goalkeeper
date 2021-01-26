@@ -41,7 +41,9 @@ exports[`Home Container should compile 1`] = `
         Ranking
       </h1>
       <app-ranking>
-        <table>
+        <table
+          class="ranking-table"
+        >
           <thead>
             <tr>
               <th>
