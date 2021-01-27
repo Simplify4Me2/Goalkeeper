@@ -14,3 +14,5 @@ steps:
       version: '5.0.x'
 
   - template: ./dotnet-build.yml
+    parameters:
+      projectName: Stats

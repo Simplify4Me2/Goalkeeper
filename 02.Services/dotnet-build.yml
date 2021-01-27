@@ -1,6 +1,12 @@
+parameters: 
+  - name: projectName
+    displayName: projectName
+    type: string
+    default: projectName 
+
 steps:
-# - script: echo dotnet-build
-#   displayName: 'Build project'
+- script: echo ${{ parameters.projectName }}
+  displayName: 'Build project'
 
 - task: DotNetCoreCLI@2
   displayName: Restore
