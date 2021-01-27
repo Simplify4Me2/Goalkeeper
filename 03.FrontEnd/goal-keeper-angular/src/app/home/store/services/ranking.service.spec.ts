@@ -31,8 +31,7 @@ describe('RankingService', () => {
         [RankingService],
         (service: RankingService) => {
             rankingService = service;
-        }
-    ));
+        }));
 
     it('should return data', () => {
         let result: RequestResult<Ranking>;
