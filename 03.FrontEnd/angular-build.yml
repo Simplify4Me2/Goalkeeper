@@ -7,7 +7,8 @@ steps:
     displayName: 'Build application'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
-  - script: ls -a  ${System.DefaultWorkingDirectory}
+  - script: |
+      ls -a
     displayName: debug
 
   - task: PublishBuildArtifacts@1
