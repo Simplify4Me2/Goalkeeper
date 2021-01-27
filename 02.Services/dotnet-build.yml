@@ -5,8 +5,8 @@ parameters:
     default: projectName 
 
 steps:
-- script: echo ${{ parameters.projectName }}
-  displayName: 'Build project'
+# - script: echo ${{ parameters.projectName }}
+#   displayName: 'Build project'
 
 
 - task: DotNetCoreCLI@2
@@ -15,11 +15,11 @@ steps:
     command: restore
     projects: 02.Services/${{ parameters.projectName }}/**/*.csproj
 
-- task: DotNetCoreCLI@2
-  displayName: Restore
-  inputs:
-    command: restore
-    projects: 02.Services/GoalKeeper.MApi/**/*.csproj
+# - task: DotNetCoreCLI@2
+#   displayName: Restore
+#   inputs:
+#     command: restore
+#     projects: 02.Services/GoalKeeper.MApi/**/*.csproj
 
 - task: DotNetCoreCLI@2
   displayName: Build
@@ -28,12 +28,12 @@ steps:
     arguments: '--no-restore --configuration release'
     workingDirectory: ./02.Services/${{ parameters.projectName }}/GoalKeeper.${{ parameters.projectName }}.WebApi
 
-- task: DotNetCoreCLI@2
-  displayName: Build
-  inputs:
-    command: build
-    arguments: '--no-restore --configuration release'
-    workingDirectory: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
+# - task: DotNetCoreCLI@2
+#   displayName: Build
+#   inputs:
+#     command: build
+#     arguments: '--no-restore --configuration release'
+#     workingDirectory: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
 
 - task: DotNetCoreCLI@2
   displayName: Test
@@ -43,13 +43,13 @@ steps:
     publishTestResults: true
     projects: 02.Services/${{ parameters.projectName }}/**/*.UnitTests.csproj
     
-- task: DotNetCoreCLI@2
-  displayName: Test
-  inputs:
-    command: test
-    arguments: '--configuration release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
-    publishTestResults: true
-    projects: 02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj
+# - task: DotNetCoreCLI@2
+#   displayName: Test
+#   inputs:
+#     command: test
+#     arguments: '--configuration release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+#     publishTestResults: true
+#     projects: 02.Services/GoalKeeper.MApi/**/*.UnitTests.csproj
 
 # At present, the code coverage reporting functionality provided by this task is limited and it does not merge coverage data. 
 # If you provide multiple files as input to the task, only the first match is considered. If you use multiple publish code 
@@ -98,15 +98,15 @@ steps:
     zipAfterPublish: true
     modifyOutputPath: true
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet publish'
-  inputs:
-    command: 'publish'
-    publishWebProjects: false
-    projects: 02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi/*.csproj
-    arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
-    zipAfterPublish: true
-    modifyOutputPath: true
+# - task: DotNetCoreCLI@2
+#   displayName: 'dotnet publish'
+#   inputs:
+#     command: 'publish'
+#     publishWebProjects: false
+#     projects: 02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi/*.csproj
+#     arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
+#     zipAfterPublish: true
+#     modifyOutputPath: true
 
 # this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
 - task: PublishBuildArtifacts@1

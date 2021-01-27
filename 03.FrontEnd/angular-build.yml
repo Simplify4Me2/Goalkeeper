@@ -1,7 +1,4 @@
 steps:
-  - script: echo angular-build
-    displayName: 'Angular build'
-
   - script: yarn
     displayName: 'Install dependencies'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
@@ -9,6 +6,13 @@ steps:
   - script: yarn build
     displayName: 'Build application'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+
+  - script: ls -a  ${System.DefaultWorkingDirectory}
+    displayName: debug
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '${System.DefaultWorkingDirectory}'
 
   - script: yarn test:ci
     displayName: 'Run unit tests'

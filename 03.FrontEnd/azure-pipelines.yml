@@ -1,6 +1,4 @@
 steps:
-  - script: echo FrontEnd-build
-
   - task: NodeTool@0
     inputs:
         versionSpec: 14.x
