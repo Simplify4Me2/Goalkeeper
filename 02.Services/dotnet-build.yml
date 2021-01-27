@@ -26,8 +26,23 @@ steps:
   inputs:
     command: build
     arguments: '--no-restore --configuration release'
+    workingDirectory: ./02.Services/${{ parameters.projectName }}/GoalKeeper.${{ parameters.projectName }}.WebApi
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    arguments: '--no-restore --configuration release'
     workingDirectory: ./02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi
 
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    arguments: '--configuration release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+    publishTestResults: true
+    projects: 02.Services/${{ parameters.projectName }}/**/*.UnitTests.csproj
+    
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
@@ -73,6 +88,16 @@ steps:
 #     testResultsFiles: '**/*.trx'
 
 # Publish projects to specified folder.
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: 02.Services/${{ parameters.projectName }}/GoalKeeper.${{ parameters.projectName }}.WebApi/*.csproj
+    arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
+    zipAfterPublish: true
+    modifyOutputPath: true
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish'
   inputs:
