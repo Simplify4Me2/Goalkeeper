@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamReducer an undefined action should return the default state 1`] = `
+Object {
+  "team": null,
+}
+`;
+
+exports[`TeamReducer getTeamSuccess action should populate the state with a team 1`] = `
+Object {
+  "team": Object {
+    "id": 3,
+    "name": "FC De Kampioenen",
+    "players": Array [],
+  },
+}
+`;

@@ -8,6 +8,13 @@ steps:
 - script: echo ${{ parameters.projectName }}
   displayName: 'Build project'
 
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    projects: 02.Services/${{ parameters.projectName }}/**/*.csproj
+
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
@@ -71,7 +78,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: 02.Services/GoalKeeper.MApi/**/*.csproj
+    projects: 02.Services/GoalKeeper.MApi/GoalKeeper.MApi.WebApi/*.csproj
     arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
     zipAfterPublish: true
     modifyOutputPath: true

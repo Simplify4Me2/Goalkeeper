@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { RequestResult } from 'src/app/shared/request-result';
-import { Player, Team } from '../models';
+import { Team } from '../models';
 import { TeamsService } from '../store/services/teams.service';
 import * as fromActions from '../store/team.actions';
 
