@@ -13,27 +13,16 @@ steps:
       ls -a
     displayName: debug
 
-  - task: CopyFiles@2
-    inputs:
-      contents: dist
-      targetFolder: $(Build.ArtifactStagingDirectory)
-    workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+  # - task: CopyFiles@2
+  #   inputs:
+  #     contents: dist
+  #     targetFolder: $(Build.ArtifactStagingDirectory)
+  #   workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: $(Build.ArtifactStagingDirectory)
-      artifactName: GoalKeeper-WebApp
-
-#   steps:
-# - script: ./buildSomething.sh
-# - task: CopyFiles@2
-#   inputs:
-#     contents: '_buildOutput/**'
-#     targetFolder: $(Build.ArtifactStagingDirectory)
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     pathToPublish: $(Build.ArtifactStagingDirectory)
-#     artifactName: MyBuildOutputs
+  # - task: PublishBuildArtifacts@1
+  #   inputs:
+  #     PathtoPublish: $(Build.ArtifactStagingDirectory)
+  #     artifactName: GoalKeeper-WebApp
 
   - script: yarn test:ci
     displayName: 'Run unit tests'
