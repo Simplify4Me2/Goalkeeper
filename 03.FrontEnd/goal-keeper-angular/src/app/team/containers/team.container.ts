@@ -7,12 +7,11 @@ import { Observable } from 'rxjs';
 import { Team } from '../../team/models';
 
 @Component({
-    selector: 'app-team',
-    template: ` <app-team-info [team]='team | async' ></app-team-info>
-                <span>Fixtures | Squad | Stats</span>
-                <app-team-players [players]='(team | async)?.players' ></app-team-players>`
+    selector: 'app-team-container',
+    templateUrl: './team.container.html',
+    styleUrls: ['./team.container.sass']
 })
-export class TeamComponent implements OnInit {
+export class TeamContainerComponent implements OnInit {
 
     team: Observable<Team>;
 

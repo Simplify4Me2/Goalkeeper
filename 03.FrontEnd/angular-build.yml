@@ -9,11 +9,13 @@ steps:
 
   - script: |
       ls -a
+      cd ${System.DefaultWorkingDirectory}/03.FrontEnd/goal-keeper-angular
+      ls -a
     displayName: debug
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '${System.DefaultWorkingDirectory}'
+  # - task: PublishBuildArtifacts@1
+  #   inputs:
+  #     PathtoPublish: '${System.DefaultWorkingDirectory}'
 
   - script: yarn test:ci
     displayName: 'Run unit tests'
