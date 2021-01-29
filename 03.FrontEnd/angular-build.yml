@@ -8,8 +8,8 @@ steps:
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
   - script: |
-      ls -a
-      cd ${System.DefaultWorkingDirectory}/03.FrontEnd/goal-keeper-angular
+      echo ${System.DefaultWorkingDirectory}
+      cd 03.FrontEnd/goal-keeper-angular
       ls -a
     displayName: debug
 
