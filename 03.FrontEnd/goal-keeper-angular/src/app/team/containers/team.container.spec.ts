@@ -5,20 +5,21 @@ import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 import * as fromActions from '../store/team.actions';
-import { TeamComponent } from './team.container';
+import { TeamContainerComponent } from '.';
+// import { TeamComponent } from './team.container';
 import { TeamInfoComponent } from '../components/team-info/team-info.component';
 import { TeamPlayersComponent } from '../components/team-players/team-players.component';
 import { selectTeam } from '../store';
 
 describe('Team Container', () => {
-    let fixture: ComponentFixture<TeamComponent>;
-    let instance: TeamComponent;
+    let fixture: ComponentFixture<TeamContainerComponent>;
+    let instance: TeamContainerComponent;
     let store: MockStore;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [RouterTestingModule],
-            declarations: [TeamComponent, TeamInfoComponent, TeamPlayersComponent],
+            declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent],
             providers: [
                 {
                     provide: ActivatedRoute,
@@ -34,7 +35,7 @@ describe('Team Container', () => {
             ]
         });
 
-        fixture = TestBed.createComponent(TeamComponent);
+        fixture = TestBed.createComponent(TeamContainerComponent);
         instance = fixture.componentInstance;
         store = TestBed.inject(MockStore);
 

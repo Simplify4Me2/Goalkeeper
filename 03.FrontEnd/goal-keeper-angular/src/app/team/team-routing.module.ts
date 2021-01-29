@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TeamContainerComponent, FixturesContainerComponent, PlayersContainerComponent, StatsContainerComponent } from './containers';
+import { TeamContainerComponent, FixturesContainerComponent, SquadContainerComponent, StatsContainerComponent } from './containers';
 
 
 const routes: Routes = [
@@ -10,7 +10,7 @@ const routes: Routes = [
         component: TeamContainerComponent,
         children: [
             { path: 'fixtures', component: FixturesContainerComponent },
-            { path: 'squad', component: PlayersContainerComponent },
+            { path: 'squad', component: SquadContainerComponent },
             { path: 'stats', component: StatsContainerComponent },
             { path: '', redirectTo: 'squad', pathMatch: 'full' },
             { path: '**', redirectTo: 'squad' },

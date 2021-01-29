@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-players',
-  templateUrl: './players.container.html',
-  styleUrls: ['./players.container.sass']
+  templateUrl: './squad.container.html',
+  styleUrls: ['./squad.container.sass']
 })
-export class PlayersContainerComponent implements OnInit {
+export class SquadContainerComponent implements OnInit {
 
   constructor() { }
 

@@ -1,39 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Team Container should compile 1`] = `
-<app-team
+<app-team-container
   route={[Function Object]}
   store={[Function MockStore]}
   team={[Function Store]}
 >
   <app-team-info>
     
-  </app-team-info><span>
-    Fixtures | Squad | Stats
-  </span><app-team-players>
-    <table
-      class="players-table"
-    >
-      <thead>
-        <tr>
-          <th>
-            ShirtNumber
-          </th>
-          <th>
-            First Name
-          </th>
-          <th>
-            Last Name
-          </th>
-          <th>
-            Position
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-      </tbody>
-    </table>
-  </app-team-players>
-</app-team>
+  </app-team-info><ul
+    class="nav"
+  >
+    <li>
+      <a
+        href="/"
+        routerlink="fixtures"
+        routerlinkactive="active-link"
+      >
+        Fixtures
+      </a>
+    </li>
+    <li>
+      <a
+        href="/"
+        routerlink="squad"
+        routerlinkactive="active-link"
+      >
+        Squad
+      </a>
+    </li>
+    <li>
+      <a
+        href="/"
+        routerlink="stats"
+        routerlinkactive="active-link"
+      >
+        Stats
+      </a>
+    </li>
+  </ul><router-outlet />
+</app-team-container>
 `;

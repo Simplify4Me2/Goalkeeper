@@ -10,11 +10,11 @@ import { TeamEffects } from './store/team.effects';
 import { TeamInfoComponent } from './components/team-info/team-info.component';
 import { TeamPlayersComponent } from './components/team-players/team-players.component';
 import { FixturesContainerComponent } from './containers/fixtures/fixtures.container';
-import { PlayersContainerComponent } from './containers/players/players.container';
+import { SquadContainerComponent } from './containers/squad/squad.container';
 import { StatsContainerComponent } from './containers/stats/stats.container';
 
 @NgModule({
-  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, FixturesContainerComponent, PlayersContainerComponent, StatsContainerComponent],
+  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, FixturesContainerComponent, SquadContainerComponent, StatsContainerComponent],
   imports: [
     CommonModule,
     TeamRoutingModule,
