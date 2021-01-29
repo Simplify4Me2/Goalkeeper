@@ -15,8 +15,9 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      contents: 03.FrontEnd/goal-keeper-angular/dist
+      contents: dist
       targetFolder: $(Build.ArtifactStagingDirectory)
+    workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
   - task: PublishBuildArtifacts@1
     inputs:

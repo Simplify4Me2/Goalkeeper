@@ -1,25 +1,43 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { SquadContainerComponent } from './squad.container';
+import { TeamPlayersComponent } from '../../components/team-players/team-players.component';
 
-describe('PlayersComponent', () => {
+describe('SquadContainer', () => {
   let component: SquadContainerComponent;
   let fixture: ComponentFixture<SquadContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SquadContainerComponent ]
+      imports: [RouterTestingModule],
+      declarations: [SquadContainerComponent, TeamPlayersComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            parent: {
+              snapshot: {
+                paramMap: convertToParamMap({
+                  id: '112'
+                })
+              }
+            }
+          }
+        },
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SquadContainerComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
-
+  
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

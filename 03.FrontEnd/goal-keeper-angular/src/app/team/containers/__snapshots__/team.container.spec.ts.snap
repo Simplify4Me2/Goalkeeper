@@ -8,10 +8,12 @@ exports[`Team Container should compile 1`] = `
 >
   <app-team-info>
     
-  </app-team-info><ul
+  </app-team-info><div
     class="nav"
   >
-    <li>
+    <nav
+      class="nav-links"
+    >
       <a
         href="/"
         routerlink="fixtures"
@@ -19,8 +21,6 @@ exports[`Team Container should compile 1`] = `
       >
         Fixtures
       </a>
-    </li>
-    <li>
       <a
         href="/"
         routerlink="squad"
@@ -28,8 +28,6 @@ exports[`Team Container should compile 1`] = `
       >
         Squad
       </a>
-    </li>
-    <li>
       <a
         href="/"
         routerlink="stats"
@@ -37,7 +35,7 @@ exports[`Team Container should compile 1`] = `
       >
         Stats
       </a>
-    </li>
-  </ul><router-outlet />
+    </nav>
+  </div><router-outlet />
 </app-team-container>
 `;

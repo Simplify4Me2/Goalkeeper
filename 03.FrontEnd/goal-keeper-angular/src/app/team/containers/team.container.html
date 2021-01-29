@@ -1,9 +1,10 @@
 <app-team-info [team]='team | async'></app-team-info>
-<ul class="nav" >
+<div class="nav" >
+    <nav class="nav-links" > 
+        <a routerLink="fixtures" routerLinkActive="active-link">Fixtures</a>
+        <a routerLink="squad" routerLinkActive="active-link">Squad</a>
+        <a routerLink="stats" routerLinkActive="active-link">Stats</a>
+    </nav>
     <!-- <li [routerLink]="['/team/fixtures', team.id]" >Fixtures</li> -->
-    <li><a routerLink="fixtures" routerLinkActive="active-link">Fixtures</a></li>
-    <li><a routerLink="squad" routerLinkActive="active-link">Squad</a></li>
-    <li><a routerLink="stats" routerLinkActive="active-link">Stats</a></li>
-</ul>
+</div>
 <router-outlet></router-outlet>
-<!-- <app-team-players [players]='(team | async)?.players'></app-team-players> -->
