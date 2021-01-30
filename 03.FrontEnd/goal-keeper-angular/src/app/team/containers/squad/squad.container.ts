@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Player } from '../../models';
+import { selectPlayers } from '../../store';
 
 @Component({
   selector: 'app-players',
@@ -10,15 +12,14 @@ import { Player } from '../../models';
 })
 export class SquadContainerComponent implements OnInit {
 
-  players: Player[] = [
-    { id: 1, position: 'GK', shirtNumber: 1, firstName: 'Michel', lastName: `Preud'Homme` }
-  ];
-  players$: Observable<Player[]> = of(this.players);
+  players: Observable<Player[]>;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private store: Store, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = Number(this.route.parent.snapshot.paramMap.get('id'));
+
+    this.players = this.store.select(selectPlayers);
   }
 
 }

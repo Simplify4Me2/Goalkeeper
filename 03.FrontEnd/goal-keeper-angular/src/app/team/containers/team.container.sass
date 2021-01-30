@@ -5,16 +5,41 @@
 .nav a
     padding: 0.2rem 1.5rem
     text-decoration: none
+    border-radius: 150px
+    color: white
 
-    + a
-        border-left: 2px solid red
+    // + a
+    //     border-left: 2px solid red
 
     &:hover
-        background-color: gray
+        background-color: lightgray
+        color: black
+        transform: scale(1.2)
+        animation: spring 300ms ease-out
 
 .nav-links
-    border: 2px solid red
-    border-radius: 15px
+    display: flex
+    justify-content: space-between
+    width: 25%
+    // border: 2px solid red
+    border-radius: 150px
+    padding: 0.5rem 1.5rem
+    background-color: gray
 
 .active-link
-    background-color: pink
+    background-color: lightgray
+    // color: black
+
+@keyframes spring 
+  15% 
+    -webkit-transform-origin: center center
+    -webkit-transform: scale(1.2, 1.1)
+  40% 
+    -webkit-transform-origin: center center
+    -webkit-transform: scale(0.95, 0.95)
+  75% 
+    -webkit-transform-origin: center center
+    -webkit-transform: scale(1.05, 1)
+  100% 
+    -webkit-transform-origin: center center
+    -webkit-transform: scale(1.2, 1.2)
