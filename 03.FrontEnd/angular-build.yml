@@ -8,16 +8,13 @@ steps:
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
   - script: |
-      echo ${System.DefaultWorkingDirectory}
-      cd 03.FrontEnd/goal-keeper-angular
-      ls -a
-      cd 03.FrontEnd/goal-keeper-angular/dist
-      ls -a
+      ls -a 03.FrontEnd/goal-keeper-angular
+      ls -a 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
     displayName: debug
 
   - task: CopyFiles@2
     inputs:
-      contents: 03.FrontEnd/goal-keeper-angular/dist
+      contents: 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
       targetFolder: $(Build.ArtifactStagingDirectory)
 
   # - task: PublishBuildArtifacts@1
