@@ -4,10 +4,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { SquadContainerComponent } from './squad.container';
 import { TeamPlayersComponent } from '../../components/team-players/team-players.component';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 describe('SquadContainer', () => {
   let component: SquadContainerComponent;
   let fixture: ComponentFixture<SquadContainerComponent>;
+  let store: MockStore;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,6 +28,7 @@ describe('SquadContainer', () => {
             }
           }
         },
+        provideMockStore()
       ]
     })
       .compileComponents();
@@ -34,6 +37,7 @@ describe('SquadContainer', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SquadContainerComponent);
     component = fixture.componentInstance;
+    store = TestBed.inject(MockStore);
   });
   
   it('should create', () => {

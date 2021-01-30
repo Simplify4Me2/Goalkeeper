@@ -7,21 +7,20 @@ steps:
     displayName: 'Build application'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
-  - script: |
-      ls -a 03.FrontEnd/goal-keeper-angular
-      ls -a 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
-    displayName: debug
+  # - script: |
+  #     ls -a 03.FrontEnd/goal-keeper-angular
+  #     ls -a 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
+  #   displayName: debug
 
   - task: CopyFiles@2
     inputs:
-      # contents: 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
       sourceFolder: 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
       targetFolder: $(Build.ArtifactStagingDirectory)
 
-  # - task: PublishBuildArtifacts@1
-  #   inputs:
-  #     PathtoPublish: $(Build.ArtifactStagingDirectory)
-  #     artifactName: GoalKeeper-WebApp
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory)
+      artifactName: GoalKeeper-WebApp
 
   - script: yarn test:ci
     displayName: 'Run unit tests'
