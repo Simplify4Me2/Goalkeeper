@@ -15,7 +15,7 @@ namespace GoalKeeper.Stats.Database.Seed
                 args.FirstOrDefault()
                 ?? ConfigurationManager.ConnectionStrings["GoalKeeperDB"]?.ConnectionString;
 
-            Console.WriteLine(connectionString);
+            //Console.WriteLine(connectionString);
 
             // Create database if not exist
             EnsureDatabase.For.SqlDatabase(connectionString);

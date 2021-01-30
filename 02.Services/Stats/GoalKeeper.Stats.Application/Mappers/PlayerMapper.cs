@@ -18,7 +18,7 @@ namespace GoalKeeper.Stats.Application.Mappers
             };
         }
 
-        public static IEnumerable<PlayerDTO> MapOut(this ICollection<Domain.Entities.Player> players)
+        public static IEnumerable<PlayerDTO> MapOut(this IEnumerable<Domain.Entities.Player> players)
             => players.Select(player => player.MapOut());
     }
 }

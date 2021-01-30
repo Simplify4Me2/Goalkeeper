@@ -79,5 +79,17 @@ namespace GoalKeeper.Stats.Infrastructure
             var result = _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
             return result;
         }
+
+
+        public async Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
+        {
+            string sql = $"SELECT [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
+                $"FROM [Stats].[Players] " +
+                $"WHERE [Players].[TeamId] = {teamId}";
+
+            var result = await _dbConnection.QueryAsync<Player>(new CommandDefinition(sql, cancellationToken: cancellationToken));
+            return result;
+        }
+
     }
 }
