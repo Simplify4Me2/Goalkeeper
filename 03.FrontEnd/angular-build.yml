@@ -11,13 +11,14 @@ steps:
       echo ${System.DefaultWorkingDirectory}
       cd 03.FrontEnd/goal-keeper-angular
       ls -a
+      cd 03.FrontEnd/goal-keeper-angular/dist
+      ls -a
     displayName: debug
 
-  # - task: CopyFiles@2
-  #   inputs:
-  #     contents: dist
-  #     targetFolder: $(Build.ArtifactStagingDirectory)
-  #   workingDirectory: ./03.FrontEnd/goal-keeper-angular 
+  - task: CopyFiles@2
+    inputs:
+      contents: 03.FrontEnd/goal-keeper-angular/dist
+      targetFolder: $(Build.ArtifactStagingDirectory)
 
   # - task: PublishBuildArtifacts@1
   #   inputs:
