@@ -12,10 +12,16 @@ steps:
   #     ls -a 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
   #   displayName: debug
 
-  - task: CopyFiles@2
+  - task: ArchiveFiles@2
     inputs:
-      sourceFolder: 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
-      targetFolder: $(Build.ArtifactStagingDirectory)
+      rootFolderOrFile: 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
+      archiveType: zip
+      archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+
+  # - task: CopyFiles@2
+  #   inputs:
+  #     sourceFolder: 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
+  #     targetFolder: $(Build.ArtifactStagingDirectory)
 
   - task: PublishBuildArtifacts@1
     inputs:
