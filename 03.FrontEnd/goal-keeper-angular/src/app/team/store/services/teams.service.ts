@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { Team } from '../../models';
+import { Player, Team } from '../../models';
 import { RequestResult } from '../../../shared/request-result';
 
 @Injectable({
@@ -14,5 +14,9 @@ export class TeamsService {
 
     getTeam(id: number): Observable<RequestResult<Team>> {
         return this.http.get<RequestResult<Team>>(`https://localhost:5001/api/team/${id}`);
+    }
+
+    getPlayers(teamId: number): Observable<RequestResult<Player[]>> {
+        return this.http.get<RequestResult<Player[]>>(`https://localhost:5001/api/player/${teamId}`);
     }
 }
