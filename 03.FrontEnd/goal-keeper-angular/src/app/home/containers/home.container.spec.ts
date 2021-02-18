@@ -5,9 +5,9 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { selectFixtures, selectRanking } from '../store';
 import { getFixtures, getRanking } from '../store/home.actions';
 import { HomeComponent } from '../containers/home.container';
-import { FixtureComponent } from '../components/fixture/fixture.component';
 import { RankingComponent } from '../components/ranking/ranking.component';
 import { NewsItemComponent } from '../components/news-item/news-item.component';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('Home Container', () => {
     let fixture: ComponentFixture<HomeComponent>;
@@ -17,11 +17,11 @@ describe('Home Container', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [
+                SharedModule,
                 RouterTestingModule
             ],
             declarations: [
                 HomeComponent,
-                FixtureComponent,
                 RankingComponent,
                 NewsItemComponent
             ],
