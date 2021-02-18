@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { Fixture } from '../models/fixture.model';
+import { Fixture } from '../../shared/models/fixture.model';
 import { getFixtures, getRanking } from '../store/home.actions';
 import * as fromHome from '../store';
 import { Observable } from 'rxjs';

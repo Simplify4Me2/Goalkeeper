@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
-import { Fixture } from '../../models/fixture.model';
+import { Fixture } from '../../../shared/models/fixture.model';
 
 @Injectable({
     providedIn: 'root'

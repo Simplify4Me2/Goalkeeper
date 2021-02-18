@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { RequestResult } from 'src/app/shared/request-result';
-import { Fixture } from '../models/fixture.model';
+import { Fixture } from '../../shared/models/fixture.model';
 import { Ranking } from '../models/ranking.model';
 import * as fromActions from './home.actions';
 import { FixturesService } from './services/fixtures.service';

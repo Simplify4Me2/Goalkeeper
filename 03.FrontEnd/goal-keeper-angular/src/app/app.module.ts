@@ -13,14 +13,13 @@ import { HomeModule } from './home/home.module';
 import { EffectsModule } from '@ngrx/effects';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    SpinnerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +34,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot(),
-    HomeModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Action, createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 
 import * as fromRoot from '../../store';
-import { Fixture } from '../models/fixture.model';
+import { Fixture } from '../../shared/models/fixture.model';
 import { Ranking } from '../models/ranking.model';
 import * as fromActions from './home.actions';
 

@@ -1,1 +1,4 @@
 <p>fixtures works!</p>
+<div *ngFor="let fixture of fixtures | async">
+    <app-fixture [fixture]="fixture"></app-fixture>
+</div>
