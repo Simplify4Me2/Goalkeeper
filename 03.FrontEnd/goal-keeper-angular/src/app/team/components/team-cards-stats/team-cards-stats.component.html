@@ -1,0 +1,19 @@
+<ng-container *ngIf="players">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Player</th>
+                <th>Red cards</th>
+                <th>Yellow cards</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of players">
+                <td>{{ player.position }}</td>
+                <td>{{ player.firstName }} {{ player.lastName }}</td>
+                <td>1</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

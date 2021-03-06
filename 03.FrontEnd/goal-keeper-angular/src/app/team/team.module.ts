@@ -6,15 +6,14 @@ import { TeamRoutingModule } from './team-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { TeamContainerComponent } from './containers/team.container';
 import * as fromTeam from './store';
+import { TeamCardsStatsComponent, TeamGoalsStatsComponent, TeamInfoComponent, TeamPlayersComponent } from './components';
 import { TeamEffects } from './store/team.effects';
-import { TeamInfoComponent } from './components/team-info/team-info.component';
-import { TeamPlayersComponent } from './components/team-players/team-players.component';
 import { FixturesContainerComponent } from './containers/fixtures/fixtures.container';
 import { SquadContainerComponent } from './containers/squad/squad.container';
 import { StatsContainerComponent } from './containers/stats/stats.container';
 
 @NgModule({
-  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, FixturesContainerComponent, SquadContainerComponent, StatsContainerComponent],
+  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, FixturesContainerComponent, SquadContainerComponent, StatsContainerComponent, TeamGoalsStatsComponent, TeamCardsStatsComponent],
   imports: [
     SharedModule,
     TeamRoutingModule,

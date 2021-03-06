@@ -1,0 +1,17 @@
+<ng-container *ngIf="players">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Player</th>
+                <th>Goals</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of players">
+                <td>{{ player.position }}</td>
+                <td>{{ player.firstName }} {{ player.lastName }}</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
