@@ -3,6 +3,7 @@ import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { StatsContainerComponent } from './stats.container';
+import { TeamCardsStatsComponent, TeamGoalsStatsComponent } from '../../components';
 
 describe('StatsComponent', () => {
   let component: StatsContainerComponent;
@@ -11,7 +12,7 @@ describe('StatsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [StatsContainerComponent],
+      declarations: [StatsContainerComponent, TeamCardsStatsComponent, TeamGoalsStatsComponent],
       providers: [
         {
           provide: ActivatedRoute,

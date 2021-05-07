@@ -9,5 +9,7 @@ namespace GoalKeeper.Stats.Domain.Entities
         public string Name { get; set; }
 
         public List<Player> Players { get; set; } = new List<Player>();
+
+        public Stadium Stadium { get; set; }
     }
 }

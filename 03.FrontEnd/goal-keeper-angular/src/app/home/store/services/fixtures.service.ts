@@ -9,7 +9,7 @@ import { Fixture } from '../../../shared/models/fixture.model';
 })
 export class FixturesService {
     fixtures: Fixture[] = [
-        { homeTeam: 'OHL', homeScore: 0, awayTeam: 'Anderlecht', awayScore: 1 },
+        { homeTeam: 'Oud-Heverlee Leuven', homeScore: 0, awayTeam: 'Anderlecht', awayScore: 1 },
         { homeTeam: 'Club Brugge', homeScore: 4, awayTeam: 'Zulte Waregem', awayScore: 1 },
         { homeTeam: 'KRC Genk', homeScore: 2, awayTeam: 'Sporting Charleroi', awayScore: 4 },
       ];

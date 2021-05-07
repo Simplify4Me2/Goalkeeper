@@ -29,10 +29,6 @@ namespace GoalKeeper.Stats.WebApi
             });
             services.AddControllers();
             SwaggerConfig.Configure(services);
-
-            // services.addCors(c => {
-            //     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            // });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
