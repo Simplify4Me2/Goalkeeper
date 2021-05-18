@@ -6,7 +6,11 @@ exports[`Home Container should compile 1`] = `
   ranking={[Function Store]}
   store={[Function MockStore]}
 >
-  <div
+  <h2
+    class="dashboard-title"
+  >
+    Soccer stats insights for your favourite team
+  </h2><div
     class="dashboard-overview"
   >
     <section
