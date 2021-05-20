@@ -17,7 +17,7 @@ CREATE TABLE [Stats].[Matches](
 	[CreatedBy] [nvarchar](max) NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
 	[ModifiedBy] [nvarchar](max) NULL,
- CONSTRAINT [PK_Stadiums] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_Matches] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -25,11 +25,11 @@ CREATE TABLE [Stats].[Matches](
 GO
 
 ALTER TABLE [Stats].[Matches] 
-ADD CONSTRAINT [FK_Matches_Teams] FOREIGN KEY ([HomeTeamId]) REFERENCES [Stats].[Teams] ([Id])
+ADD CONSTRAINT [FK_Matches_HomeTeam_Teams] FOREIGN KEY ([HomeTeamId]) REFERENCES [Stats].[Teams] ([Id])
 
 GO 
 
 ALTER TABLE [Stats].[Matches] 
-ADD CONSTRAINT [FK_Matches_Teams] FOREIGN KEY ([AwayTeamId]) REFERENCES [Stats].[Teams] ([Id])
+ADD CONSTRAINT [FK_Matches_AwayTeam_Teams] FOREIGN KEY ([AwayTeamId]) REFERENCES [Stats].[Teams] ([Id])
 
 GO
