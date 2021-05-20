@@ -26,24 +26,23 @@ namespace GoalKeeper.Stats.Infrastructure
         {
             //var ranking = _eventStore.AggregateStream<Ranking>(1);
 
-            //Ranking ranking = new Ranking
-            //{
-            //    Id = 1,
-            //    Name = "Jupiler Pro League",
-            //    Teams = new List<string> { "RSC Anderlecht", "Antwerp", "KRC Genk", "Club Brugge" }
-            //};
-
             //var foo = new EventSourcingRepository();
             //await foo.SaveAsync(new Guid());
 
             string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
 
             var result = await _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
-
+            var random = new Random();
             Ranking ranking = new Ranking
             {
                 Name = "Jupiler Pro League",
-                Teams = result.ToList()
+                TeamRankings = result.Select(team => new TeamRanking
+                {
+                    //Id = team.Id,
+                    Team = team,
+                    Points = random.Next(36, 76)
+                }).ToList()
+                //Teams = result.ToList()
             };
 
             return ranking;
