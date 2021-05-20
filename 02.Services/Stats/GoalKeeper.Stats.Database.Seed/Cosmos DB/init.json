@@ -1,0 +1,163 @@
+[
+  {
+    "Id": "1",
+    "StadiumId": 2,
+    "Name": "Royal Antwerp FC",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "aff00dd4-73db-4df1-bdda-428c90508f08"
+  },
+  {
+    "Id": "2",
+    "StadiumId": 1,
+    "Name": "Club Brugge",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "e237df28-5a81-44b1-b375-a9595e384c65"
+  },
+  {
+    "Id": "3",
+    "StadiumId": 3,
+    "Name": "KAA Gent",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "9af452aa-2086-49ee-a23f-17566ac56eaa"
+  },
+  {
+    "Id": "4",
+    "StadiumId": 1,
+    "Name": "Cercle Brugge",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "811d4de8-cec7-4e0a-8d85-d84f3ce35be3"
+  },
+  {
+    "Id": "5",
+    "StadiumId": 4,
+    "Name": "Beerschot VA",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "c675ad29-1dc1-48ee-aa5b-b3af0049d404"
+  },
+  {
+    "Id": "6",
+    "StadiumId": 5,
+    "Name": "Standard Luik",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "85503db2-15a1-4a6e-a095-157f551bac7d"
+  },
+  {
+    "Id": "7",
+    "StadiumId": 6,
+    "Name": "Oud-Heverlee Leuven",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "d0efdb34-93fa-4001-927d-2673e868dc96"
+  },
+  {
+    "Id": "8",
+    "StadiumId": 7,
+    "Name": "KV Kortrijk",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "1c44f16b-8aba-472d-92ff-b2cf1db4215c"
+  },
+  {
+    "Id": "9",
+    "StadiumId": 8,
+    "Name": "Royal Charleroi Sporting Club",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "448992b0-4481-43cd-8327-eba2b7bee516"
+  },
+  {
+    "Id": "10",
+    "StadiumId": 9,
+    "Name": "KV Mechelen",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "12b343ce-5b1d-4442-9d1f-d7c9ab207911"
+  },
+  {
+    "Id": "11",
+    "StadiumId": 10,
+    "Name": "KV Oostende",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "cc4c4100-f76c-4d56-864f-d0becb31154a"
+  },
+  {
+    "Id": "12",
+    "StadiumId": 11,
+    "Name": "RSC Anderlecht",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "cc54c682-48cf-465f-87ca-cb9e70a1e3d9"
+  },
+  {
+    "Id": "13",
+    "StadiumId": 12,
+    "Name": "Royal Excel Moeskroen",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "f6b788ba-4063-4768-a308-e8d317a82ef7"
+  },
+  {
+    "Id": "14",
+    "StadiumId": 13,
+    "Name": "KRC Genk",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "237f91fb-d8c2-4036-8531-e62439b148be"
+  },
+  {
+    "Id": "15",
+    "StadiumId": 14,
+    "Name": "Sint-Truidense VV",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "9c71955c-c32f-4ecb-9ca8-f54cf810890b"
+  },
+  {
+    "Id": "16",
+    "StadiumId": 15,
+    "Name": "KVRS Waasland - SK Beveren",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "08e2a3ef-2d59-4fc2-be9b-cc32bd2814b3"
+  },
+  {
+    "Id": "17",
+    "StadiumId": 16,
+    "Name": "KAS Eupen",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "5645dd46-fc74-4d1a-bed5-52faa27974a7"
+  },
+  {
+    "Id": "18",
+    "StadiumId": 17,
+    "Name": "SV Zulte Waregem",
+    "CreatedUtc": "2021-01-30T20:39:15.5633333",
+    "CreatedBy": "Seed",
+    "ModifiedUtc": "2021-01-30T20:39:15.5633333",
+    "id": "e2da5813-189f-4475-963e-84efbc42190e"
+  }]

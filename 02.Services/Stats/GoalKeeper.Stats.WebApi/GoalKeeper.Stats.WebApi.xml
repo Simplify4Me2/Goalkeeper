@@ -4,5 +4,11 @@
         <name>GoalKeeper.Stats.WebApi</name>
     </assembly>
     <members>
+        <member name="M:GoalKeeper.Stats.WebApi.Configuration.IocConfig.InitializeCosmosClientInstanceAsync(Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+            Creates a Cosmos DB database and a container with the specified partition key. 
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
