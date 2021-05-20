@@ -1,16 +1,22 @@
-<table class="ranking-table">
-    <thead>
-        <tr>
-            <th>Position</th>
-            <th>Team</th>
-            <th>Points</th>
-        </tr>
-    </thead>
-    <tbody *ngIf="ranking as ranking" >
-        <tr *ngFor="let team of ranking.teams">
-            <td>1</td>
-            <td class="team" [routerLink]="['/team', team.id]">{{ team.name }}</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-</table>
+<div class="box">
+    <h1 class="title">Ranking</h1>
+    <table class="ranking-table">
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="ranking as ranking" >
+            <tr *ngFor="let team of ranking.teams">
+                <td>1</td>
+                <td class="team" [routerLink]="['/team', team.id]">
+                    <img class="logo" src='{{ "assets/images/logos/" + team.name + ".svg" }}' />
+                    <span>{{ team.name }}</span>
+                </td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -6,7 +6,11 @@ exports[`Home Container should compile 1`] = `
   ranking={[Function Store]}
   store={[Function MockStore]}
 >
-  <div
+  <h2
+    class="dashboard-title"
+  >
+    Soccer stats insights for your favourite team
+  </h2><div
     class="dashboard-overview"
   >
     <section
@@ -37,31 +41,37 @@ exports[`Home Container should compile 1`] = `
     <aside
       class="side-content"
     >
-      <h1>
-        Ranking
-      </h1>
       <app-ranking>
-        <table
-          class="ranking-table"
+        <div
+          class="box"
         >
-          <thead>
-            <tr>
-              <th>
-                Position
-              </th>
-              <th>
-                Team
-              </th>
-              <th>
-                Points
-              </th>
-            </tr>
-          </thead>
-          
-          <tbody>
+          <h1
+            class="title"
+          >
+            Ranking
+          </h1>
+          <table
+            class="ranking-table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  Position
+                </th>
+                <th>
+                  Team
+                </th>
+                <th>
+                  Points
+                </th>
+              </tr>
+            </thead>
             
-          </tbody>
-        </table>
+            <tbody>
+              
+            </tbody>
+          </table>
+        </div>
       </app-ranking>
     </aside>
   </div>
