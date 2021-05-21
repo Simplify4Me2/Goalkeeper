@@ -1,7 +1,6 @@
-import { Team } from "./team.model";
+import { TeamRanking } from "./team-ranking.model";
 
 export interface Ranking {
-    id: number;
     competitionName: string;
-    teams: Team[];
+    teamRankings: TeamRanking[];
 }

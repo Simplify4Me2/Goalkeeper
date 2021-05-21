@@ -9,13 +9,13 @@
             </tr>
         </thead>
         <tbody *ngIf="ranking as ranking" >
-            <tr *ngFor="let team of ranking.teams">
-                <td>1</td>
-                <td class="team" [routerLink]="['/team', team.id]">
-                    <img class="logo" src='{{ "assets/images/logos/" + team.name + ".svg" }}' />
-                    <span>{{ team.name }}</span>
+            <tr *ngFor="let team of ranking.teamRankings">
+                <td>{{ team.teamId }}</td>
+                <td class="team" [routerLink]="['/team', team.teamId]">
+                    <img class="logo" src='{{ "assets/images/logos/" + team.teamName + ".svg" }}' />
+                    <span>{{ team.teamName }}</span>
                 </td>
-                <td>0</td>
+                <td>{{ team.points}}</td>
             </tr>
         </tbody>
     </table>

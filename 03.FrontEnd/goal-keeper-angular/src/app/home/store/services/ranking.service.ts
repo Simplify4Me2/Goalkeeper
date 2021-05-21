@@ -14,25 +14,24 @@ export class RankingService {
     constructor(private http: HttpClient) {}
 
     ranking: Ranking = {
-        id: 1,
         competitionName: 'Jupiler Pro League',
-        teams: [
-            { id: 5, name: 'Club Brugge' },
-            { id: 98, name: 'KAA Gent' },
-            { id: 65, name: 'Charleroi' },
-            { id: 10, name: 'Antwerp' },
-            { id: 23, name: 'Standard' },
-            { id: 67, name: 'KV Mechelen' },
-            { id: 29, name: 'KRC Genk' },
-            { id: 58, name: 'Anderlecht' },
-            { id: 11, name: 'Zulte Waregem' },
-            { id: 39, name: 'Excel Moeskroen' },
-            { id: 31, name: 'KV Kortrijk' },
-            { id: 19, name: 'STVV' },
-            { id: 44, name: 'KAS Eupen' },
-            { id: 21, name: 'Cercle Brugge' },
-            { id: 12, name: 'KV Oostende' },
-            { id: 8, name: 'Waasland-Beveren' },
+        teamRankings: [
+            { teamId: 5, teamName: 'Club Brugge', points: 72 },
+            { teamId: 98, teamName: 'KAA Gent', points: 59 },
+            { teamId: 65, teamName: 'Charleroi', points: 58 },
+            { teamId: 10, teamName: 'Antwerp', points: 56 },
+            { teamId: 23, teamName: 'Standard', points: 54 },
+            { teamId: 67, teamName: 'KV Mechelen', points: 51 },
+            { teamId: 29, teamName: 'KRC Genk', points: 51 },
+            { teamId: 58, teamName: 'Anderlecht', points: 50 },
+            { teamId: 11, teamName: 'Zulte Waregem', points: 49 },
+            { teamId: 39, teamName: 'Excel Moeskroen', points: 48 },
+            { teamId: 31, teamName: 'KV Kortrijk', points: 47 },
+            { teamId: 19, teamName: 'STVV', points: 46 },
+            { teamId: 44, teamName: 'KAS Eupen', points: 45 },
+            { teamId: 21, teamName: 'Cercle Brugge', points: 42 },
+            { teamId: 12, teamName: 'KV Oostende', points: 40 },
+            { teamId: 8, teamName: 'Waasland-Beveren', points: 40 },
         ]
     }
 
