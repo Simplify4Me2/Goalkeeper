@@ -25,32 +25,26 @@ exports[`Home Container should compile 1`] = `
           >
             MatchDay 5
           </h1>
-          <p>
-            match-day works!
-          </p>
+          <div
+            class="day"
+          >
+            27/04
+          </div>
+          
+          <div
+            class="day"
+          >
+            28/04
+          </div>
+          
+          <div
+            class="day"
+          >
+            29/04
+          </div>
+          
         </div>
       </app-match-day>
-      <article>
-        <h1>
-          Fixtures
-        </h1>
-        
-      </article>
-      <article>
-        <h1>
-          News
-        </h1>
-        <app-news-item>
-          <p>
-            news-item works!
-          </p>
-          <picture>
-            <img
-              src="/assets/news-item.jpg"
-            />
-          </picture>
-        </app-news-item>
-      </article>
     </section>
     <aside
       class="side-content"

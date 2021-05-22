@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Fixture } from 'src/app/shared/models/fixture.model';
 
 @Component({
   selector: 'app-match-day',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./match-day.component.sass']
 })
 export class MatchDayComponent implements OnInit {
+
+  @Input() fixtures: Fixture[];
 
   constructor() { }
 
