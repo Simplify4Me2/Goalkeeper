@@ -19,9 +19,8 @@ describe('RankingService', () => {
         httpTestingController = TestBed.inject(HttpTestingController);
         rankingStub = {
             data: {
-                id: 3,
                 competitionName: 'Test competition name',
-                teams: []
+                teamRankings: [{ teamId: 1, teamName: 'Test Team', points: 0 }]
             },
             messages: []
         };

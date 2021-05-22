@@ -39,9 +39,8 @@ describe('HomeEffects', () => {
         it('should return a getRankingsSuccess, with data, on success', () => {
             const request: RequestResult<Ranking> = {
                 data: {
-                    id: 1,
                     competitionName: 'Test League',
-                    teams: []
+                    teamRankings: [{ teamId: 1, teamName: 'Test Team', points: 0 }]
                 },
                 messages: []
             };
