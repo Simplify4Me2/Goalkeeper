@@ -5,8 +5,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { selectFixtures, selectRanking } from '../store';
 import { getFixtures, getRanking } from '../store/home.actions';
 import { HomeComponent } from '../containers/home.container';
-import { RankingComponent } from '../components/ranking/ranking.component';
-import { NewsItemComponent } from '../components/news-item/news-item.component';
+import { MatchDayComponent, NewsItemComponent, RankingComponent } from '../components';
 import { SharedModule } from '../../shared/shared.module';
 
 describe('Home Container', () => {
@@ -23,7 +22,8 @@ describe('Home Container', () => {
             declarations: [
                 HomeComponent,
                 RankingComponent,
-                NewsItemComponent
+                NewsItemComponent,
+                MatchDayComponent
             ],
             providers: [
                 provideMockStore({

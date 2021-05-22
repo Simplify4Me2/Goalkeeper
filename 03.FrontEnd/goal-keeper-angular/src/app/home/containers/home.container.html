@@ -4,7 +4,6 @@
             <app-match-day></app-match-day>
             <article>
                 <h1>Fixtures</h1>
-                <!-- <p>{{ fixtures | async | json }}</p> -->
                 <div *ngFor="let fixture of fixtures | async">
                     <app-fixture [fixture]="fixture"></app-fixture>
                 </div>
@@ -15,7 +14,6 @@
             </article>
         </section>
         <aside class="side-content">
-            <!-- <h1>Ranking</h1> -->
             <app-ranking [ranking]="ranking | async"></app-ranking>
         </aside>
 </div>
