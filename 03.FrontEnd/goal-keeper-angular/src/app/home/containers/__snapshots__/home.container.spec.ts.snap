@@ -17,9 +17,18 @@ exports[`Home Container should compile 1`] = `
       class="main-content"
     >
       <app-match-day>
-        <p>
-          match-day works!
-        </p>
+        <div
+          class="box"
+        >
+          <h1
+            class="title"
+          >
+            MatchDay 5
+          </h1>
+          <p>
+            match-day works!
+          </p>
+        </div>
       </app-match-day>
       <article>
         <h1>
