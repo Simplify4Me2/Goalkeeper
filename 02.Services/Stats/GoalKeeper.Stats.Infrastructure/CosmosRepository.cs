@@ -32,7 +32,7 @@ namespace GoalKeeper.Stats.Infrastructure
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
+        public Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
         {
             //try
             //{
@@ -56,7 +56,8 @@ namespace GoalKeeper.Stats.Infrastructure
             //    //Console.ReadKey();
             //}
             //return Task.FromResult(()new List<Team>());
-            return new List<Team>();
+            //return new List<Team>();
+            throw new NotImplementedException();
         }
 
         //private async Task GetStartedDemoAsync()
