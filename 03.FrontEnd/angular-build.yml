@@ -42,7 +42,7 @@ steps:
     inputs: 
       codeCoverageTool: Cobertura
       summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/goal-keeper/cobertura-coverage.xml'
-      reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+      # reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
       
   # - script: yarn cypress:ci
   #   displayName: 'Run E2E tests'
