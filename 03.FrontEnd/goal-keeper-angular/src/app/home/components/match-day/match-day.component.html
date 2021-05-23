@@ -1,4 +1,15 @@
 <div class="box">
     <h1 class="title">MatchDay 5</h1>
-    <p>match-day works!</p>
+    <div class="day">27/04</div>
+    <div *ngFor="let fixture of fixtures">
+        <app-fixture [fixture]="fixture"></app-fixture>
+    </div>
+    <div class="day">28/04</div>
+    <div *ngFor="let fixture of fixtures">
+        <app-fixture [fixture]="fixture"></app-fixture>
+    </div>
+    <div class="day">29/04</div>
+    <div *ngFor="let fixture of fixtures">
+        <app-fixture [fixture]="fixture"></app-fixture>
+    </div>
 </div>

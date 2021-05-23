@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { fakeAsync, TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Actions } from '@ngrx/effects';
 import { Observable } from 'rxjs';
@@ -36,7 +36,7 @@ describe('HomeEffects', () => {
     });
 
     describe('getRankings', () => {
-        it('should return a getRankingsSuccess, with data, on success', () => {
+        it('should return a getRankingsSuccess, with data, on success', fakeAsync(() => {
             const request: RequestResult<Ranking> = {
                 data: {
                     competitionName: 'Test League',
@@ -55,7 +55,7 @@ describe('HomeEffects', () => {
 
 
             expect(effects.getRanking).toBeObservable(expected)
-        });
+        }));
 
         it('should return a getRankingsFail, without data, on fail', () => {
             const action = fromActions.getRanking();

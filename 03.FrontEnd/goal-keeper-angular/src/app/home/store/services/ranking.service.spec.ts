@@ -1,4 +1,4 @@
-import { inject, TestBed } from '@angular/core/testing';
+import { fakeAsync, inject, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { Ranking } from '../../models/ranking.model';
@@ -32,7 +32,7 @@ describe('RankingService', () => {
             rankingService = service;
         }));
 
-    it('should return data', () => {
+    it('should return data', fakeAsync(() => {
         let result: RequestResult<Ranking>;
         rankingService.get().subscribe(r => {
             result = r;
@@ -45,5 +45,5 @@ describe('RankingService', () => {
         req.flush(rankingStub);
 
         expect(result).toEqual(rankingStub);
-    });
+    }));
 });

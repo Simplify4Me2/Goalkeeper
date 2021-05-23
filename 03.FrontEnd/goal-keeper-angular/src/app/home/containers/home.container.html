@@ -1,17 +1,17 @@
 <h2 class="dashboard-title">Soccer stats insights for your favourite team</h2>
 <div class="dashboard-overview">
         <section class="main-content">
-            <app-match-day></app-match-day>
-            <article>
+            <app-match-day [fixtures]="fixtures | async" ></app-match-day>
+            <!-- <article>
                 <h1>Fixtures</h1>
                 <div *ngFor="let fixture of fixtures | async">
                     <app-fixture [fixture]="fixture"></app-fixture>
                 </div>
-            </article>
-            <article>
+            </article> -->
+            <!-- <article>
                 <h1>News</h1>
                 <app-news-item></app-news-item>
-            </article>
+            </article> -->
         </section>
         <aside class="side-content">
             <app-ranking [ranking]="ranking | async"></app-ranking>
