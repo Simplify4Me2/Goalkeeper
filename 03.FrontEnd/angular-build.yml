@@ -1,3 +1,6 @@
+variables:
+  disable.coverage.autogenerate: 'true'
+
 steps:
   - script: yarn
     displayName: 'Install dependencies'
