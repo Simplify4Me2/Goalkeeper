@@ -90,5 +90,16 @@ namespace GoalKeeper.Stats.Infrastructure
             return result;
         }
 
+        Task<IEnumerable<object>> GetMatches(CancellationToken cancellationToken)
+        {
+            string sql =    "SELECT [Matches].[Id], [HomeTeamId], homeTeam.[Name] AS [HomeTeamName], [HomeTeamScore], [AwayTeamId], awayTeam.[Name] AS [AwayTeamName] [AwayTeamScore], [Matchday], [DateUtc] " + 
+                            "FROM [Stats].[Matches] " +
+                                $"INNER JOIN [Stats].[Teams] homeTeam ON [Stats].[Teams].[Id] = [Stats].[Matches].[HomeTeamId] " +
+                                $"INNER JOIN [Stats].[Teams] awayTeam ON [Stats].[Teams].[Id] = [Stats].[Matches].[AwayTeamId]";
+
+            var result = _dbConnection.QueryAsync<object>(new CommandDefinition(sql, cancellationToken: cancellationToken));
+            return result;
+        }
+
     }
 }
