@@ -25,9 +25,20 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         [ProducesResponseType(typeof(IEnumerable<MatchDTO>), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<IEnumerable<MatchDTO>>> GetTeams()
+        public async Task<Result<IEnumerable<MatchDTO>>> GetAllMatches()
         {
             var query = new GetMatchesQuery();
+            return new Result<IEnumerable<MatchDTO>>(await _mediator.Send(query));
+        }
+
+        [HttpGet]
+        [Route("matchday")]
+        [ProducesResponseType(typeof(IEnumerable<MatchDTO>), 200)]
+        [ProducesResponseType(typeof(Exception), 500)]
+        [ProducesErrorResponseType(typeof(Exception))]
+        public async Task<Result<IEnumerable<MatchDTO>>> GetMatchesFromLastMatchday()
+        {
+            var query = new GetMatchesFromLastMatchdayQuery();
             return new Result<IEnumerable<MatchDTO>>(await _mediator.Send(query));
         }
     }
