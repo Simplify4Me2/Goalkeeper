@@ -59,7 +59,7 @@ namespace GoalKeeper.Stats.Infrastructure
             {
                 team.Players.Add(player);
                 return team;
-            });
+            }, cancellationToken);
 
             var result = sqlResult.GroupBy(team => team.Id).Select(group =>
             {
@@ -79,7 +79,6 @@ namespace GoalKeeper.Stats.Infrastructure
             return result;
         }
 
-
         public async Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
         {
             string sql = $"SELECT [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
@@ -88,6 +87,23 @@ namespace GoalKeeper.Stats.Infrastructure
 
             var result = await _dbConnection.QueryAsync<Player>(new CommandDefinition(sql, cancellationToken: cancellationToken));
             return result;
+        }
+
+        public Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
+        {
+            string sql =    "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
+                                "[homeTeam].[Id], [homeTeam].[Name], " +
+                                "[awayTeam].[Id], [awayTeam].[Name] " +
+                            "FROM [Stats].[Matches] [match] " +
+                                "INNER JOIN [Stats].[Teams] [homeTeam] ON [homeTeam].[Id] = [match].[HomeTeamId] " +
+                                "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId]";
+
+            var sqlResult = _dbConnection.QueryAsync<Match, Team, Team, Match>(sql, (match, homeTeam, awayTeam) => {
+                match.HomeTeam = homeTeam;
+                match.AwayTeam = awayTeam;
+                return match;
+            }, cancellationToken);
+            return sqlResult;
         }
 
     }
