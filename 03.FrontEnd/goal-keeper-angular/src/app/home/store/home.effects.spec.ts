@@ -9,12 +9,14 @@ import { RankingService } from './services/ranking.service';
 import * as fromActions from './home.actions';
 import { Ranking } from '../models/ranking.model';
 import { RequestResult } from 'src/app/shared/request-result';
+import { MatchService } from './services/match.service';
 
 describe('HomeEffects', () => {
 
     let actions: Observable<any>;
     let effects: HomeEffects;
-    let service: RankingService;
+    let rankingService: RankingService;
+    let matchService: MatchService;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -26,13 +28,21 @@ describe('HomeEffects', () => {
                         get: jest.fn()
                     }
                 },
+                {
+                    provide: MatchService,
+                    useValue: {
+                        get: jest.fn(),
+                        getLastMatchday: jest.fn()
+                    }
+                },
                 provideMockActions(() => actions)
             ]
         });
 
         actions = TestBed.inject(Actions);
         effects = TestBed.inject(HomeEffects);
-        service = TestBed.inject(RankingService);
+        rankingService = TestBed.inject(RankingService);
+        matchService = TestBed.inject(MatchService);
     });
 
     describe('getRankings', () => {
@@ -51,8 +61,7 @@ describe('HomeEffects', () => {
             actions = hot('--a', { a: action });
             const response = cold('--b|', { b: request });
             const expected = cold('----c', { c: completion });
-            service.get = jest.fn(() => response);
-
+            rankingService.get = jest.fn(() => response);
 
             expect(effects.getRanking).toBeObservable(expected)
         }));
@@ -64,8 +73,7 @@ describe('HomeEffects', () => {
             actions = hot('--a', { a: action });
             const response = cold('--#|');
             const expected = cold('----c', { c: completion });
-            service.get = jest.fn(() => response);
-
+            rankingService.get = jest.fn(() => response);
 
             expect(effects.getRanking).toBeObservable(expected)
         });

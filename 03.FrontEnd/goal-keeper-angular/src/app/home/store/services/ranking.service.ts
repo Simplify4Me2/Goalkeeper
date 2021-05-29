@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Ranking } from '../../models/ranking.model';
-import { Team } from '../../models/team.model';
 import { RequestResult } from '../../../shared/request-result';
 
 @Injectable({

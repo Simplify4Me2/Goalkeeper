@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Match } from 'src/app/shared/models/match.model';
 import { Matchday } from '../../models/matchday.model';
-import * as moment from 'moment';
+// import * as moment from 'moment';
+import moment from 'moment';
+// import {} from 'moment';
 
 @Component({
   selector: 'app-match-day',
