@@ -41,5 +41,16 @@ namespace GoalKeeper.Stats.WebApi.Controllers
             var query = new GetMatchesFromLastMatchdayQuery();
             return new Result<IEnumerable<MatchDTO>>(await _mediator.Send(query));
         }
+
+        [HttpGet]
+        [Route("matchday/last")]
+        [ProducesResponseType(typeof(IEnumerable<MatchdayDTO>), 200)]
+        [ProducesResponseType(typeof(Exception), 500)]
+        [ProducesErrorResponseType(typeof(Exception))]
+        public async Task<Result<MatchdayDTO>> GetLastMatchday()
+        {
+            var query = new GetLastMatchdayQuery();
+            return new Result<MatchdayDTO>(await _mediator.Send(query));
+        }
     }
 }

@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { selectFixtures, selectRanking } from '../store';
-import { getFixtures, getRanking } from '../store/home.actions';
+import { getMatches, getRanking } from '../store/home.actions';
 import { HomeComponent } from '../containers/home.container';
 import { MatchDayComponent, NewsItemComponent, RankingComponent } from '../components';
 import { SharedModule } from '../../shared/shared.module';
@@ -46,7 +46,7 @@ describe('Home Container', () => {
     });
 
     it('should dispatch a getFixtures on init', () => {
-        const action = getFixtures();
+        const action = getMatches();
 
         fixture.detectChanges();
 

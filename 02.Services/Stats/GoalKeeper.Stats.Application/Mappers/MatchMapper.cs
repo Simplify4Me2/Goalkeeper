@@ -11,11 +11,12 @@ namespace GoalKeeper.Stats.Application.Mappers
             return new MatchDTO
             {
                 Id = match.Id,
+                HomeTeamId = match.HomeTeam.Id,
                 HomeTeamName = match.HomeTeam.Name,
                 HomeTeamScore = match.HomeTeamScore,
+                AwayTeamId = match.AwayTeam.Id,
                 AwayTeamName = match.AwayTeam.Name,
                 AwayTeamScore = match.AwayTeamScore,
-                Matchday = match.Matchday,
                 Date = match.Date
             };
         }

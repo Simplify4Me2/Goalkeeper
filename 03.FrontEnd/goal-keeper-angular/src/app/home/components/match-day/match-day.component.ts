@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Fixture } from 'src/app/shared/models/fixture.model';
+import { Match } from 'src/app/shared/models/match.model';
+import { Matchday } from '../../models/matchday.model';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-match-day',
@@ -8,11 +10,18 @@ import { Fixture } from 'src/app/shared/models/fixture.model';
 })
 export class MatchDayComponent implements OnInit {
 
-  @Input() fixtures: Fixture[];
+  @Input() fixtures: Match[];
+  @Input() matchday: Matchday;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  click() {
+    console.log('Dada: ', this.matchday.matches[0].date);
+    const foo = moment(this.matchday.matches[0].date);
+    console.log('Dada: ', foo.format('DD/MM'));
   }
 
 }

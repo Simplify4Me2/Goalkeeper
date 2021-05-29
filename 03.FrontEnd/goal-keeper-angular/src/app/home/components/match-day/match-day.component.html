@@ -1,7 +1,7 @@
 <div class="box">
     <h1 class="title">MatchDay 5</h1>
     <div class="day">27/04</div>
-    <div *ngFor="let fixture of fixtures">
+    <div (click)="click()" *ngFor="let fixture of fixtures">
         <app-fixture [fixture]="fixture"></app-fixture>
     </div>
     <div class="day">28/04</div>
