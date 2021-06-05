@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { fakeAsync, TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 import { cold, hot } from 'jasmine-marbles';
@@ -35,7 +35,7 @@ describe('TeamEffects', () => {
     });
 
     describe('getTeam', () => {
-        it('should return a getTeamSuccess, with data, on success', () => {
+        it('should return a getTeamSuccess, with data, on success', fakeAsync(() => {
             const request: RequestResult<Team> = {
                 data: {
                     id: 3,
@@ -45,7 +45,7 @@ describe('TeamEffects', () => {
                 messages: []
             };
 
-            const action = fromActions.getTeam({ id: 3 });
+            const action = fromActions.getTeam({ name: 'FC De Kampioenen' });
             const completion = fromActions.getTeamSuccess({ team: request.data });
 
             actions = hot('--a', { a: action });
@@ -54,10 +54,10 @@ describe('TeamEffects', () => {
             service.getTeam = jest.fn(() => response);
 
             expect(effects.getTeam).toBeObservable(expected);
-        });
+        }));
 
-        it('should return a getTeamFail, without data, on fail', () => {
-            const action = fromActions.getTeam({ id: 3 });
+        it('should return a getTeamFail, without data, on fail', fakeAsync(() => {
+            const action = fromActions.getTeam({ name: 'FC De Kampioenen' });
             const completion = fromActions.getTeamFail();
 
             actions = hot('--a', { a: action });
@@ -66,6 +66,6 @@ describe('TeamEffects', () => {
             service.getTeam = jest.fn(() => response);
 
             expect(effects.getTeam).toBeObservable(expected);
-        });
+        }));
     });
 });
