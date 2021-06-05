@@ -10,7 +10,7 @@ namespace GoalKeeper.Stats.Application.Mappers
         {
             return new MatchdayDTO
             {
-                Matchday = matchday.Day,
+                Day = matchday.Day,
                 Matches = matchday.Matches.MapOut()
             };
         }

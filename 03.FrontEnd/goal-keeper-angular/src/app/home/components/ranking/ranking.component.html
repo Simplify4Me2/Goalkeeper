@@ -11,7 +11,7 @@
         <tbody *ngIf="ranking as ranking" >
             <tr *ngFor="let team of ranking.teamRankings">
                 <td>{{ team.teamId }}</td>
-                <td class="team" [routerLink]="['/team', team.teamId]">
+                <td class="team" [routerLink]="['/team', team.teamName]">
                     <img class="logo" src='{{ "assets/images/logos/" + team.teamName + ".svg" }}' />
                     <span>{{ team.teamName }}</span>
                 </td>

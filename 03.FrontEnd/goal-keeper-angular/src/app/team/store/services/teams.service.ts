@@ -12,8 +12,8 @@ export class TeamsService {
 
     constructor(private http: HttpClient) {}
 
-    getTeam(id: number): Observable<RequestResult<Team>> {
-        return this.http.get<RequestResult<Team>>(`https://localhost:5001/api/team/${id}`);
+    getTeam(name: string): Observable<RequestResult<Team>> {
+        return this.http.get<RequestResult<Team>>(`https://localhost:5001/api/team/${name}`);
     }
 
     getPlayers(teamId: number): Observable<RequestResult<Player[]>> {

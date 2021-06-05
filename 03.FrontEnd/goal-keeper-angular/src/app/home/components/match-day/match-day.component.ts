@@ -1,29 +1,31 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Match } from 'src/app/shared/models/match.model';
 import { Matchday } from '../../models/matchday.model';
-// import * as moment from 'moment';
-import moment from 'moment';
-// import {} from 'moment';
 
 @Component({
   selector: 'app-match-day',
   templateUrl: './match-day.component.html',
-  styleUrls: ['./match-day.component.sass']
+  styleUrls: ['./match-day.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatchDayComponent implements OnInit {
-
   @Input() fixtures: Match[];
   @Input() matchday: Matchday;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  getDistinctMatchDates(): string[] {
+    return [...new Set(this.matchday.matches?.map((match) => match.date))];
   }
 
-  click() {
-    console.log('Dada: ', this.matchday.matches[0].date);
-    const foo = moment(this.matchday.matches[0].date);
-    console.log('Dada: ', foo.format('DD/MM'));
+  getMatchesForDate(date: string): Match[] {
+    return this.matchday.matches?.filter((match) => match.date === date);
   }
-
 }

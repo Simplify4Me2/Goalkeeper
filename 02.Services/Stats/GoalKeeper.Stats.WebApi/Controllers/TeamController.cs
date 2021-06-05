@@ -31,14 +31,25 @@ namespace GoalKeeper.Stats.WebApi.Controllers
             return new Result<IEnumerable<TeamDTO>>(await _mediator.Send(query));
         }
 
+        //[HttpGet]
+        //[Route("{id}")]
+        //[ProducesResponseType(typeof(TeamDTO), 200)]
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<TeamDTO>> GetTeamById([FromRoute] long id)
+        //{
+        //    var query = new GetTeamByIdQuery(id);
+        //    return new Result<TeamDTO>(await _mediator.Send(query));
+        //}
+
         [HttpGet]
-        [Route("{id}")]
+        [Route("{name}")]
         [ProducesResponseType(typeof(TeamDTO), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<TeamDTO>> GetTeamById([FromRoute] long id)
+        public async Task<Result<TeamDTO>> GetTeamByName([FromRoute] string name)
         {
-            var query = new GetTeamByIdQuery(id);
+            var query = new GetTeamByNameQuery(name);
             return new Result<TeamDTO>(await _mediator.Send(query));
         }
 

@@ -37,6 +37,11 @@ namespace GoalKeeper.Stats.Infrastructure
             throw new NotImplementedException();
         }
 
+        public Task<Team> GetTeamByName(string name, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
         {
             //try

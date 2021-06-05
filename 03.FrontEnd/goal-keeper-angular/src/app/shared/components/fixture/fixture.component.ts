@@ -8,7 +8,7 @@ import { Match } from '../../models/match.model';
 })
 export class FixtureComponent implements OnInit {
 
-  @Input() fixture: Match;
+  @Input() match: Match;
 
   constructor() { }
 

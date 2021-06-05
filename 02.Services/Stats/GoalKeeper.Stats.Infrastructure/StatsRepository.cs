@@ -71,6 +71,30 @@ namespace GoalKeeper.Stats.Infrastructure
             return result.FirstOrDefault();
         }
 
+
+        public async Task<Team> GetTeamByName(string name, CancellationToken cancellationToken)
+        {
+            string sql = $"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
+                $"FROM [Stats].[Players] " +
+                    $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
+                $"WHERE [Teams].[Name] LIKE '%{name}%'";
+
+            var sqlResult = await _dbConnection.QueryAsync<Team, Player, Team>(sql, (team, player) =>
+            {
+                team.Players.Add(player);
+                return team;
+            }, cancellationToken);
+
+            var result = sqlResult.GroupBy(team => team.Id).Select(group =>
+            {
+                var groupedTeam = group.First();
+                groupedTeam.Players = group.Select(g => g.Players.Single()).ToList();
+                return groupedTeam;
+            });
+
+            return result.FirstOrDefault();
+        }
+
         public Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
         {
             string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
@@ -105,6 +129,5 @@ namespace GoalKeeper.Stats.Infrastructure
             }, cancellationToken);
             return sqlResult;
         }
-
     }
 }

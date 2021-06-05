@@ -18,9 +18,9 @@ export class TeamContainerComponent implements OnInit {
     constructor(private store: Store, private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-        const id = Number(this.route.snapshot.paramMap.get('id'));
+        const name = this.route.snapshot.paramMap.get('name');
 
-        this.store.dispatch(fromTeam.getTeam({ id: id }));
+        this.store.dispatch(fromTeam.getTeam({ name }));
 
         this.team = this.store.select(fromTeam.selectTeam);
     }
