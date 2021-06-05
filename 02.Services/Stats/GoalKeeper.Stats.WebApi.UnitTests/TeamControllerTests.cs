@@ -32,12 +32,12 @@ namespace GoalKeeper.Stats.WebApi.UnitTests
         }
 
         [Fact]
-        public async Task GetTeamById_CallsQuery()
+        public async Task GetTeamByName_CallsQuery()
         {
-            long teamId = 12;
-            await controller.GetTeamById(teamId);
+            string teamName = "FC De Kampioenen";
+            await controller.GetTeamByName(teamName);
 
-            _mediator.Verify(p => p.Send(It.IsAny<GetTeamByIdQuery>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediator.Verify(p => p.Send(It.IsAny<GetTeamByNameQuery>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }
