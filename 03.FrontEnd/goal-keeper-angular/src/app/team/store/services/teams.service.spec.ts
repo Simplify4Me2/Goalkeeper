@@ -1,5 +1,5 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { inject, TestBed } from '@angular/core/testing';
+import { fakeAsync, inject, TestBed } from '@angular/core/testing';
 
 import { RequestResult } from 'src/app/shared/request-result';
 import { Team } from '../../models';
@@ -31,20 +31,20 @@ describe('TeamsService', () => {
         teamsService = service;
     }));
 
-    it('should return data', () => {
-        const teamId = 3;
+    it('should return data', fakeAsync(() => {
+        const teamName = 'FC De Kampioenen';
         let result: RequestResult<Team>;
-        teamsService.getTeam(teamId).subscribe(r => {
+        teamsService.getTeam(teamName).subscribe(r => {
             result = r;
         });
         const req = httpTestingController.expectOne({
             method: 'GET',
-            url: `https://localhost:5001/api/team/${teamId}`
+            url: `https://localhost:5001/api/team/${teamName}`
         });
 
         req.flush(teamStub);
 
         expect(result).toEqual(teamStub);
-    });
+    }));
     
 });
