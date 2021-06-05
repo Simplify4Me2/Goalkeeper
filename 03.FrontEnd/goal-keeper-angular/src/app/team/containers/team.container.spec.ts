@@ -22,7 +22,7 @@ describe('Team Container', () => {
                     useValue: {
                         snapshot: {
                             paramMap: convertToParamMap({
-                                id: '112'
+                                name: 'test'
                             })
                         }
                     }
@@ -45,7 +45,7 @@ describe('Team Container', () => {
     });
 
     it('should dispatch a getTeam on init', () => {
-        const action = fromActions.getTeam({ id: 112 });
+        const action = fromActions.getTeam({ name: 'test' });
 
         fixture.detectChanges();
 
