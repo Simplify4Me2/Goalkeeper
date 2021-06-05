@@ -13,7 +13,7 @@ export class FixturesContainerComponent implements OnInit {
   fixtures: Observable<Match[]>;
 
   fakeFixtures: Match[] = [{
-    homeTeamId: 11, homeTeam: 'Foo', homeScore: 1, awayTeamId: 22, awayTeam: 'Bar', awayScore: 0, date: '2020-03-03'
+    homeTeamId: 11, homeTeamName: 'Foo', homeTeamScore: 1, awayTeamId: 22, awayTeamName: 'Bar', awayTeamScore: 0, date: '2020-03-03'
   }];
 
   constructor(private route: ActivatedRoute) { }
