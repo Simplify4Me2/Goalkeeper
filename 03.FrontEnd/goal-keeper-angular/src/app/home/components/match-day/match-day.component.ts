@@ -28,4 +28,12 @@ export class MatchDayComponent implements OnInit {
   getMatchesForDate(date: string): Match[] {
     return this.matchday.matches?.filter((match) => match.date === date);
   }
+
+  leftClick() {
+    console.log('left click');
+  }
+
+  rightClick() {
+    console.log('right click');
+  }
 }

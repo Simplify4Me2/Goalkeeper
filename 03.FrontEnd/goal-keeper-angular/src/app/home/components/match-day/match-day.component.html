@@ -1,5 +1,11 @@
 <div class="box" *ngIf="matchday as matchday">
-  <h1 class="title">MatchDay {{ matchday.day }}</h1>
+  <div class="title">
+    <h1>MatchDay {{ matchday.day }}</h1>
+    <div class="navigation" >
+      <i class="fas fa-angle-left" (click)="leftClick()" ></i>
+      <i class="fas fa-angle-right" (click)="rightClick()"></i>
+    </div>
+  </div>
 
   <div *ngFor="let date of getDistinctMatchDates()">
     <div class="date" >{{ date }}</div>
