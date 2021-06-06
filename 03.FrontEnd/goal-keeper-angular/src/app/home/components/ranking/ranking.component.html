@@ -9,8 +9,8 @@
             </tr>
         </thead>
         <tbody *ngIf="ranking as ranking" >
-            <tr *ngFor="let team of ranking.teamRankings">
-                <td>{{ team.teamId }}</td>
+            <tr *ngFor="let team of ranking.teamRankings; let i = index">
+                <td>{{ i + 1 }}</td>
                 <td class="team" [routerLink]="['/team', team.teamName]">
                     <img class="logo" src='{{ "assets/images/logos/" + team.teamName + ".svg" }}' />
                     <span>{{ team.teamName }}</span>
