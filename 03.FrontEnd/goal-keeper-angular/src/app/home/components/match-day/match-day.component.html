@@ -2,8 +2,8 @@
   <div class="title">
     <h1>MatchDay {{ matchday.day }}</h1>
     <div class="navigation" >
-      <i class="fas fa-angle-left" (click)="leftClick()" ></i>
-      <i class="fas fa-angle-right" (click)="rightClick()"></i>
+      <i class="fas fa-angle-left" [class.disabled]="matchday.isOpeningMatchday" (click)="leftClick()" ></i>
+      <i class="fas fa-angle-right" [class.disabled]="matchday.isClosingMatchday" (click)="rightClick()"></i>
     </div>
   </div>
 

@@ -32,19 +32,19 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("matchday")]
-        [ProducesResponseType(typeof(IEnumerable<MatchDTO>), 200)]
+        [Route("matchday/{day}")]
+        [ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<IEnumerable<MatchDTO>>> GetMatchesFromLastMatchday()
+        public async Task<Result<MatchdayDTO>> GetMatchday([FromRoute] int day)
         {
-            var query = new GetMatchesFromLastMatchdayQuery();
-            return new Result<IEnumerable<MatchDTO>>(await _mediator.Send(query));
+            var query = new GetMatchdayQuery(day);
+            return new Result<MatchdayDTO>(await _mediator.Send(query));
         }
 
         [HttpGet]
         [Route("matchday/last")]
-        [ProducesResponseType(typeof(IEnumerable<MatchdayDTO>), 200)]
+        [ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
         public async Task<Result<MatchdayDTO>> GetLastMatchday()

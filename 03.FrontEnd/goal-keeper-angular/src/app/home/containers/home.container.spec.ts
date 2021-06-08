@@ -2,10 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
-import { selectFixtures, selectRanking } from '../store';
-import { getMatches, getRanking } from '../store/home.actions';
+import * as fromStore from '../store';
+import * as fromActions from '../store/home.actions';
 import { HomeComponent } from '../containers/home.container';
-import { MatchDayComponent, NewsItemComponent, RankingComponent } from '../components';
+import { MatchDayComponent, RankingComponent } from '../components';
 import { SharedModule } from '../../shared/shared.module';
 
 describe('Home Container', () => {
@@ -22,12 +22,11 @@ describe('Home Container', () => {
             declarations: [
                 HomeComponent,
                 RankingComponent,
-                NewsItemComponent,
                 MatchDayComponent
             ],
             providers: [
                 provideMockStore({
-                    selectors: [{ selector: selectFixtures, value: [] }, { selector: selectRanking, value: [] },],
+                    selectors: [{ selector: fromStore.selectLastMatchday, value: [] }, { selector: fromStore.selectRanking, value: [] },],
                 }),
             ],
         });
@@ -45,16 +44,8 @@ describe('Home Container', () => {
         expect(fixture).toMatchSnapshot();
     });
 
-    it('should dispatch a getFixtures on init', () => {
-        const action = getMatches();
-
-        fixture.detectChanges();
-
-        expect(store.dispatch).toHaveBeenCalledWith(action);
-    });
-
     it('should dispatch a getRankings on init', () => {
-        const action = getRanking();
+        const action = fromActions.getRanking();
 
         fixture.detectChanges();
 

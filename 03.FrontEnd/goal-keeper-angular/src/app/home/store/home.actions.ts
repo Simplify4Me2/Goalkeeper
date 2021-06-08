@@ -1,19 +1,20 @@
 import { createAction, props } from '@ngrx/store';
-import { Match } from '../../shared/models/match.model';
+// import { Match } from '../../shared/models/match.model';
 import { Matchday } from '../models/matchday.model';
 import { Ranking } from '../models/ranking.model';
 
-export const getMatches = createAction(
-    '[Home/Container] Get Matches'
+export const getMatchday = createAction(
+    '[Home/Container] Get Matchday',
+    props<{ day: number}>()
 );
 
-export const getMatchesSuccess = createAction(
-    '[Home/API] Get Matches Success',
-    props<{ fixtures: Match[] }>()
+export const getMatchdaySuccess = createAction(
+    '[Home/API] Get Matchday Success',
+    props<{ matchday: Matchday }>()
 );
 
-export const getMatchesFail = createAction(
-    '[Home/API] Get Matches Success',
+export const getMatchdayFail = createAction(
+    '[Home/API] Get Matchday Failed',
 );
 
 export const getRanking = createAction(
@@ -26,7 +27,7 @@ export const getRankingSuccess = createAction(
 );
 
 export const getRankingFail = createAction(
-    '[Home/API] Get Ranking Success',
+    '[Home/API] Get Ranking Failed',
 );
 
 export const getLastMatchday = createAction(
@@ -39,5 +40,5 @@ export const getLastMatchdaySuccess = createAction(
 );
 
 export const getLastMatchdayFail = createAction(
-    '[Home/API] Get Last Matchday Success',
+    '[Home/API] Get Last Matchday Failed',
 );

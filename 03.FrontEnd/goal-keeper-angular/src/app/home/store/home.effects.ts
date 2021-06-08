@@ -4,7 +4,6 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { RequestResult } from 'src/app/shared/request-result';
-import { Match } from '../../shared/models/match.model';
 import { Matchday } from '../models/matchday.model';
 import { Ranking } from '../models/ranking.model';
 import * as fromActions from './home.actions';
@@ -16,13 +15,13 @@ export class HomeEffects {
 
     constructor(private actions: Actions, private matchService: MatchService, private rankingService: RankingService) { }
 
-    getMatches = createEffect(() =>
+    getMatchday = createEffect(() =>
         this.actions.pipe(
-            ofType(fromActions.getMatches),
-            switchMap(() =>
-                this.matchService.get().pipe(
-                    map((fixtures: Match[]) => fromActions.getMatchesSuccess({ fixtures })),
-                    catchError(() => of(fromActions.getMatchesFail()))
+            ofType(fromActions.getMatchday),
+            switchMap((action) =>
+                this.matchService.getMatchday(action.day).pipe(
+                    map((result: RequestResult<Matchday>) => fromActions.getMatchdaySuccess({ matchday: result.data })),
+                    catchError(() => of(fromActions.getMatchdayFail()))
                 )
             )
         )
@@ -42,7 +41,7 @@ export class HomeEffects {
 
     getLastMatchday = createEffect(() =>
         this.actions.pipe(
-            ofType(fromActions.getMatches),
+            ofType(fromActions.getLastMatchday),
             switchMap(() =>
                 this.matchService.getLastMatchday().pipe(
                     map((result: RequestResult<Matchday>) => fromActions.getLastMatchdaySuccess({ matchday: result.data })),

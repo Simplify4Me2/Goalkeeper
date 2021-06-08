@@ -6,6 +6,10 @@ namespace GoalKeeper.Stats.Application.IO.DTOs
     {
         public int Day { get; set; }
 
+        public bool IsOpeningMatchday { get; set; }
+
+        public bool IsClosingMatchday { get; set; }
+
         public IEnumerable<MatchDTO> Matches { get; set; }
     }
 }

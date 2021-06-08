@@ -11,6 +11,9 @@ namespace GoalKeeper.Stats.Application.Mappers
             return new MatchdayDTO
             {
                 Day = matchday.Day,
+                // Or does this "logic" belong in the Domain??
+                IsOpeningMatchday = matchday.Day == 1,
+                IsClosingMatchday = matchday.Day == 34,
                 Matches = matchday.Matches.MapOut()
             };
         }

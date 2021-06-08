@@ -1,8 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import { Match } from 'src/app/shared/models/match.model';
 import { Matchday } from '../../models/matchday.model';
@@ -14,8 +16,9 @@ import { Matchday } from '../../models/matchday.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatchDayComponent implements OnInit {
-  @Input() fixtures: Match[];
   @Input() matchday: Matchday;
+
+  @Output() navigateMatchday = new EventEmitter<number>();
 
   constructor() {}
 
@@ -30,10 +33,10 @@ export class MatchDayComponent implements OnInit {
   }
 
   leftClick() {
-    console.log('left click');
+    !this.matchday.isOpeningMatchday && this.navigateMatchday.emit(this.matchday.day - 1);
   }
 
   rightClick() {
-    console.log('right click');
+    !this.matchday.isClosingMatchday && this.navigateMatchday.emit(this.matchday.day + 1);
   }
 }
