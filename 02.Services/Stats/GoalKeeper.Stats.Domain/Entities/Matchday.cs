@@ -4,8 +4,14 @@ namespace GoalKeeper.Stats.Domain.Entities
 {
     public class Matchday
     {
-        public int Day { get; set; }
+        public Matchday(int day, IEnumerable<Match> matches)
+        {
+            Day = day;
+            Matches = matches;
+        }
 
-        public IEnumerable<Match> Matches { get; set; }
+        public int Day { get; }
+
+        public IEnumerable<Match> Matches { get; }
     }
 }

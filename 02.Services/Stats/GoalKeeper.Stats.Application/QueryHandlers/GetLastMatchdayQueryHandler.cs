@@ -27,11 +27,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
                       where match.Matchday == data.Max(x => x.Matchday)
                       select match;
 
-            var matchday = new Matchday
-            {
-                Day = matchesFromLastMatchday.Select(match => match.Matchday).First(),
-                Matches = matchesFromLastMatchday
-            };
+            var matchday = new Matchday(matchesFromLastMatchday.Select(match => match.Matchday).First(), matchesFromLastMatchday);
 
             return matchday.MapOut();
         }

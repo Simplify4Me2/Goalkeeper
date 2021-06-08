@@ -27,11 +27,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
                       where match.Matchday == request.Day
                       select match;
 
-            var matchday = new Matchday
-            {
-                Day = matchesFromMatchday.Select(match => match.Matchday).First(),
-                Matches = matchesFromMatchday
-            };
+            var matchday = new Matchday(matchesFromMatchday.Select(match => match.Matchday).First(), matchesFromMatchday);
 
             return matchday.MapOut();
         }
