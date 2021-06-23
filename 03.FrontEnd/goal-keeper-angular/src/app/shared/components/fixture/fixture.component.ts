@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Fixture } from '../../models/fixture.model';
+import { Match } from '../../models/match.model';
 
 @Component({
   selector: 'app-fixture',
@@ -8,7 +8,7 @@ import { Fixture } from '../../models/fixture.model';
 })
 export class FixtureComponent implements OnInit {
 
-  @Input() fixture: Fixture;
+  @Input() match: Match;
 
   constructor() { }
 

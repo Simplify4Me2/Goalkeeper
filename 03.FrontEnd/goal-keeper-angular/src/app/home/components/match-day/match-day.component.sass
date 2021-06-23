@@ -5,23 +5,46 @@
     // height: 670px
 
 .title
-    font-style: normal
-    font-weight: bold
-    font-size: 36px
-    line-height: 43px
     height: 54px
 
-    margin: auto
-    padding-left: 35px
+    display: flex
+    justify-content: space-between
+
     padding-top: 6px
     color: #FFFFFF
 
     background: #000000
     border-radius: 6px 6px 0px 0px
 
-.day
+h1
+    font-style: normal
+    font-weight: bold
+    font-size: 36px
+
+    // line-height: 43px
+    // margin: auto
+
+    margin-top: 0px
+    padding-left: 35px
+
+.date
     font-size: 18px
     line-height: 22px
     color: gray
     text-align: center
     margin-top: 6px
+
+
+.navigation
+    padding-right: 6px
+
+.navigation i 
+    padding: 3px
+    font-size: 36px
+
+    &:hover:not(.disabled)
+        cursor: pointer
+        color: gray
+
+.disabled
+    opacity: 25%

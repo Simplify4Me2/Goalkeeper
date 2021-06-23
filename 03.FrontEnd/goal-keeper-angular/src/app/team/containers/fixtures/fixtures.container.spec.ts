@@ -20,7 +20,7 @@ describe('FixturesComponent', () => {
             parent: {
               snapshot: {
                 paramMap: convertToParamMap({
-                  id: '112'
+                  name: 'test'
                 })
               }
             }

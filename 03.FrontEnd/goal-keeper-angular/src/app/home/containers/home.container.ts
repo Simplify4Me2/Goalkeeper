@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { Fixture } from '../../shared/models/fixture.model';
-import { getFixtures, getRanking } from '../store/home.actions';
-import * as fromHome from '../store';
+import * as fromActions from '../store/home.actions';
+import * as fromStore from '../store';
 import { Observable } from 'rxjs';
 import { Ranking } from '../models/ranking.model';
+import { Matchday } from '../models/matchday.model';
 
 @Component({
   selector: 'app-home',
@@ -13,18 +13,21 @@ import { Ranking } from '../models/ranking.model';
   styleUrls: ['./home.container.sass'],
 })
 export class HomeComponent implements OnInit {
-  fixtures: Observable<Fixture[]>;
   ranking: Observable<Ranking>;
+  lastMatchday: Observable<Matchday>;
 
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-      this.store.dispatch(getFixtures());
-      this.store.dispatch(getRanking());
+      this.store.dispatch(fromActions.getRanking());
+      this.store.dispatch(fromActions.getLastMatchday());
+
       
-      this.fixtures = this.store.select(fromHome.selectFixtures);
-      this.ranking = this.store.select(fromHome.selectRanking);
-      // console.log('fixtures: ', this.fixtures);
-      // console.log('ranking: ', this.ranking);
+      this.ranking = this.store.select(fromStore.selectRanking);
+      this.lastMatchday = this.store.select(fromStore.selectLastMatchday);
+  }
+
+  selectMatchday(matchday: number) {
+    this.store.dispatch(fromActions.getMatchday({ day: matchday }));
   }
 }

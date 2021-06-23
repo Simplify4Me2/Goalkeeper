@@ -6,7 +6,7 @@ import { TeamContainerComponent, FixturesContainerComponent, SquadContainerCompo
 
 const routes: Routes = [
     { 
-        path: ':id', 
+        path: ':name', 
         component: TeamContainerComponent,
         children: [
             { path: 'fixtures', component: FixturesContainerComponent },

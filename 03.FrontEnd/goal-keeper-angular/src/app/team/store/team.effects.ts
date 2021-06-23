@@ -17,7 +17,7 @@ export class TeamEffects {
         this.actions.pipe(
             ofType(fromActions.getTeam),
             switchMap((props) =>
-                this.service.getTeam(props.id).pipe(
+                this.service.getTeam(props.name).pipe(
                     map((request: RequestResult<Team>) => fromActions.getTeamSuccess({ team: request.data })),
                     catchError(() => of(fromActions.getTeamFail())
                     ))

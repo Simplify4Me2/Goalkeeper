@@ -22,30 +22,30 @@ namespace GoalKeeper.Stats.Infrastructure
             _eventStore = eventStore ?? throw new ArgumentNullException(nameof(eventStore));
         }
 
-        public async Task<Ranking> GetRanking(CancellationToken cancellationToken)
+        public Task<Ranking> GetRanking(CancellationToken cancellationToken)
         {
             //var ranking = _eventStore.AggregateStream<Ranking>(1);
 
             //var foo = new EventSourcingRepository();
             //await foo.SaveAsync(new Guid());
 
-            string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
+            //string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
 
-            var result = await _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
-            var random = new Random();
+            //var result = await _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
+            //var random = new Random();
             Ranking ranking = new Ranking
             {
                 Name = "Jupiler Pro League",
-                TeamRankings = result.Select(team => new TeamRanking
-                {
-                    //Id = team.Id,
-                    Team = team,
-                    Points = random.Next(36, 76)
-                }).ToList()
+                //TeamRankings = result.Select(team => new TeamRanking
+                //{
+                //    //Id = team.Id,
+                //    Team = team,
+                //    Points = random.Next(36, 76)
+                //}).ToList()
                 //Teams = result.ToList()
             };
 
-            return ranking;
+            return Task.Run(() => ranking);
         }
 
         public async Task<Team> GetTeamById(long id, CancellationToken cancellationToken)
@@ -59,7 +59,31 @@ namespace GoalKeeper.Stats.Infrastructure
             {
                 team.Players.Add(player);
                 return team;
+            }, cancellationToken);
+
+            var result = sqlResult.GroupBy(team => team.Id).Select(group =>
+            {
+                var groupedTeam = group.First();
+                groupedTeam.Players = group.Select(g => g.Players.Single()).ToList();
+                return groupedTeam;
             });
+
+            return result.FirstOrDefault();
+        }
+
+
+        public async Task<Team> GetTeamByName(string name, CancellationToken cancellationToken)
+        {
+            string sql = $"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
+                $"FROM [Stats].[Players] " +
+                    $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
+                $"WHERE [Teams].[Name] LIKE '%{name}%'";
+
+            var sqlResult = await _dbConnection.QueryAsync<Team, Player, Team>(sql, (team, player) =>
+            {
+                team.Players.Add(player);
+                return team;
+            }, cancellationToken);
 
             var result = sqlResult.GroupBy(team => team.Id).Select(group =>
             {
@@ -79,7 +103,6 @@ namespace GoalKeeper.Stats.Infrastructure
             return result;
         }
 
-
         public async Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
         {
             string sql = $"SELECT [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
@@ -90,16 +113,21 @@ namespace GoalKeeper.Stats.Infrastructure
             return result;
         }
 
-        Task<IEnumerable<object>> GetMatches(CancellationToken cancellationToken)
+        public Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
         {
-            string sql =    "SELECT [Matches].[Id], [HomeTeamId], homeTeam.[Name] AS [HomeTeamName], [HomeTeamScore], [AwayTeamId], awayTeam.[Name] AS [AwayTeamName] [AwayTeamScore], [Matchday], [DateUtc] " + 
-                            "FROM [Stats].[Matches] " +
-                                $"INNER JOIN [Stats].[Teams] homeTeam ON [Stats].[Teams].[Id] = [Stats].[Matches].[HomeTeamId] " +
-                                $"INNER JOIN [Stats].[Teams] awayTeam ON [Stats].[Teams].[Id] = [Stats].[Matches].[AwayTeamId]";
+            string sql =    "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
+                                "[homeTeam].[Id], [homeTeam].[Name], " +
+                                "[awayTeam].[Id], [awayTeam].[Name] " +
+                            "FROM [Stats].[Matches] [match] " +
+                                "INNER JOIN [Stats].[Teams] [homeTeam] ON [homeTeam].[Id] = [match].[HomeTeamId] " +
+                                "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId]";
 
-            var result = _dbConnection.QueryAsync<object>(new CommandDefinition(sql, cancellationToken: cancellationToken));
-            return result;
+            var sqlResult = _dbConnection.QueryAsync<Match, Team, Team, Match>(sql, (match, homeTeam, awayTeam) => {
+                match.HomeTeam = homeTeam;
+                match.AwayTeam = awayTeam;
+                return match;
+            }, cancellationToken);
+            return sqlResult;
         }
-
     }
 }

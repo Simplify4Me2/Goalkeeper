@@ -12,8 +12,10 @@ namespace GoalKeeper.Stats.Application.Ports
         
         Task<Domain.Entities.Team> GetTeamById(long id, CancellationToken cancellationToken);
 
+        Task<Domain.Entities.Team> GetTeamByName(string name, CancellationToken cancellationToken);
+
         Task<IEnumerable<Domain.Entities.Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken);
-        
-        Task<IEnumerable<object>> GetMatches(CancellationToken cancellationToken);
+
+        Task<IEnumerable<Domain.Entities.Match>> GetMatches(CancellationToken cancellationToken);
     }
 }

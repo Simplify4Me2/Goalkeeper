@@ -2,7 +2,7 @@
 
 exports[`Home Container should compile 1`] = `
 <app-home
-  fixtures={[Function Store]}
+  lastMatchday={[Function Store]}
   ranking={[Function Store]}
   store={[Function MockStore]}
 >
@@ -17,30 +17,26 @@ exports[`Home Container should compile 1`] = `
       class="main-content"
     >
       <app-match-day>
+        
         <div
           class="box"
         >
-          <h1
+          <div
             class="title"
           >
-            MatchDay 5
-          </h1>
-          <div
-            class="day"
-          >
-            27/04
-          </div>
-          
-          <div
-            class="day"
-          >
-            28/04
-          </div>
-          
-          <div
-            class="day"
-          >
-            29/04
+            <h1>
+              MatchDay 
+            </h1>
+            <div
+              class="navigation"
+            >
+              <i
+                class="fas fa-angle-left"
+              />
+              <i
+                class="fas fa-angle-right"
+              />
+            </div>
           </div>
           
         </div>

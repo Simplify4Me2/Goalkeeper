@@ -3,7 +3,7 @@ import { Player, Team } from '../../team/models';
 
 export const getTeam = createAction(
     '[TeamPage] Get Team',
-    props<{ id: number }>()
+    props<{ name: string }>()
 );
 
 

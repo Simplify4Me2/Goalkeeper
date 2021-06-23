@@ -17,6 +17,11 @@ namespace GoalKeeper.Stats.Infrastructure
             _container = dbClient.GetContainer(databaseName, containerName);
         }
 
+        public Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
@@ -28,6 +33,11 @@ namespace GoalKeeper.Stats.Infrastructure
         }
 
         public Task<Team> GetTeamById(long id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Team> GetTeamByName(string name, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

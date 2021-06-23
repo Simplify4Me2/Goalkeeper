@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Fixture } from 'src/app/shared/models/fixture.model';
+import { Match } from 'src/app/shared/models/match.model';
 
 @Component({
   selector: 'app-fixtures',
@@ -10,10 +10,10 @@ import { Fixture } from 'src/app/shared/models/fixture.model';
 })
 export class FixturesContainerComponent implements OnInit {
 
-  fixtures: Observable<Fixture[]>;
+  fixtures: Observable<Match[]>;
 
-  fakeFixtures: Fixture[] = [{
-    homeTeam: 'Foo', homeScore: 1, awayTeam: 'Bar', awayScore: 0
+  fakeFixtures: Match[] = [{
+    homeTeamId: 11, homeTeamName: 'Foo', homeTeamScore: 1, awayTeamId: 22, awayTeamName: 'Bar', awayTeamScore: 0, date: '2020-03-03'
   }];
 
   constructor(private route: ActivatedRoute) { }
