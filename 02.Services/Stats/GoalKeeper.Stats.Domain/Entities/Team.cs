@@ -4,13 +4,20 @@ namespace GoalKeeper.Stats.Domain.Entities
 {
     public class Team
     {
-        public long Id { get; set; }
+        public long Id { get; private set; }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public List<Player> Players { get; set; } = new List<Player>();
+        public List<Player> Players { get; private set; } = new List<Player>();
 
-        public Stadium Stadium { get; set; }
+        //public Stadium Stadium { get; set; }
+
+        public Team(long id, string name, List<Player> players)
+        {
+            Id = id;
+            Name = name;
+            Players = players;
+        }
 
         // Should I move the logic over here?
         public int RankingPoints()

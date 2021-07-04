@@ -31,28 +31,8 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
             var teamRankings = new List<TeamRanking>();
             foreach (Team team in teams)
             {
-                int points = 0;
-                var homeMatches = matches.Where(match => match.HomeTeam.Id == team.Id);
-                foreach (var match in homeMatches)
-                {
-                    if (match.HomeTeamScore > match.AwayTeamScore) points += 3;
-                    if (match.HomeTeamScore == match.AwayTeamScore) points += 1;
-                };
+                teamRankings.Add(Ranking.CalculatePoints(team, matches.Where(match => match.HomeTeam.Id == team.Id || match.AwayTeam.Id == team.Id).ToList()));
 
-                var awayMatches = matches.Where(match => match.AwayTeam.Id == team.Id);
-                foreach (var match in homeMatches)
-                {
-                    if (match.HomeTeamScore > match.AwayTeamScore) points += 3;
-                    if (match.HomeTeamScore == match.AwayTeamScore) points += 1;
-                };
-
-                var teamRanking = new TeamRanking
-                {
-                    Team = team,
-                    Points = points
-                };
-
-                teamRankings.Add(teamRanking);
             };
 
             var ranking = new Ranking

@@ -7,11 +7,6 @@ steps:
     displayName: 'Build application'
     workingDirectory: ./03.FrontEnd/goal-keeper-angular 
 
-  # - script: |
-  #     ls -a 03.FrontEnd/goal-keeper-angular
-  #     ls -a 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
-  #   displayName: debug
-
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: 03.FrontEnd/goal-keeper-angular/dist/goal-keeper-angular
@@ -42,7 +37,6 @@ steps:
     inputs: 
       codeCoverageTool: Cobertura
       summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/goal-keeper/cobertura-coverage.xml'
-      # reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
       
   # - script: yarn cypress:ci
   #   displayName: 'Run E2E tests'
