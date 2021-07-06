@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Domain.Entities;
+using GoalKeeper.Stats.Infrastructure.DataModels;
 using GoalKeeper.Stats.Infrastructure.EventStore;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ namespace GoalKeeper.Stats.Infrastructure
                     $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
                 $"WHERE [Teams].[Id] = {id}";
 
-            var sqlResult = await _dbConnection.QueryAsync<Team, Player, Team>(sql, (team, player) =>
+            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, Player, TeamDataModel>(sql, (team, player) =>
             {
                 team.Players.Add(player);
                 return team;
@@ -68,7 +69,7 @@ namespace GoalKeeper.Stats.Infrastructure
                 return groupedTeam;
             });
 
-            return result.FirstOrDefault();
+            return TeamDataModel.MapOut(result.FirstOrDefault());
         }
 
 
@@ -79,7 +80,7 @@ namespace GoalKeeper.Stats.Infrastructure
                     $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
                 $"WHERE [Teams].[Name] LIKE '%{name}%'";
 
-            var sqlResult = await _dbConnection.QueryAsync<Team, Player, Team>(sql, (team, player) =>
+            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, Player, TeamDataModel>(sql, (team, player) =>
             {
                 team.Players.Add(player);
                 return team;
@@ -92,15 +93,15 @@ namespace GoalKeeper.Stats.Infrastructure
                 return groupedTeam;
             });
 
-            return result.FirstOrDefault();
+            return TeamDataModel.MapOut(result.FirstOrDefault());
         }
 
-        public Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
         {
             string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
 
-            var result = _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
-            return result;
+            var result = await _dbConnection.QueryAsync<TeamDataModel>(new CommandDefinition(sql, cancellationToken: cancellationToken));
+            return TeamDataModel.MapOut(result); 
         }
 
         public async Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
@@ -122,9 +123,9 @@ namespace GoalKeeper.Stats.Infrastructure
                                 "INNER JOIN [Stats].[Teams] [homeTeam] ON [homeTeam].[Id] = [match].[HomeTeamId] " +
                                 "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId]";
 
-            var sqlResult = _dbConnection.QueryAsync<Match, Team, Team, Match>(sql, (match, homeTeam, awayTeam) => {
-                match.HomeTeam = homeTeam;
-                match.AwayTeam = awayTeam;
+            var sqlResult = _dbConnection.QueryAsync<Match, TeamDataModel, TeamDataModel, Match>(sql, (match, homeTeam, awayTeam) => {
+                match.HomeTeam = TeamDataModel.MapOut(homeTeam);
+                match.AwayTeam = TeamDataModel.MapOut(awayTeam);
                 return match;
             }, cancellationToken);
             return sqlResult;

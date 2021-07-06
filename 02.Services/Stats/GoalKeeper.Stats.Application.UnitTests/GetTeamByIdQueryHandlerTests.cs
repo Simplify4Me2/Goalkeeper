@@ -4,6 +4,7 @@ using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Application.QueryHandlers;
 using Moq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -21,7 +22,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         {
             _repository = new Mock<IStatsRepository>();
             _repository.Setup(x => x.GetTeamById(It.IsAny<long>(), CancellationToken.None))
-                .ReturnsAsync(new Domain.Entities.Team { Id = 12, Name = "TeamName", Players = new List<Domain.Entities.Player>() { new Domain.Entities.Player(), new Domain.Entities.Player() } });
+                .ReturnsAsync(new Domain.Entities.Team(12, "TeamName", new List<Domain.Entities.Player>() { new Domain.Entities.Player(1, new Domain.Primitives.Person("Pico", "Coppens", new DateTime(), null), null, 9, "ATT"), new Domain.Entities.Player(2, new Domain.Primitives.Person("Xavier", "Waterslaegers", new DateTime(), null), null, 1, "GK") } ));
             queryHandler = new GetTeamByIdQueryHandler(_repository.Object);
         }
 

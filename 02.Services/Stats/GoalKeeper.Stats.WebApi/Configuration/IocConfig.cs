@@ -11,6 +11,8 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Azure.Cosmos;
 using System.Threading.Tasks;
+using GoalKeeper.Common.Domain;
+using GoalKeeper.Stats.WebApi.Providers;
 
 namespace GoalKeeper.Stats.WebApi.Configuration
 {
@@ -26,6 +28,8 @@ namespace GoalKeeper.Stats.WebApi.Configuration
             services.AddTransient<IDbConnection>(db => new SqlConnection(configuration.GetConnectionString("GoalKeeperDB")));
 
             //services.AddSingleton<IStatsRepository>(InitializeCosmosClientInstanceAsync(configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+
+            services.AddTransient<IDateTimeProvider, DateTimeProvider>();
         }
 
         /// <summary>
