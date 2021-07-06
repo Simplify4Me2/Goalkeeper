@@ -16,6 +16,6 @@ namespace GoalKeeper.Stats.Infrastructure.DataModels
         => new Team(team.Id, team.Name, team.Players);
 
         public static IEnumerable<Team> MapOut(IEnumerable<TeamDataModel> teams)
-        => teams.Select(team => new Team(team.Id, team.Name, team.Players));
+        => teams.Select(team => MapOut(team));
     }
 }

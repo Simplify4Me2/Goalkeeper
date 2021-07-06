@@ -114,7 +114,7 @@ namespace GoalKeeper.Stats.Infrastructure
             return result;
         }
 
-        public Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
         {
             string sql =    "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
                                 "[homeTeam].[Id], [homeTeam].[Name], " +
@@ -123,12 +123,12 @@ namespace GoalKeeper.Stats.Infrastructure
                                 "INNER JOIN [Stats].[Teams] [homeTeam] ON [homeTeam].[Id] = [match].[HomeTeamId] " +
                                 "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId]";
 
-            var sqlResult = _dbConnection.QueryAsync<Match, TeamDataModel, TeamDataModel, Match>(sql, (match, homeTeam, awayTeam) => {
-                match.HomeTeam = TeamDataModel.MapOut(homeTeam);
-                match.AwayTeam = TeamDataModel.MapOut(awayTeam);
+            var sqlResult = await _dbConnection.QueryAsync<MatchDataModel, TeamDataModel, TeamDataModel, MatchDataModel>(sql, (match, homeTeam, awayTeam) => {
+                match.HomeTeam = homeTeam;
+                match.AwayTeam = awayTeam;
                 return match;
             }, cancellationToken);
-            return sqlResult;
+            return MatchDataModel.MapOut(sqlResult);
         }
     }
 }
