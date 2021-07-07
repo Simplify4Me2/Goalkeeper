@@ -18,12 +18,5 @@ namespace GoalKeeper.Stats.Domain.Entities
             Name = name;
             Players = players;
         }
-
-        // Should I move the logic over here?
-        public int RankingPoints()
-        {
-            //this.Matches.Select(match => won / loss);
-            return 5;
-        }
     }
 }

@@ -6,20 +6,20 @@ namespace GoalKeeper.Stats.Domain.Entities
     {
         public long Id { get; }
 
-        private Person Name { get; }
+        private Person Person { get; }
 
-        public string FirstName => Name.Firstname;
+        public string FirstName => Person.Firstname;
 
-        public string LastName => Name.LastName;
+        public string LastName => Person.LastName;
 
         public int ShirtNumber { get; }
 
         public string Position { get; }
 
-        public Player(long id, Person name, Team team, int shirtNumber, string position)
+        public Player(long id, Person person, Team team, int shirtNumber, string position)
         {
             Id = id;
-            Name = name;
+            Person = person;
             ShirtNumber = shirtNumber;
             Position = position;
         }
