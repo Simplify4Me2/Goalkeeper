@@ -22,26 +22,14 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.GetRanking(cancellationToken);
+            //var data = await _repository.GetRanking(cancellationToken);
 
             var matches = await _repository.GetMatches(cancellationToken);
-
             var teams = await _repository.GetTeams(cancellationToken);
 
-            var teamRankings = new List<TeamRanking>();
-            foreach (Team team in teams)
-            {
-                teamRankings.Add(Ranking.CalculatePoints(team, matches.Where(match => match.HomeTeam.Id == team.Id || match.AwayTeam.Id == team.Id).ToList()));
+            League league = new League("Jupiler Pro League", teams.ToList(), matches.ToList());
 
-            };
-
-            var ranking = new Ranking
-            {
-                Name = data.Name,
-                TeamRankings = teamRankings.OrderByDescending(teamRanking => teamRanking.Points).ToList()
-            };
-
-            return ranking.MapOut();
+            return league.MapOut();
         }
     }
 }

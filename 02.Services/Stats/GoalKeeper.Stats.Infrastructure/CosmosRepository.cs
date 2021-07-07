@@ -27,7 +27,7 @@ namespace GoalKeeper.Stats.Infrastructure
             throw new NotImplementedException();
         }
 
-        public Task<Ranking> GetRanking(CancellationToken cancellationToken)
+        public Task<League> GetRanking(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

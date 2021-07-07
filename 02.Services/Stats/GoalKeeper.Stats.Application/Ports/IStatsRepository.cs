@@ -6,7 +6,7 @@ namespace GoalKeeper.Stats.Application.Ports
 {
     public interface IStatsRepository
     {
-        Task<Domain.Entities.Ranking> GetRanking(CancellationToken cancellationToken);
+        Task<Domain.Entities.League> GetRanking(CancellationToken cancellationToken);
 
         Task<IEnumerable<Domain.Entities.Team>> GetTeams(CancellationToken cancellationToken);
         

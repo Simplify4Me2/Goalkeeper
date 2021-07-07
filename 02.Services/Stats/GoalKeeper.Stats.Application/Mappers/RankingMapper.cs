@@ -5,12 +5,12 @@ namespace GoalKeeper.Stats.Application.Mappers
 {
     public static class RankingMapper
     {
-        public static RankingDTO MapOut(this Domain.Entities.Ranking ranking)
+        public static RankingDTO MapOut(this Domain.Entities.League league)
         {
             return new RankingDTO
             {
-                CompetitionName = ranking.Name,
-                TeamRankings = ranking.TeamRankings.MapOut().ToList()
+                CompetitionName = league.Name,
+                TeamRankings = league.Table.MapOut().ToList()
             };
         }
     }
