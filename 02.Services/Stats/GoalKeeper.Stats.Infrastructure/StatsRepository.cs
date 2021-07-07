@@ -23,34 +23,6 @@ namespace GoalKeeper.Stats.Infrastructure
             _eventStore = eventStore ?? throw new ArgumentNullException(nameof(eventStore));
         }
 
-        public Task<League> GetRanking(CancellationToken cancellationToken)
-        {
-            //var ranking = _eventStore.AggregateStream<Ranking>(1);
-
-            //var foo = new EventSourcingRepository();
-            //await foo.SaveAsync(new Guid());
-
-            //string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
-
-            //var result = await _dbConnection.QueryAsync<Team>(new CommandDefinition(sql, cancellationToken: cancellationToken));
-            //var random = new Random();
-            //Ranking ranking = new Ranking
-            //{
-            //    Name = "Jupiler Pro League",
-            //    //TeamRankings = result.Select(team => new TeamRanking
-            //    //{
-            //    //    //Id = team.Id,
-            //    //    Team = team,
-            //    //    Points = random.Next(36, 76)
-            //    //}).ToList()
-            //    //Teams = result.ToList()
-            //};
-
-            //return Task.Run(() => ranking);
-
-            throw new NotImplementedException();
-        }
-
         public async Task<Team> GetTeamById(long id, CancellationToken cancellationToken)
         {
             string sql = $"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
@@ -73,7 +45,6 @@ namespace GoalKeeper.Stats.Infrastructure
 
             return TeamDataModel.MapOut(result.FirstOrDefault());
         }
-
 
         public async Task<Team> GetTeamByName(string name, CancellationToken cancellationToken)
         {

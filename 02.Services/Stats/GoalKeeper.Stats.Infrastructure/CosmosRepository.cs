@@ -27,11 +27,6 @@ namespace GoalKeeper.Stats.Infrastructure
             throw new NotImplementedException();
         }
 
-        public Task<League> GetRanking(CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<Team> GetTeamById(long id, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();

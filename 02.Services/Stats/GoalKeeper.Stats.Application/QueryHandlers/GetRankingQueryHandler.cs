@@ -22,8 +22,6 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
-            //var data = await _repository.GetRanking(cancellationToken);
-
             var matches = await _repository.GetMatches(cancellationToken);
             var teams = await _repository.GetTeams(cancellationToken);
 
