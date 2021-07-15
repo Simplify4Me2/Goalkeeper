@@ -1,4 +1,4 @@
-﻿using GoalKeeper.Stats.Domain.Primitives;
+﻿using GoalKeeper.Stats.Domain.ValueObjects;
 
 namespace GoalKeeper.Stats.Domain.Entities
 {
