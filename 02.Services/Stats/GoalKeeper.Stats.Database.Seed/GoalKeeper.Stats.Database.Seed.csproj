@@ -11,7 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Seeds\202107252210_PromovendiStadiums_1A_2021-22.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Seeds\202101261856_Stadiums_1A_2020-21.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Seeds\202107252221_PromovendiTeams_1A_2021-22.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Seeds\202101262113_Team_1A_2020-21.sql">
