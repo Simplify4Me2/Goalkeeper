@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace GoalKeeper.Stats.Domain.ValueObjects
+namespace GoalKeeper.Stats.Domain.Entities
 {
-    public class Person
+    public abstract class Person
     {
         public Person(string firstname, string lastName, DateTime birthdate, DateTime today)
         {
             Firstname = firstname;
-            LastName = lastName;
+            Lastname = lastName;
             Birthdate = birthdate;
             _today = today;
         }
 
         public string Firstname { get; }
-        public string LastName { get; }
+        public string Lastname { get; }
         private DateTime Birthdate { get; }
 
         private readonly DateTime _today;

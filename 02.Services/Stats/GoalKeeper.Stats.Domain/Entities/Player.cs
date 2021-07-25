@@ -1,25 +1,19 @@
-﻿using GoalKeeper.Stats.Domain.ValueObjects;
+﻿using System;
 
 namespace GoalKeeper.Stats.Domain.Entities
 {
-    public class Player
+    public class Player : Person
     {
         public long Id { get; }
-
-        private Person Person { get; }
-
-        public string FirstName => Person.Firstname;
-
-        public string LastName => Person.LastName;
 
         public int ShirtNumber { get; }
 
         public string Position { get; }
 
-        public Player(long id, Person person, Team team, int shirtNumber, string position)
+        public Player(long id, string firstName, string lastName, DateTime birthdate, DateTime today, Team team, int shirtNumber, string position)
+            : base(firstName, lastName, birthdate, today)
         {
             Id = id;
-            Person = person;
             ShirtNumber = shirtNumber;
             Position = position;
         }

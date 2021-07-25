@@ -11,8 +11,8 @@ namespace GoalKeeper.Stats.Application.Mappers
             return new PlayerDTO
             {
                 Id = player.Id,
-                FirstName = player.FirstName,
-                LastName = player.LastName,
+                FirstName = player.Firstname,
+                LastName = player.Lastname,
                 ShirtNumber = player.ShirtNumber,
                 Position = player.Position
             };
