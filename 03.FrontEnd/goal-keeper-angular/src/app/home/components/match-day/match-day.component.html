@@ -2,6 +2,7 @@
   <div class="title">
     <h1>MatchDay {{ matchday.day }}</h1>
     <div class="navigation" >
+      <!-- Add something in case the icon doesn't render like previous next -->
       <i class="fas fa-angle-left" [class.disabled]="matchday.isOpeningMatchday" (click)="leftClick()" ></i>
       <i class="fas fa-angle-right" [class.disabled]="matchday.isClosingMatchday" (click)="rightClick()"></i>
     </div>

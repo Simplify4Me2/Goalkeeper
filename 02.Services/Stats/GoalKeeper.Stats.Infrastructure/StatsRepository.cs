@@ -71,7 +71,10 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
         {
-            string sql = "SELECT [Id], [Name] FROM [Stats].[Teams]";
+            string sql = "SELECT [Teams].[Id], [Teams].[Name] FROM [Stats].[Teams]" +
+                "JOIN [Stats].[SeasonTeams] ON [Teams].[Id] = [SeasonTeams].[TeamId] " +
+                "JOIN [Stats].[Seasons] ON [SeasonTeams].[SeasonId] = [Seasons].[Id] " +
+                "WHERE GETDATE() BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
 
             var result = await _dbConnection.QueryAsync<TeamDataModel>(new CommandDefinition(sql, cancellationToken: cancellationToken));
             return TeamDataModel.MapOut(result); 
@@ -94,7 +97,9 @@ namespace GoalKeeper.Stats.Infrastructure
                                 "[awayTeam].[Id], [awayTeam].[Name] " +
                             "FROM [Stats].[Matches] [match] " +
                                 "INNER JOIN [Stats].[Teams] [homeTeam] ON [homeTeam].[Id] = [match].[HomeTeamId] " +
-                                "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId]";
+                                "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId] " +
+                                "JOIN [Stats].[Seasons] ON [Seasons].[Id] = (SELECT MAX([Id]) FROM [Stats].[Seasons]) " +
+                            "WHERE [DateUtc] BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
 
             var sqlResult = await _dbConnection.QueryAsync<MatchDataModel, TeamDataModel, TeamDataModel, MatchDataModel>(sql, (match, homeTeam, awayTeam) => {
                 match.HomeTeam = homeTeam;

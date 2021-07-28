@@ -17,6 +17,15 @@
     <None Update="Seeds\202101261856_Stadiums_1A_2020-21.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Seeds\202107281650_Matches_Matchday1_1A_2021-22.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Seeds\202107281510_PromovendiTeamsPlayers_1A_2021-22.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Seeds\202107272215_SeasonTeams_1A_2021-22.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Seeds\202107252221_PromovendiTeams_1A_2021-22.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
