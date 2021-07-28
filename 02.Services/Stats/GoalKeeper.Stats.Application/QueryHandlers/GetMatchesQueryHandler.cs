@@ -11,16 +11,16 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 {
     public class GetMatchesQueryHandler : IRequestHandler<GetMatchesQuery, IEnumerable<MatchDTO>>
     {
-        private readonly IStatsRepository _repository;
+        private readonly IMatchRepository _repository;
 
-        public GetMatchesQueryHandler(IStatsRepository repository)
+        public GetMatchesQueryHandler(IMatchRepository repository)
         {
             _repository = repository;
         }
 
         public async Task<IEnumerable<MatchDTO>> Handle(GetMatchesQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.GetMatches(cancellationToken);
+            var data = await _repository.Get(cancellationToken);
             return data.MapOut();
         }
     }

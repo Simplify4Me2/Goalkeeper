@@ -12,16 +12,16 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 {
     public class GetMatchdayQueryHandler : IRequestHandler<GetMatchdayQuery, MatchdayDTO>
     {
-        private readonly IStatsRepository _repository;
+        private readonly IMatchRepository _repository;
 
-        public GetMatchdayQueryHandler(IStatsRepository repository)
+        public GetMatchdayQueryHandler(IMatchRepository repository)
         {
             _repository = repository;
         }
 
         public async Task<MatchdayDTO> Handle(GetMatchdayQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.GetMatches(cancellationToken);
+            var data = await _repository.Get(cancellationToken);
 
             var matchesFromMatchday = from match in data
                       where match.Matchday == request.Day

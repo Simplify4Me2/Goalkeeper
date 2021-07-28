@@ -13,17 +13,19 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 {
     public class GetRankingQueryHandler : IRequestHandler<GetRankingQuery, RankingDTO>
     {
-        private readonly IStatsRepository _repository;
+        private readonly IStatsRepository _statsRepository;
+        private readonly IMatchRepository _matchRepository;
 
-        public GetRankingQueryHandler(IStatsRepository repository)
+        public GetRankingQueryHandler(IStatsRepository statsRepository, IMatchRepository matchRepository)
         {
-            _repository = repository;
+            _statsRepository = statsRepository;
+            _matchRepository = matchRepository;
         }
 
         public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
-            var matches = await _repository.GetMatches(cancellationToken);
-            var teams = await _repository.GetTeams(cancellationToken);
+            var matches = await _matchRepository.Get(cancellationToken);
+            var teams = await _statsRepository.GetTeams(cancellationToken);
 
             League league = new League("Jupiler Pro League", teams.ToList(), matches.ToList());
 

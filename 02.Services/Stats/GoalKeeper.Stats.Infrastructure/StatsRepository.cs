@@ -89,24 +89,5 @@ namespace GoalKeeper.Stats.Infrastructure
             var result = await _dbConnection.QueryAsync<Player>(new CommandDefinition(sql, cancellationToken: cancellationToken));
             return result;
         }
-
-        public async Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
-        {
-            string sql =    "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
-                                "[homeTeam].[Id], [homeTeam].[Name], " +
-                                "[awayTeam].[Id], [awayTeam].[Name] " +
-                            "FROM [Stats].[Matches] [match] " +
-                                "INNER JOIN [Stats].[Teams] [homeTeam] ON [homeTeam].[Id] = [match].[HomeTeamId] " +
-                                "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId] " +
-                                "JOIN [Stats].[Seasons] ON [Seasons].[Id] = (SELECT MAX([Id]) FROM [Stats].[Seasons]) " +
-                            "WHERE [DateUtc] BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
-
-            var sqlResult = await _dbConnection.QueryAsync<MatchDataModel, TeamDataModel, TeamDataModel, MatchDataModel>(sql, (match, homeTeam, awayTeam) => {
-                match.HomeTeam = homeTeam;
-                match.AwayTeam = awayTeam;
-                return match;
-            }, cancellationToken);
-            return MatchDataModel.MapOut(sqlResult);
-        }
     }
 }

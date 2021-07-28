@@ -12,16 +12,16 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 {
     public class GetLastMatchdayQueryHandler : IRequestHandler<GetLastMatchdayQuery, MatchdayDTO>
     {
-        private readonly IStatsRepository _repository;
+        private readonly IMatchRepository _repository;
 
-        public GetLastMatchdayQueryHandler(IStatsRepository repository)
+        public GetLastMatchdayQueryHandler(IMatchRepository repository)
         {
             _repository = repository;
         }
 
         public async Task<MatchdayDTO> Handle(GetLastMatchdayQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.GetMatches(cancellationToken);
+            var data = await _repository.Get(cancellationToken);
 
             var matchesFromLastMatchday = from match in data
                       where match.Matchday == data.Max(x => x.Matchday)
