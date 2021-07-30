@@ -10,10 +10,10 @@ namespace GoalKeeper.Stats.Infrastructure.DataModels
 
         public string Name { get; set; }
 
-        public List<Player> Players { get; set; } = new List<Player>();
+        public List<PlayerDataModel> Players { get; set; } = new List<PlayerDataModel>();
 
         public static Team MapOut(TeamDataModel team)
-        => new Team(team.Id, team.Name, team.Players);
+        => new Team(team.Id, team.Name, PlayerDataModel.MapOut(team.Players).ToList());
 
         public static IEnumerable<Team> MapOut(IEnumerable<TeamDataModel> teams)
         => teams.Select(team => MapOut(team));

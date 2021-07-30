@@ -11,7 +11,7 @@ CREATE TABLE [Stats].[Players](
 	[LastName] [nvarchar](max) NULL,
     [ShirtNumber] [int] NULL,
 	[Position] [nvarchar](5) NULL,
-	[CreatedUtc] [datetime2](7) NOT NULL,
+	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
 	[CreatedBy] [nvarchar](max) NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
 	[ModifiedBy] [nvarchar](max) NULL,

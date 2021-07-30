@@ -30,7 +30,7 @@ namespace GoalKeeper.Stats.Infrastructure
                     $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
                 $"WHERE [Teams].[Id] = {id}";
 
-            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, Player, TeamDataModel>(sql, (team, player) =>
+            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, PlayerDataModel, TeamDataModel>(sql, (team, player) =>
             {
                 team.Players.Add(player);
                 return team;
@@ -53,7 +53,7 @@ namespace GoalKeeper.Stats.Infrastructure
                     $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
                 $"WHERE [Teams].[Name] LIKE '%{name}%'";
 
-            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, Player, TeamDataModel>(sql, (team, player) =>
+            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, PlayerDataModel, TeamDataModel>(sql, (team, player) =>
             {
                 team.Players.Add(player);
                 return team;

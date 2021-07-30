@@ -23,6 +23,7 @@ namespace GoalKeeper.Stats.WebApi.Configuration
             services.AddMediatR(typeof(IAmApplication), typeof(IAmApplicationIO), typeof(Startup));
 
             services.AddTransient<IStatsRepository, StatsRepository>();
+            services.AddTransient<IMatchRepository, MatchRepository>();
             services.AddTransient<IEventStore, MyEventStore>();
 
             services.AddTransient<IDbConnection>(db => new SqlConnection(configuration.GetConnectionString("GoalKeeperDB")));

@@ -1,4 +1,6 @@
 ﻿using GoalKeeper.Common.Application.IO;
+using GoalKeeper.Stats.Application.IO.CommandModels;
+using GoalKeeper.Stats.Application.IO.Commands;
 using GoalKeeper.Stats.Application.IO.DTOs;
 using GoalKeeper.Stats.Application.IO.Queries;
 using MediatR;
@@ -51,6 +53,18 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         {
             var query = new GetLastMatchdayQuery();
             return new Result<MatchdayDTO>(await _mediator.Send(query));
+        }
+
+        [HttpPost]
+        [Route("")]
+        [ProducesResponseType(typeof(Result<bool>), 200)]
+        [ProducesResponseType(typeof(BadRequestResult), 400)]
+        [ProducesResponseType(typeof(Exception), 500)]
+        [ProducesErrorResponseType(typeof(Exception))]
+        public async Task<Result<bool>> AddMatch([FromBody] MatchPlayedModel model)
+        {
+            var command = new MatchPlayedCommand(model.HomeTeamName, model.HomeTeamScore, model.AwayTeamName, model.AwayTeamScore, model.Date, model.Matchday);
+            return new Result<bool>(await _mediator.Send(command));
         }
     }
 }

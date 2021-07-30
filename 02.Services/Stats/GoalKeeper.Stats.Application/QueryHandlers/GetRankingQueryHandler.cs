@@ -4,7 +4,6 @@ using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Domain.Entities;
 using MediatR;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,8 +23,8 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
-            var matches = await _matchRepository.Get(cancellationToken);
             var teams = await _statsRepository.GetTeams(cancellationToken);
+            var matches = await _matchRepository.Get(cancellationToken);
 
             League league = new League("Jupiler Pro League", teams.ToList(), matches.ToList());
 

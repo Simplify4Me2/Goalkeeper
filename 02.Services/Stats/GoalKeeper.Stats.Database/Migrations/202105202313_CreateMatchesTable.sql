@@ -13,7 +13,7 @@ CREATE TABLE [Stats].[Matches](
 	[AwayTeamScore] [int] NOT NULL,
 	[Matchday] [int] NOT NULL,
 	[DateUtc] [datetime2](7) NOT NULL,
-	[CreatedUtc] [datetime2](7) NOT NULL,
+	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
 	[CreatedBy] [nvarchar](max) NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
 	[ModifiedBy] [nvarchar](max) NULL,

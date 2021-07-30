@@ -5,7 +5,6 @@ using GoalKeeper.Stats.Infrastructure.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -37,6 +36,18 @@ namespace GoalKeeper.Stats.Infrastructure
                 return match;
             }, cancellationToken);
             return MatchDataModel.MapOut(sqlResult);
+        }
+
+        public async Task<bool> Save(Match match, CancellationToken cancellationToken)
+        {
+            string sql = "INSERT INTO [Stats].[Matches] " +
+                "([HomeTeamId] ,[HomeTeamScore] ,[AwayTeamId] ,[AwayTeamScore] ,[Matchday], [DateUtc] ,[CreatedUtc] ,[CreatedBy] ,[ModifiedUtc] ,[ModifiedBy]) " +
+                "VALUES " +
+                    $"({match.HomeTeam.Id}, {match.HomeTeamScore}, {match.AwayTeam.Id}, {match.AwayTeamScore}, {match.Matchday}, {DateTime.Now}, {DateTime.Now}, {"TODO"}, {DateTime.Now}, {"TODO"})";
+
+            var sqlresult = await _dbConnection.ExecuteAsync(sql, cancellationToken);
+
+            return sqlresult == 1;
         }
     }
 }
