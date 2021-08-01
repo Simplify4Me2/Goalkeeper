@@ -23,13 +23,14 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("{teamId}")]
-        [ProducesResponseType(typeof(IEnumerable<PlayerDTO>), 200)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<IEnumerable<PlayerDTO>>> GetPlayersByTeamId([FromRoute] long teamId)
+        //[ProducesResponseType(typeof(IEnumerable<PlayerDTO>), 200)]
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<IEnumerable<PlayerDTO>>> GetPlayersByTeamId([FromRoute] long teamId)
+        public async Task<IActionResult> GetPlayersByTeamId([FromRoute] long teamId)
         {
             var query = new GetPlayersByTeamIdQuery(teamId);
-            return new Result<IEnumerable<PlayerDTO>>(await _mediator.Send(query));
+            return Ok(new Result<IEnumerable<PlayerDTO>>(await _mediator.Send(query)));
         }
     }
 }

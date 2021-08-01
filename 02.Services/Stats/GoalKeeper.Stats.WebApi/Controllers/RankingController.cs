@@ -21,13 +21,14 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("")]
-        [ProducesResponseType(typeof(RankingDTO), 200)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<RankingDTO>> GetRanking()
+        //[ProducesResponseType(typeof(RankingDTO), 200)]
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<RankingDTO>> GetRanking()
+        public async Task<IActionResult> GetRanking()
         {
             var query = new GetRankingQuery();
-            return new Result<RankingDTO>(await _mediator.Send(query));
+            return Ok(new Result<RankingDTO>(await _mediator.Send(query)));
         }
     }
 }

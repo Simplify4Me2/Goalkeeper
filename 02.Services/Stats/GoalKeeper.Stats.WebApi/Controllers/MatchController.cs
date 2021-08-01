@@ -24,47 +24,51 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("")]
-        [ProducesResponseType(typeof(IEnumerable<MatchDTO>), 200)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<IEnumerable<MatchDTO>>> GetAllMatches()
+        //[ProducesResponseType(typeof(IEnumerable<MatchDTO>), 200)]
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<IEnumerable<MatchDTO>>> GetAllMatches()
+        public async Task<IActionResult> GetAllMatches()
         {
             var query = new GetMatchesQuery();
-            return new Result<IEnumerable<MatchDTO>>(await _mediator.Send(query));
+            return Ok(new Result<IEnumerable<MatchDTO>>(await _mediator.Send(query)));
         }
 
         [HttpGet]
         [Route("matchday/{day}")]
-        [ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<MatchdayDTO>> GetMatchday([FromRoute] int day)
+        //[ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<MatchdayDTO>> GetMatchday([FromRoute] int day)
+        public async Task<IActionResult> GetMatchday([FromRoute] int day)
         {
             var query = new GetMatchdayQuery(day);
-            return new Result<MatchdayDTO>(await _mediator.Send(query));
+            return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
         }
 
         [HttpGet]
         [Route("matchday/last")]
-        [ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<MatchdayDTO>> GetLastMatchday()
+        //[ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<MatchdayDTO>> GetLastMatchday()
+        public async Task<IActionResult> GetLastMatchday()
         {
             var query = new GetLastMatchdayQuery();
-            return new Result<MatchdayDTO>(await _mediator.Send(query));
+            return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
         }
 
         [HttpPost]
         [Route("")]
-        [ProducesResponseType(typeof(Result<bool>), 200)]
-        [ProducesResponseType(typeof(BadRequestResult), 400)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<bool>> AddMatch([FromBody] MatchPlayedModel model)
+        //[ProducesResponseType(typeof(Result<bool>), 200)]
+        //[ProducesResponseType(typeof(BadRequestResult), 400)]
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<bool>> AddMatch([FromBody] MatchPlayedModel model)
+        public async Task<IActionResult> AddMatch([FromBody] MatchPlayedModel model)
         {
             var command = new MatchPlayedCommand(model.HomeTeamName, model.HomeTeamScore, model.AwayTeamName, model.AwayTeamScore, model.Date, model.Matchday);
-            return new Result<bool>(await _mediator.Send(command));
+            return Ok(new Result<bool>(await _mediator.Send(command)));
         }
     }
 }

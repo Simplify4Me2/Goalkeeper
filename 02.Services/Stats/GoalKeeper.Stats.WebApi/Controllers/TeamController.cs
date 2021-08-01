@@ -23,12 +23,13 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         [HttpGet]
         [Route("")]
         [ProducesResponseType(typeof(IEnumerable<TeamDTO>), 200)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<IEnumerable<TeamDTO>>> GetTeams()
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<IEnumerable<TeamDTO>>> GetTeams()
+        public async Task<IActionResult> GetTeams()
         {
             var query = new GetTeamsQuery();
-            return new Result<IEnumerable<TeamDTO>>(await _mediator.Send(query));
+            return Ok(new Result<IEnumerable<TeamDTO>>(await _mediator.Send(query)));
         }
 
         //[HttpGet]
@@ -45,12 +46,13 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         [HttpGet]
         [Route("{name}")]
         [ProducesResponseType(typeof(TeamDTO), 200)]
-        [ProducesResponseType(typeof(Exception), 500)]
-        [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<TeamDTO>> GetTeamByName([FromRoute] string name)
+        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesErrorResponseType(typeof(Exception))]
+        //public async Task<Result<TeamDTO>> GetTeamByName([FromRoute] string name)
+        public async Task<IActionResult> GetTeamByName([FromRoute] string name)
         {
             var query = new GetTeamByNameQuery(name);
-            return new Result<TeamDTO>(await _mediator.Send(query));
+            return Ok(new Result<TeamDTO>(await _mediator.Send(query)));
         }
 
     }
