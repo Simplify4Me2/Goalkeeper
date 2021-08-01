@@ -1,5 +1,6 @@
 ﻿using GoalKeeper.Common.Application.IO;
 using GoalKeeper.Stats.Application.IO.DTOs;
+using GoalKeeper.Stats.Application.IO.Exceptions;
 using GoalKeeper.Stats.Application.IO.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -46,13 +47,20 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         [HttpGet]
         [Route("{name}")]
         [ProducesResponseType(typeof(TeamDTO), 200)]
-        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesResponseType(typeof(TeamNotFoundException), 400)]
         //[ProducesErrorResponseType(typeof(Exception))]
         //public async Task<Result<TeamDTO>> GetTeamByName([FromRoute] string name)
         public async Task<IActionResult> GetTeamByName([FromRoute] string name)
         {
-            var query = new GetTeamByNameQuery(name);
-            return Ok(new Result<TeamDTO>(await _mediator.Send(query)));
+            try
+            {
+                var query = new GetTeamByNameQuery(name);
+                return Ok(new Result<TeamDTO>(await _mediator.Send(query)));
+            }
+            catch (TeamNotFoundException)
+            {
+                return NotFound($"Team not found: {name}");
+            }
         }
 
     }
