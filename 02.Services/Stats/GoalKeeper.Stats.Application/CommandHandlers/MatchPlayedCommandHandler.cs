@@ -21,12 +21,12 @@ namespace GoalKeeper.Stats.Application.CommandHandlers
             _statsRepository = statsRepository;
         }
 
-        public async Task<bool> Handle(MatchPlayedCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(MatchPlayedCommand command, CancellationToken cancellationToken)
         {
-            var homeTeam = await _statsRepository.GetTeamByName(request.HomeTeamName, cancellationToken);
-            var awayTeam = await _statsRepository.GetTeamByName(request.AwayTeamName, cancellationToken);
+            var homeTeam = await _statsRepository.GetTeamByName(command.HomeTeamName, cancellationToken);
+            var awayTeam = await _statsRepository.GetTeamByName(command.AwayTeamName, cancellationToken);
 
-            var match = new Match(0, homeTeam, request.HomeTeamScore, awayTeam, request.AwayTeamScore, request.Date, request.Matchday);
+            var match = new Match(0, homeTeam, command.HomeTeamScore, awayTeam, command.AwayTeamScore, command.Date, command.Matchday);
 
             return await _matchRepository.Save(match, cancellationToken);
         }
