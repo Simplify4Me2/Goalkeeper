@@ -42,7 +42,7 @@ namespace GoalKeeper.Stats.Domain.UnitTests
 
             // Assert
             var expected = 0;
-            league.Table.First(ranking => ranking.Team == testTeam).Points.Should().Be(expected);
+            league.Table.First(ranking => ranking.Team.Id == testTeam.Id).Points.Should().Be(expected);
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace GoalKeeper.Stats.Domain.UnitTests
 
             // Assert
             var expected = 3;
-            league.Table.First(ranking => ranking.Team == testTeam).Points.Should().Be(expected);
+            league.Table.First(ranking => ranking.Team.Id == testTeam.Id).Points.Should().Be(expected);
         }
 
         [Fact]
@@ -78,7 +78,26 @@ namespace GoalKeeper.Stats.Domain.UnitTests
 
             // Assert
             var expected = 1;
-            league.Table.First(ranking => ranking.Team == testTeam).Points.Should().Be(expected);
+            league.Table.First(ranking => ranking.Team.Id == testTeam.Id).Points.Should().Be(expected);
+        }
+
+        [Fact]
+        public void League_Table_MatchDrawnAndMatchWon_ReturnsFourPoints()
+        {
+            // Arrange
+            var testTeam = new Team(1, "FC De Kampioenen", new List<Player>());
+            var otherTeam = new Team(2, "Away Team 1", new List<Player>());
+            var teams = new List<Team> { testTeam, otherTeam };
+            var matches = new List<Match>
+            {
+                new Match(1, testTeam, 1, otherTeam, 1, new DateTime(), 1),
+                new Match(2, otherTeam, 0, testTeam, 1, new DateTime(), 1)
+            };
+            var league = new League("CBF", teams, matches);
+
+            // Assert
+            var expected = 1 + 3;
+            league.Table.First(ranking => ranking.Team.Id == testTeam.Id).Points.Should().Be(expected);
         }
 
         [Fact]
@@ -100,7 +119,7 @@ namespace GoalKeeper.Stats.Domain.UnitTests
 
             // Assert
             var expected = 3 + 1 + 0;
-            league.Table.First(ranking => ranking.Team == testTeam).Points.Should().Be(expected);
+            league.Table.First(ranking => ranking.Team.Id == testTeam.Id).Points.Should().Be(expected);
         }
 
         [Fact]

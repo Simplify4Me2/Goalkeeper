@@ -45,7 +45,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         }
 
         [Fact]
-        public async Task MatchPlayed_CallsSave_ContainsHomeTeam()
+        public async Task MatchPlayed_CallsSave_WithHomeTeam()
         {
             // Arrange
             var homeTeam = new Team(1, "HomeTeam", SomePlayers());
@@ -63,7 +63,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         }
 
         [Fact]
-        public async Task MatchPlayed_CallsSave_ContainsHomeTeamScore()
+        public async Task MatchPlayed_CallsSave_WithHomeTeamScore()
         {
             // Arrange
             var homeTeam = new Team(1, "HomeTeam", SomePlayers());
@@ -81,7 +81,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         }
 
         [Fact]
-        public async Task MatchPlayed_CallsSave_ContainsAwayTeam()
+        public async Task MatchPlayed_CallsSave_WithAwayTeam()
         {
             // Arrange
             var homeTeam = new Team(1, "HomeTeam", SomePlayers());
@@ -99,7 +99,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         }
 
         [Fact]
-        public async Task MatchPlayed_CallsSave_ContainsAwayTeamScore()
+        public async Task MatchPlayed_CallsSave_WithAwayTeamScore()
         {
             // Arrange
             var homeTeam = new Team(1, "HomeTeam", SomePlayers());
@@ -117,7 +117,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         }
 
         [Fact]
-        public async Task MatchPlayed_CallsSave_ContainsMatchDate()
+        public async Task MatchPlayed_CallsSave_WithMatchDate()
         {
             // Arrange
             var homeTeam = new Team(1, "HomeTeam", SomePlayers());
@@ -135,7 +135,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         }
 
         [Fact]
-        public async Task MatchPlayed_CallsSave_ContainsMatchDay()
+        public async Task MatchPlayed_CallsSave_WithMatchDay()
         {
             // Arrange
             var homeTeam = new Team(1, "HomeTeam", SomePlayers());

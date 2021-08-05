@@ -27,8 +27,8 @@ namespace GoalKeeper.Stats.Domain.Entities
                 List<TeamRanking> table = new List<TeamRanking>();
                 foreach (Team team in Teams)
                 {
-                    int points = (from match in Matches
-                                  where team == match.HomeTeam || team == match.AwayTeam
+                    var matches = Matches.Where(match => team.Id == match.HomeTeam.Id || team.Id == match.AwayTeam.Id);
+                    int points = (from match in matches
                                   select CalculatePoints(team, match)).Sum();
 
                     TeamRanking teamRanking = new TeamRanking(team, points);
@@ -42,9 +42,9 @@ namespace GoalKeeper.Stats.Domain.Entities
         {
             if (match.HomeTeamScore == match.AwayTeamScore)
                 return _pointsForDraw;
-            if (team == match.HomeTeam && match.HomeTeamScore > match.AwayTeamScore)
+            if (team.Id == match.HomeTeam.Id && match.HomeTeamScore > match.AwayTeamScore)
                 return _pointsForWin;
-            if (team == match.AwayTeam && match.HomeTeamScore < match.AwayTeamScore)
+            if (team.Id == match.AwayTeam.Id && match.HomeTeamScore < match.AwayTeamScore)
                 return _pointsForWin;
             return _pointsForLoss;
         }

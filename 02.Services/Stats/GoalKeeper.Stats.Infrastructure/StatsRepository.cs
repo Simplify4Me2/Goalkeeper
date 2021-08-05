@@ -74,7 +74,7 @@ namespace GoalKeeper.Stats.Infrastructure
             string sql = "SELECT [Teams].[Id], [Teams].[Name] FROM [Stats].[Teams]" +
                 "JOIN [Stats].[SeasonTeams] ON [Teams].[Id] = [SeasonTeams].[TeamId] " +
                 "JOIN [Stats].[Seasons] ON [SeasonTeams].[SeasonId] = [Seasons].[Id] " +
-                "WHERE GETDATE() BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
+                    "WHERE GETDATE() BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
 
             var result = await _dbConnection.QueryAsync<TeamDataModel>(new CommandDefinition(sql, cancellationToken: cancellationToken));
             return TeamDataModel.MapOut(result); 
