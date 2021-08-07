@@ -11,6 +11,8 @@ export class TeamInfoComponent implements OnInit {
 
   @Input() team: Team;
 
+  mockStadiumName: string = 'Bosuilstadion';
+
   constructor() { }
 
   ngOnInit(): void {
