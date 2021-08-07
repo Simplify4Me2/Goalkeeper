@@ -10,9 +10,7 @@ namespace GoalKeeper.Stats.Domain.Entities
         private const int _pointsForLoss = 0;
 
         public string Name { get; }
-
         private List<Team> Teams { get; }
-
         private List<Match> Matches { get; }
 
         public League(string name, List<Team> teams, List<Match> matches)
@@ -29,7 +27,7 @@ namespace GoalKeeper.Stats.Domain.Entities
                 {
                     var matches = Matches.Where(match => team.Id == match.HomeTeam.Id || team.Id == match.AwayTeam.Id);
                     int points = (from match in matches
-                                  select CalculatePoints(team, match)).Sum();
+                                  select DeterminePoints(team, match)).Sum();
 
                     TeamRanking teamRanking = new TeamRanking(team, points);
                     table.Add(teamRanking);
@@ -38,7 +36,7 @@ namespace GoalKeeper.Stats.Domain.Entities
             }
         }
 
-        private int CalculatePoints(Team team, Match match)
+        private int DeterminePoints(Team team, Match match)
         {
             if (match.HomeTeamScore == match.AwayTeamScore)
                 return _pointsForDraw;
