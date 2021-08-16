@@ -1,3 +1,16 @@
+// @import 'styles'
+// @import '../../../../sass/_variables'
+// @use 'styles'
+// @use '../../../../styles'
+// @use '~/s'
+// @use '_variables'
+// @use 'src/app/sass/_variables'
+@use '../../../../sass/_variables' as var
+
+$antwerp-rgba: rgba(223, 23, 43, 0.75)
+$antwerp-stadium: 'assets/images/stadiums/antwerp.jpg'
+$anderlecht-stadium: 'https://www.rsca.be/sites/rsca/files/2019-10/Lotto%20Park_0.jpg'
+    
 // .stadium
 //     display: block
 //     width: 40%
@@ -9,7 +22,10 @@
 //     border-image: linear-gradient(to bottom, red, rgba(0,0,0,0)) 1 100%
 
 .team
-    font-family: 'Permanent Marker', Charcoal, sans-serif
+    // font-family: 'Permanent Marker', Charcoal, sans-serif
+    // font-family: $primary-font-family
+    font-family: var.$primary-font-family
+    // font-family: _variables.$primary-font-family
 
 .team-name
     text-align: center
@@ -23,7 +39,7 @@
     height: 260px
     width: 100%
     margin-bottom: 40px
-    background:     /* top, transparent red, faked with gradient */     linear-gradient(      rgba(223, 23, 43, 0.75),       rgba(223, 23, 43, 0.75)    ),    /* bottom, image */    url('https://www.rsca.be/sites/rsca/files/2019-10/Lotto%20Park_0.jpg') no-repeat center center
+    background: linear-gradient($antwerp-rgba, $antwerp-rgba), url($antwerp-stadium) no-repeat center center
     background-size: 100% 200%
 
     display: flex
@@ -38,7 +54,7 @@
     justify-content: space-between
 
 .team-form
-    font-family: Lato
+    font-family: var.$secondary-font-family
     height: 88px
     width: 352px
     background: white

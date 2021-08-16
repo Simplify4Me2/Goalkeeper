@@ -19,4 +19,34 @@ VALUES
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Union%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 1, 2, '2021-08-01 13:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Zulte Waregem%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 2, 2, '2021-08-01 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 2, 2, '2021-08-01 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Kortrijk%'), 1, 2, '2021-08-01 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Kortrijk%'), 1, 2, '2021-08-01 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 1, 3, '2021-08-06 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Union%'), 3, 3, '2021-08-07 16:15:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Mechelen%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KAS Eupen%'), 3, 3, '2021-08-07 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Sint-Truidense VV%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Zulte Waregem%'), 3, 3, '2021-08-07 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Kortrijk%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KRC Genk%'), 2, 3, '2021-08-07 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 1, 3, '2021-08-08 13:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Charleroi Sporting Club%'), 1, 3, '2021-08-08 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RSC Anderlecht%'), 3, (SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 0, 3, '2021-08-08 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Oostende%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 0, 3, '2021-08-08 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Charleroi Sporting Club%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 1, 4, '2021-08-13 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Union%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Kortrijk%'), 0, 4, '2021-08-14 16:15:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAS Eupen%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Sint-Truidense VV%'), 1, 4, '2021-08-14 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Oostende%'), 3, 4, '2021-08-14 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KRC Genk%'), 4, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 0, 4, '2021-08-14 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 1, 4, '2021-08-15 13:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Mechelen%'), 0, 4, '2021-08-15 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%RSC Anderlecht%'), 2, 4, '2021-08-15 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%Zulte Waregem%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 4, 4, '2021-08-15 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed')
+
+  --((SELECT Id FROM Stats.Teams WHERE [Name] like '%Standard Luik%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Oostende%'), 1, 5, '2021-08-20 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  --((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Cercle Brugge%'), 0, 5, '2021-08-21 16:15:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  --((SELECT Id FROM Stats.Teams WHERE [Name] like '%Oud-Heverlee Leuven%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KAS Eupen%'), 1, 5, '2021-08-21 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  --((SELECT Id FROM Stats.Teams WHERE [Name] like '%Sint-Truidense VV%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Kortrijk%'), 3, 5, '2021-08-21 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ----((SELECT Id FROM Stats.Teams WHERE [Name] like '%RSC Anderlecht%'), 4, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KAA Gent%'), 0, 5, '2021-08-14 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  --((SELECT Id FROM Stats.Teams WHERE [Name] like '%Zulte Waregem%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Charleroi Sporting Club%'), 1, 5, '2021-08-22 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  --((SELECT Id FROM Stats.Teams WHERE [Name] like '%Club Brugge%'), 2, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Beerschot VA%'), 0, 5, '2021-08-22 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  --((SELECT Id FROM Stats.Teams WHERE [Name] like '%KV Mechelen%'), 1, (SELECT Id FROM Stats.Teams WHERE [Name] like '%Union%'), 2, 5, '2021-08-22 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ----((SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Antwerp FC%'), 0, (SELECT Id FROM Stats.Teams WHERE [Name] like '%KRC Genk%'), 4, 5, '2021-08-15 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed')
