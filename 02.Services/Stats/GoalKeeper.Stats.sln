@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.WebApi", "GoalKeeper.Stats.WebApi\GoalKeeper.Stats.WebApi.csproj", "{BFA770F3-68ED-4F0D-A9DB-F7B1CD6A2F5A}"
 EndProject
@@ -33,9 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.EventStore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.Application.UnitTests", "GoalKeeper.Stats.Application.UnitTests\GoalKeeper.Stats.Application.UnitTests.csproj", "{514D4700-5246-448B-A619-0FD4D4625D24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.Stats.Domain.UnitTests", "GoalKeeper.Stats.Domain.UnitTests\GoalKeeper.Stats.Domain.UnitTests.csproj", "{F5307D94-6B6E-4DC1-B7ED-ADA7D6B3DA3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.Domain.UnitTests", "GoalKeeper.Stats.Domain.UnitTests\GoalKeeper.Stats.Domain.UnitTests.csproj", "{F5307D94-6B6E-4DC1-B7ED-ADA7D6B3DA3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Common.Domain", "..\..\01.Common\GoalKeeper.Common\GoalKeeper.Common.Domain\GoalKeeper.Common.Domain.csproj", "{9B7C31CA-179F-44E4-9908-AC88EF152336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Common.Application", "..\..\01.Common\GoalKeeper.Common\GoalKeeper.Common.Domain\GoalKeeper.Common.Application.csproj", "{9B7C31CA-179F-44E4-9908-AC88EF152336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

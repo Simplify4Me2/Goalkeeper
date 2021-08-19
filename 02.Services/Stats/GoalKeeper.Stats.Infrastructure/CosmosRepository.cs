@@ -1,5 +1,5 @@
 ﻿using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.Entities;
+using GoalKeeper.Stats.Domain.ValueObjects;
 using Microsoft.Azure.Cosmos;
 using System;
 using System.Collections.Generic;

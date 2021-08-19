@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using GoalKeeper.Stats.Domain.ValueObjects;
 using GoalKeeper.Stats.Domain.Entities;
 using System;
 using System.Collections.Generic;

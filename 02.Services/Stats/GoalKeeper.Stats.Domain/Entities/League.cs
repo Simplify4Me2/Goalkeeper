@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GoalKeeper.Stats.Domain.ValueObjects;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GoalKeeper.Stats.Domain.Entities

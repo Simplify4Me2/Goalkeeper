@@ -6,7 +6,7 @@ namespace GoalKeeper.Stats.Application.Mappers
 {
     public static class MatchMapper
     {
-        public static MatchDTO MapOut(this Domain.Entities.Match match)
+        public static MatchDTO MapOut(this Domain.ValueObjects.Match match)
         {
             return new MatchDTO
             {
@@ -21,7 +21,7 @@ namespace GoalKeeper.Stats.Application.Mappers
             };
         }
 
-        public static IEnumerable<MatchDTO> MapOut(this IEnumerable<Domain.Entities.Match> matches)
+        public static IEnumerable<MatchDTO> MapOut(this IEnumerable<Domain.ValueObjects.Match> matches)
             => matches.Select(match => MapOut(match));
     }
 }

@@ -22,7 +22,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
         {
             _repository = new Mock<IStatsRepository>();
             _repository.Setup(x => x.GetTeamById(It.IsAny<long>(), CancellationToken.None))
-                .ReturnsAsync(new Domain.Entities.Team(12, "TeamName", new List<Domain.Entities.Player>() { new Domain.Entities.Player(1, "Pico", "Coppens", new DateTime(), new DateTime(), 9, "ATT"), new Domain.Entities.Player(2, "Xavier", "Waterslaegers", new DateTime(), new DateTime(), 1, "GK") } ));
+                .ReturnsAsync(new Domain.ValueObjects.Team(12, "TeamName", new List<Domain.ValueObjects.Player>() { new Domain.ValueObjects.Player(1, "Pico", "Coppens", new DateTime(), new DateTime(), 9, "ATT"), new Domain.ValueObjects.Player(2, "Xavier", "Waterslaegers", new DateTime(), new DateTime(), 1, "GK") } ));
             queryHandler = new GetTeamByIdQueryHandler(_repository.Object);
         }
 

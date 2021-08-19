@@ -1,6 +1,6 @@
 ﻿using GoalKeeper.Stats.Application.IO.Commands;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.Entities;
+using GoalKeeper.Stats.Domain.ValueObjects;
 using MediatR;
 using System;
 using System.Collections.Generic;

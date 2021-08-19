@@ -2,7 +2,7 @@
 using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.Entities;
+using GoalKeeper.Stats.Domain.ValueObjects;
 using MediatR;
 using System.Linq;
 using System.Threading;

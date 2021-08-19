@@ -2,7 +2,7 @@
 using GoalKeeper.Stats.Application.CommandHandlers;
 using GoalKeeper.Stats.Application.IO.Commands;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.Entities;
+using GoalKeeper.Stats.Domain.ValueObjects;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -34,14 +34,14 @@ namespace GoalKeeper.Stats.Application.UnitTests
             var homeTeam = new Team(1, "HomeTeam", SomePlayers());
             var awayTeam = new Team(2, "AwayTeam", SomePlayers());
             var command = new MatchPlayedCommand(homeTeam.Name, 0, awayTeam.Name, 0, DateTime.Today, 0);
-            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.Entities.Match>(), CancellationToken.None)).ReturnsAsync(true);
+            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.ValueObjects.Match>(), CancellationToken.None)).ReturnsAsync(true);
 
             // Act
             var response = await commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.Entities.Match>(match => match.Id.Equals(0)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.Id.Equals(0)), CancellationToken.None), Times.Once);
         }
 
         [Fact]
@@ -52,14 +52,14 @@ namespace GoalKeeper.Stats.Application.UnitTests
             var awayTeam = new Team(2, "AwayTeam", SomePlayers());
             var command = new MatchPlayedCommand(homeTeam.Name, 0, awayTeam.Name, 0, DateTime.Today, 0);
             _statsRepository.Setup(x => x.GetTeamByName(homeTeam.Name, CancellationToken.None)).ReturnsAsync(homeTeam);
-            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.Entities.Match>(), CancellationToken.None)).ReturnsAsync(true);
+            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.ValueObjects.Match>(), CancellationToken.None)).ReturnsAsync(true);
 
             // Act
             var response = await commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.Entities.Match>(match => match.HomeTeam.Equals(homeTeam)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.HomeTeam.Equals(homeTeam)), CancellationToken.None), Times.Once);
         }
 
         [Fact]
@@ -70,14 +70,14 @@ namespace GoalKeeper.Stats.Application.UnitTests
             var awayTeam = new Team(2, "AwayTeam", SomePlayers());
             var homeTeamScore = 3;
             var command = new MatchPlayedCommand(homeTeam.Name, homeTeamScore, awayTeam.Name, 0, DateTime.Today, 0);
-            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.Entities.Match>(), CancellationToken.None)).ReturnsAsync(true);
+            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.ValueObjects.Match>(), CancellationToken.None)).ReturnsAsync(true);
 
             // Act
             var response = await commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.Entities.Match>(match => match.HomeTeamScore.Equals(homeTeamScore)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.HomeTeamScore.Equals(homeTeamScore)), CancellationToken.None), Times.Once);
         }
 
         [Fact]
@@ -88,14 +88,14 @@ namespace GoalKeeper.Stats.Application.UnitTests
             var awayTeam = new Team(2, "AwayTeam", SomePlayers());
             var command = new MatchPlayedCommand(homeTeam.Name, 0, awayTeam.Name, 0, DateTime.Today, 0);
             _statsRepository.Setup(x => x.GetTeamByName(awayTeam.Name, CancellationToken.None)).ReturnsAsync(awayTeam);
-            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.Entities.Match>(), CancellationToken.None)).ReturnsAsync(true);
+            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.ValueObjects.Match>(), CancellationToken.None)).ReturnsAsync(true);
 
             // Act
             var response = await commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.Entities.Match>(match => match.AwayTeam.Equals(awayTeam)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.AwayTeam.Equals(awayTeam)), CancellationToken.None), Times.Once);
         }
 
         [Fact]
@@ -106,14 +106,14 @@ namespace GoalKeeper.Stats.Application.UnitTests
             var awayTeam = new Team(2, "AwayTeam", SomePlayers());
             var awayTeamScore = 3;
             var command = new MatchPlayedCommand(homeTeam.Name, 0, awayTeam.Name, awayTeamScore, DateTime.Today, 0);
-            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.Entities.Match>(), CancellationToken.None)).ReturnsAsync(true);
+            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.ValueObjects.Match>(), CancellationToken.None)).ReturnsAsync(true);
 
             // Act
             var response = await commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.Entities.Match>(match => match.AwayTeamScore.Equals(awayTeamScore)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.AwayTeamScore.Equals(awayTeamScore)), CancellationToken.None), Times.Once);
         }
 
         [Fact]
@@ -124,14 +124,14 @@ namespace GoalKeeper.Stats.Application.UnitTests
             var awayTeam = new Team(2, "AwayTeam", SomePlayers());
             var matchDate = new DateTime(2021, 08, 01);
             var command = new MatchPlayedCommand(homeTeam.Name, 0, awayTeam.Name, 0, matchDate, 0);
-            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.Entities.Match>(), CancellationToken.None)).ReturnsAsync(true);
+            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.ValueObjects.Match>(), CancellationToken.None)).ReturnsAsync(true);
 
             // Act
             var response = await commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.Entities.Match>(match => match.Date.Equals(matchDate)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.Date.Equals(matchDate)), CancellationToken.None), Times.Once);
         }
 
         [Fact]
@@ -142,14 +142,14 @@ namespace GoalKeeper.Stats.Application.UnitTests
             var awayTeam = new Team(2, "AwayTeam", SomePlayers());
             var matchDay = 3;
             var command = new MatchPlayedCommand(homeTeam.Name, 0, awayTeam.Name, 0, DateTime.Today, matchDay);
-            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.Entities.Match>(), CancellationToken.None)).ReturnsAsync(true);
+            _matchRepository.Setup(x => x.Save(It.IsAny<Domain.ValueObjects.Match>(), CancellationToken.None)).ReturnsAsync(true);
 
             // Act
             var response = await commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.Entities.Match>(match => match.Matchday.Equals(matchDay)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.Matchday.Equals(matchDay)), CancellationToken.None), Times.Once);
         }
 
         private List<Player> SomePlayers()

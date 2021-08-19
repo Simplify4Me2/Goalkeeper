@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoalKeeper.Stats.Domain.Entities
+namespace GoalKeeper.Stats.Domain.ValueObjects
 {
     public class Player : Person
     {

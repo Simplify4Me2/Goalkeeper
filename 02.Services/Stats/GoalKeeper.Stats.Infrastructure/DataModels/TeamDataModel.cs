@@ -1,5 +1,5 @@
 ﻿using GoalKeeper.Stats.Application.IO.Exceptions;
-using GoalKeeper.Stats.Domain.Entities;
+using GoalKeeper.Stats.Domain.ValueObjects;
 using System.Collections.Generic;
 using System.Linq;
 
