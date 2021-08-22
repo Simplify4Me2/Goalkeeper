@@ -1,6 +1,7 @@
 <div *ngIf="team" class="team" >
     <h1 class="team-name" >{{ team.name }}</h1>
-    <div class="team-background" >
+    <!-- <div class="team-background" > -->
+        <div [ngClass]="getTeamBackground(team.name)" >
         <img class="logo" src='{{ "assets/images/logos/" + team.name + ".svg" }}' />
         <div class="right-content" >
             <div></div>
