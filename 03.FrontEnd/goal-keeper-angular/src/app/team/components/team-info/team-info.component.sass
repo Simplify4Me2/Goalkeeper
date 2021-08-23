@@ -6,53 +6,14 @@
 // @use '_variables'
 // @use 'src/app/sass/_variables'
 @use '../../../../sass/_variables' as var
-
-$anderlecht-rgba: rgba(81, 46, 143, 0.75)
-$antwerp-rgba: rgba(223, 23, 43, 0.75)
-$cercle-brugge-rgba: rgba(0, 159, 69, 0.75)
-$charleroi-rgba: rgba(0, 0, 0, 0.75)
-$club-brugge-rgba: rgba(0, 120, 191, 0.75)
-$eupen-rgba: rgba(0, 0, 0, 0.75)
-$genk-rgba: rgba(0, 120, 191, 0.75)
-$gent-rgba: rgba(0, 71, 148, 0.75)
-$kortrijk-rgba: rgba(201, 32, 38, 0.75)
-$mechelen-rgba: rgba(227, 34, 25, 0.75)
-$oostende-rgba: rgba(228, 7, 20, 0.75)
-$stvv-rgba: rgba(0, 96, 173, 0.75)
-$standard-de-liege-rgba: rgba(255, 17, 0, 0.75)
-$zulte-waregem-rgba: rgba(211, 2, 64 , 0.75)
-$union-rgba: rgba(11, 45, 80, 0.75)
-$seraing-rgba: rgba(222, 18, 33, 0.75)
-$oud-heverlee-leuven-rgba: rgba(33, 167, 55, 0.75)
-$beerschot-rgba: rgba(84, 54, 124, 0.75)
-
-$anderlecht-stadium: '/assets/images/stadiums/anderlecht.jpg'
-$antwerp-stadium: '/assets/images/stadiums/antwerp.jpg'
-$beerschot-stadium: '/assets/images/stadiums/beerschot.jpg'
-$charleroi-stadium: '/assets/images/stadiums/charleroi.jpg'
-$brugge-stadium: '/assets/images/stadiums/brugge.jpg'
-$eupen-stadium: '/assets/images/stadiums/eupen.jpg'
-$genk-stadium: '/assets/images/stadiums/genk.jpg'
-$gent-stadium: '/assets/images/stadiums/gent.jpg'
-$kortrijk-stadium: '/assets/images/stadiums/kortrijk.jpg'
-$mechelen-stadium: '/assets/images/stadiums/mechelen.jpg'
-$oud-heverlee-leuven-stadium: '/assets/images/stadiums/ohl.jpg'
-$oostende-stadium: '/assets/images/stadiums/oostende.jpg'
-$seraing-stadium: '/assets/images/stadiums/seraing.jpg'
-$standard-stadium: '/assets/images/stadiums/standard.jpg'
-$stvv-stadium: '/assets/images/stadiums/stvv.jpg'
-$union-stadium: '/assets/images/stadiums/union.jpg'
-$zulte-waregem-stadium: '/assets/images/stadiums/zulte-waregem.jpg'
+@use '../../../../sass/_teamvariables' as teamvar
 
 @mixin background($rgba, $stadium)
     background: linear-gradient($rgba, $rgba), url($stadium) no-repeat center center
     background-size: 100% 200%
   
 .team
-    // font-family: 'Permanent Marker', Charcoal, sans-serif
-    // font-family: $primary-font-family
     font-family: var.$primary-font-family
-    // font-family: _variables.$primary-font-family
 
 .team-name
     text-align: center
@@ -61,7 +22,6 @@ $zulte-waregem-stadium: '/assets/images/stadiums/zulte-waregem.jpg'
     height: 70%
     padding-left: 2rem
 
-    // https://css-tricks.com/tinted-images-multiple-backgrounds/
 .team-background
     height: 260px
     width: 100%
@@ -72,58 +32,58 @@ $zulte-waregem-stadium: '/assets/images/stadiums/zulte-waregem.jpg'
     align-items: center
 
 .antwerp
-    @include background($antwerp-rgba, $antwerp-stadium)
+    @include background(teamvar.$antwerp-rgba, teamvar.$antwerp-stadium)
 
 .anderlecht
-    @include background($anderlecht-rgba, $anderlecht-stadium)
+    @include background(teamvar.$anderlecht-rgba, teamvar.$anderlecht-stadium)
 
 .beerschot
-    @include background($beerschot-rgba, $beerschot-stadium)
+    @include background(teamvar.$beerschot-rgba, teamvar.$beerschot-stadium)
 
 .cercle-brugge
-    @include background($cercle-brugge-rgba, $brugge-stadium)
+    @include background(teamvar.$cercle-brugge-rgba, teamvar.$brugge-stadium)
 
 .charleroi
-    @include background($charleroi-rgba, $charleroi-stadium)
+    @include background(teamvar.$charleroi-rgba, teamvar.$charleroi-stadium)
 
 .club-brugge
-    @include background($club-brugge-rgba, $brugge-stadium)
+    @include background(teamvar.$club-brugge-rgba, teamvar.$brugge-stadium)
 
 .eupen
-    @include background($eupen-rgba, $eupen-stadium)
+    @include background(teamvar.$eupen-rgba, teamvar.$eupen-stadium)
 
 .genk
-    @include background($genk-rgba, $genk-stadium)
+    @include background(teamvar.$genk-rgba, teamvar.$genk-stadium)
 
 .gent
-    @include background($gent-rgba, $gent-stadium)
+    @include background(teamvar.$gent-rgba, teamvar.$gent-stadium)
 
 .kortrijk
-    @include background($kortrijk-rgba, $kortrijk-stadium)
+    @include background(teamvar.$kortrijk-rgba, teamvar.$kortrijk-stadium)
 
 .mechelen
-    @include background($mechelen-rgba, $mechelen-stadium)
+    @include background(teamvar.$mechelen-rgba, teamvar.$mechelen-stadium)
 
 .ohl
-    @include background($oud-heverlee-leuven-rgba, $oud-heverlee-leuven-stadium)
+    @include background(teamvar.$oud-heverlee-leuven-rgba, teamvar.$oud-heverlee-leuven-stadium)
 
 .oostende
-    @include background($oostende-rgba, $oostende-stadium)
+    @include background(teamvar.$oostende-rgba, teamvar.$oostende-stadium)
 
 .seraing
-    @include background($seraing-rgba, $seraing-stadium)
+    @include background(teamvar.$seraing-rgba, teamvar.$seraing-stadium)
 
 .standard
-    @include background($standard-de-liege-rgba, $standard-stadium)
+    @include background(teamvar.$standard-de-liege-rgba, teamvar.$standard-stadium)
 
 .stvv
-    @include background($stvv-rgba, $stvv-stadium)
+    @include background(teamvar.$stvv-rgba, teamvar.$stvv-stadium)
 
 .union
-    @include background($union-rgba, $standard-stadium)
+    @include background(teamvar.$union-rgba, teamvar.$standard-stadium)
 
 .zulte-waregem
-    @include background($zulte-waregem-rgba, $zulte-waregem-stadium)
+    @include background(teamvar.$zulte-waregem-rgba, teamvar.$zulte-waregem-stadium)
 
 .right-content
     display: flex
@@ -160,14 +120,3 @@ $zulte-waregem-stadium: '/assets/images/stadiums/zulte-waregem.jpg'
 
 .loss
     color: red
-
-      
-// .stadium
-//     display: block
-//     width: 40%
-//     margin-left: auto
-//     margin-right: auto
-//     padding: 1rem
-//     border-width: 5px
-//     border-style: solid
-//     border-image: linear-gradient(to bottom, red, rgba(0,0,0,0)) 1 100%

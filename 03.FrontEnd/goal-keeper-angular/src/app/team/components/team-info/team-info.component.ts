@@ -20,13 +20,9 @@ export class TeamInfoComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // console.log(this.team);
   }
 
   getTeamBackground(teamName: string) {
-    // console.log(teamName.replace(/\s+/g, ''));
-    // console.log(teamName === 'Royal Antwerp FC');
-    console.log(teamName);
     // return {
     //   btn: true,
     //   'btn-primary': true,

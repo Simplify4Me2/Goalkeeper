@@ -1,6 +1,5 @@
 <div *ngIf="team" class="team" >
     <h1 class="team-name" >{{ team.name }}</h1>
-    <!-- <div class="team-background" > -->
         <div [ngClass]="getTeamBackground(team.name)" >
         <img class="logo" src='{{ "assets/images/logos/" + team.name + ".svg" }}' />
         <div class="right-content" >
@@ -15,9 +14,4 @@
             <span class="stadium-name">{{ mockStadiumName }}</span>
         </div>
     </div>
-    <!-- <img class="stadium" src="https://www.rsca.be/sites/rsca/files/2019-10/Lotto%20Park_0.jpg" /> -->
-    <!-- <div class="team-name">
-    </div> -->
-    <!-- <img src="https://resources.ohleuven.com/oud-heverlee-leuven/photo/2018/08/29/516f4860-40c9-4fb6-b4ca-de06803daf3e/775209246-014.jpg" />
-    <img src="https://www.rsca.be/sites/rsca/files/2019-10/Lotto%20Park_0.jpg" /> -->
 </div>
