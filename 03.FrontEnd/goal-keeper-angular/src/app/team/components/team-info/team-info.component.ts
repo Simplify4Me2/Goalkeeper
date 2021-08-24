@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { Team } from '../../models/team.model';
+import { Team } from '../../models';
 
 @Component({
   selector: 'app-team-info',
@@ -14,8 +14,6 @@ import { Team } from '../../models/team.model';
 })
 export class TeamInfoComponent implements OnInit {
   @Input() team: Team;
-
-  mockStadiumName: string = 'Bosuilstadion';
 
   constructor() {}
 
