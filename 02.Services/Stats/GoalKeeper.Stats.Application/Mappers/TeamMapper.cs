@@ -12,6 +12,7 @@ namespace GoalKeeper.Stats.Application.Mappers
             {
                 Id = team.Id,
                 Name = team.Name,
+                StadiumName = team.Stadium.Name,
                 Players = team.Players.MapOut()
             };
         }

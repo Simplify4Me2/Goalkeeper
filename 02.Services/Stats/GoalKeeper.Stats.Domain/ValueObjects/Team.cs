@@ -10,12 +10,13 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
 
         public List<Player> Players { get; private set; } = new List<Player>();
 
-        //public Stadium Stadium { get; set; }
+        public Stadium Stadium { get; set; }
 
-        public Team(long id, string name, List<Player> players)
+        public Team(long id, string name, Stadium stadium, List<Player> players)
         {
             Id = id;
             Name = name;
+            Stadium = stadium;
             Players = players;
         }
     }

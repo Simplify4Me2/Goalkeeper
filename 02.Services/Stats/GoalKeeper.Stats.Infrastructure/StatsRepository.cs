@@ -48,14 +48,16 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<Team> GetTeamByName(string name, CancellationToken cancellationToken)
         {
-            string sql = $"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
-                $"FROM [Stats].[Players] " +
-                    $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
+            string sql = $"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position], [Stadiums].[Id], [Stadiums].[Name] " +
+                $"FROM [Stats].[Teams] " +
+                    $"INNER JOIN [Stats].[Players] ON [Teams].[Id] = [Players].[TeamId] " +
+                    $"INNER JOIN [Stats].[Stadiums] ON [Teams].[StadiumId] = [Stadiums].[Id] " +
                 $"WHERE [Teams].[Name] LIKE '%{name}%'";
 
-            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, PlayerDataModel, TeamDataModel>(sql, (team, player) =>
+            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, PlayerDataModel, StadiumDataModel, TeamDataModel>(sql, (team, player, stadium) =>
             {
                 team.Players.Add(player);
+                team.Stadium = stadium;
                 return team;
             }, cancellationToken);
 

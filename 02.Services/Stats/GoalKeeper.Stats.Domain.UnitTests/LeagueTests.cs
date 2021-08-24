@@ -16,9 +16,9 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             // Arrange
             var teams = new List<Team>
             {
-                new Team(1, "Team 1", new List<Player>()),
-                new Team(2, "Team 2", new List<Player>()),
-                new Team(3, "Team 3", new List<Player>())
+                new Team(1, "Team 1", new Stadium(5, "Den Bruinen Dreef"), new List<Player>()),
+                new Team(2, "Team 2", new Stadium(5, "Bosuilstadion"), new List<Player>()),
+                new Team(3, "Team 3", new Stadium(5, "Regenboogstadion"), new List<Player>())
             };
             var matches = new List<Match>();
             var league = new League("CBF", teams, matches);
@@ -32,8 +32,8 @@ namespace GoalKeeper.Stats.Domain.UnitTests
         public void League_Table_MatchLost_ReturnsZeroPoints()
         {
             // Arrange
-            var testTeam = new Team(1, "FC De Kampioenen", new List<Player>());
-            var awayTeam1 = new Team(2, "Away Team 1", new List<Player>());
+            var testTeam = new Team(1, "FC De Kampioenen", new Stadium(5, "Den Bruinen Dreef"), new List<Player>());
+            var awayTeam1 = new Team(2, "Away Team 1", new Stadium(5, "Bosuilstadion"), new List<Player>());
             var teams = new List<Team> { testTeam, awayTeam1 };
             var matches = new List<Match>
             {
@@ -50,8 +50,8 @@ namespace GoalKeeper.Stats.Domain.UnitTests
         public void League_Table_MatchWon_ReturnsThreePoints()
         {
             // Arrange
-            var testTeam = new Team(1, "FC De Kampioenen", new List<Player>());
-            var awayTeam1 = new Team(2, "Away Team 1", new List<Player>());
+            var testTeam = new Team(1, "FC De Kampioenen", new Stadium(5, "Den Bruinen Dreef"), new List<Player>());
+            var awayTeam1 = new Team(2, "Away Team 1", new Stadium(5, "Bosuilstadion"), new List<Player>());
             var teams = new List<Team> { testTeam, awayTeam1 };
             var matches = new List<Match>
             {
@@ -68,8 +68,8 @@ namespace GoalKeeper.Stats.Domain.UnitTests
         public void League_Table_MatchDrawn_ReturnsOnePoints()
         {
             // Arrange
-            var testTeam = new Team(1, "FC De Kampioenen", new List<Player>());
-            var awayTeam1 = new Team(2, "Away Team 1", new List<Player>());
+            var testTeam = new Team(1, "FC De Kampioenen", new Stadium(5, "Den Bruinen Dreef"), new List<Player>());
+            var awayTeam1 = new Team(2, "Away Team 1", new Stadium(5, "Bosuilstadion"), new List<Player>());
             var teams = new List<Team> { testTeam, awayTeam1 };
             var matches = new List<Match>
             {
@@ -86,8 +86,8 @@ namespace GoalKeeper.Stats.Domain.UnitTests
         public void League_Table_MatchDrawnAndMatchWon_ReturnsFourPoints()
         {
             // Arrange
-            var testTeam = new Team(1, "FC De Kampioenen", new List<Player>());
-            var otherTeam = new Team(2, "Away Team 1", new List<Player>());
+            var testTeam = new Team(1, "FC De Kampioenen", new Stadium(5, "Den Bruinen Dreef"), new List<Player>());
+            var otherTeam = new Team(2, "Away Team 1", new Stadium(5, "Bosuilstadion"), new List<Player>());
             var teams = new List<Team> { testTeam, otherTeam };
             var matches = new List<Match>
             {
@@ -105,10 +105,10 @@ namespace GoalKeeper.Stats.Domain.UnitTests
         public void League_Table_ThreeMatches_WinDrawLoss_ReturnsFourPoints()
         {
             // Arrange
-            var testTeam = new Team(1, "FC De Kampioenen", new List<Player>());
-            var awayTeam1 = new Team(2, "Away Team 1", new List<Player>());
-            var awayTeam2 = new Team(3, "Away Team 2", new List<Player>());
-            var awayTeam3 = new Team(4, "Away Team 3", new List<Player>());
+            var testTeam = new Team(1, "FC De Kampioenen", new Stadium(5, "Den Bruinen Dreef"), new List<Player>());
+            var awayTeam1 = new Team(2, "Away Team 1", new Stadium(5, "Bosuilstadion"), new List<Player>());
+            var awayTeam2 = new Team(3, "Away Team 2", new Stadium(5, "Regenboogstadion"), new List<Player>());
+            var awayTeam3 = new Team(4, "Away Team 3", new Stadium(5, "Astridpark"), new List<Player>());
             var teams = new List<Team> { testTeam, awayTeam1, awayTeam2, awayTeam3 };
             var matches = new List<Match>
             {
@@ -127,10 +127,10 @@ namespace GoalKeeper.Stats.Domain.UnitTests
         public void League_Table_OrdersDescendingByPoints()
         {
             // Arrange
-            var team1 = new Team(1, "FC De Kampioenen", new List<Player>());
-            var team2 = new Team(2, "Away Team 1", new List<Player>());
-            var team3 = new Team(3, "Away Team 2", new List<Player>());
-            var team4 = new Team(4, "Away Team 3", new List<Player>());
+            var team1 = new Team(1, "FC De Kampioenen", new Stadium(5, "Den Bruinen Dreef"), new List<Player>());
+            var team2 = new Team(2, "Away Team 1", new Stadium(5, "Bosuilstadion"), new List<Player>());
+            var team3 = new Team(3, "Away Team 2", new Stadium(5, "Regenboogstadion"), new List<Player>());
+            var team4 = new Team(4, "Away Team 3", new Stadium(5, "Astridpark"), new List<Player>());
             var teams = new List<Team> { team1, team2, team3, team4 };
             var matches = new List<Match>
             {
