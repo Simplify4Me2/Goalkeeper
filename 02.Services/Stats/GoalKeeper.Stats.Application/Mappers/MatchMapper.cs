@@ -13,10 +13,10 @@ namespace GoalKeeper.Stats.Application.Mappers
                 Id = match.Id,
                 HomeTeamId = match.HomeTeam.Id,
                 HomeTeamName = match.HomeTeam.Name,
-                HomeTeamScore = match.HomeTeamScore,
+                HomeTeamScore = match.Score.Home,
                 AwayTeamId = match.AwayTeam.Id,
                 AwayTeamName = match.AwayTeam.Name,
-                AwayTeamScore = match.AwayTeamScore,
+                AwayTeamScore = match.Score.Away,
                 Date = match.Date
             };
         }

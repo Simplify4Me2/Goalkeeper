@@ -77,7 +77,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.HomeTeamScore.Equals(homeTeamScore)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.Score.Home.Equals(homeTeamScore)), CancellationToken.None), Times.Once);
         }
 
         [Fact]
@@ -113,7 +113,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
 
             // Assert
             response.Should().BeTrue();
-            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.AwayTeamScore.Equals(awayTeamScore)), CancellationToken.None), Times.Once);
+            _matchRepository.Verify(x => x.Save(It.Is<Domain.ValueObjects.Match>(match => match.Score.Away.Equals(awayTeamScore)), CancellationToken.None), Times.Once);
         }
 
         [Fact]

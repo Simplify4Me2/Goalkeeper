@@ -46,7 +46,7 @@ namespace GoalKeeper.Stats.Infrastructure
             string sql = "INSERT INTO [Stats].[Matches] " +
                 "([HomeTeamId] ,[HomeTeamScore] ,[AwayTeamId] ,[AwayTeamScore] ,[Matchday], [DateUtc] ,[CreatedUtc] ,[CreatedBy] ,[ModifiedUtc] ,[ModifiedBy]) " +
                 "VALUES " +
-                    $"({match.HomeTeam.Id}, {match.HomeTeamScore}, {match.AwayTeam.Id}, {match.AwayTeamScore}, {match.Matchday}, '{match.Date.ToString("yyyy-mm-dd")}', GETDATE(), 'TODO', GETDATE(), 'TODO')";
+                    $"({match.HomeTeam.Id}, {match.Score.Home}, {match.AwayTeam.Id}, {match.Score.Away}, {match.Matchday}, '{match.Date.ToString("yyyy-mm-dd")}', GETDATE(), 'TODO', GETDATE(), 'TODO')";
 
             var sqlresult = await _dbConnection.ExecuteAsync(sql, cancellationToken);
 

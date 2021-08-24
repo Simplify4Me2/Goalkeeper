@@ -39,11 +39,11 @@ namespace GoalKeeper.Stats.Domain.Entities
 
         private int DeterminePoints(Team team, Match match)
         {
-            if (match.HomeTeamScore == match.AwayTeamScore)
+            if (match.Score.Home == match.Score.Away)
                 return _pointsForDraw;
-            if (team.Id == match.HomeTeam.Id && match.HomeTeamScore > match.AwayTeamScore)
+            if (team.Id == match.HomeTeam.Id && match.Score.Home > match.Score.Away)
                 return _pointsForWin;
-            if (team.Id == match.AwayTeam.Id && match.HomeTeamScore < match.AwayTeamScore)
+            if (team.Id == match.AwayTeam.Id && match.Score.Home < match.Score.Away)
                 return _pointsForWin;
             return _pointsForLoss;
         }

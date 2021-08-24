@@ -26,7 +26,7 @@ namespace GoalKeeper.Stats.Application.CommandHandlers
             var homeTeam = await _statsRepository.GetTeamByName(command.HomeTeamName, cancellationToken);
             var awayTeam = await _statsRepository.GetTeamByName(command.AwayTeamName, cancellationToken);
 
-            var match = new Match(0, homeTeam, command.HomeTeamScore, awayTeam, command.AwayTeamScore, command.Date, command.Matchday);
+            var match = new Match(0, homeTeam, awayTeam, new Score(command.HomeTeamScore, command.AwayTeamScore), command.Date, command.Matchday);
 
             return await _matchRepository.Save(match, cancellationToken);
         }
