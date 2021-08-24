@@ -12,6 +12,7 @@ Object {
     "id": 3,
     "name": "FC De Kampioenen",
     "players": Array [],
+    "stadiumName": "DDT Ok Cars",
   },
 }
 `;

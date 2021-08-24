@@ -11,7 +11,7 @@ describe('TeamReducer', () => {
     });
 
     it('getTeamSuccess action should populate the state with a team', () => {
-        const team: Team = { id: 3, name: 'FC De Kampioenen', players: [] };
+        const team: Team = { id: 3, name: 'FC De Kampioenen', stadiumName: 'DDT Ok Cars',  players: [] };
 
         const result = teamReducer(undefined, getTeamSuccess({ team }));
 

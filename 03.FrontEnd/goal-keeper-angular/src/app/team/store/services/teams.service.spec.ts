@@ -21,6 +21,7 @@ describe('TeamsService', () => {
             data: {
                 id: 3,
                 name: 'FC De Kampioenen',
+                stadiumName: 'DDT Ok Cars',
                 players: []
             },
             messages: []
