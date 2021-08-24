@@ -25,14 +25,16 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<Team> GetTeamById(long id, CancellationToken cancellationToken)
         {
-            string sql = $"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] " +
-                $"FROM [Stats].[Players] " +
-                    $"INNER JOIN [Stats].[Teams] ON [Teams].[Id] = [Players].[TeamId] " +
+            string sql = $"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position], [Stadiums].[Id], [Stadiums].[Name] " +
+                $"FROM [Stats].[Teams] " +
+                    $"INNER JOIN [Stats].[Players] ON [Teams].[Id] = [Players].[TeamId] " +
+                    $"INNER JOIN [Stats].[Stadiums] ON [Teams].[StadiumId] = [Stadiums].[Id] " +
                 $"WHERE [Teams].[Id] = {id}";
 
-            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, PlayerDataModel, TeamDataModel>(sql, (team, player) =>
+            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, PlayerDataModel, StadiumDataModel, TeamDataModel>(sql, (team, player, stadium) =>
             {
                 team.Players.Add(player);
+                team.Stadium = stadium;
                 return team;
             }, cancellationToken);
 
@@ -73,13 +75,20 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<IEnumerable<Team>> GetTeams(CancellationToken cancellationToken)
         {
-            string sql = "SELECT [Teams].[Id], [Teams].[Name] FROM [Stats].[Teams]" +
-                "JOIN [Stats].[SeasonTeams] ON [Teams].[Id] = [SeasonTeams].[TeamId] " +
-                "JOIN [Stats].[Seasons] ON [SeasonTeams].[SeasonId] = [Seasons].[Id] " +
-                    "WHERE GETDATE() BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
+            string sql = "SELECT [Teams].[Id], [Teams].[Name], [Stadiums].[Id], [Stadiums].[Name] " +
+                "FROM [Stats].[Teams] " +
+                    "JOIN [Stats].[SeasonTeams] ON [Teams].[Id] = [SeasonTeams].[TeamId] " +
+                    "JOIN [Stats].[Seasons] ON [SeasonTeams].[SeasonId] = [Seasons].[Id] " +
+                    "JOIN [Stats].[Stadiums] ON [Teams].[StadiumId] = [Stadiums].[Id] " +
+                "WHERE GETDATE() BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
 
-            var result = await _dbConnection.QueryAsync<TeamDataModel>(new CommandDefinition(sql, cancellationToken: cancellationToken));
-            return TeamDataModel.MapOut(result); 
+            var sqlResult = await _dbConnection.QueryAsync<TeamDataModel, StadiumDataModel, TeamDataModel>(sql, (team, stadium) => 
+            { 
+                team.Stadium = stadium; 
+                return team; 
+            }, cancellationToken);
+
+            return TeamDataModel.MapOut(sqlResult);
         }
 
         public async Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
