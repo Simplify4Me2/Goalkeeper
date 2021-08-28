@@ -6,10 +6,10 @@
             <div></div>
             <div [ngClass]="getTeamFormClass(team.name)" >
                 <span class="form-span">Form guide:</span>
-                <span class="form-streak win">W</span>
-                <span class="form-streak draw">D</span>
-                <span class="form-streak win">W</span>
-                <span class="form-streak loss">L</span>
+                <span class="form-streak win">{{ form.fourMatchesAgo }}</span>
+                <span class="form-streak draw">{{ form.threeMatchesAgo }}</span>
+                <span class="form-streak win">{{ form.twoMatchesAgo }}</span>
+                <span class="form-streak loss">{{ form.previousMatch }}</span>
             </div>
             <span class="stadium-name">{{ team.stadiumName }}</span>
         </div>

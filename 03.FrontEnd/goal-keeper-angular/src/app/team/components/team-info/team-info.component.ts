@@ -17,6 +17,13 @@ export class TeamInfoComponent implements OnInit {
 
   mockStadiumName: string = 'Bosuilstadion';
 
+  form: Form = {
+    previousMatch: 'L',
+    twoMatchesAgo: 'W',
+    threeMatchesAgo: 'D',
+    fourMatchesAgo: 'W'
+  };
+
   constructor() {}
 
   ngOnInit(): void {
@@ -79,4 +86,11 @@ export class TeamInfoComponent implements OnInit {
       'zulte-waregem': teamName === 'SV Zulte Waregem'
     };
   }
+}
+
+interface Form {
+  previousMatch: string;
+  twoMatchesAgo: string;
+  threeMatchesAgo: string;
+  fourMatchesAgo: string;
 }
