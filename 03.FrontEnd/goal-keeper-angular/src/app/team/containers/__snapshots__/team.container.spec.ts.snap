@@ -14,27 +14,20 @@ exports[`Team Container should compile 1`] = `
     <nav
       class="nav-links"
     >
-      <a
-        href="/"
-        routerlink="fixtures"
-        routerlinkactive="active-link"
-      >
-        Fixtures
-      </a>
-      <a
-        href="/"
+      <span
         routerlink="squad"
         routerlinkactive="active-link"
+        tabindex="0"
       >
-        Squad
-      </a>
-      <a
-        href="/"
+         Squad 
+      </span>
+      <span
         routerlink="stats"
         routerlinkactive="active-link"
+        tabindex="0"
       >
-        Stats
-      </a>
+         Results 
+      </span>
     </nav>
   </div><router-outlet />
 </app-team-container>
