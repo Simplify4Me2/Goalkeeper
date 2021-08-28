@@ -31,59 +31,59 @@
     justify-content: space-between
     align-items: center
 
-.antwerp
-    @include background(teamvar.$antwerp-rgba, teamvar.$antwerp-stadium)
+    &.antwerp
+        @include background(teamvar.$antwerp-primary-rgba, teamvar.$antwerp-stadium)
 
-.anderlecht
-    @include background(teamvar.$anderlecht-rgba, teamvar.$anderlecht-stadium)
+    &.anderlecht
+        @include background(teamvar.$anderlecht-primary-rgba, teamvar.$anderlecht-stadium)
 
-.beerschot
-    @include background(teamvar.$beerschot-rgba, teamvar.$beerschot-stadium)
+    &.beerschot
+        @include background(teamvar.$beerschot-primary-rgba, teamvar.$beerschot-stadium)
 
-.cercle-brugge
-    @include background(teamvar.$cercle-brugge-rgba, teamvar.$brugge-stadium)
+    &.cercle-brugge
+        @include background(teamvar.$cercle-brugge-primary-rgba, teamvar.$brugge-stadium)
 
-.charleroi
-    @include background(teamvar.$charleroi-rgba, teamvar.$charleroi-stadium)
+    &.charleroi
+        @include background(teamvar.$charleroi-primary-rgba, teamvar.$charleroi-stadium)
 
-.club-brugge
-    @include background(teamvar.$club-brugge-rgba, teamvar.$brugge-stadium)
+    &.club-brugge
+        @include background(teamvar.$club-brugge-primary-rgba, teamvar.$brugge-stadium)
 
-.eupen
-    @include background(teamvar.$eupen-rgba, teamvar.$eupen-stadium)
+    &.eupen
+        @include background(teamvar.$eupen-primary-rgba, teamvar.$eupen-stadium)
 
-.genk
-    @include background(teamvar.$genk-rgba, teamvar.$genk-stadium)
+    &.genk
+        @include background(teamvar.$genk-primary-rgba, teamvar.$genk-stadium)
 
-.gent
-    @include background(teamvar.$gent-rgba, teamvar.$gent-stadium)
+    &.gent
+        @include background(teamvar.$gent-primary-rgba, teamvar.$gent-stadium)
 
-.kortrijk
-    @include background(teamvar.$kortrijk-rgba, teamvar.$kortrijk-stadium)
+    &.kortrijk
+        @include background(teamvar.$kortrijk-primary-rgba, teamvar.$kortrijk-stadium)
 
-.mechelen
-    @include background(teamvar.$mechelen-rgba, teamvar.$mechelen-stadium)
+    &.mechelen
+        @include background(teamvar.$mechelen-primary-rgba, teamvar.$mechelen-stadium)
 
-.ohl
-    @include background(teamvar.$oud-heverlee-leuven-rgba, teamvar.$oud-heverlee-leuven-stadium)
+    &.ohl
+        @include background(teamvar.$oud-heverlee-leuven-primary-rgba, teamvar.$oud-heverlee-leuven-stadium)
 
-.oostende
-    @include background(teamvar.$oostende-rgba, teamvar.$oostende-stadium)
+    &.oostende
+        @include background(teamvar.$oostende-primary-rgba, teamvar.$oostende-stadium)
 
-.seraing
-    @include background(teamvar.$seraing-rgba, teamvar.$seraing-stadium)
+    &.seraing
+        @include background(teamvar.$seraing-primary-rgba, teamvar.$seraing-stadium)
 
-.standard
-    @include background(teamvar.$standard-de-liege-rgba, teamvar.$standard-stadium)
+    &.standard
+        @include background(teamvar.$standard-de-liege-primary-rgba, teamvar.$standard-stadium)
 
-.stvv
-    @include background(teamvar.$stvv-rgba, teamvar.$stvv-stadium)
+    &.stvv
+        @include background(teamvar.$stvv-primary-rgba, teamvar.$stvv-stadium)
 
-.union
-    @include background(teamvar.$union-rgba, teamvar.$standard-stadium)
+    &.union
+        @include background(teamvar.$union-primary-rgba, teamvar.$union-stadium)
 
-.zulte-waregem
-    @include background(teamvar.$zulte-waregem-rgba, teamvar.$zulte-waregem-stadium)
+    &.zulte-waregem
+        @include background(teamvar.$zulte-waregem-primary-rgba, teamvar.$zulte-waregem-stadium)
 
 .right-content
     display: flex
@@ -97,11 +97,64 @@
     height: 88px
     width: 352px
     background: white
-    border: 2px solid #FF0000
     display: flex
     justify-content: space-between
     align-items: center
     padding: 0rem 1rem
+
+    &.antwerp
+        border: 2px solid teamvar.$antwerp-secondary-rgba
+
+    &.anderlecht
+        border: 2px solid teamvar.$anderlecht-secondary-rgba
+
+    &.beerschot
+        border: 2px solid teamvar.$beerschot-secondary-rgba
+
+    &.cercle-brugge
+        border: 2px solid teamvar.$cercle-brugge-secondary-rgba
+
+    &.charleroi
+        border: 2px solid teamvar.$charleroi-secondary-rgba
+
+    &.club-brugge
+        border: 2px solid teamvar.$club-brugge-secondary-rgba
+
+    &.eupen
+        border: 2px solid teamvar.$eupen-secondary-rgba
+
+    &.genk
+        border: 2px solid teamvar.$genk-secondary-rgba
+
+    &.gent
+        border: 2px solid teamvar.$gent-secondary-rgba
+
+    &.kortrijk
+        border: 2px solid teamvar.$kortrijk-secondary-rgba
+
+    &.mechelen
+        border: 2px solid teamvar.$mechelen-secondary-rgba
+
+    &.ohl
+        border: 2px solid teamvar.$oud-heverlee-leuven-secondary-rgba
+
+    &.oostende
+        border: 2px solid teamvar.$oostende-secondary-rgba
+
+    &.seraing
+        border: 2px solid teamvar.$seraing-secondary-rgba
+
+    &.standard
+        border: 2px solid teamvar.$standard-de-liege-secondary-rgba
+
+    &.stvv
+        border: 2px solid teamvar.$stvv-secondary-rgba
+
+    &.union
+        border: 2px solid teamvar.$union-secondary-rgba
+
+    &.zulte-waregem
+        border: 2px solid teamvar.$zulte-waregem-secondary-rgba
 
 .stadium-name
     color: white

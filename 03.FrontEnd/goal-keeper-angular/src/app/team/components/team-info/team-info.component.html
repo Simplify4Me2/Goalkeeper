@@ -1,10 +1,10 @@
 <div *ngIf="team" class="team" >
     <h1 class="team-name" >{{ team.name }}</h1>
-        <div [ngClass]="getTeamBackground(team.name)" >
+        <div [ngClass]="getTeamBackgroundClass(team.name)" >
         <img class="logo" src='{{ "assets/images/logos/" + team.name + ".svg" }}' />
         <div class="right-content" >
             <div></div>
-            <div class="team-form" >
+            <div [ngClass]="getTeamFormClass(team.name)" >
                 <span class="form-span">Form guide:</span>
                 <span class="form-streak win">W</span>
                 <span class="form-streak draw">D</span>
