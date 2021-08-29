@@ -6,10 +6,9 @@
             <div></div>
             <div [ngClass]="getTeamFormClass(team.name)" >
                 <span class="form-span">Form guide:</span>
-                <span class="form-streak win">{{ form.fourMatchesAgo }}</span>
-                <span class="form-streak draw">{{ form.threeMatchesAgo }}</span>
-                <span class="form-streak win">{{ form.twoMatchesAgo }}</span>
-                <span class="form-streak loss">{{ form.previousMatch }}</span>
+                <ng-container *ngFor="let lastMatchResult of formMock">
+                    <span [ngClass]="getLastMatchResultClass(lastMatchResult)">{{ lastMatchResult }}</span>
+                </ng-container>
             </div>
             <span class="stadium-name">{{ team.stadiumName }}</span>
         </div>

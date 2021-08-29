@@ -4,6 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+import { Match } from 'src/app/shared/models/match.model';
 import { Team } from '../../models/team.model';
 
 @Component({
@@ -15,18 +16,21 @@ import { Team } from '../../models/team.model';
 export class TeamInfoComponent implements OnInit {
   @Input() team: Team;
 
-  mockStadiumName: string = 'Bosuilstadion';
-
-  form: Form = {
-    previousMatch: 'L',
-    twoMatchesAgo: 'W',
-    threeMatchesAgo: 'D',
-    fourMatchesAgo: 'W'
-  };
+  formMock: string[] = [
+    'W', 'D', 'W', 'L'
+  ]
 
   constructor() {}
 
   ngOnInit(): void {
+  }
+
+  getLastMatchResultClass(lastMatchResult: string) {
+    return {
+      'form-streak': true,
+      'win': lastMatchResult === 'W',
+      'loss': lastMatchResult === 'L'
+    };
   }
 
   getTeamBackgroundClass(teamName: string) {
@@ -86,11 +90,4 @@ export class TeamInfoComponent implements OnInit {
       'zulte-waregem': teamName === 'SV Zulte Waregem'
     };
   }
-}
-
-interface Form {
-  previousMatch: string;
-  twoMatchesAgo: string;
-  threeMatchesAgo: string;
-  fourMatchesAgo: string;
 }
