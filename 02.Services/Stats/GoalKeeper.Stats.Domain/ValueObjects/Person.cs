@@ -4,14 +4,16 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
 {
     public abstract class Person
     {
-        public Person(string firstname, string lastName, DateTime birthdate, DateTime today)
+        public Person(long id, string firstname, string lastName, DateTime birthdate, DateTime today)
         {
+            Id = id;
             Firstname = firstname;
             Lastname = lastName;
             Birthdate = birthdate;
             _today = today;
         }
 
+        public long Id { get; }
         public string Firstname { get; }
         public string Lastname { get; }
         private DateTime Birthdate { get; }

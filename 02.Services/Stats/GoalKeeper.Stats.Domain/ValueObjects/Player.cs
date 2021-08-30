@@ -4,16 +4,13 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
 {
     public class Player : Person
     {
-        public long Id { get; }
-
         public int ShirtNumber { get; }
 
         public string Position { get; }
 
         public Player(long id, string firstName, string lastName, DateTime birthdate, DateTime today, int shirtNumber, string position)
-            : base(firstName, lastName, birthdate, today)
+            : base(id, firstName, lastName, birthdate, today)
         {
-            Id = id;
             ShirtNumber = shirtNumber;
             Position = position;
         }
