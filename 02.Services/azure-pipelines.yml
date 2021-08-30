@@ -12,6 +12,7 @@ steps:
   - task: UseDotNet@2
     inputs:
       version: '6.0.x'
+      includePreviewVersions: true
 
   - template: ./dotnet-build.yml
     parameters:
