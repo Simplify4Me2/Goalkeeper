@@ -5,4 +5,5 @@ export interface Team {
     name: string;
     stadiumName: string;
     players: Player[];
+    // form: string[];
 }

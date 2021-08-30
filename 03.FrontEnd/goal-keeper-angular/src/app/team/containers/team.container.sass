@@ -1,46 +1,52 @@
 .nav
     display: flex
     justify-content: center
+    margin-bottom: 10px
 
-.nav a
-    padding: 0.2rem 1.5rem
-    text-decoration: none
-    border-radius: 150px
-    color: white
+// .nav a
+//     padding: 0.2rem 1.5rem
+//     text-decoration: none
+//     border-radius: 150px
+//     color: white
 
-    // + a
-    //     border-left: 2px solid red
+//     // + a
+//     //     border-left: 2px solid red
 
-    &:hover
-        background-color: lightgray
-        color: black
-        transform: scale(1.2)
-        animation: spring 300ms ease-out
+//     &:hover
+//         background-color: lightgray
+//         color: black
+//         transform: scale(1.2)
+//         animation: spring 300ms ease-out
 
 .nav-links
     display: flex
-    justify-content: space-between
-    width: 25%
-    // border: 2px solid red
-    min-width: 17rem
-    border-radius: 150px
-    padding: 0.5rem 1.5rem
-    background-color: gray
+    width: 415px
+    border: 2px solid #000000
+    border-radius: 6px
+
+.nav-links span
+    width: 100%
+    align-self: center
+    text-align: center
+    padding: 5px 0px
+    cursor: pointer
 
 .active-link
-    background-color: lightgray
-    // color: black
+    color: white
+    background: #C4C4C4
+    border-radius: 0px 3px 3px 0px
 
-@keyframes spring 
-  15% 
-    -webkit-transform-origin: center center
-    -webkit-transform: scale(1.2, 1.1)
-  40% 
-    -webkit-transform-origin: center center
-    -webkit-transform: scale(0.95, 0.95)
-  75% 
-    -webkit-transform-origin: center center
-    -webkit-transform: scale(1.05, 1)
-  100% 
-    -webkit-transform-origin: center center
-    -webkit-transform: scale(1.2, 1.2)
+
+// @keyframes spring 
+//   15% 
+//     -webkit-transform-origin: center center
+//     -webkit-transform: scale(1.2, 1.1)
+//   40% 
+//     -webkit-transform-origin: center center
+//     -webkit-transform: scale(0.95, 0.95)
+//   75% 
+//     -webkit-transform-origin: center center
+//     -webkit-transform: scale(1.05, 1)
+//   100% 
+//     -webkit-transform-origin: center center
+//     -webkit-transform: scale(1.2, 1.2)
