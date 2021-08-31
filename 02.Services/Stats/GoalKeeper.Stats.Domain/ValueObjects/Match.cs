@@ -2,7 +2,7 @@
 
 namespace GoalKeeper.Stats.Domain.ValueObjects
 {
-    public class Match
+    public abstract class Match
     {
         public long Id { get; }
 
@@ -10,19 +10,21 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
 
         public Team AwayTeam { get; }
 
-        public Score Score { get; }
+        //public Score Score { get; }
 
         public int Matchday { get; }
 
-        public DateTime Date { get; }
+        //public DateTime Date { get; }
 
-        public Match(long id, Team homeTeam, Team awayTeam, Score score, DateTime date, int matchday)
+        //public bool IsPlayed { get; }
+
+        public Match(long id, Team homeTeam, Team awayTeam, int matchday)
         {
             Id = id;
             HomeTeam = homeTeam;
-            Score = score;
+            //Score = score;
             AwayTeam = awayTeam;
-            Date = date;
+            //Date = date;
             Matchday = matchday;
         }
     }

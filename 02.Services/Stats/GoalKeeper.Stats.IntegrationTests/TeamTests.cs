@@ -1,6 +1,8 @@
 using GoalKeeper.Stats.Application.IO.Services;
 using Moq;
 using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace GoalKeeper.Stats.IntegrationTests
@@ -21,9 +23,9 @@ namespace GoalKeeper.Stats.IntegrationTests
         }
 
         [Fact]
-        public void Test1()
+        public async Task Test1()
         {
-
+            await _service.GetTeam("Test", CancellationToken.None);
         }
     }
 }

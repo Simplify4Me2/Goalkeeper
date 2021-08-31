@@ -12,9 +12,9 @@ namespace GoalKeeper.Stats.Domain.Entities
 
         public string Name { get; }
         private List<Team> Teams { get; }
-        private List<Match> Matches { get; }
+        private List<PlayedMatch> Matches { get; }
 
-        public League(string name, List<Team> teams, List<Match> matches)
+        public League(string name, List<Team> teams, List<PlayedMatch> matches)
         {
             Name = name;
             Teams = teams;
@@ -37,13 +37,13 @@ namespace GoalKeeper.Stats.Domain.Entities
             }
         }
 
-        private int DeterminePoints(Team team, Match match)
+        private int DeterminePoints(Team team, PlayedMatch match)
         {
-            if (match.Score.Home == match.Score.Away)
+            if (match.FinalScore.Home == match.FinalScore.Away)
                 return _pointsForDraw;
-            if (team.Id == match.HomeTeam.Id && match.Score.Home > match.Score.Away)
+            if (team.Id == match.HomeTeam.Id && match.FinalScore.Home > match.FinalScore.Away)
                 return _pointsForWin;
-            if (team.Id == match.AwayTeam.Id && match.Score.Home < match.Score.Away)
+            if (team.Id == match.AwayTeam.Id && match.FinalScore.Home < match.FinalScore.Away)
                 return _pointsForWin;
             return _pointsForLoss;
         }

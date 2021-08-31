@@ -21,10 +21,10 @@ namespace GoalKeeper.Stats.Infrastructure.DataModels
 
         public DateTime Date { get; set; }
 
-        public static Match MapOut(MatchDataModel match)
-        => new Match(match.Id, TeamDataModel.MapOut(match.HomeTeam), TeamDataModel.MapOut(match.AwayTeam), new Score(match.HomeTeamScore, match.AwayTeamScore), match.Date, match.Matchday);
+        public static PlayedMatch MapOut(MatchDataModel match)
+        => new PlayedMatch(match.Id, TeamDataModel.MapOut(match.HomeTeam), TeamDataModel.MapOut(match.AwayTeam), new Score(match.HomeTeamScore, match.AwayTeamScore), match.Date, match.Matchday);
 
-        public static IEnumerable<Match> MapOut(IEnumerable<MatchDataModel> matches)
+        public static IEnumerable<PlayedMatch> MapOut(IEnumerable<MatchDataModel> matches)
         => matches.Select(match => MapOut(match));
     }
 }

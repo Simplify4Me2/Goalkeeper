@@ -6,8 +6,8 @@ namespace GoalKeeper.Stats.Application.Ports
 {
     public interface IMatchRepository
     {
-        Task<IEnumerable<Domain.ValueObjects.Match>> Get(CancellationToken cancellationToken);
+        Task<IEnumerable<Domain.ValueObjects.PlayedMatch>> Get(CancellationToken cancellationToken);
 
-        Task<bool> Save(Domain.ValueObjects.Match match, CancellationToken cancellationToken);
+        Task<bool> Save(Domain.ValueObjects.PlayedMatch match, CancellationToken cancellationToken);
     }
 }

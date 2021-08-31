@@ -18,7 +18,7 @@ namespace GoalKeeper.Stats.Infrastructure
             _dbConnection = dbConnection;
         }
 
-        public async Task<IEnumerable<Match>> Get(CancellationToken cancellationToken)
+        public async Task<IEnumerable<PlayedMatch>> Get(CancellationToken cancellationToken)
         {
             string sql = "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
                                 "[homeTeam].[Id], [homeTeam].[Name], [homeStadium].[Id], [homeStadium].[Name], " +
@@ -41,12 +41,12 @@ namespace GoalKeeper.Stats.Infrastructure
             return MatchDataModel.MapOut(sqlResult);
         }
 
-        public async Task<bool> Save(Match match, CancellationToken cancellationToken)
+        public async Task<bool> Save(PlayedMatch match, CancellationToken cancellationToken)
         {
             string sql = "INSERT INTO [Stats].[Matches] " +
                 "([HomeTeamId] ,[HomeTeamScore] ,[AwayTeamId] ,[AwayTeamScore] ,[Matchday], [DateUtc] ,[CreatedUtc] ,[CreatedBy] ,[ModifiedUtc] ,[ModifiedBy]) " +
                 "VALUES " +
-                    $"({match.HomeTeam.Id}, {match.Score.Home}, {match.AwayTeam.Id}, {match.Score.Away}, {match.Matchday}, '{match.Date.ToString("yyyy-mm-dd")}', GETDATE(), 'TODO', GETDATE(), 'TODO')";
+                    $"({match.HomeTeam.Id}, {match.FinalScore.Home}, {match.AwayTeam.Id}, {match.FinalScore.Away}, {match.Matchday}, '{match.Date.ToString("yyyy-mm-dd")}', GETDATE(), 'TODO', GETDATE(), 'TODO')";
 
             var sqlresult = await _dbConnection.ExecuteAsync(sql, cancellationToken);
 

@@ -4,7 +4,9 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
 {
     public class Matchday
     {
-        public Matchday(int day, IEnumerable<Match> matches)
+        private const int _matches = 34;
+
+        public Matchday(int day, IEnumerable<PlayedMatch> matches)
         {
             Day = day;
             Matches = matches;
@@ -12,6 +14,10 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
 
         public int Day { get; }
 
-        public IEnumerable<Match> Matches { get; }
+        public IEnumerable<PlayedMatch> Matches { get; }
+
+        public bool IsOpeningMatchday => Day == 1;
+
+        public bool IsClosingMatchday => Day == _matches;
     }
 }
