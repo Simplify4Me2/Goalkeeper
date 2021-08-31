@@ -30,4 +30,8 @@ export class HomeComponent implements OnInit {
   selectMatchday(matchday: number) {
     this.store.dispatch(fromActions.getMatchday({ day: matchday }));
   }
+
+  selectUpcomingMatchday(matchday: number) {
+    
+  }
 }

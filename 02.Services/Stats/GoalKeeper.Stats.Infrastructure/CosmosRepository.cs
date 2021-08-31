@@ -17,7 +17,7 @@ namespace GoalKeeper.Stats.Infrastructure
             _container = dbClient.GetContainer(databaseName, containerName);
         }
 
-        public Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
+        public Task<IEnumerable<PlayedMatch>> GetMatches(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

@@ -18,7 +18,7 @@ namespace GoalKeeper.Stats.Infrastructure
             _dbConnection = dbConnection;
         }
 
-        public async Task<IEnumerable<PlayedMatch>> Get(CancellationToken cancellationToken)
+        public async Task<IEnumerable<PlayedMatch>> GetResults(CancellationToken cancellationToken)
         {
             string sql = "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
                                 "[homeTeam].[Id], [homeTeam].[Name], [homeStadium].[Id], [homeStadium].[Name], " +
@@ -39,6 +39,11 @@ namespace GoalKeeper.Stats.Infrastructure
                 return match;
             }, cancellationToken);
             return MatchDataModel.MapOut(sqlResult);
+        }
+
+        public Task<IEnumerable<Fixture>> GetFixtures(int matchday, CancellationToken cancellationToken)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task<bool> Save(PlayedMatch match, CancellationToken cancellationToken)

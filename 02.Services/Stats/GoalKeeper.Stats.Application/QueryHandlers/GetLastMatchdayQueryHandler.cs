@@ -21,13 +21,13 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<MatchdayDTO> Handle(GetLastMatchdayQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.Get(cancellationToken);
+            var data = await _repository.GetResults(cancellationToken);
 
-            var matchesFromLastMatchday = from match in data
+            var matchesFromLastMatchday = (from match in data
                       where match.Matchday == data.Max(x => x.Matchday)
-                      select match;
+                      select match).ToList();
 
-            var matchday = new Matchday(matchesFromLastMatchday.Select(match => match.Matchday).First(), matchesFromLastMatchday);
+            var matchday = new MatchdayResults(matchesFromLastMatchday.Select(match => match.Matchday).First(), matchesFromLastMatchday);
 
             return matchday.MapOut();
         }

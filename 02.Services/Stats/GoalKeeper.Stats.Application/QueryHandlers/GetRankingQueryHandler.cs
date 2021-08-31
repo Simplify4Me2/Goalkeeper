@@ -24,7 +24,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
         public async Task<RankingDTO> Handle(GetRankingQuery request, CancellationToken cancellationToken)
         {
             var teams = await _statsRepository.GetTeams(cancellationToken);
-            var matches = await _matchRepository.Get(cancellationToken);
+            var matches = await _matchRepository.GetResults(cancellationToken);
 
             League league = new League("Jupiler Pro League", teams.ToList(), matches.ToList());
 

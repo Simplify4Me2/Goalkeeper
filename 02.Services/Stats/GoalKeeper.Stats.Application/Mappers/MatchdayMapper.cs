@@ -6,19 +6,26 @@ namespace GoalKeeper.Stats.Application.Mappers
 {
     public static class MatchdayMapper
     {
-        public static MatchdayDTO MapOut(this Domain.ValueObjects.Matchday matchday)
+        public static MatchdayDTO MapOut(this Domain.ValueObjects.MatchdayResults matchday)
         {
             return new MatchdayDTO
             {
                 Day = matchday.Day,
-                // Or does this "logic" belong in the Domain?? => Fo sho!!! TODO !!!
                 IsOpeningMatchday = matchday.IsOpeningMatchday,
                 IsClosingMatchday = matchday.IsClosingMatchday,
                 Matches = matchday.Matches.MapOut()
             };
         }
 
-        public static IEnumerable<MatchdayDTO> MapOut(this IEnumerable<Domain.ValueObjects.Matchday> matchdays)
-            => matchdays.Select(matchday => MapOut(matchday));
+        public static UpcomingMatchdayDTO MapOut(this Domain.ValueObjects.UpcomingMatchday matchday)
+        {
+            return new UpcomingMatchdayDTO
+            {
+                Day = matchday.Day,
+                IsOpeningMatchday = matchday.IsOpeningMatchday,
+                IsClosingMatchday = matchday.IsClosingMatchday,
+                Matches = matchday.Matches.MapOut()
+            };
+        }
     }
 }

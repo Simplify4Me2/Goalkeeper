@@ -23,10 +23,7 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("")]
-        [ProducesResponseType(typeof(IEnumerable<TeamDTO>), 200)]
-        //[ProducesResponseType(typeof(Exception), 500)]
-        //[ProducesErrorResponseType(typeof(Exception))]
-        //public async Task<Result<IEnumerable<TeamDTO>>> GetTeams()
+        [ProducesResponseType(typeof(Result<IEnumerable<TeamDTO>>), 200)]
         public async Task<IActionResult> GetTeams()
         {
             var query = new GetTeamsQuery();
@@ -46,11 +43,8 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("{name}")]
-        [ProducesResponseType(typeof(TeamDTO), StatusCodes.Status200OK)]
-        //[ProducesResponseType(StatusCodes.Status404NotFound)]
-        //[ProducesResponseType(typeof(TeamNotFoundException), 400)]
-        //[ProducesErrorResponseType(typeof(Exception))]
-        //public async Task<Result<TeamDTO>> GetTeamByName([FromRoute] string name)
+        [ProducesResponseType(typeof(Result<TeamDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetTeamByName([FromRoute] string name)
         {
             try
@@ -60,7 +54,6 @@ namespace GoalKeeper.Stats.WebApi.Controllers
             }
             catch (TeamNotFoundException)
             {
-                //return NotFound($"Team not found: {name}");
                 return NotFound();
             }
         }
