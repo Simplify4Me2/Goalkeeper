@@ -4,5 +4,6 @@ export interface Matchday {
     day: number;
     isOpeningMatchday: boolean;
     isClosingMatchday: boolean;
+    // nextMatchdayIsUpcoming: boolean;
     matches: Match[];
 }

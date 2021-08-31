@@ -19,6 +19,7 @@ export class MatchDayComponent implements OnInit {
   @Input() matchday: Matchday;
 
   @Output() navigateMatchday = new EventEmitter<number>();
+  @Output() navigateUpcomingMatchday = new EventEmitter<number>();
 
   constructor() {}
 
@@ -37,6 +38,10 @@ export class MatchDayComponent implements OnInit {
   }
 
   rightClick() {
-    !this.matchday.isClosingMatchday && this.navigateMatchday.emit(this.matchday.day + 1);
+    const nextMatchdayIsUpcoming = this.matchday.day >= 5;
+    if (!this.matchday.isClosingMatchday && nextMatchdayIsUpcoming)
+      this.navigateUpcomingMatchday.emit(this.matchday.day + 1);
+    else
+      this.navigateMatchday.emit(this.matchday.day + 1);
   }
 }

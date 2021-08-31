@@ -42,3 +42,8 @@ export const getLastMatchdaySuccess = createAction(
 export const getLastMatchdayFail = createAction(
     '[Home/API] Get Last Matchday Failed',
 );
+
+export const getUpcomingMatchday = createAction(
+    '[Home/API] Get Upcoming Matchday',
+    props<{ day: number}>()
+);
