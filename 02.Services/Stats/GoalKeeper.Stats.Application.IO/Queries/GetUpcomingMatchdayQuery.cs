@@ -3,7 +3,7 @@ using MediatR;
 
 namespace GoalKeeper.Stats.Application.IO.Queries
 {
-    public class GetUpcomingMatchdayQuery : IRequest<UpcomingMatchdayDTO>
+    public class GetUpcomingMatchdayQuery : IRequest<MatchdayDTO>
     {
         public int Matchday { get; }
 

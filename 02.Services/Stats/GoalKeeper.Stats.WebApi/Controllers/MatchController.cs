@@ -48,11 +48,11 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("matchday/upcoming/{day}")]
-        [ProducesResponseType(typeof(Result<UpcomingMatchdayDTO>), 200)]
+        [ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
         public async Task<IActionResult> GetUpcomingMatchday([FromRoute] int day)
         {
             var query = new GetUpcomingMatchdayQuery(day);
-            return Ok(new Result<UpcomingMatchdayDTO>(await _mediator.Send(query)));
+            return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
         }
 
         [HttpGet]

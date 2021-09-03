@@ -19,5 +19,7 @@ namespace GoalKeeper.Stats.Domain.Primitives
         public Team AwayTeam { get; }
 
         public int Matchday { get; }
+
+        public abstract bool IsPlayed {  get; }
     }
 }

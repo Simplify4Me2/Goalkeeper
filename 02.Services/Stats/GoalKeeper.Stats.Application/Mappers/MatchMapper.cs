@@ -24,20 +24,21 @@ namespace GoalKeeper.Stats.Application.Mappers
         public static IEnumerable<MatchDTO> MapOut(this IEnumerable<Domain.ValueObjects.PlayedMatch> matches)
             => matches.Select(match => MapOut(match));
 
-        public static FixtureDTO MapOut(this Domain.ValueObjects.Fixture fixture)
+        public static MatchDTO MapOut(this Domain.ValueObjects.Fixture fixture)
         {
-            return new FixtureDTO
+            return new MatchDTO
             {
                 Id = fixture.Id,
                 HomeTeamId = fixture.HomeTeam.Id,
                 HomeTeamName = fixture.HomeTeam.Name,
                 AwayTeamId = fixture.AwayTeam.Id,
                 AwayTeamName = fixture.AwayTeam.Name,
-                Date = fixture.ScheduledDate
+                Date = fixture.ScheduledDate,
+                IsPlayed = fixture.IsPlayed
             };
         }
 
-        public static IEnumerable<FixtureDTO> MapOut(this IEnumerable<Domain.ValueObjects.Fixture> fixtures)
+        public static IEnumerable<MatchDTO> MapOut(this IEnumerable<Domain.ValueObjects.Fixture> fixtures)
             => fixtures.Select(fixture => MapOut(fixture));
     }
 }

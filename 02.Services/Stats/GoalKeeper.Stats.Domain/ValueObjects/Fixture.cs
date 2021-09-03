@@ -11,5 +11,7 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
         {
             ScheduledDate = date;
         }
+
+        public override bool IsPlayed => false;
     }
 }

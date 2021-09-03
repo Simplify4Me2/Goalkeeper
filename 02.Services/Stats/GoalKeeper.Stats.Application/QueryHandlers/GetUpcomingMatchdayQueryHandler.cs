@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GoalKeeper.Stats.Application.QueryHandlers
 {
-    public class GetUpcomingMatchdayQueryHandler : IRequestHandler<GetUpcomingMatchdayQuery, UpcomingMatchdayDTO>
+    public class GetUpcomingMatchdayQueryHandler : IRequestHandler<GetUpcomingMatchdayQuery, MatchdayDTO>
     {
         private readonly IMatchRepository _repository;
 
@@ -19,7 +19,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
             _repository = repository;
         }
 
-        public async Task<UpcomingMatchdayDTO> Handle(GetUpcomingMatchdayQuery request, CancellationToken cancellationToken)
+        public async Task<MatchdayDTO> Handle(GetUpcomingMatchdayQuery request, CancellationToken cancellationToken)
         {
             var data = await _repository.GetFixtures(request.Matchday, cancellationToken);
 

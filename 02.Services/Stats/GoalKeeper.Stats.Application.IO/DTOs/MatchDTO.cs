@@ -19,5 +19,7 @@ namespace GoalKeeper.Stats.Application.IO.DTOs
         public int AwayTeamScore { get; set; }
 
         public DateTime Date { get; set; }
+
+        public bool IsPlayed { get; set; }
     }
 }

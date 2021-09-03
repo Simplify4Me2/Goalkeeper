@@ -17,9 +17,9 @@ namespace GoalKeeper.Stats.Application.Mappers
             };
         }
 
-        public static UpcomingMatchdayDTO MapOut(this Domain.ValueObjects.UpcomingMatchday matchday)
+        public static MatchdayDTO MapOut(this Domain.ValueObjects.UpcomingMatchday matchday)
         {
-            return new UpcomingMatchdayDTO
+            return new MatchdayDTO
             {
                 Day = matchday.Day,
                 IsOpeningMatchday = matchday.IsOpeningMatchday,

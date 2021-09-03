@@ -14,5 +14,7 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
             FinalScore = score;
             Date = date;
         }
+
+        public override bool IsPlayed => true;
     }
 }
