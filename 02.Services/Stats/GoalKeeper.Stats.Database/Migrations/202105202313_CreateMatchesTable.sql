@@ -8,9 +8,9 @@ GO
 CREATE TABLE [Stats].[Matches](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[HomeTeamId] [bigint] NOT NULL,
-	[HomeTeamScore] [int] NOT NULL,
+	[HomeTeamScore] [int] NULL,
 	[AwayTeamId] [bigint] NOT NULL,
-	[AwayTeamScore] [int] NOT NULL,
+	[AwayTeamScore] [int] NULL,
 	[Matchday] [int] NOT NULL,
 	[DateUtc] [datetime2](7) NOT NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
