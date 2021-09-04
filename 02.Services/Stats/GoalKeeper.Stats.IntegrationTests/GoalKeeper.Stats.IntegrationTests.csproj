@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.9" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -22,6 +24,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GoalKeeper.Stats.Application.IO\GoalKeeper.Stats.Application.IO.csproj" />
+    <ProjectReference Include="..\GoalKeeper.Stats.Application\GoalKeeper.Stats.Application.csproj" />
+    <ProjectReference Include="..\GoalKeeper.Stats.WebApi\GoalKeeper.Stats.WebApi.csproj" />
   </ItemGroup>
 
 </Project>
