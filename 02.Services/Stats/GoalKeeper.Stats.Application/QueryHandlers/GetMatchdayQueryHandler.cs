@@ -21,13 +21,9 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<MatchdayDTO> Handle(GetMatchdayQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.Get(cancellationToken);
+            var data = await _repository.FindByMatchday(request.Day, cancellationToken);
 
-            var matchesFromMatchday = (from match in data
-                      where match.Matchday == request.Day
-                      select match).ToList();
-
-            var matchday = new Matchday(matchesFromMatchday.Select(match => match.Matchday).First(), matchesFromMatchday);
+            var matchday = new Matchday(request.Day, data.ToList());
 
             return matchday.MapOut();
         }

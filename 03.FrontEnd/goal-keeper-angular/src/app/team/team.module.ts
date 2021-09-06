@@ -8,12 +8,12 @@ import { TeamContainerComponent } from './containers/team.container';
 import * as fromTeam from './store';
 import { TeamCardsStatsComponent, TeamGoalsStatsComponent, TeamInfoComponent, TeamPlayersComponent } from './components';
 import { TeamEffects } from './store/team.effects';
-import { FixturesContainerComponent } from './containers/fixtures/fixtures.container';
+import { MatchesContainerComponent } from './containers/matches/matches.container';
 import { SquadContainerComponent } from './containers/squad/squad.container';
 import { StatsContainerComponent } from './containers/stats/stats.container';
 
 @NgModule({
-  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, FixturesContainerComponent, SquadContainerComponent, StatsContainerComponent, TeamGoalsStatsComponent, TeamCardsStatsComponent],
+  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, MatchesContainerComponent, SquadContainerComponent, StatsContainerComponent, TeamGoalsStatsComponent, TeamCardsStatsComponent],
   imports: [
     SharedModule,
     TeamRoutingModule,

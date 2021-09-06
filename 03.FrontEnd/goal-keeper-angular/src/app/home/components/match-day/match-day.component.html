@@ -11,7 +11,7 @@
   <div *ngFor="let date of getDistinctMatchDates()">
     <div class="date" >{{ date }}</div>
     <div *ngFor="let match of getMatchesForDate(date)">
-    <app-fixture [match]="match"></app-fixture>
+    <app-match [match]="match"></app-match>
     </div>
   </div>
 </div>

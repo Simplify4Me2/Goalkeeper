@@ -3,16 +3,16 @@ import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-import { FixturesContainerComponent } from './fixtures.container';
+import { MatchesContainerComponent } from './matches.container';
 
 describe('FixturesComponent', () => {
-  let component: FixturesContainerComponent;
-  let fixture: ComponentFixture<FixturesContainerComponent>;
+  let component: MatchesContainerComponent;
+  let fixture: ComponentFixture<MatchesContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, SharedModule],
-      declarations: [ FixturesContainerComponent ],
+      declarations: [ MatchesContainerComponent ],
       providers: [
         {
           provide: ActivatedRoute,
@@ -32,7 +32,7 @@ describe('FixturesComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FixturesContainerComponent);
+    fixture = TestBed.createComponent(MatchesContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

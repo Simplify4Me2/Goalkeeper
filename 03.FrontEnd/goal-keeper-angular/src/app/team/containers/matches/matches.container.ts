@@ -4,13 +4,13 @@ import { Observable, of } from 'rxjs';
 import { Match } from 'src/app/shared/models/match.model';
 
 @Component({
-  selector: 'app-fixtures',
-  templateUrl: './fixtures.container.html',
-  styleUrls: ['./fixtures.container.sass']
+  selector: 'app-matches',
+  templateUrl: './matches.container.html',
+  styleUrls: ['./matches.container.sass']
 })
-export class FixturesContainerComponent implements OnInit {
+export class MatchesContainerComponent implements OnInit {
 
-  fixtures: Observable<Match[]>;
+  matches: Observable<Match[]>;
 
   fakeFixtures: Match[] = [{
     homeTeamId: 11, homeTeamName: 'Foo', homeTeamScore: 1, awayTeamId: 22, awayTeamName: 'Bar', awayTeamScore: 0, date: '2020-03-03'
@@ -21,7 +21,7 @@ export class FixturesContainerComponent implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.parent.snapshot.paramMap.get('id'));
 
-    this.fixtures = of(this.fakeFixtures);
+    this.matches = of(this.fakeFixtures);
   }
 
 }
