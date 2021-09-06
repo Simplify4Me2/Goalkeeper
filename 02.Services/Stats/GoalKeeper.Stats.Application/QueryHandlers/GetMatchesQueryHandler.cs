@@ -20,7 +20,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<IEnumerable<MatchDTO>> Handle(GetMatchesQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.GetResults(cancellationToken);
+            var data = await _repository.Get(cancellationToken);
             return data.MapOut();
         }
     }

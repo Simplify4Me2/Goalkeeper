@@ -6,7 +6,7 @@ namespace GoalKeeper.Stats.Application.Mappers
 {
     public static class PlayerMapper
     {
-        public static PlayerDTO MapOut(this Domain.ValueObjects.Player player)
+        public static PlayerDTO MapOut(this Domain.Player player)
         {
             return new PlayerDTO
             {
@@ -18,7 +18,7 @@ namespace GoalKeeper.Stats.Application.Mappers
             };
         }
 
-        public static IEnumerable<PlayerDTO> MapOut(this IEnumerable<Domain.ValueObjects.Player> players)
+        public static IEnumerable<PlayerDTO> MapOut(this IEnumerable<Domain.Player> players)
             => players.Select(player => player.MapOut());
     }
 }

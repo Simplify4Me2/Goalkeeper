@@ -1,8 +1,7 @@
-﻿using GoalKeeper.Stats.Domain.ValueObjects;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace GoalKeeper.Stats.Domain.Entities
+namespace GoalKeeper.Stats.Domain
 {
     public class League
     {
@@ -12,9 +11,9 @@ namespace GoalKeeper.Stats.Domain.Entities
 
         public string Name { get; }
         private List<Team> Teams { get; }
-        private List<PlayedMatch> Matches { get; }
+        private List<Match> Matches { get; }
 
-        public League(string name, List<Team> teams, List<PlayedMatch> matches)
+        public League(string name, List<Team> teams, List<Match> matches)
         {
             Name = name;
             Teams = teams;
@@ -37,13 +36,15 @@ namespace GoalKeeper.Stats.Domain.Entities
             }
         }
 
-        private int DeterminePoints(Team team, PlayedMatch match)
+        private int DeterminePoints(Team team, Match match)
         {
-            if (match.FinalScore.Home == match.FinalScore.Away)
+            if (match.Status != Status.Played)
+                return 0;
+            if (match.Score.Home == match.Score.Away)
                 return _pointsForDraw;
-            if (team.Id == match.HomeTeam.Id && match.FinalScore.Home > match.FinalScore.Away)
+            if (team.Id == match.HomeTeam.Id && match.Score.Home > match.Score.Away)
                 return _pointsForWin;
-            if (team.Id == match.AwayTeam.Id && match.FinalScore.Home < match.FinalScore.Away)
+            if (team.Id == match.AwayTeam.Id && match.Score.Home < match.Score.Away)
                 return _pointsForWin;
             return _pointsForLoss;
         }

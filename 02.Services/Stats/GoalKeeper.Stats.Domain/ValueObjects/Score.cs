@@ -1,4 +1,6 @@
-﻿namespace GoalKeeper.Stats.Domain.ValueObjects
+﻿using System;
+
+namespace GoalKeeper.Stats.Domain
 {
     public class Score
     {

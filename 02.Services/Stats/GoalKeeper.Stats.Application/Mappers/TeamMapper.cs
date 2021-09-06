@@ -6,7 +6,7 @@ namespace GoalKeeper.Stats.Application.Mappers
 {
     public static class TeamMapper
     {
-        public static TeamDTO MapOut(this Domain.ValueObjects.Team team)
+        public static TeamDTO MapOut(this Domain.Team team)
         {
             return new TeamDTO
             {
@@ -17,7 +17,7 @@ namespace GoalKeeper.Stats.Application.Mappers
             };
         }
 
-        public static IEnumerable<TeamDTO> MapOut(this IEnumerable<Domain.ValueObjects.Team> teams)
+        public static IEnumerable<TeamDTO> MapOut(this IEnumerable<Domain.Team> teams)
             => teams.Select(team => MapOut(team));
     }
 }

@@ -1,7 +1,4 @@
 using FluentAssertions;
-using GoalKeeper.Stats.Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
 using Xunit;
 
 namespace GoalKeeper.Stats.Domain.UnitTests

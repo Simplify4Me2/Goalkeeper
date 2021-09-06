@@ -5,7 +5,7 @@ namespace GoalKeeper.Stats.Application.Mappers
 {
     public static class RankingMapper
     {
-        public static RankingDTO MapOut(this Domain.Entities.League league)
+        public static RankingDTO MapOut(this Domain.League league)
         {
             return new RankingDTO
             {

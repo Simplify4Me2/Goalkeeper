@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoalKeeper.Stats.Domain.Primitives
+namespace GoalKeeper.Stats.Domain
 {
     public abstract class Person
     {

@@ -1,4 +1,4 @@
-﻿namespace GoalKeeper.Stats.Domain.ValueObjects
+﻿namespace GoalKeeper.Stats.Domain
 {
     public class Stadium
     {

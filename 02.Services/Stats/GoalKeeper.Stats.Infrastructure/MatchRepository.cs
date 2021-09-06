@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.ValueObjects;
+using GoalKeeper.Stats.Domain;
 using GoalKeeper.Stats.Infrastructure.DataModels;
 using System.Collections.Generic;
 using System.Data;
@@ -18,7 +18,7 @@ namespace GoalKeeper.Stats.Infrastructure
             _dbConnection = dbConnection;
         }
 
-        public async Task<IEnumerable<PlayedMatch>> GetResults(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Match>> Get(CancellationToken cancellationToken)
         {
             string sql = "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
                                 "[homeTeam].[Id], [homeTeam].[Name], [homeStadium].[Id], [homeStadium].[Name], " +
@@ -41,7 +41,7 @@ namespace GoalKeeper.Stats.Infrastructure
             return MatchDataModel.MapOut(sqlResult);
         }
 
-        public async Task<IEnumerable<Fixture>> GetFixtures(int matchday, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Match>> FindByMatchday(int matchday, CancellationToken cancellationToken)
         {
             string sql = "SELECT [match].[Id], [Matchday], [DateUtc] AS Date, " +
                                 "[homeTeam].[Id], [homeTeam].[Name], [homeStadium].[Id], [homeStadium].[Name], " +
@@ -54,22 +54,22 @@ namespace GoalKeeper.Stats.Infrastructure
                                 "JOIN [Stats].[Seasons] ON [Seasons].[Id] = (SELECT MAX([Id]) FROM [Stats].[Seasons]) " +
                             $"WHERE [Matchday] = {matchday} AND [DateUtc] BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
 
-            var sqlResult = await _dbConnection.QueryAsync<FixtureDataModel, TeamDataModel, StadiumDataModel, TeamDataModel, StadiumDataModel, FixtureDataModel>(sql, (match, homeTeam, homeStadium, awayTeam, awayStadium) => {
+            var sqlResult = await _dbConnection.QueryAsync<MatchDataModel, TeamDataModel, StadiumDataModel, TeamDataModel, StadiumDataModel, MatchDataModel>(sql, (match, homeTeam, homeStadium, awayTeam, awayStadium) => {
                 match.HomeTeam = homeTeam;
                 match.HomeTeam.Stadium = homeStadium;
                 match.AwayTeam = awayTeam;
                 match.AwayTeam.Stadium = awayStadium;
                 return match;
             }, cancellationToken);
-            return FixtureDataModel.MapOut(sqlResult);
+            return MatchDataModel.MapOut(sqlResult);
         }
 
-        public async Task<bool> Save(PlayedMatch match, CancellationToken cancellationToken)
+        public async Task<bool> Save(Match match, CancellationToken cancellationToken)
         {
             string sql = "INSERT INTO [Stats].[Matches] " +
                 "([HomeTeamId] ,[HomeTeamScore] ,[AwayTeamId] ,[AwayTeamScore] ,[Matchday], [DateUtc] ,[CreatedUtc] ,[CreatedBy] ,[ModifiedUtc] ,[ModifiedBy]) " +
                 "VALUES " +
-                    $"({match.HomeTeam.Id}, {match.FinalScore.Home}, {match.AwayTeam.Id}, {match.FinalScore.Away}, {match.Matchday}, '{match.Date.ToString("yyyy-mm-dd")}', GETDATE(), 'TODO', GETDATE(), 'TODO')";
+                    $"({match.HomeTeam.Id}, {match.Score.Home}, {match.AwayTeam.Id}, {match.Score.Away}, {match.Matchday}, '{match.Date.ToString("yyyy-mm-dd")}', GETDATE(), 'TODO', GETDATE(), 'TODO')";
 
             var sqlresult = await _dbConnection.ExecuteAsync(sql, cancellationToken);
 

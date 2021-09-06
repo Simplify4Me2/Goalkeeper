@@ -1,10 +1,7 @@
 ﻿using GoalKeeper.Stats.Application.IO.Commands;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.ValueObjects;
+using GoalKeeper.Stats.Domain;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -26,7 +23,7 @@ namespace GoalKeeper.Stats.Application.CommandHandlers
             var homeTeam = await _statsRepository.GetTeamByName(command.HomeTeamName, cancellationToken);
             var awayTeam = await _statsRepository.GetTeamByName(command.AwayTeamName, cancellationToken);
 
-            var match = new PlayedMatch(0, homeTeam, awayTeam, new Score(command.HomeTeamScore, command.AwayTeamScore), command.Date, command.Matchday);
+            var match = new Match(0, homeTeam, awayTeam, new Score(command.HomeTeamScore, command.AwayTeamScore), command.Date, command.Matchday);
 
             return await _matchRepository.Save(match, cancellationToken);
         }

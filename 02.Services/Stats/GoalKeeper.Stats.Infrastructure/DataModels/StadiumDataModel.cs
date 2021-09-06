@@ -1,4 +1,4 @@
-﻿using GoalKeeper.Stats.Domain.ValueObjects;
+﻿using GoalKeeper.Stats.Domain;
 
 namespace GoalKeeper.Stats.Infrastructure.DataModels
 {

@@ -1,5 +1,5 @@
 ﻿using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.ValueObjects;
+using GoalKeeper.Stats.Domain;
 using Microsoft.Azure.Cosmos;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace GoalKeeper.Stats.Infrastructure
             _container = dbClient.GetContainer(databaseName, containerName);
         }
 
-        public Task<IEnumerable<PlayedMatch>> GetMatches(CancellationToken cancellationToken)
+        public Task<IEnumerable<Match>> GetMatches(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

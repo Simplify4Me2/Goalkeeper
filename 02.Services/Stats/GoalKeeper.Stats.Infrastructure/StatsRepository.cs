@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.ValueObjects;
+using GoalKeeper.Stats.Domain;
 using GoalKeeper.Stats.Infrastructure.DataModels;
 using GoalKeeper.Stats.Infrastructure.EventStore;
 using System;

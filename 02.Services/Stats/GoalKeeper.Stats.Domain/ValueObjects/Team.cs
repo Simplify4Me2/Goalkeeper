@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GoalKeeper.Stats.Domain.ValueObjects
+namespace GoalKeeper.Stats.Domain
 {
     public class Team
     {

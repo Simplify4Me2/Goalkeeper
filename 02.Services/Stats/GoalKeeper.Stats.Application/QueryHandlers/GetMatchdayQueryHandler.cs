@@ -2,7 +2,7 @@
 using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.ValueObjects;
+using GoalKeeper.Stats.Domain;
 using MediatR;
 using System.Linq;
 using System.Threading;
@@ -21,13 +21,13 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<MatchdayDTO> Handle(GetMatchdayQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.GetResults(cancellationToken);
+            var data = await _repository.Get(cancellationToken);
 
             var matchesFromMatchday = (from match in data
                       where match.Matchday == request.Day
                       select match).ToList();
 
-            var matchday = new MatchdayResults(matchesFromMatchday.Select(match => match.Matchday).First(), matchesFromMatchday);
+            var matchday = new Matchday(matchesFromMatchday.Select(match => match.Matchday).First(), matchesFromMatchday);
 
             return matchday.MapOut();
         }

@@ -1,7 +1,6 @@
-﻿using GoalKeeper.Stats.Domain.Primitives;
-using System;
+﻿using System;
 
-namespace GoalKeeper.Stats.Domain.ValueObjects
+namespace GoalKeeper.Stats.Domain
 {
     public class Player : Person
     {
