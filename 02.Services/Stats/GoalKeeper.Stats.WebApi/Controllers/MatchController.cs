@@ -36,7 +36,7 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpGet]
         [Route("matchday/{day}")]
-        //[ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
+        [ProducesResponseType(typeof(Result<MatchdayDTO>), StatusCodes.Status200OK)]
         //[ProducesResponseType(typeof(Exception), 500)]
         //[ProducesErrorResponseType(typeof(Exception))]
         //public async Task<Result<MatchdayDTO>> GetMatchday([FromRoute] int day)
@@ -46,26 +46,26 @@ namespace GoalKeeper.Stats.WebApi.Controllers
             return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
         }
 
-        [HttpGet]
-        [Route("matchday/upcoming/{day}")]
-        [ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
-        public async Task<IActionResult> GetUpcomingMatchday([FromRoute] int day)
-        {
-            var query = new GetUpcomingMatchdayQuery(day);
-            return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
-        }
-
-        [HttpGet]
-        [Route("matchday/last")]
+        //[HttpGet]
+        //[Route("matchday/upcoming/{day}")]
         //[ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
-        //[ProducesResponseType(typeof(Exception), 500)]
-        //[ProducesErrorResponseType(typeof(Exception))]
-        //public async Task<Result<MatchdayDTO>> GetLastMatchday()
-        public async Task<IActionResult> GetLastMatchday()
-        {
-            var query = new GetLastMatchdayQuery();
-            return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
-        }
+        //public async Task<IActionResult> GetUpcomingMatchday([FromRoute] int day)
+        //{
+        //    var query = new GetUpcomingMatchdayQuery(day);
+        //    return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
+        //}
+
+        //[HttpGet]
+        //[Route("matchday/last")]
+        ////[ProducesResponseType(typeof(Result<MatchdayDTO>), 200)]
+        ////[ProducesResponseType(typeof(Exception), 500)]
+        ////[ProducesErrorResponseType(typeof(Exception))]
+        ////public async Task<Result<MatchdayDTO>> GetLastMatchday()
+        //public async Task<IActionResult> GetLastMatchday()
+        //{
+        //    var query = new GetLastMatchdayQuery();
+        //    return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
+        //}
 
         [HttpPost]
         [Route("")]

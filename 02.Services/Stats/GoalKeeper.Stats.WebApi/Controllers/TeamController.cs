@@ -3,10 +3,7 @@ using GoalKeeper.Stats.Application.IO.DTOs;
 using GoalKeeper.Stats.Application.IO.Exceptions;
 using GoalKeeper.Stats.Application.IO.Queries;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace GoalKeeper.Stats.WebApi.Controllers
 {
@@ -41,6 +38,12 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         //    return new Result<TeamDTO>(await _mediator.Send(query));
         //}
 
+        /// <summary>
+        ///  This is a summary
+        /// </summary>
+        /// <param name="name">Namediedoo</param>
+        /// <returns>Somezing</returns>
+        /// <response code="200">Great success</response>
         [HttpGet]
         [Route("{name}")]
         [ProducesResponseType(typeof(Result<TeamDTO>), StatusCodes.Status200OK)]

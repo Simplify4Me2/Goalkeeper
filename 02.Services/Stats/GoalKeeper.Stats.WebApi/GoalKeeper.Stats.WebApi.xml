@@ -10,5 +10,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:GoalKeeper.Stats.WebApi.Controllers.TeamController.GetTeamByName(System.String)">
+            <summary>
+             This is a summary
+            </summary>
+            <param name="name">Namediedoo</param>
+            <returns>Somezing</returns>
+            <response code="200">Great success</response>
+        </member>
     </members>
 </doc>
