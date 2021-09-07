@@ -20,13 +20,7 @@ export class MatchService {
 
   getLastMatchday(): Observable<RequestResult<Matchday>> {
     return this.http.get<RequestResult<Matchday>>(
-      'https://localhost:5001/api/match/matchday/last'
-    );
-  }
-
-  getUpcomingMatchday(day: number): Observable<RequestResult<Matchday>> {
-    return this.http.get<RequestResult<Matchday>>(
-      `https://localhost:5001/api/match/matchday/upcoming/${day}`
+      'https://localhost:5001/api/match/matchday/0'
     );
   }
 }

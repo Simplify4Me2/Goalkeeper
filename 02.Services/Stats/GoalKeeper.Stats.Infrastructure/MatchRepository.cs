@@ -41,9 +41,37 @@ namespace GoalKeeper.Stats.Infrastructure
             return MatchDataModel.MapOut(sqlResult);
         }
 
+        public async Task<IEnumerable<Match>> FindCurrentMatchday(CancellationToken cancellationToken)
+        {
+            string sql = "WITH currentMatchday (Matchday) AS " +
+                            "(SELECT MAX([match].Matchday) FROM [Stats].[Matches] [match] " +
+                            "JOIN [Stats].[Seasons] ON [Seasons].[Id] = (SELECT MAX([Id]) FROM [Stats].[Seasons]) " +
+                            "WHERE ([match].HomeTeamScore IS NOT NULL OR [match].AwayTeamScore IS NOT NULL) " +
+                            "AND [match].[DateUtc] BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]) " +
+                           "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
+                                "[homeTeam].[Id], [homeTeam].[Name], [homeStadium].[Id], [homeStadium].[Name], " +
+                                "[awayTeam].[Id], [awayTeam].[Name], [awayStadium].[Id], [awayStadium].[Name] " +
+                            "FROM [Stats].[Matches] [match] " +
+                                "INNER JOIN [Stats].[Teams] [homeTeam] ON [homeTeam].[Id] = [match].[HomeTeamId] " +
+                                "INNER JOIN [Stats].[Stadiums] [homeStadium] ON [homeTeam].[StadiumId] = [homeStadium].[Id] " +
+                                "INNER JOIN [Stats].[Teams] [awayTeam] ON [awayTeam].[Id] = [match].[AwayTeamId] " +
+                                "INNER JOIN [Stats].[Stadiums] [awayStadium] ON [awayTeam].[StadiumId] = [awayStadium].[Id] " +
+                                "JOIN [Stats].[Seasons] ON [Seasons].[Id] = (SELECT MAX([Id]) FROM [Stats].[Seasons]) " +
+                            $"WHERE [Matchday] IN (SELECT Matchday FROM currentMatchday) AND [DateUtc] BETWEEN [Seasons].[StartUtc] AND [Seasons].[EndUtc]";
+
+            var sqlResult = await _dbConnection.QueryAsync<MatchDataModel, TeamDataModel, StadiumDataModel, TeamDataModel, StadiumDataModel, MatchDataModel>(sql, (match, homeTeam, homeStadium, awayTeam, awayStadium) => {
+                match.HomeTeam = homeTeam;
+                match.HomeTeam.Stadium = homeStadium;
+                match.AwayTeam = awayTeam;
+                match.AwayTeam.Stadium = awayStadium;
+                return match;
+            }, cancellationToken);
+            return MatchDataModel.MapOut(sqlResult);
+        }
+
         public async Task<IEnumerable<Match>> FindByMatchday(int matchday, CancellationToken cancellationToken)
         {
-            string sql = "SELECT [match].[Id], [Matchday], [DateUtc] AS Date, " +
+            string sql = "SELECT [match].[Id], [HomeTeamScore], [AwayTeamScore], [Matchday], [DateUtc] AS Date, " +
                                 "[homeTeam].[Id], [homeTeam].[Name], [homeStadium].[Id], [homeStadium].[Name], " +
                                 "[awayTeam].[Id], [awayTeam].[Name], [awayStadium].[Id], [awayStadium].[Name] " +
                             "FROM [Stats].[Matches] [match] " +

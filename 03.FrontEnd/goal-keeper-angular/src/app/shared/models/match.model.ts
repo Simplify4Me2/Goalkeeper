@@ -6,4 +6,5 @@ export interface Match {
     awayTeamName: string;
     awayTeamScore: number;
     date: string;
+    isPlayed: boolean;
 }

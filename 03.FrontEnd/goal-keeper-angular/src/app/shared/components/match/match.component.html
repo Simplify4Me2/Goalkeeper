@@ -1,7 +1,13 @@
-<div class="fixture"> 
+<div class="match" *ngIf="match.isPlayed else fixture"> 
     <img class="logo" src='{{ "assets/images/logos/" + match.homeTeamName + ".svg" }}' />
     <span>{{ match.homeTeamScore }}</span>
     <span>-</span>
     <span>{{ match.awayTeamScore }}</span>
     <img class="logo" src='{{ "assets/images/logos/" + match.awayTeamName + ".svg" }}' />
 </div>
+
+<ng-template #fixture>
+    <img class="logo" src='{{ "assets/images/logos/" + match.homeTeamName + ".svg" }}' />
+    <span>{{ match.date }}</span>
+    <img class="logo" src='{{ "assets/images/logos/" + match.awayTeamName + ".svg" }}' />
+</ng-template>

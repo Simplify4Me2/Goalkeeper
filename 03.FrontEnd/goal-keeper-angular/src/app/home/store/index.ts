@@ -38,10 +38,6 @@ const testReducer = createReducer(
   on(fromActions.getRankingSuccess, (state, { ranking }) => ({
     ...state,
     ranking: ranking,
-  })),
-  on(fromActions.getLastMatchdaySuccess, (state, { matchday }) => ({
-    ...state,
-    matchday: matchday,
   }))
 );
 

@@ -17,7 +17,8 @@ namespace GoalKeeper.Stats.Application.Mappers
                 AwayTeamId = match.AwayTeam.Id,
                 AwayTeamName = match.AwayTeam.Name,
                 AwayTeamScore = match.Status == Domain.Status.Played ? match.Score.Away.ToString() : null,
-                Date = match.Date
+                Date = match.Date,
+                IsPlayed = match.Status == Domain.Status.Played
             };
         }
 

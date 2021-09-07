@@ -33,17 +33,3 @@ export const getRankingFail = createAction(
 export const getLastMatchday = createAction(
     '[Home/Container] Get Last Matchday'
 );
-
-export const getLastMatchdaySuccess = createAction(
-    '[Home/API] Get Last Matchday Success',
-    props<{ matchday: Matchday }>()
-);
-
-export const getLastMatchdayFail = createAction(
-    '[Home/API] Get Last Matchday Failed',
-);
-
-export const getUpcomingMatchday = createAction(
-    '[Home/API] Get Upcoming Matchday',
-    props<{ day: number}>()
-);

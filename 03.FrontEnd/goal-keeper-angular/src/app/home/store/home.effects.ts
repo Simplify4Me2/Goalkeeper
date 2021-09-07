@@ -44,18 +44,6 @@ export class HomeEffects {
             ofType(fromActions.getLastMatchday),
             switchMap(() =>
                 this.matchService.getLastMatchday().pipe(
-                    map((result: RequestResult<Matchday>) => fromActions.getLastMatchdaySuccess({ matchday: result.data })),
-                    catchError(() => of(fromActions.getLastMatchdayFail()))
-                )
-            )
-        )
-    );
-
-    getUpcomingMatchday = createEffect(() =>
-        this.actions.pipe(
-            ofType(fromActions.getUpcomingMatchday),
-            switchMap((action) =>
-                this.matchService.getUpcomingMatchday(action.day).pipe(
                     map((result: RequestResult<Matchday>) => fromActions.getMatchdaySuccess({ matchday: result.data })),
                     catchError(() => of(fromActions.getMatchdayFail()))
                 )

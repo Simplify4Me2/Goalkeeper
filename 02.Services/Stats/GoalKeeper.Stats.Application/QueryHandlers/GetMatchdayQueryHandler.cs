@@ -4,6 +4,7 @@ using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Domain;
 using MediatR;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,9 +22,13 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
 
         public async Task<MatchdayDTO> Handle(GetMatchdayQuery request, CancellationToken cancellationToken)
         {
-            var data = await _repository.FindByMatchday(request.Day, cancellationToken);
+            IEnumerable<Match> data;
+            if (request.Day == 0)
+                data = await _repository.FindCurrentMatchday(cancellationToken);
+            else
+                data = await _repository.FindByMatchday(request.Day, cancellationToken);
 
-            var matchday = new Matchday(request.Day, data.ToList());
+            var matchday = new Matchday(data.FirstOrDefault().Matchday, data.ToList());
 
             return matchday.MapOut();
         }
