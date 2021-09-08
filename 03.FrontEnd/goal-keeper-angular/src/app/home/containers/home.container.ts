@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
       this.store.dispatch(fromActions.getRanking());
-      this.store.dispatch(fromActions.getLastMatchday());
+      this.store.dispatch(fromActions.getCurrentMatchday());
 
       
       this.ranking = this.store.select(fromStore.selectRanking);

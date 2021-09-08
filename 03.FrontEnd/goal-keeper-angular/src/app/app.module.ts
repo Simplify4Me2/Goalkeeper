@@ -13,7 +13,6 @@ import { HomeModule } from './home/home.module';
 import { EffectsModule } from '@ngrx/effects';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
