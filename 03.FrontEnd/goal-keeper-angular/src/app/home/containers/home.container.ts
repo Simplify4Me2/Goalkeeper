@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as fromActions from '../store/home.actions';
@@ -11,6 +11,7 @@ import { Matchday } from '../models/matchday.model';
   selector: 'app-home',
   templateUrl: './home.container.html',
   styleUrls: ['./home.container.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
   ranking: Observable<Ranking>;
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
       this.store.dispatch(fromActions.getRanking());
-      this.store.dispatch(fromActions.getLastMatchday());
+      this.store.dispatch(fromActions.getCurrentMatchday());
 
       
       this.ranking = this.store.select(fromStore.selectRanking);

@@ -51,4 +51,12 @@ describe('Home Container', () => {
 
         expect(store.dispatch).toHaveBeenCalledWith(action);
     });
+
+    it('should dispatch a getCurrentMatchday on init', () => {
+        const action = fromActions.getCurrentMatchday();
+
+        fixture.detectChanges();
+
+        expect(store.dispatch).toHaveBeenCalledWith(action);
+    });
 });

@@ -41,7 +41,7 @@ export class HomeEffects {
 
     getLastMatchday = createEffect(() =>
         this.actions.pipe(
-            ofType(fromActions.getLastMatchday),
+            ofType(fromActions.getCurrentMatchday),
             switchMap(() =>
                 this.matchService.getLastMatchday().pipe(
                     map((result: RequestResult<Matchday>) => fromActions.getMatchdaySuccess({ matchday: result.data })),
