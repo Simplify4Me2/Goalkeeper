@@ -28,8 +28,9 @@ namespace GoalKeeper.Stats.Domain
                     var matches = Matches.Where(match => team.Id == match.HomeTeam.Id || team.Id == match.AwayTeam.Id);
                     int points = (from match in matches
                                   select DeterminePoints(team, match)).Sum();
+                    int matchesPlayed = matches.Where(match => match.Score != null).Count();
 
-                    TeamRanking teamRanking = new TeamRanking(team, points);
+                    TeamRanking teamRanking = new TeamRanking(team, points, matchesPlayed);
                     table.Add(teamRanking);
                 }
                 return table.OrderByDescending(ranking => ranking.Points).ToList();

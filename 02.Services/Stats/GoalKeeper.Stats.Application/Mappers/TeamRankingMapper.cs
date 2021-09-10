@@ -12,7 +12,8 @@ namespace GoalKeeper.Stats.Application.Mappers
             {
                 TeamId = teamRanking.Team.Id,
                 TeamName = teamRanking.Team.Name,
-                Points = teamRanking.Points
+                Points = teamRanking.Points,
+                GamesPlayed = teamRanking.GamesPlayed
             };
         }
 

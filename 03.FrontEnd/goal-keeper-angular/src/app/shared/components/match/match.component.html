@@ -1,17 +1,21 @@
 <div class="match" *ngIf="match.isPlayed else fixture"> 
     <img class="logo" src='{{ "assets/images/logos/" + match.homeTeamName + ".svg" }}' />
+    <!-- <span class="team-name">CLU</span> -->
     <span>{{ match.homeTeamScore }}</span>
     <span>-</span>
     <span>{{ match.awayTeamScore }}</span>
+    <!-- <span class="team-name">KVO</span> -->
     <img class="logo" src='{{ "assets/images/logos/" + match.awayTeamName + ".svg" }}' />
 </div>
 
 <ng-template #fixture>
     <div class="match">
         <img class="logo" src='{{ "assets/images/logos/" + match.homeTeamName + ".svg" }}' />
+        <!-- <span class="team-name">CLU</span> -->
         <span></span>
         <span class="fixture-date">{{ match.date | date:'HH:mm' }}</span>
         <span></span>
+        <!-- <span class="team-name">KVO</span> -->
         <img class="logo" src='{{ "assets/images/logos/" + match.awayTeamName + ".svg" }}' />
     </div>
 </ng-template>

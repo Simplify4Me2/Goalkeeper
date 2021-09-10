@@ -7,5 +7,7 @@
         public string TeamName { get; set; }
 
         public int Points { get; set; }
+
+        public int GamesPlayed { get; set; }
     }
 }

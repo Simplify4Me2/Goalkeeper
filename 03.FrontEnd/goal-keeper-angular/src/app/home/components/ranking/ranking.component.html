@@ -6,6 +6,7 @@
                 <th>Position</th>
                 <th>Team</th>
                 <th>Points</th>
+                <th>GP</th>
             </tr>
         </thead>
         <tbody *ngIf="ranking as ranking" >
@@ -15,7 +16,8 @@
                     <img class="logo" src='{{ "assets/images/logos/" + team.teamName + ".svg" }}' />
                     <span>{{ team.teamName }}</span>
                 </td>
-                <td>{{ team.points}}</td>
+                <td class="bold">{{ team.points}}</td>
+                <td>{{ team.gamesPlayed }}</td>
             </tr>
         </tbody>
     </table>
