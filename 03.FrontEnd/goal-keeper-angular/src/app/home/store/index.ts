@@ -56,12 +56,13 @@ export const selectRanking = createSelector(
   selectHomeState,
   (state) => state.ranking
 );
-// export const selectLastMatchday = createSelector(selectHomeState, (state) => state.lastMatchday);
 
-export const selectLastMatchday = createSelector(selectHomeState, (state) => ({
-  ...state.matchday,
-  matches: state.matchday?.matches.map((match) => ({
-    ...match,
-    date: moment(match.date).format('DD/MM'),
-  })),
-}));
+export const selectMatchday = createSelector(selectHomeState, (state) => state.matchday);
+
+// export const selectMatchday = createSelector(selectHomeState, (state) => ({
+//   ...state.matchday,
+//   matches: state.matchday?.matches.map((match) => ({
+//     ...match,
+//     date: moment(match.date).format('DD/MM'),
+//   })),
+// }));

@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
       
       this.ranking = this.store.select(fromStore.selectRanking);
-      this.lastMatchday = this.store.select(fromStore.selectLastMatchday);
+      this.lastMatchday = this.store.select(fromStore.selectMatchday);
   }
 
   selectMatchday(matchday: number) {

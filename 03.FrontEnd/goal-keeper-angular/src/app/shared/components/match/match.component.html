@@ -9,7 +9,9 @@
 <ng-template #fixture>
     <div class="match">
         <img class="logo" src='{{ "assets/images/logos/" + match.homeTeamName + ".svg" }}' />
-        <span>{{ match.date }}</span>
+        <span></span>
+        <span class="fixture-date">{{ match.date | date:'HH:mm' }}</span>
+        <span></span>
         <img class="logo" src='{{ "assets/images/logos/" + match.awayTeamName + ".svg" }}' />
     </div>
 </ng-template>

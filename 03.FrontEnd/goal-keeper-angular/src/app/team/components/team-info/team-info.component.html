@@ -6,7 +6,7 @@
             <div></div>
             <div [ngClass]="getTeamFormClass(team.name)" >
                 <span class="form-span">Form guide:</span>
-                <ng-container *ngFor="let lastMatchResult of formMock">
+                <ng-container *ngFor="let lastMatchResult of team.form">
                     <span [ngClass]="getLastMatchResultClass(lastMatchResult)">{{ lastMatchResult }}</span>
                 </ng-container>
             </div>

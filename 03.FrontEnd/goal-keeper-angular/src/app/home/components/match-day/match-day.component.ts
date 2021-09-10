@@ -6,6 +6,8 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
+import moment from 'moment';
+
 import { Match } from 'src/app/shared/models/match.model';
 import { Matchday } from '../../models/matchday.model';
 
@@ -25,11 +27,11 @@ export class MatchDayComponent implements OnInit {
   ngOnInit(): void {}
 
   getDistinctMatchDates(): string[] {
-    return [...new Set(this.matchday.matches?.map((match) => match.date))];
+    return [...new Set(this.matchday.matches?.map((match) => moment(match.date).format('DD/MM')))];
   }
 
   getMatchesForDate(date: string): Match[] {
-    return this.matchday.matches?.filter((match) => match.date === date);
+    return this.matchday.matches?.filter((match) => moment(match.date).format('DD/MM') === date);
   }
 
   leftClick() {

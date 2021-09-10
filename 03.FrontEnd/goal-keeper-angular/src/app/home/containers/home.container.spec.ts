@@ -26,7 +26,7 @@ describe('Home Container', () => {
             ],
             providers: [
                 provideMockStore({
-                    selectors: [{ selector: fromStore.selectLastMatchday, value: [] }, { selector: fromStore.selectRanking, value: [] },],
+                    selectors: [{ selector: fromStore.selectMatchday, value: [] }, { selector: fromStore.selectRanking, value: [] },],
                 }),
             ],
         });
