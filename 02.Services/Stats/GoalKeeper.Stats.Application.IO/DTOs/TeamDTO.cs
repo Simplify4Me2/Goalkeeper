@@ -11,5 +11,7 @@ namespace GoalKeeper.Stats.Application.IO.DTOs
         public string StadiumName { get; set; }
 
         public IEnumerable<PlayerDTO> Players { get; set; }
+
+        public string[] Form { get; set; }
     }
 }

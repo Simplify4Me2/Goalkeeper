@@ -12,6 +12,8 @@ namespace GoalKeeper.Stats.Application.Ports
 
         Task<IEnumerable<Domain.Match>> FindByMatchday(int matchday, CancellationToken cancellationToken);
 
+        Task<IEnumerable<Domain.Match>> FindByTeamId(long teamId, CancellationToken cancellationToken);
+
         Task<bool> Save(Domain.Match match, CancellationToken cancellationToken);
     }
 }

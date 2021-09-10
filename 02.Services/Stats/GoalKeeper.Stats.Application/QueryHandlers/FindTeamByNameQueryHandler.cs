@@ -4,7 +4,9 @@ using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.IO.Validators;
 using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
+using GoalKeeper.Stats.Domain.Services;
 using MediatR;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,11 +15,13 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
     public class FindTeamByNameQueryHandler : IRequestHandler<FindTeamByNameQuery, TeamDTO>
     {
         private readonly IStatsRepository _repository;
+        private readonly IMatchRepository _matchRepository;
         private readonly GetTeamByNameQueryValidator validator;
 
-        public FindTeamByNameQueryHandler(IStatsRepository repository)
+        public FindTeamByNameQueryHandler(IStatsRepository repository, IMatchRepository matchRepository)
         {
             _repository = repository;
+            _matchRepository = matchRepository;
             validator = new GetTeamByNameQueryValidator();
         }
 
@@ -27,9 +31,12 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
             if (!validationResult.IsValid)
                 throw new ValidationException(validationResult.Errors);
 
-            var data = await _repository.GetTeamByName(request.Name, cancellationToken);
+            var team = await _repository.GetTeamByName(request.Name, cancellationToken);
+            var matches = await _matchRepository.FindByTeamId(team.Id, cancellationToken);
 
-            return data.MapOut();
+            TeamDTO returnValue = team.MapOut();
+            returnValue.Form = TeamFormService.PrintForm(team, matches.ToList());
+            return returnValue;
         }
     }
 }
