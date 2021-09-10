@@ -19,5 +19,10 @@ namespace GoalKeeper.Stats.Domain
             Stadium = stadium;
             Players = players;
         }
+
+        public string[] FormToString(List<Match> matches)
+        {
+            return new[] { "W", "D", "W", "L" };
+        }
     }
 }

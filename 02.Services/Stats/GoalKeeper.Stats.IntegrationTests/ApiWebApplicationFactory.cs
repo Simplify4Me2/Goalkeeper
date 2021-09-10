@@ -39,6 +39,11 @@ namespace GoalKeeper.Stats.IntegrationTests
             return Task.FromResult(returnValue.Select(fixture => fixture));
         }
 
+        public Task<IEnumerable<Match>> FindByTeamId(long teamId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<Match>> FindCurrentMatchday(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();

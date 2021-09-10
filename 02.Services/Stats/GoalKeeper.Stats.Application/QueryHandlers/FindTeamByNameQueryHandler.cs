@@ -4,7 +4,6 @@ using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.IO.Validators;
 using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
-using GoalKeeper.Stats.Domain.Services;
 using MediatR;
 using System.Linq;
 using System.Threading;
@@ -35,7 +34,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
             var matches = await _matchRepository.FindByTeamId(team.Id, cancellationToken);
 
             TeamDTO returnValue = team.MapOut();
-            returnValue.Form = TeamFormService.PrintForm(team, matches.ToList());
+            returnValue.Form = team.FormToString(matches.ToList());
             return returnValue;
         }
     }
