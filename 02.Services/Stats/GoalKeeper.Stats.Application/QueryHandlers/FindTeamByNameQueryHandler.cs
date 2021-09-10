@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace GoalKeeper.Stats.Application.QueryHandlers
 {
-    public class GetTeamByNameQueryHandler : IRequestHandler<GetTeamByNameQuery, TeamDTO>
+    public class FindTeamByNameQueryHandler : IRequestHandler<FindTeamByNameQuery, TeamDTO>
     {
         private readonly IStatsRepository _repository;
         private readonly GetTeamByNameQueryValidator validator;
 
-        public GetTeamByNameQueryHandler(IStatsRepository repository)
+        public FindTeamByNameQueryHandler(IStatsRepository repository)
         {
             _repository = repository;
             validator = new GetTeamByNameQueryValidator();
         }
 
-        public async Task<TeamDTO> Handle(GetTeamByNameQuery request, CancellationToken cancellationToken)
+        public async Task<TeamDTO> Handle(FindTeamByNameQuery request, CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)

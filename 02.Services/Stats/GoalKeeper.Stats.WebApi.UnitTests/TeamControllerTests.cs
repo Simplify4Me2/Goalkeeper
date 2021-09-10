@@ -37,7 +37,7 @@ namespace GoalKeeper.Stats.WebApi.UnitTests
             string teamName = "FC De Kampioenen";
             await controller.GetTeamByName(teamName);
 
-            _mediator.Verify(p => p.Send(It.IsAny<GetTeamByNameQuery>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediator.Verify(p => p.Send(It.IsAny<FindTeamByNameQuery>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }

@@ -3,11 +3,11 @@ using MediatR;
 
 namespace GoalKeeper.Stats.Application.IO.Queries
 {
-    public class GetTeamByNameQuery : IRequest<TeamDTO>
+    public class FindTeamByNameQuery : IRequest<TeamDTO>
     {
         public string Name { get; }
 
-        public GetTeamByNameQuery(string name)
+        public FindTeamByNameQuery(string name)
         {
             Name = name;
         }

@@ -52,7 +52,7 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         {
             try
             {
-                var query = new GetTeamByNameQuery(name);
+                var query = new FindTeamByNameQuery(name);
                 return Ok(new Result<TeamDTO>(await _mediator.Send(query)));
             }
             catch (TeamNotFoundException)
