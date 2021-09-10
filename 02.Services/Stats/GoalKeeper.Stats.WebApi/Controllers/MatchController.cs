@@ -2,12 +2,10 @@
 using GoalKeeper.Stats.Application.IO.CommandModels;
 using GoalKeeper.Stats.Application.IO.Commands;
 using GoalKeeper.Stats.Application.IO.DTOs;
+using GoalKeeper.Stats.Application.IO.Exceptions;
 using GoalKeeper.Stats.Application.IO.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace GoalKeeper.Stats.WebApi.Controllers
 {
@@ -37,13 +35,21 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         [HttpGet]
         [Route("matchday/{day}")]
         [ProducesResponseType(typeof(Result<MatchdayDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         //[ProducesResponseType(typeof(Exception), 500)]
         //[ProducesErrorResponseType(typeof(Exception))]
         //public async Task<Result<MatchdayDTO>> GetMatchday([FromRoute] int day)
         public async Task<IActionResult> GetMatchday([FromRoute] int day)
         {
-            var query = new GetMatchdayQuery(day);
-            return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
+            try
+            {
+                var query = new GetMatchdayQuery(day);
+                return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
+            }
+            catch (MatchdayNotFoundException)
+            {
+                return NotFound();
+            }
         }
 
         //[HttpGet]

@@ -1,4 +1,5 @@
 ﻿using GoalKeeper.Stats.Application.IO.DTOs;
+using GoalKeeper.Stats.Application.IO.Exceptions;
 using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.Mappers;
 using GoalKeeper.Stats.Application.Ports;
@@ -27,6 +28,8 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
                 data = await _repository.FindCurrentMatchday(cancellationToken);
             else
                 data = await _repository.FindByMatchday(request.Day, cancellationToken);
+
+            if (data.Count() == 0) throw new MatchdayNotFoundException($"No matches found for matchday {request.Day}.");
 
             var matchday = new Matchday(data.FirstOrDefault().Matchday, data.ToList());
 
