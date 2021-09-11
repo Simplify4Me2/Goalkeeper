@@ -50,7 +50,7 @@ describe('HomeEffects', () => {
             const request: RequestResult<Ranking> = {
                 data: {
                     competitionName: 'Test League',
-                    teamRankings: [{ teamId: 1, teamName: 'Test Team', points: 0 }]
+                    teamRankings: [{ teamId: 1, teamName: 'Test Team', points: 0, gamesPlayed: 0 }]
                 },
                 messages: []
             };
