@@ -20,7 +20,7 @@ describe('RankingService', () => {
         rankingStub = {
             data: {
                 competitionName: 'Test competition name',
-                teamRankings: [{ teamId: 1, teamName: 'Test Team', points: 0 }]
+                teamRankings: [{ teamId: 1, teamName: 'Test Team', points: 0, gamesPlayed: 0 }]
             },
             messages: []
         };

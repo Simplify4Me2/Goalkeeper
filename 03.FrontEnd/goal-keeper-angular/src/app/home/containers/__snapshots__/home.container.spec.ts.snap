@@ -68,6 +68,9 @@ exports[`Home Container should compile 1`] = `
                 <th>
                   Points
                 </th>
+                <th>
+                  GP
+                </th>
               </tr>
             </thead>
             

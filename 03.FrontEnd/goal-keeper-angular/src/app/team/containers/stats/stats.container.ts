@@ -11,7 +11,7 @@ import { Player } from '../../models';
 export class StatsContainerComponent implements OnInit {
 
   players: Observable<Player[]>;
-
+  // https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/
   fakePlayers: Player[] = [
     { id: 1, firstName: 'Dieumerci', lastName: 'Mbokani', shirtNumber: 9, position: 'ATT' },
     { id: 2, firstName: 'Lior', lastName: 'Refaelov', shirtNumber: 7, position: 'MID' },
