@@ -34,7 +34,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
             var matches = await _matchRepository.FindByTeamId(team.Id, cancellationToken);
 
             TeamDTO returnValue = team.MapOut();
-            returnValue.Form = team.FormToString(matches.ToList());
+            returnValue.Form = team.FormToString(matches.Where(match => match.Status == Domain.Status.Played).ToList());
             return returnValue;
         }
     }
