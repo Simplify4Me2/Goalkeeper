@@ -26,6 +26,8 @@ namespace GoalKeeper.Stats.Application.UnitTests
         [Fact]
         public async Task FindTeamByName_WithValidRequest_ReturnsData()
         {
+            //_matchRepository.Setup(x => x.FindByTeamId(It.IsAny<long>(), CancellationToken.None))
+            //    .ReturnsAsync(new List<Match> {  new Domain.Match(55, ) })
             string teamName = "FC De Kampioenen";
             var response = await queryHandler.Handle(new FindTeamByNameQuery(teamName), CancellationToken.None);
             response.Should().NotBeNull();
@@ -34,7 +36,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
             response.StadiumName.Should().Be("Den Bruinen Dreef");
             response.Players.Count().Should().Be(2);
             response.Form.Count().Should().Be(4);
-            response.Form.Should().BeEquivalentTo(new[] { "W", "D", "W", "L" });
+            response.Form.Should().BeEquivalentTo(new[] { "-", "-", "-", "-" });
             _repository.Verify(x => x.GetTeamByName(teamName, CancellationToken.None), Times.Once);
         }
 

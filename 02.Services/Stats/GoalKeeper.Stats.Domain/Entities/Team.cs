@@ -30,6 +30,7 @@ namespace GoalKeeper.Stats.Domain
                 if (matches.Count == 0)
                 {
                     returnValue[returnValueIndex] = "-";
+                    returnValueIndex--;
                     continue;
                 }
                 var match = matches.Last();

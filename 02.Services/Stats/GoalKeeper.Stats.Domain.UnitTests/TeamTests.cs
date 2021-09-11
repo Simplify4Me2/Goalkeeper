@@ -101,5 +101,23 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             string[] exptected = new string[] { "-", "L", "W", "D" };
             result.Should().BeEquivalentTo(exptected);
         }
+
+        [Fact]
+        public void Team_FormToString_Should_Return_CorrectCombination()
+        {
+            // Arrange
+            var team = new Team(12, "FC De Kampioenen", null, null);
+            var otherTeam = new Team(34, "FC Nelly Boys", null, null); ;
+            List<Match> matches = new List<Match> {
+            new Match(1, otherTeam, team, new Score(2,1), new DateTime(2021, 01, 08), 5),
+            };
+
+            // Act
+            var result = team.FormToString(matches);
+
+            // Assert
+            string[] exptected = new string[] { "-", "-", "-", "L" };
+            result.Should().BeEquivalentTo(exptected);
+        }
     }
 }
