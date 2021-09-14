@@ -26,10 +26,10 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var team = new Team(12, "FC De Kampioenen", null, null);
             var otherTeam = new Team(34, "FC Nelly Boys", null, null); ;
             List<Match> matches = new List<Match> {
-            new Match(1, team, otherTeam, new Score(1,0), new DateTime(2021, 01, 01), 4),
-            new Match(2, otherTeam, team, new Score(0,2), new DateTime(2021, 01, 08), 5),
-            new Match(3, team, otherTeam, new Score(2,1), new DateTime(2021, 01, 15), 6),
-            new Match(4, otherTeam, team, new Score(1,3), new DateTime(2021, 01, 22), 7),
+            new Match(1, team, otherTeam, new Score(1,0, null), new DateTime(2021, 01, 01), 4),
+            new Match(2, otherTeam, team, new Score(0,2, null), new DateTime(2021, 01, 08), 5),
+            new Match(3, team, otherTeam, new Score(2,1, null), new DateTime(2021, 01, 15), 6),
+            new Match(4, otherTeam, team, new Score(1,3, null), new DateTime(2021, 01, 22), 7),
             };
 
             // Act
@@ -47,10 +47,10 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var team = new Team(12, "FC De Kampioenen", null, null);
             var otherTeam = new Team(34, "FC Nelly Boys", null, null); ;
             List<Match> matches = new List<Match> {
-            new Match(1, team, otherTeam, new Score(1,1), new DateTime(2021, 01, 01), 4),
-            new Match(2, otherTeam, team, new Score(2,2), new DateTime(2021, 01, 08), 5),
-            new Match(3, team, otherTeam, new Score(2,2), new DateTime(2021, 01, 15), 6),
-            new Match(4, otherTeam, team, new Score(3,3), new DateTime(2021, 01, 22), 7),
+            new Match(1, team, otherTeam, new Score(1,1, null), new DateTime(2021, 01, 01), 4),
+            new Match(2, otherTeam, team, new Score(2,2, null), new DateTime(2021, 01, 08), 5),
+            new Match(3, team, otherTeam, new Score(2,2, null), new DateTime(2021, 01, 15), 6),
+            new Match(4, otherTeam, team, new Score(3,3, null), new DateTime(2021, 01, 22), 7),
             };
 
             // Act
@@ -68,10 +68,10 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var team = new Team(12, "FC De Kampioenen", null, null);
             var otherTeam = new Team(34, "FC Nelly Boys", null, null); ;
             List<Match> matches = new List<Match> {
-            new Match(1, team, otherTeam, new Score(0,1), new DateTime(2021, 01, 01), 4),
-            new Match(2, otherTeam, team, new Score(2,1), new DateTime(2021, 01, 08), 5),
-            new Match(3, team, otherTeam, new Score(0,2), new DateTime(2021, 01, 15), 6),
-            new Match(4, otherTeam, team, new Score(4,3), new DateTime(2021, 01, 22), 7),
+            new Match(1, team, otherTeam, new Score(0,1, null), new DateTime(2021, 01, 01), 4),
+            new Match(2, otherTeam, team, new Score(2,1, null), new DateTime(2021, 01, 08), 5),
+            new Match(3, team, otherTeam, new Score(0,2, null), new DateTime(2021, 01, 15), 6),
+            new Match(4, otherTeam, team, new Score(4,3, null), new DateTime(2021, 01, 22), 7),
             };
 
             // Act
@@ -89,9 +89,9 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var team = new Team(12, "FC De Kampioenen", null, null);
             var otherTeam = new Team(34, "FC Nelly Boys", null, null); ;
             List<Match> matches = new List<Match> {
-            new Match(2, otherTeam, team, new Score(2,1), new DateTime(2021, 01, 08), 5),
-            new Match(3, team, otherTeam, new Score(3,2), new DateTime(2021, 01, 15), 6),
-            new Match(4, otherTeam, team, new Score(3,3), new DateTime(2021, 01, 22), 7),
+            new Match(2, otherTeam, team, new Score(2,1, null), new DateTime(2021, 01, 08), 5),
+            new Match(3, team, otherTeam, new Score(3,2, null), new DateTime(2021, 01, 15), 6),
+            new Match(4, otherTeam, team, new Score(3,3, null), new DateTime(2021, 01, 22), 7),
             };
 
             // Act
@@ -109,7 +109,7 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var team = new Team(12, "FC De Kampioenen", null, null);
             var otherTeam = new Team(34, "FC Nelly Boys", null, null); ;
             List<Match> matches = new List<Match> {
-            new Match(1, otherTeam, team, new Score(2,1), new DateTime(2021, 01, 08), 5),
+            new Match(1, otherTeam, team, new Score(2,1, null), new DateTime(2021, 01, 08), 5),
             };
 
             // Act

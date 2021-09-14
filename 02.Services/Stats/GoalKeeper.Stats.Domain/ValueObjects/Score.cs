@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoalKeeper.Stats.Domain.ValueObjects;
+using System.Collections.Generic;
 
 namespace GoalKeeper.Stats.Domain
 {
@@ -8,10 +9,13 @@ namespace GoalKeeper.Stats.Domain
 
         public int Away { get; }
 
-        public Score(int homeScore, int awayScore)
+        public List<Goal> Goals { get; set; }
+
+        public Score(int homeScore, int awayScore, List<Goal> goals = null)
         {
             Home = homeScore;
             Away = awayScore;
+            Goals = goals ?? new List<Goal>();
         }
     }
 }

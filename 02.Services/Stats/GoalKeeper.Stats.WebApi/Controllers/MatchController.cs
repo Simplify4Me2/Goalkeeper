@@ -82,7 +82,7 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         //public async Task<Result<bool>> AddMatch([FromBody] MatchPlayedModel model)
         public async Task<IActionResult> AddMatch([FromBody] MatchPlayedModel model)
         {
-            var command = new MatchPlayedCommand(model.HomeTeamName, model.HomeTeamScore, model.AwayTeamName, model.AwayTeamScore, model.Date, model.Matchday);
+            MatchPlayedCommand command = model.ToCommand();
             return Ok(new Result<bool>(await _mediator.Send(command)));
         }
     }

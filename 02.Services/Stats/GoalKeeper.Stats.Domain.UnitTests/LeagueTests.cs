@@ -32,7 +32,7 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var teams = new List<Team> { testTeam, awayTeam1 };
             var matches = new List<Match>
             {
-                new Match(1, testTeam, awayTeam1, new Score(3, 5), new DateTime(), 1)
+                new Match(1, testTeam, awayTeam1, new Score(3, 5, null), new DateTime(), 1)
             };
             var league = new League("CBF", teams, matches);
 
@@ -50,7 +50,7 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var teams = new List<Team> { testTeam, awayTeam1 };
             var matches = new List<Match>
             {
-                new Match(1, testTeam, awayTeam1, new Score(5, 0), new DateTime(), 1)
+                new Match(1, testTeam, awayTeam1, new Score(5, 0, null), new DateTime(), 1)
             };
             var league = new League("CBF", teams, matches);
 
@@ -68,7 +68,7 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var teams = new List<Team> { testTeam, awayTeam1 };
             var matches = new List<Match>
             {
-                new Match(1, testTeam, awayTeam1, new Score(0, 0), new DateTime(), 1)
+                new Match(1, testTeam, awayTeam1, new Score(0, 0, null), new DateTime(), 1)
             };
             var league = new League("CBF", teams, matches);
 
@@ -86,9 +86,9 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var teams = new List<Team> { testTeam, otherTeam };
             var matches = new List<Match>
 {
-                new Match(1, testTeam, otherTeam, new Score(1, 1), new DateTime(), 1),
-                new Match(2, otherTeam, testTeam, new Score(0, 1), new DateTime(), 1)
-            };
+                new Match(1, testTeam, otherTeam, new Score(1, 1, null), new DateTime(), 1),
+                new Match(2, otherTeam, testTeam, new Score(0, 1, null), new DateTime(), 1)
+            };                                                  
             var league = new League("CBF", teams, matches);
 
             // Assert
@@ -107,9 +107,9 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var teams = new List<Team> { testTeam, awayTeam1, awayTeam2, awayTeam3 };
             var matches = new List<Match>
             {
-                new Match(1, testTeam, awayTeam1, new Score(5, 0), new DateTime(), 1),
-                new Match(2, awayTeam2, testTeam, new Score(2, 2), new DateTime(), 1),
-                new Match(3, testTeam, awayTeam1, new Score(2, 3), new DateTime(), 1),
+                new Match(1, testTeam, awayTeam1, new Score(5, 0, null), new DateTime(), 1),
+                new Match(2, awayTeam2, testTeam, new Score(2, 2, null), new DateTime(), 1),
+                new Match(3, testTeam, awayTeam1, new Score(2, 3, null), new DateTime(), 1),
             };
             var league = new League("CBF", teams, matches);
 
@@ -129,12 +129,12 @@ namespace GoalKeeper.Stats.Domain.UnitTests
             var teams = new List<Team> { team1, team2, team3, team4 };
             var matches = new List<Match>
             {
-                new Match(1, team1, team2, new Score(0, 5), new DateTime(), 1),
-                new Match(2, team3, team4, new Score(1, 2), new DateTime(), 1),
-                new Match(3, team3, team1, new Score(2, 3), new DateTime(), 2),
-                new Match(4, team4, team2, new Score(2, 3), new DateTime(), 2),
-                new Match(5, team1, team4, new Score(1, 0), new DateTime(), 3),
-                new Match(6, team2, team3, new Score(2, 1), new DateTime(), 3),
+                new Match(1, team1, team2, new Score(0, 5, null), new DateTime(), 1),
+                new Match(2, team3, team4, new Score(1, 2, null), new DateTime(), 1),
+                new Match(3, team3, team1, new Score(2, 3, null), new DateTime(), 2),
+                new Match(4, team4, team2, new Score(2, 3, null), new DateTime(), 2),
+                new Match(5, team1, team4, new Score(1, 0, null), new DateTime(), 3),
+                new Match(6, team2, team3, new Score(2, 1, null), new DateTime(), 3),
             };
             var league = new League("CBF", teams, matches);
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoalKeeper.Stats.Application.IO.Commands;
+using System;
 
 namespace GoalKeeper.Stats.Application.IO.CommandModels
 {
@@ -15,5 +16,10 @@ namespace GoalKeeper.Stats.Application.IO.CommandModels
         public DateTime Date { get; set; }
 
         public int Matchday { get; set; }
+
+        public MatchPlayedCommand ToCommand()
+        {
+            return new MatchPlayedCommand(HomeTeamName, HomeTeamScore, AwayTeamName, AwayTeamScore, Date, Matchday);
+        }
     }
 }
