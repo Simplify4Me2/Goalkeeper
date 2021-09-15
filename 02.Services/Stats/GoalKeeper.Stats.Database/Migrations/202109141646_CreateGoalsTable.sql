@@ -10,6 +10,7 @@ CREATE TABLE [Stats].[Goals](
     [PlayerId] [bigint] NOT NULL,
 	[Minute] [int] NOT NULL,
 	[Extra] [int] NULL,
+	[Penalty] [bit],
 	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
 	[CreatedBy] [nvarchar](max) NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
