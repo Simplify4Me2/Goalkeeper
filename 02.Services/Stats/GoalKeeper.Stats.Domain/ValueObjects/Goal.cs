@@ -6,12 +6,12 @@ namespace GoalKeeper.Stats.Domain.ValueObjects
     {
         public Player Player { get; }
 
-        public DateTime Time { get; }
+        public int Minute { get; }
 
-        public Goal(Player player, DateTime time)
+        public Goal(Player player, int minute)
         {
             Player = player;
-            Time = time;
+            Minute = minute;
         }
     }
 }
