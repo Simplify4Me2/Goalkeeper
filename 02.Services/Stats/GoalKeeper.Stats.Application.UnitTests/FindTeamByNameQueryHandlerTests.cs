@@ -26,8 +26,6 @@ namespace GoalKeeper.Stats.Application.UnitTests
         [Fact]
         public async Task FindTeamByName_WithValidRequest_ReturnsData()
         {
-            //_matchRepository.Setup(x => x.FindByTeamId(It.IsAny<long>(), CancellationToken.None))
-            //    .ReturnsAsync(new List<Match> {  new Domain.Match(55, ) })
             string teamName = "FC De Kampioenen";
             var response = await queryHandler.Handle(new FindTeamByNameQuery(teamName), CancellationToken.None);
             response.Should().NotBeNull();

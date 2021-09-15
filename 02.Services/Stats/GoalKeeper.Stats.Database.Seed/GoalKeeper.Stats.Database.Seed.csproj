@@ -17,6 +17,9 @@
     <None Update="Seeds\202101261856_Stadiums_1A_2020-21.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Seeds\202109141702_Goals_1A_2021-22.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Seeds\202107281650_Matches_1A_2021-22.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
