@@ -1,4 +1,4 @@
-<ng-container *ngIf="players">
+<!-- <ng-container *ngIf="players">
     <table class="players-table zigzag">
         <thead>
             <tr>
@@ -17,4 +17,22 @@
             </tr>
         </tbody>
     </table>
+</ng-container> -->
+
+<ng-container *ngIf="players">
+    <div class="position-title" >
+        <!-- https://css-tricks.com/line-on-sides-headers/ -->
+        <!-- <hr> -->
+        <span>Goalkeepers</span>
+        <!-- <hr> -->
+    </div>
+    <div class="position-title" >
+        <span>Defenders</span>
+    </div>
+    <div class="position-title" >
+        <span>Midfielders</span>
+    </div>
+    <div class="position-title" >
+        <span>Attackers</span>
+    </div>
 </ng-container>
