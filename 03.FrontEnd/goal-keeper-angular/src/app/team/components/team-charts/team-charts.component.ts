@@ -1,15 +1,18 @@
 import { AfterContentInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Chart, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-team-charts',
   templateUrl: './team-charts.component.html',
   styleUrls: ['./team-charts.component.sass']
 })
-export class TeamChartsComponent implements OnInit, AfterContentInit {
+export class TeamChartsComponent implements OnInit {
 
   // https://edupala.com/how-to-use-angular-chartjs/
 
   @ViewChild('doughnut', {static: true}) donut: ElementRef;
+
+  chart: any;
 
   data = {
     labels: ['OK', 'WARNING', 'CRITICAL', 'UNKNOWN'],
@@ -41,14 +44,11 @@ export class TeamChartsComponent implements OnInit, AfterContentInit {
   ];
 
   constructor() { }
-  ngAfterContentInit(): void {
-    console.log(this.donut);
-    // var chart = new Chart(this.donut.nativeElement, { type: 'doughnut', data: this.data});
-    // Chart.register(chart);
-  }
 
   ngOnInit(): void {
-    
+    Chart.register(...registerables);
+
+    this.chart = new Chart(this.donut.nativeElement, { type: 'doughnut', data: this.data});
   }
   
 
