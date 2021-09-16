@@ -8,6 +8,7 @@ CREATE TABLE [Stats].[Goals](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
     [MatchId] [bigint] NOT NULL,
     [PlayerId] [bigint] NOT NULL,
+    [TeamId] [bigint] NOT NULL,
 	[Minute] [int] NOT NULL,
 	[Extra] [int] NULL,
 	[Penalty] [bit],

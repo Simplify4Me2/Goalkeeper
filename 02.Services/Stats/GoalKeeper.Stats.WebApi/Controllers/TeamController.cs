@@ -4,7 +4,6 @@ using GoalKeeper.Stats.Application.IO.Exceptions;
 using GoalKeeper.Stats.Application.IO.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace GoalKeeper.Stats.WebApi.Controllers
 {
