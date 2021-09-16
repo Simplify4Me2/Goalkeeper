@@ -1,4 +1,5 @@
 using FluentAssertions;
+using System;
 using Xunit;
 
 namespace GoalKeeper.Stats.Domain.UnitTests

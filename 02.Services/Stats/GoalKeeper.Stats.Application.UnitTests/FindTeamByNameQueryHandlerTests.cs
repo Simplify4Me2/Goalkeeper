@@ -4,6 +4,11 @@ using GoalKeeper.Stats.Application.IO.Queries;
 using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Application.QueryHandlers;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace GoalKeeper.Stats.Application.UnitTests
