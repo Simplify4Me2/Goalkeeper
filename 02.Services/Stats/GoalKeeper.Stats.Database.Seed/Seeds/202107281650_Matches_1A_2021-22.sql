@@ -98,7 +98,7 @@ VALUES
   (@Charleroi     , 0, @ClubBrugge      , 1, 8, '2021-09-18 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@STVV          , 1, @Genk            , 2, 8, '2021-09-19 13:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp       , 2, @Seraing         , 1, 8, '2021-09-19 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@StandardLuik  , NULL, @Anderlecht   , NULL, 8, '2021-09-19 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@StandardLuik  , 0, @Anderlecht		, 1, 8, '2021-09-19 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Kortrijk      , NULL, @Gent         , NULL, 8, '2021-09-19 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
   (@ClubBrugge    , NULL, @OHL          , NULL, 9, '2021-09-24 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
