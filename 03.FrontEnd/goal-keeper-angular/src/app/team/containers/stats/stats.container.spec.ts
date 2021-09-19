@@ -1,9 +1,15 @@
+import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { StatsContainerComponent } from './stats.container';
-import { TeamCardsStatsComponent, TeamGoalsStatsComponent, TeamChartsComponent } from '../../components';
+import { TeamCardsStatsComponent, TeamGoalsStatsComponent } from '../../components';
+
+
+@Component({
+  selector: "app-team-charts", template: ""
+}) class MockTeamChartsComponent {}
 
 describe('StatsContainer', () => {
   let component: StatsContainerComponent;
@@ -12,8 +18,8 @@ describe('StatsContainer', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [StatsContainerComponent, TeamCardsStatsComponent, TeamGoalsStatsComponent, TeamChartsComponent],
-      providers: [
+      declarations: [StatsContainerComponent, TeamCardsStatsComponent, TeamGoalsStatsComponent, MockTeamChartsComponent],
+      providers: [ 
         {
           provide: ActivatedRoute,
           useValue: {
@@ -25,7 +31,7 @@ describe('StatsContainer', () => {
               }
             }
           }
-        },
+        },  
       ]
     })
       .compileComponents();
