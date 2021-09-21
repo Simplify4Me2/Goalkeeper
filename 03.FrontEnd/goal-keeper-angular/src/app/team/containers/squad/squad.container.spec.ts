@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { SquadContainerComponent } from './squad.container';
-import { TeamPlayersComponent } from '../../components/team-players/team-players.component';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { TeamPlayersComponent, PlayerCardComponent } from '../../components';
 
 describe('SquadContainer', () => {
   let component: SquadContainerComponent;
@@ -14,7 +14,7 @@ describe('SquadContainer', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [SquadContainerComponent, TeamPlayersComponent],
+      declarations: [SquadContainerComponent, TeamPlayersComponent, PlayerCardComponent],
       providers: [
         {
           provide: ActivatedRoute,

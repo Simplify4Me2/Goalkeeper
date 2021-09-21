@@ -20,24 +20,21 @@
 </ng-container> -->
 
 <ng-container *ngIf="players">
-    <div class="position-title" >
-        <!-- https://css-tricks.com/line-on-sides-headers/ -->
-        <!-- <hr> -->
-        <span>Goalkeepers</span>
-        <!-- <hr> -->
-        <!-- <section class="player-section"> -->
-            <section>
-            <div class="player-card-left"><span>77</span><span>POS</span></div>
-            <div class="player-card-right"><span>FirstName</span><span>LastName</span></div>
-        </section>
-    </div>
-    <div class="position-title" >
-        <span>Defenders</span>
-    </div>
-    <div class="position-title" >
-        <span>Midfielders</span>
-    </div>
-    <div class="position-title" >
-        <span>Attackers</span>
-    </div>
+  <div class="position-title">
+    <!-- https://css-tricks.com/line-on-sides-headers/ -->
+    <hr>
+    <h3><span>Goalkeepers</span></h3>
+    <hr />
+    <!-- <section class="player-section"> -->
+    <app-player-card></app-player-card>
+  </div>
+  <div class="position-title">
+    <span>Defenders</span>
+  </div>
+  <div class="position-title">
+    <span>Midfielders</span>
+  </div>
+  <div class="position-title">
+    <span>Attackers</span>
+  </div>
 </ng-container>
