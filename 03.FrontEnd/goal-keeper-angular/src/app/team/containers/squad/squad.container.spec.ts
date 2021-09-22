@@ -5,6 +5,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { SquadContainerComponent } from './squad.container';
 import { TeamPlayersComponent, PlayerCardComponent } from '../../components';
+import { FilterByPositionPipe } from '../../pipes/filter-by-position.pipe';
 
 describe('SquadContainer', () => {
   let component: SquadContainerComponent;
@@ -14,7 +15,7 @@ describe('SquadContainer', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [SquadContainerComponent, TeamPlayersComponent, PlayerCardComponent],
+      declarations: [SquadContainerComponent, TeamPlayersComponent, PlayerCardComponent, FilterByPositionPipe],
       providers: [
         {
           provide: ActivatedRoute,

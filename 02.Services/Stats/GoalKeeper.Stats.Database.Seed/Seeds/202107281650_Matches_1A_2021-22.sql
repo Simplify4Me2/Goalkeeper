@@ -68,7 +68,7 @@ VALUES
   (@ZulteWaregem  , 2, @Charleroi       , 2, 5, '2021-08-22 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@ClubBrugge    , 3, @Beerschot       , 2, 5, '2021-08-22 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Mechelen      , 3, @Union           , 1, 5, '2021-08-22 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Antwerp       , NULL, @Genk         , NULL, 5, '2021-09-22 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Antwerp       , 4, @Genk			, 2, 5, '2021-09-22 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Anderlecht    , NULL, @Gent         , NULL, 5, '2021-09-23 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   
   (@Kortrijk      , 2, @Mechelen        , 2, 6, '2021-08-27 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
