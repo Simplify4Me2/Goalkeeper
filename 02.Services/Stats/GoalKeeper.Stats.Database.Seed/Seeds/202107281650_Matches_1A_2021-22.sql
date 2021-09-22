@@ -21,15 +21,15 @@
 INSERT INTO [Stats].[Matches]
 ([HomeTeamId], [HomeTeamScore], [AwayTeamId], [AwayTeamScore], [Matchday], [DateUtc], CreatedUtc, CreatedBy, ModifiedUtc, ModifiedBy)
 VALUES
-  (@StandardLuik	, 1, @Genk			  , 1, 1, '2021-07-23 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@OHL				, 1, @ZulteWaregem	  , 1, 1, '2021-07-24 16:15:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Kortrijk		, 2, @Seraing		  , 0, 1, '2021-07-24 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Oostende		, 0, @Charleroi		  , 3, 1, '2021-07-24 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Mechelen		, 3, @Antwerp		  , 2, 1, '2021-07-25 13:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@ClubBrugge		, 2, @Eupen			  , 2, 1, '2021-07-25 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Anderlecht		, 1, @Union			  , 3, 1, '2021-07-25 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@STVV			, 2, @Gent			  , 1, 1, '2021-07-25 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Beerschot		, 0, @CercleBrugge	  , 1, 1, '2021-07-27 20:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@StandardLuik  , 1, @Genk			, 1, 1, '2021-07-23 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@OHL			  , 1, @ZulteWaregem	, 1, 1, '2021-07-24 16:15:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Kortrijk	  , 2, @Seraing			, 0, 1, '2021-07-24 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Oostende	  , 0, @Charleroi		, 3, 1, '2021-07-24 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Mechelen	  , 3, @Antwerp			, 2, 1, '2021-07-25 13:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@ClubBrugge	  , 2, @Eupen			, 2, 1, '2021-07-25 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Anderlecht	  , 1, @Union			, 3, 1, '2021-07-25 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@STVV		  , 2, @Gent			, 1, 1, '2021-07-25 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Beerschot	  , 0, @CercleBrugge	, 1, 1, '2021-07-27 20:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
   (@Genk          , 3, @Oostende        , 4, 2, '2021-07-30 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Charleroi     , 0, @STVV            , 0, 2, '2021-07-31 16:15:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
@@ -99,7 +99,7 @@ VALUES
   (@STVV          , 1, @Genk            , 2, 8, '2021-09-19 13:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp       , 2, @Seraing         , 1, 8, '2021-09-19 16:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@StandardLuik  , 0, @Anderlecht		, 1, 8, '2021-09-19 18:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Kortrijk      , NULL, @Gent         , NULL, 8, '2021-09-19 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Kortrijk      , 1, @Gent			, 0, 8, '2021-09-19 21:00:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
   (@ClubBrugge    , NULL, @OHL          , NULL, 9, '2021-09-24 20:45:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Beerschot     , NULL, @Eupen        , NULL, 9, '2021-09-25 16:15:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),

@@ -13,9 +13,10 @@ import { SquadContainerComponent } from './containers/squad/squad.container';
 import { StatsContainerComponent } from './containers/stats/stats.container';
 import { TeamChartsComponent } from './components/team-charts/team-charts.component';
 import { PlayerCardComponent } from './components/player-card/player-card.component';
+import { FilterByPositionPipe } from './pipes/filter-by-position.pipe';
 
 @NgModule({
-  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, MatchesContainerComponent, SquadContainerComponent, StatsContainerComponent, TeamGoalsStatsComponent, TeamCardsStatsComponent, TeamChartsComponent, PlayerCardComponent],
+  declarations: [TeamContainerComponent, TeamInfoComponent, TeamPlayersComponent, MatchesContainerComponent, SquadContainerComponent, StatsContainerComponent, TeamGoalsStatsComponent, TeamCardsStatsComponent, TeamChartsComponent, PlayerCardComponent, FilterByPositionPipe],
   imports: [
     SharedModule,
     TeamRoutingModule,

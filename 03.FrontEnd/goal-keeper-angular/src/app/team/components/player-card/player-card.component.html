@@ -1,8 +1,8 @@
 <section class="player-section">
     <div class="player-card-left">
         <div class="top-half flex-column">
-            <span class="bold">77</span>
-            <span>POS</span>
+            <span class="bold">{{ player.shirtNumber }}</span>
+            <span>{{ player.position }}</span>
           </div>
       <img
         class="nationality"
@@ -16,8 +16,8 @@
         src="https://voicebyte.nl/wp-content/uploads/2015/07/default-profile.jpg"
       />
       <div class="bottom-half flex-column">
-          <span>FirstName</span>
-          <span class="bold">LastName</span>
+          <span>{{ player.firstName }}</span>
+          <span class="bold">{{ player.lastName }}</span>
       </div>
     </div>
   </section>
