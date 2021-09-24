@@ -1,52 +1,11 @@
 @use '../../../../sass/_variables' as var
 
-.players-table
-  width: 100%
-  text-align: center
-
-table
-  font-family: sans-serif
-  th, td
-    padding: .25em .5em
-    text-align: left
-    &:nth-child(2)
-      text-align: right
-  td
-    background-color: #eee
-  th
-    background-color: #009
-    color: #fff
-
-.subtitle
-  // &:after
-  //   display: block
-
-  // https://codepen.io/chris22smith/pen/NWWRWxJ
-// .zigzag 
-//   border-collapse:separate
-//   border-spacing:.25em 1em
-//   tbody tr:nth-child(odd) 
-//     transform:rotate(2deg)
-//   thead tr,
-//   tbody tr:nth-child(even) 
-//     transform:rotate(-2deg)
-
-.position-title
-  font-family: var.$secondary-font-family
-  font-size: 36px
-  line-height: 42px
-  display: flex
-  justify-content: center
-
-.position-title span:before
-.position-title span:after
-  background-color: red
-
-.player-section
+.player
   font-size: 18px
   width: 210px
   height: 140px
   display: flex
+  margin: 1rem 1rem 1rem 0rem
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25)
   justify-content: space-around
 
@@ -79,12 +38,8 @@ table
   border-radius: 50%
   flex-grow: 2
 
-.bold
-  font-weight: bold
-
 .top-half
   flex-grow: 2
-
 
 .flex-column
   display: flex
@@ -94,27 +49,4 @@ table
 
 .bottom-half
   flex-grow: 1
-
-// .position-title hr
-//   // content: '              yolo  '
-//   text-decoration: line-through
-  // border-top: 1px solid red
-
-// .position-title span:before,
-// .position-title span:after 
-//   content: ""
-//   position: absolute
-//   height: 5px
-//   border-bottom: 1px solid red
-//   border-top: 1px solid red
-//   top: 0
-//   width: 600px
-
-// .position-title span:before 
-//   right: 100%
-//   margin-right: 15px
-
-// .position-title span:after 
-//   left: 100%
-//   margin-left: 15px
 
