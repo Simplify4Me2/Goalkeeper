@@ -181,6 +181,7 @@ VALUES
   --(@Beerschot, 'Tarik', 'Tissoudali', 34, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Beerschot, 'Loris', 'Brogno', 92, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Beerschot, 'Micael', 'Felipe', 99, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Beerschot, 'Issa', 'Soumaré', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
   (@StandardLuik, 'Jean-François'	, 'Gillet'			, 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@StandardLuik, 'Arnaud'			, 'Bodart'			, 16, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
@@ -357,6 +358,7 @@ VALUES
   (@Oostende, 'Brecht', 'Capon', 27, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Oostende, 'Ari', 'Skulason', 23, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Oostende, 'Marvin', 'Dewaele', 12, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Oostende, 'Alfons', 'Amade', 23, 'DEF', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Oostende, 'Evangelos', 'Patoulidis', 24, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Oostende, 'Maxime', 'D''Arpino', 6, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Oostende, 'Andrew', 'Hjulsager', 17, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
@@ -411,7 +413,7 @@ VALUES
   (@Anderlecht, 'Antoine',	'Colassin'			, 53, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Anderlecht, 'Paul',		'Mukairu'			, 12, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Anderlecht, 'Mustapha', 'Bundu'				, 19, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  --(@Anderlecht, 'Isaac',	'Thelin'			, 24, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Anderlecht, 'Isaac',	'Thelin'			, 24, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Anderlecht, 'Joshua',	'Zirkzee'			, 24, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Anderlecht, 'Christian','Kouamé'			, 99, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   
@@ -474,6 +476,7 @@ VALUES
   (@Genk, 'Paul', 'Onuachu', 18, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Genk, 'Bryan', 'Limbombe', 22, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Genk, 'Iké', 'Ugbo', 21, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Genk, 'Joseph', 'Paintsil', 28, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
   (@STVV, 'Kenny', 'Steppe', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@STVV, 'Daniel', 'Schmidt', 21, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),

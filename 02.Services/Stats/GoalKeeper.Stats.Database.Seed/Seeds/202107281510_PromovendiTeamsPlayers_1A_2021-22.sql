@@ -50,4 +50,5 @@ VALUES
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 'Mathieu', 'Cachbach', 17, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 'Youssef', 'Maziz', 88, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 'Ali', 'Sanogo', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 'Marius', 'Mouandilmadji', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 'Marius', 'Mouandilmadji', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  ((SELECT Id FROM Stats.Teams WHERE [Name] like '%RFC Seraing%'), 'Georges ', 'Mikautadze', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed')
