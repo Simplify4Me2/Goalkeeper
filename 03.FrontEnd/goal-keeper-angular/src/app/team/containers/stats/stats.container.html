@@ -1,6 +1,8 @@
 <!-- <p>stats works!</p> -->
-<app-team-charts></app-team-charts>
-<div class="flex">
-    <app-team-goals-stats class="stats-item" [players]="players | async"></app-team-goals-stats>
-    <app-team-cards-stats class="stats-item" [players]="players | async"></app-team-cards-stats>
+<div class="flex column">
+    <app-team-charts></app-team-charts>
+    <div class="flex">
+        <app-team-goals-stats class="stats-item" [players]="players | async"></app-team-goals-stats>
+        <app-team-cards-stats class="stats-item" [players]="players | async"></app-team-cards-stats>
+    </div>
 </div>

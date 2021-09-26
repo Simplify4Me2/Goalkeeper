@@ -38,32 +38,69 @@ export class TeamChartsComponent implements OnInit {
     ],
   };
 
-  saleData = [
-    { name: 'Mobiles', value: 105000 },
-    { name: 'Laptop', value: 55000 },
-    { name: 'AC', value: 15000 },
-    { name: 'Headset', value: 150000 },
-    { name: 'Fridge', value: 20000 },
-  ];
+  // saleData = [
+  //   { name: 'Mobiles', value: 105000 },
+  //   { name: 'Laptop', value: 55000 },
+  //   { name: 'AC', value: 15000 },
+  //   { name: 'Headset', value: 150000 },
+  //   { name: 'Fridge', value: 20000 },
+  // ];
 
   // barData: ChartData = {
 
   // };
 
   barOptions: ChartOptions = {
-    indexAxis: 'x'
+    indexAxis: 'y',
+    scales: {
+      x: {
+        stacked: true,
+        grid: {
+          display: false
+        },
+        display: false
+      },
+      y: { 
+        stacked: true,
+        grid: {
+          display: false
+        },
+        display: false
+      },
+    },
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        enabled: false
+      }
+    }
   }
 
   barConfig: ChartConfiguration = {
     type: 'bar',
     data: {
-      labels: ['Foo'],
+      labels: [''],
       datasets: [
         {
-          data: [727, 589, 537, 543, 574],
-          backgroundColor: 'rgba(63,103,126,1)',
-          hoverBackgroundColor: 'rgba(50,90,100,1)',
+          data: [4],
+          backgroundColor: 'rgba(0,128,0,1)',
+          // hoverBackgroundColor: 'rgba(50,90,100,1)',
+          borderRadius: Number.MAX_VALUE
         },
+        {
+          data: [2],
+          backgroundColor: 'rgba(255,165,0,1)',
+          // hoverBackgroundColor: 'rgba(50,90,100,1)',
+          borderRadius: Number.MAX_VALUE
+        },
+        {
+          data: [6],
+          backgroundColor: 'rgba(255,0,0,1)',
+          // hoverBackgroundColor: 'rgba(50,90,100,1)',
+          borderRadius: Number.MAX_VALUE
+        }
       ],
     },
     options: this.barOptions
@@ -177,10 +214,10 @@ export class TeamChartsComponent implements OnInit {
   ngOnInit(): void {
     Chart.register(...registerables);
 
-    this.dougnut = new Chart(this.donut.nativeElement, {
-      type: 'doughnut',
-      data: this.doughnutData,
-    });
+    // this.dougnut = new Chart(this.donut.nativeElement, {
+    //   type: 'doughnut',
+    //   data: this.doughnutData,
+    // });
 
     this.bar = new Chart(this.resultBar.nativeElement, this.barConfig);
   }
