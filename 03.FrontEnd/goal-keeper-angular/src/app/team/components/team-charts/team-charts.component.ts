@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Chart, ChartConfiguration, ChartData, ChartOptions, registerables } from 'chart.js';
+import { Chart, ChartConfiguration, ChartOptions, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-team-charts',
