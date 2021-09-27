@@ -114,13 +114,14 @@ VALUES
   (@Gent, 'Niklas'		, 'Dorsch', 30, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Gent, 'Julien'		, 'De Sart', 13, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   --(@Gent, 'Roman'		, 'Yaremchuk', 7, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Gent, 'Anderson'	, 'Niangbo', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  --(@Gent, 'Anderson'	, 'Niangbo', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Gent, 'Dylan'		, 'Mbayo', 18, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Gent, 'Osman'		, 'Bukari', 20, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Gent, 'Laurent'		, 'Depoitre', 29, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Gent, 'Tim'			, 'Kleindienst', 34, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Gent, 'Gianni'		, 'Bruno', 19, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Gent, 'Tarik'		, 'Tissoudali', 34, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Gent, 'Darko'		, 'Lemajić', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
 
 
   (@CercleBrugge, 'Thomas', 'Didillon', 1, 'GK', GETDATE(), 'Seed', GETDATE(), 'Seed'),
@@ -500,6 +501,7 @@ VALUES
   (@STVV, 'Jhonny', 'Lucas', 33, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@STVV, 'Hamza', 'Massoudi', 70, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@STVV, 'Christian', 'Brüls', 44, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@STVV, 'Rocco', 'Reitz', 8, 'MID', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@STVV, 'Yuma', 'Suzuki', 9, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@STVV, 'Oleksandr', 'Filippov', 11, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
   --(@STVV, 'Keito', 'Nakamura', 15, 'ATT', GETDATE(), 'Seed', GETDATE(), 'Seed'),
