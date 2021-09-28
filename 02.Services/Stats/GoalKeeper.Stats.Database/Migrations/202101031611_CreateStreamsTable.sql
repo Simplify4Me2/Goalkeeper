@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [EventStore].[Streams](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Type] [nvarchar](max) NOT NULL,
-	[Version] [int] NULL,
+	[Version] [int] NOT NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL,
-	[CreatedBy] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Streams] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

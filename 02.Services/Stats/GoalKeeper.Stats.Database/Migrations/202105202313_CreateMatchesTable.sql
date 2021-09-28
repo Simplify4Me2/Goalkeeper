@@ -14,9 +14,9 @@ CREATE TABLE [Stats].[Matches](
 	[Matchday] [int] NOT NULL,
 	[DateUtc] [datetime2](7) NOT NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](max) NOT NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
-	[ModifiedBy] [nvarchar](max) NULL,
+	[ModifiedBy] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Matches] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

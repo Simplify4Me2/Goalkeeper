@@ -20,7 +20,7 @@ namespace GoalKeeper.Stats.Application.IO.Services
             //};
         }
 
-        public async Task<Result<MatchDTO>> GetTeam(string teamName, CancellationToken cancellationToken)
+        public async Task<Result<MatchDTO>> FindTeam(string teamName, CancellationToken cancellationToken)
         {
             //_client = new HttpClient(new HttpClientHandler())
             //{

@@ -10,9 +10,9 @@ CREATE TABLE [Stats].[Seasons](
 	[StartUtc] [datetime2](7) NOT NULL,
 	[EndUtc] [datetime2](7) NOT NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](max) NOT NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
-	[ModifiedBy] [nvarchar](max) NULL,
+	[ModifiedBy] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Seasons] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

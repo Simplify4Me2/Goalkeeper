@@ -13,9 +13,9 @@ CREATE TABLE [Stats].[Goals](
 	[Extra] [int] NULL,
 	[Penalty] [bit],
 	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](max) NOT NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
-	[ModifiedBy] [nvarchar](max) NULL,
+	[ModifiedBy] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Goals] PRIMARY KEY CLUSTERED ([Id] ASC) 
  WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
  CONSTRAINT [FK_Goals_Players] FOREIGN KEY ([PlayerId]) REFERENCES [Stats].[Players] ([Id])

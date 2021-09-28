@@ -6,11 +6,11 @@ GO
 
 CREATE TABLE [Stats].[Teams](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](max) NULL,
+	[Name] [nvarchar](max) NOT NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](max) NOT NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
-	[ModifiedBy] [nvarchar](max) NULL,
+	[ModifiedBy] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Teams] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

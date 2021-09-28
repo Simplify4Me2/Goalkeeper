@@ -7,12 +7,12 @@ GO
 
 CREATE TABLE [Stats].[Stadiums](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](max) NULL,
+	[Name] [nvarchar](max) NOT NULL,
 	[PictureUrl] [nvarchar](max) NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](max) NOT NULL,
 	[ModifiedUtc] [datetime2](7) NOT NULL,
-	[ModifiedBy] [nvarchar](max) NULL,
+	[ModifiedBy] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Stadiums] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

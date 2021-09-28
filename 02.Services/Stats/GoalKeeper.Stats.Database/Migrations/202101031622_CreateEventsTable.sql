@@ -6,12 +6,12 @@ GO
 
 CREATE TABLE [EventStore].[Events](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Data] [nvarchar](max) NULL,
+	[Data] [nvarchar](max) NOT NULL,
 	[StreamId] [bigint] NOT NULL,
 	[Type] [nvarchar](max) NOT NULL,
-	[Version] [int] NULL,
+	[Version] [int] NOT NULL,
 	[CreatedUtc] [datetime2](7) NOT NULL,
-	[CreatedBy] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Events] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
