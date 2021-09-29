@@ -18,7 +18,11 @@ DECLARE
 	@ZulteWaregem BIGINT =		(SELECT Id FROM Stats.Teams WHERE [Name] like '%Zulte Waregem%'),
 	@Union BIGINT =				(SELECT Id FROM Stats.Teams WHERE [Name] like '%Union%'),
 	@Moucron BIGINT =			(SELECT Id FROM Stats.Teams WHERE [Name] like '%Royal Excel Moeskroen%'),
-	@WaaslandBeveren BIGINT =	(SELECT Id FROM Stats.Teams WHERE [Name] like '%KVRS Waasland - SK Beveren%')
+	@WaaslandBeveren BIGINT =	(SELECT Id FROM Stats.Teams WHERE [Name] like '%KVRS Waasland - SK Beveren%'),
+
+	@Belgium	BIGINT		= (SELECT Id FROM dbo.Countries WHERE [Name] like '%Belgium%'),
+	@Portugal	BIGINT		= (SELECT Id FROM dbo.Countries WHERE [Name] like '%Portugal%'),
+	@Senegal	BIGINT		= (SELECT Id FROM dbo.Countries WHERE [Name] like '%Senegal%')
 
 INSERT INTO Stats.Players
 (TeamId, FirstName, LastName, ShirtNumber, Position, Nationality, CreatedUtc, CreatedBy, ModifiedUtc, ModifiedBy)
@@ -26,21 +30,21 @@ VALUES
   (@Antwerp, 'Jean'		, 'Butez'				, 46, 'GK',  NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Davor'	, 'Matijaš'				, 71, 'GK',  NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Alireza'	, 'Beiranvand'			,  1, 'GK',  NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Antwerp, 'Ritchie'	, 'De Laet'				,  2, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Antwerp, 'Abdoulaye', 'Seck'				,  4, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Antwerp, 'Aurélio'	, 'Buta'				,  5, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Antwerp, 'Ritchie'	, 'De Laet'				,  2, 'DEF', @Belgium,	GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Antwerp, 'Abdoulaye', 'Seck'				,  4, 'DEF', @Senegal,	GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Antwerp, 'Aurélio'	, 'Buta'				,  5, 'DEF', @Portugal,	GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Dragan'	, 'Lausberg'			, 64, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Luete Ava', 'Dongo'				, 12, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Antwerp, 'Jordan'	, 'Lukaku'				, 94, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Antwerp, 'Jordan'	, 'Lukaku'				, 94, 'DEF', @Belgium, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Jérémy'	, 'Gelin'				, 26, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Frank'	, 'Boya'				, 15, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Júnior'	, 'Pius'				, 40, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Dylan'	, 'Batubinsika'			, 21, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Simen'	, 'Juklerød'			,  6, 'DEF', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Christian', 'Benavente Bristol'	, 24, 'MID', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Antwerp, 'Birger'	, 'Verstraete'			,  5, 'MID', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Antwerp, 'Birger'	, 'Verstraete'			,  5, 'MID', @Belgium, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Nana'		, 'Ampomah'				, 23, 'MID', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
-  (@Antwerp, 'Nill'		, 'De Pauw'				, 14, 'MID', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
+  (@Antwerp, 'Nill'		, 'De Pauw'				, 14, 'MID', @Belgium, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Manuel'	, 'Benson'				, 28, 'MID', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Koji'		, 'Miyoshi'				, 19, 'MID', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),
   (@Antwerp, 'Pieter'	, 'Gerkens'				, 16, 'MID', NULL, GETDATE(), 'Seed', GETDATE(), 'Seed'),

@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Seeds\202101262112_Countries.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Seeds\202107252210_PromovendiStadiums_1A_2021-22.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
