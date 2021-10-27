@@ -14,34 +14,28 @@
     <None Update="Seeds\202101262112_Countries.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Seeds\202107252210_PromovendiStadiums_1A_2021-22.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Seeds\202101261856_Stadiums_1A_2020-21.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Seeds\202109141702_Goals_1A_2021-22.sql">
+    <None Update="Seeds\202109302208_Persons.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Seeds\202110032158_Goals_1A_2021-22.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Seeds\202107281650_Matches_1A_2021-22.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Seeds\202107281510_PromovendiTeamsPlayers_1A_2021-22.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Seeds\202107272215_SeasonTeams_1A_2021-22.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Seeds\202107252221_PromovendiTeams_1A_2021-22.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Seeds\202101262113_Team_1A_2020-21.sql">
+    <None Update="Seeds\202101262113_Teams.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Seeds\202105202334_Matches_1A_2020_21.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Seeds\202101262114_Players_1A_2020_21.sql">
+    <None Update="Seeds\202110032157_Players_1A.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

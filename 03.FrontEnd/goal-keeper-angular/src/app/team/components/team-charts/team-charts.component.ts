@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart, ChartConfiguration, ChartOptions, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-team-charts',
   templateUrl: './team-charts.component.html',
   styleUrls: ['./team-charts.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TeamChartsComponent implements OnInit {
 

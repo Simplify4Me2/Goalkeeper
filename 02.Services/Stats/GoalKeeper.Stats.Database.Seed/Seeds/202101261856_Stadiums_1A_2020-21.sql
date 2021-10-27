@@ -18,3 +18,5 @@ VALUES
 , ('Freethielstadion', '', GETDATE(), 'Seed', GETDATE(), 'Seed') 
 , ('Kehrweg-Stadion', '', GETDATE(), 'Seed', GETDATE(), 'Seed') 
 , ('Regenboogstadion', '', GETDATE(), 'Seed', GETDATE(), 'Seed') 
+, ('Joseph Marien Stadion', '', GETDATE(), 'Seed', GETDATE(), 'Seed')
+, ('Pairaystadion', '', GETDATE(), 'Seed', GETDATE(), 'Seed') 

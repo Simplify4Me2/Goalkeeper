@@ -23,7 +23,7 @@
     <None Update="Migrations\202101031622_CreateEventsTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Migrations\202012302247_CreatePlayersTable.sql">
+    <None Update="Migrations\202110032158_CreatePlayersTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Migrations\202101261857_CreateStadiumsTable.sql">
@@ -32,10 +32,13 @@
     <None Update="Migrations\202105202313_CreateMatchesTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Migrations\202109271559_CreateNationalitiesTable.sql">
+    <None Update="Migrations\202109302159_CreatePersonsTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Migrations\202109141646_CreateGoalsTable.sql">
+    <None Update="Migrations\202109271559_CreateCountriesTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Migrations\202110242129_CreateGoalsTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Migrations\202107252235_CreateSeasonsTable.sql">

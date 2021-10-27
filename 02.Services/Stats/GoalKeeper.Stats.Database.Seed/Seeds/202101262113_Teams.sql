@@ -19,3 +19,5 @@ VALUES
 , ('KVRS Waasland - SK Beveren', (SELECT Id FROM [Stats].Stadiums WHERE [Name] like '%Freethielstadion%'), GETDATE(), 'Seed', GETDATE(), 'Seed') 
 , ('KAS Eupen', (SELECT Id FROM [Stats].Stadiums WHERE [Name] like '%Kehrweg-Stadion%'), GETDATE(), 'Seed', GETDATE(), 'Seed') 
 , ('SV Zulte Waregem', (SELECT Id FROM [Stats].Stadiums WHERE [Name] like '%Regenboogstadion%'), GETDATE(), 'Seed', GETDATE(), 'Seed') 
+, ('Union', (SELECT Id FROM [Stats].Stadiums WHERE [Name] like '%Joseph Marien Stadion%'), GETDATE(), 'Seed', GETDATE(), 'Seed')
+, ('RFC Seraing', (SELECT Id FROM [Stats].Stadiums WHERE [Name] like '%Pairaystadion%'), GETDATE(), 'Seed', GETDATE(), 'Seed') 
