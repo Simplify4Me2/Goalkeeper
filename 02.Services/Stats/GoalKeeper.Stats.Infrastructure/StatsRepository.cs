@@ -25,9 +25,10 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<Team> GetTeamById(long id, CancellationToken cancellationToken)
         {
-            string sql = $@"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position], [Stadiums].[Id], [Stadiums].[Name] 
+            string sql = $@"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Persons].[FirstName], [Persons].[LastName], [Players].[ShirtNumber], [Players].[Position], [Stadiums].[Id], [Stadiums].[Name] 
                             FROM [Stats].[Teams] 
                                 INNER JOIN [Stats].[Players] ON [Teams].[Id] = [Players].[TeamId] 
+                                INNER JOIN [dbo].[Persons] ON [Players].[PersonId] = [Persons].[Id] 
                                 INNER JOIN [Stats].[Stadiums] ON [Teams].[StadiumId] = [Stadiums].[Id] 
                             WHERE [Teams].[Id] = {id}";
 
@@ -50,9 +51,10 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<Team> GetTeamByName(string name, CancellationToken cancellationToken)
         {
-            string sql = $@"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position], [Stadiums].[Id], [Stadiums].[Name] 
+            string sql = $@"SELECT [Teams].[Id], [Teams].[Name], [Players].[Id], [Players].[TeamId], [Persons].[FirstName], [Persons].[LastName], [Players].[ShirtNumber], [Players].[Position], [Stadiums].[Id], [Stadiums].[Name] 
                                 FROM [Stats].[Teams] 
                                     INNER JOIN [Stats].[Players] ON [Teams].[Id] = [Players].[TeamId] 
+                                    INNER JOIN [dbo].[Persons] ON [Players].[PersonId] = [Persons].[Id] 
                                     INNER JOIN [Stats].[Stadiums] ON [Teams].[StadiumId] = [Stadiums].[Id] 
                                 WHERE [Teams].[Name] LIKE '%{name}%'";
 
@@ -93,12 +95,13 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
         {
-            string sql = $@"SELECT [Players].[Id], [Players].[TeamId], [Players].[FirstName], [Players].[LastName], [Players].[ShirtNumber], [Players].[Position] 
+            string sql = $@"SELECT [Players].[Id], [Players].[TeamId], [Persons].[FirstName], [Persons].[LastName], [Players].[ShirtNumber], [Players].[Position] 
                             FROM [Stats].[Players] 
+                                INNER JOIN [dbo].[Persons] ON [Players].[PersonId] = [Persons].[Id] 
                             WHERE [Players].[TeamId] = {teamId}";
 
-            var result = await _dbConnection.QueryAsync<Player>(new CommandDefinition(sql, cancellationToken: cancellationToken));
-            return result;
+            var result = await _dbConnection.QueryAsync<PlayerDataModel>(new CommandDefinition(sql, cancellationToken: cancellationToken));
+            return PlayerDataModel.MapOut(result);
         }
     }
 }
