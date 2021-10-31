@@ -95,9 +95,10 @@ namespace GoalKeeper.Stats.Infrastructure
 
         public async Task<IEnumerable<Player>> GetPlayersByTeamId(long teamId, CancellationToken cancellationToken)
         {
-            string sql = $@"SELECT [Players].[Id], [Players].[TeamId], [Persons].[FirstName], [Persons].[LastName], [Players].[ShirtNumber], [Players].[Position] 
+            string sql = $@"SELECT [Players].[Id], [Players].[TeamId], [Persons].[FirstName], [Persons].[LastName], [Countries].[TwoLetterISOCode], [Players].[ShirtNumber], [Players].[Position] 
                             FROM [Stats].[Players] 
                                 INNER JOIN [dbo].[Persons] ON [Players].[PersonId] = [Persons].[Id] 
+                                INNER JOIN [dbo].[Countries] ON [Persons].[Nationality] = [Countries].[Id] 
                             WHERE [Players].[TeamId] = {teamId}";
 
             var result = await _dbConnection.QueryAsync<PlayerDataModel>(new CommandDefinition(sql, cancellationToken: cancellationToken));

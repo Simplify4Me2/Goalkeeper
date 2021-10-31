@@ -13,6 +13,7 @@ namespace GoalKeeper.Stats.Application.Mappers
                 Id = player.Id,
                 FirstName = player.Firstname,
                 LastName = player.Lastname,
+                Nationality = player.Nationality,
                 ShirtNumber = player.ShirtNumber,
                 Position = player.Position
             };

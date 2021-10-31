@@ -30,7 +30,7 @@ namespace GoalKeeper.Stats.WebApi.Controllers
         //public async Task<Result<IEnumerable<PlayerDTO>>> GetPlayersByTeamId([FromRoute] long teamId)
         public async Task<IActionResult> GetPlayersByTeamId([FromRoute] long teamId)
         {
-            var query = new GetPlayersByTeamIdQuery(teamId);
+            var query = new FindPlayersByTeamIdQuery(teamId);
             return Ok(new Result<IEnumerable<PlayerDTO>>(await _mediator.Send(query)));
         }
     }

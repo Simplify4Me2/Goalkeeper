@@ -8,11 +8,14 @@ namespace GoalKeeper.Stats.Domain
 
         public string Position { get; }
 
-        public Player(long id, string firstName, string lastName, DateTime birthdate, DateTime today, int shirtNumber, string position)
+        public string Nationality { get; set; }
+
+        public Player(long id, string firstName, string lastName, string nationality, DateTime birthdate, DateTime today, int shirtNumber, string position)
             : base(id, firstName, lastName, birthdate, today)
         {
             ShirtNumber = shirtNumber;
             Position = position;
+            Nationality = nationality;
         }
     }
 }

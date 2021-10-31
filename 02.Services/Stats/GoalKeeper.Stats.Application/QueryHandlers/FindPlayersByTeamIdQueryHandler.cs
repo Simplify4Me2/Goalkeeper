@@ -11,18 +11,18 @@ using GoalKeeper.Stats.Application.Mappers;
 
 namespace GoalKeeper.Stats.Application.QueryHandlers
 {
-    public class GetPlayersByTeamIdQueryHandler : IRequestHandler<GetPlayersByTeamIdQuery, IEnumerable<PlayerDTO>>
+    public class FindPlayersByTeamIdQueryHandler : IRequestHandler<FindPlayersByTeamIdQuery, IEnumerable<PlayerDTO>>
     {
         private readonly IStatsRepository _repository;
         private readonly GetPlayersByTeamIdQueryValidator validator;
 
-        public GetPlayersByTeamIdQueryHandler(IStatsRepository repository)
+        public FindPlayersByTeamIdQueryHandler(IStatsRepository repository)
         {
             _repository = repository;
             validator = new GetPlayersByTeamIdQueryValidator();
         }
 
-        public async Task<IEnumerable<PlayerDTO>> Handle(GetPlayersByTeamIdQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<PlayerDTO>> Handle(FindPlayersByTeamIdQuery request, CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
