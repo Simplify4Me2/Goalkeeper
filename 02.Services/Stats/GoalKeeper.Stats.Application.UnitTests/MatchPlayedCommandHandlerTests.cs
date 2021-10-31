@@ -155,9 +155,9 @@ namespace GoalKeeper.Stats.Application.UnitTests
         private List<Player> SomePlayers()
         {
             List<Player> players = new List<Player>();
-            players.Add(new Player(1, "Pico", "Coppens", new DateTime(2000, 01, 01), DateTime.Today, 9, "ATT"));
-            players.Add(new Player(1, "Xavier", "Waterslaegers", new DateTime(2000, 01, 01), DateTime.Today, 1, "GK"));
-            players.Add(new Player(1, "Lionel", "Messi", new DateTime(2000, 01, 01), DateTime.Today, 11, "ATT"));
+            players.Add(new Player(1, "Pico", "Coppens", "BE", new DateTime(2000, 01, 01), DateTime.Today, 9, "ATT"));
+            players.Add(new Player(1, "Xavier", "Waterslaegers", "BE", new DateTime(2000, 01, 01), DateTime.Today, 1, "GK"));
+            players.Add(new Player(1, "Lionel", "Messi", "AG", new DateTime(2000, 01, 01), DateTime.Today, 11, "ATT"));
             return players;
         }
     }

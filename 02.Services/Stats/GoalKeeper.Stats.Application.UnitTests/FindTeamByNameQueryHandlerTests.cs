@@ -24,7 +24,7 @@ namespace GoalKeeper.Stats.Application.UnitTests
             _repository = new Mock<IStatsRepository>();
             _matchRepository = new Mock<IMatchRepository>();
             _repository.Setup(x => x.GetTeamByName(It.IsAny<string>(), CancellationToken.None))
-                .ReturnsAsync(new Domain.Team(12, "FC De Kampioenen", new Domain.Stadium(5, "Den Bruinen Dreef"), new List<Domain.Player>() { new Domain.Player(1, "Pico", "Coppens", new DateTime(), new DateTime(), 9, "ATT"), new Domain.Player(2, "Xavier", "Waterslaegers", new DateTime(), new DateTime(), 1, "GK") } ));
+                .ReturnsAsync(new Domain.Team(12, "FC De Kampioenen", new Domain.Stadium(5, "Den Bruinen Dreef"), new List<Domain.Player>() { new Domain.Player(1, "Pico", "Coppens", "BE", new DateTime(), new DateTime(), 9, "ATT"), new Domain.Player(2, "Xavier", "Waterslaegers", "BE", new DateTime(), new DateTime(), 1, "GK") } ));
             queryHandler = new FindTeamByNameQueryHandler(_repository.Object, _matchRepository.Object);
         }
 
