@@ -19,7 +19,7 @@ export interface State extends fromRoot.State {
 }
 
 export const teamReducer = createReducer(initialState,
-    on(fromActions.getTeamSuccess, (state, { team }) => ({ ...state, team: team })),
+    on(fromActions.getTeamSuccess, (state, { team }) => { console.log(team); return ({ ...state, team: team })}),
     );
 
 export function reducer(state: TeamState, action: Action) {

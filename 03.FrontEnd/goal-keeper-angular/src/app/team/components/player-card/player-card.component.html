@@ -4,9 +4,10 @@
             <span class="bold">{{ player.shirtNumber }}</span>
             <span>{{ player.position }}</span>
           </div>
+          <!-- src="https://www.countryflags.io/be/flat/48.png" -->
       <img
-        alt="BE"
-        src="https://www.countryflags.io/be/flat/48.png"
+        alt="{{ player.nationality }}"
+        src='{{ "https://www.worldometers.info/img/flags/" + player.nationality.toLowerCase() + "-flag.gif"}}'
       />
     </div>
     <div class="player-card-right">

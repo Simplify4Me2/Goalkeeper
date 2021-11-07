@@ -14,8 +14,8 @@ namespace GoalKeeper.Stats.Domain
             : base(id, firstName, lastName, birthdate, today)
         {
             ShirtNumber = shirtNumber;
-            Position = position;
-            Nationality = nationality;
+            Position = position ?? throw new ArgumentNullException(nameof(position));
+            Nationality = nationality ?? throw new ArgumentNullException(nameof(nationality));
         }
     }
 }
