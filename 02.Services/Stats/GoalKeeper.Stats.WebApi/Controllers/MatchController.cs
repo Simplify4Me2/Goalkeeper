@@ -79,15 +79,21 @@ namespace GoalKeeper.Stats.WebApi.Controllers
 
         [HttpPost]
         [Route("")]
-        //[ProducesResponseType(typeof(Result<bool>), 200)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status404NotFound)]
         //[ProducesResponseType(typeof(BadRequestResult), 400)]
-        //[ProducesResponseType(typeof(Exception), 500)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         //[ProducesErrorResponseType(typeof(Exception))]
         //public async Task<Result<bool>> AddMatch([FromBody] MatchPlayedModel model)
         public async Task<IActionResult> AddMatch([FromBody] MatchPlayedModel model)
         {
             MatchPlayedCommand command = model.ToCommand();
-            return Ok(new Result<bool>(await _mediator.Send(command)));
+
+            return CreatedAtAction(nameof(AddMatch), new Result<bool>(await _mediator.Send(command)));
+
+            //return Ok(new Result<bool>(await _mediator.Send(command)));
+            //return Created(new Uri("dunno what to put here"), model);
         }
     }
 }

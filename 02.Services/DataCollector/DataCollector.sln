@@ -5,7 +5,11 @@ VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataCollector", "DataCollector\DataCollector.csproj", "{8E032CC9-31F6-4588-832C-748FABD1AD10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPLScore", "JPLScore\JPLScore.csproj", "{F66CD557-9686-4B4A-A81E-429D78915AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JPLScore", "JPLScore\JPLScore.csproj", "{F66CD557-9686-4B4A-A81E-429D78915AEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{7F47983B-A402-4CA6-B546-B55854554AF7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.Stats.Application.IO", "..\Stats\GoalKeeper.Stats.Application.IO\GoalKeeper.Stats.Application.IO.csproj", "{481695D9-A6EE-4230-AA2E-27194E151266}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{F66CD557-9686-4B4A-A81E-429D78915AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F66CD557-9686-4B4A-A81E-429D78915AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F66CD557-9686-4B4A-A81E-429D78915AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{481695D9-A6EE-4230-AA2E-27194E151266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481695D9-A6EE-4230-AA2E-27194E151266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481695D9-A6EE-4230-AA2E-27194E151266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481695D9-A6EE-4230-AA2E-27194E151266}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{481695D9-A6EE-4230-AA2E-27194E151266} = {7F47983B-A402-4CA6-B546-B55854554AF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {414C483E-4546-4943-9984-30ADFAF22595}
