@@ -10,6 +10,7 @@ class Program
 
         var matches = MatchCollectorProLeague.GetMatchesFromMatchday(5);
 
-        Console.WriteLine(matches);
+        Formatter.ConsoleWrite(matches);
+        Formatter.WriteToFileAsSQL(matches);
     }
 }

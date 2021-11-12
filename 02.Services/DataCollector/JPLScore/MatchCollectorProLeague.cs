@@ -43,9 +43,9 @@ internal class MatchCollectorProLeague
                     match.HomeTeamScore = int.Parse(homeTeamScoreElement.Text);
                     match.AwayTeamScore = int.Parse(awayTeamScoreElement.Text);
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"{match.HomeTeamName} vs {match.AwayTeamName}: {match.HomeTeamScore} - {match.AwayTeamScore}");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    //Console.ForegroundColor = ConsoleColor.Green;
+                    //Console.WriteLine($"{match.HomeTeamName} vs {match.AwayTeamName}: {match.HomeTeamScore} - {match.AwayTeamScore}");
+                    //Console.ForegroundColor = ConsoleColor.White;
                 }
                 catch (Exception)
                 {
