@@ -1,13 +1,12 @@
 ﻿using GoalKeeper.Stats.Application.IO.CommandModels;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace JPLScore
 {
-    internal class MatchCollector
+    internal class MatchCollectorSporza
     {
         public static List<MatchPlayedModel> GetMatchesFromMatchday(int matchday)
         {
@@ -15,6 +14,12 @@ namespace JPLScore
 
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://sporza.be/nl/categorie/voetbal/jupiler-pro-league/";
+
+            // Get rid of the GDPR pop-up
+            driver.SwitchTo().Frame(0);
+            driver.FindElement(By.XPath("//*[text() = 'Accept All']")).Click();
+            driver.SwitchTo().DefaultContent();
+
 
             var section = driver.FindElement(By.Id("sc-matchdays-uuid-matchdays"));
 
@@ -47,16 +52,21 @@ namespace JPLScore
                     Console.WriteLine($"{homeTeamNameElement.Text} - {awayTeamNameElement.Text} : not played yet.");
                 }
 
-                if (homeTeamNameElement != null && awayTeamNameElement != null && homeTeamScoreElement != null && awayTeamScoreElement != null)
-                {
-                    var homeTeamScore = int.Parse(homeTeamScoreElement.Text);
-                    match.HomeTeamScore = homeTeamScore;
+                var homeTeamScore = int.Parse(homeTeamScoreElement.Text);
+                match.HomeTeamScore = homeTeamScore;
 
-                    var awayTeamScore = int.Parse(awayTeamScoreElement.Text);
-                    match.AwayTeamScore = awayTeamScore;
+                var awayTeamScore = int.Parse(awayTeamScoreElement.Text);
+                match.AwayTeamScore = awayTeamScore;
 
-                    //Console.WriteLine($"{homeTeamNameElement.Text} {homeTeamScore} - {awayTeamScore} {awayTeamNameElement.Text}");
-                }
+                //item.Click();
+                //var matchDateElement = driver.FindElements(By.XPath(".//span[contains(@class,'sc-metadata__item')]")).ToList().Last();
+                //driver.Navigate().Back();
+
+                //WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 1, 30));
+                ////wait.Until(ExpectedConditions.visibilityOfElementLocated(By.xpath("xpathValue")));
+                //wait.Until<IWebElement>(foo => foo.FindElement(By.XPath(".//div[contains(@class,'sc-metadata')]")));
+
+                //Console.WriteLine($"{homeTeamNameElement.Text} {homeTeamScore} - {awayTeamScore} {awayTeamNameElement.Text}");
                 matches.Add(match);
             }
 
