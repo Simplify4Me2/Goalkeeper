@@ -50,7 +50,7 @@ namespace GoalKeeper.Stats.WebApi.Controllers
                 var query = new GetMatchdayQuery(day);
                 return Ok(new Result<MatchdayDTO>(await _mediator.Send(query)));
             }
-            catch (MatchdayNotFoundException)
+            catch (MatchdayOutOfRangeException)
             {
                 return NotFound();
             }

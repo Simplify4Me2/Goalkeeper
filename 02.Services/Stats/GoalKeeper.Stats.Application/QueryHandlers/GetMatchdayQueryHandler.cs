@@ -29,7 +29,7 @@ namespace GoalKeeper.Stats.Application.QueryHandlers
             else
                 data = await _repository.FindByMatchday(request.Day, cancellationToken);
 
-            if (data.Count() == 0) throw new MatchdayNotFoundException($"No matches found for matchday {request.Day}.");
+            if (data.Count() == 0) throw new MatchdayOutOfRangeException($"No matches found for matchday {request.Day}.");
 
             var matchday = new Matchday(data.FirstOrDefault().Matchday, data.ToList());
 
