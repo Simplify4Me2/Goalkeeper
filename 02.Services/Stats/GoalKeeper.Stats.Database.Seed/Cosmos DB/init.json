@@ -1,7 +1,14 @@
 [
   {
     "Id": "1",
-    "StadiumId": 2,
+    "Stadium": {
+		"Name": "Jan Breydelstadion",
+		"PictureUrl": "",
+		"CreatedUtc": "2021-01-30T20:39:15.4366667",
+		"CreatedBy": "Seed",
+		"ModifiedUtc": "2021-01-30T20:39:15.4366667",
+		"ModifiedBy": "Seed"
+	},
     "Name": "Royal Antwerp FC",
     "CreatedUtc": "2021-01-30T20:39:15.5633333",
     "CreatedBy": "Seed",

@@ -9,10 +9,16 @@ namespace GoalKeeper.Stats.Application.IO.Services
     public class BaseService
     {
         private readonly HttpClient _client;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        protected BaseService(HttpClient client)
+        public BaseService(HttpClient client)
         {
             _client = client;
+        }
+
+        protected BaseService(IHttpClientFactory httpClientFactory)
+        {
+            _httpClientFactory = httpClientFactory;
         }
 
         protected BaseService(ServiceConfiguration configuration, string endpoint)
