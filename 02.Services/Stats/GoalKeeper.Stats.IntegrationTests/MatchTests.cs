@@ -1,9 +1,11 @@
 ﻿using FluentAssertions;
+using GoalKeeper.Stats.Application.IO.Services;
 using GoalKeeper.Stats.WebApi.Controllers;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 using Api = GoalKeeper.Stats.WebApi;
@@ -12,14 +14,10 @@ namespace GoalKeeper.Stats.IntegrationTests
 {
     public class MatchTests : IClassFixture<WebApplicationFactory<Api.Startup>>
     {
-        private readonly HttpClient _client;
         private readonly WebApplicationFactory<Api.Startup> _factory;
 
         public MatchTests(WebApplicationFactory<Api.Startup> factory)
         {
-            //_client = fixture.CreateClient();
-            //_client.BaseAddress(new Uri("https://localhost"));
-
             _factory = factory;
         }
 
@@ -31,6 +29,17 @@ namespace GoalKeeper.Stats.IntegrationTests
             var response = await client.GetAsync("/api/match/matchday/5");
             response.EnsureSuccessStatusCode();
             response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task AllMatches_ReturnsSuccesAndCorrectContentType()
+        {
+            var client = _factory.CreateClient();
+            var service = new MatchService(client);
+
+            var result = await service.AllMatches(5, CancellationToken.None);
+
+            result.Should().NotBeNull();
         }
     }
 }

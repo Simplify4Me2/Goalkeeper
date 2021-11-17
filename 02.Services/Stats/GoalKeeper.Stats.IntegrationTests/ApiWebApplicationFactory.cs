@@ -1,4 +1,5 @@
-﻿using GoalKeeper.Stats.Application.Ports;
+﻿using GoalKeeper.Stats.Application.IO.Services;
+using GoalKeeper.Stats.Application.Ports;
 using GoalKeeper.Stats.Domain;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -28,6 +29,7 @@ namespace GoalKeeper.Stats.IntegrationTests
             });
             builder.ConfigureTestServices(services =>
             {
+                services.AddTransient<IMatchService, MatchService>();
                 services.AddTransient<IMatchRepository, MatchRepositoryStub>();
             });
         }

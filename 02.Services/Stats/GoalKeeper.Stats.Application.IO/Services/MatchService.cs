@@ -22,7 +22,7 @@ namespace GoalKeeper.Stats.Application.IO.Services
 
         public async Task<Result<MatchdayDTO>> AllMatches(int matchday, CancellationToken cancellationToken)
         {
-            return await DoQuery<MatchdayDTO>($"matchday/{matchday}", cancellationToken);
+            return await DoQuery<MatchdayDTO>($"/api/match/matchday/{matchday}", cancellationToken);
         }
     }
 }

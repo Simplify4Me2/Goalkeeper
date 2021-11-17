@@ -59,6 +59,8 @@ namespace GoalKeeper.Stats.WebApi.Controllers
                 var query = new FindTeamByNameQuery(name);
                 return Ok(new Result<TeamDTO>(await _mediator.Send(query)));
             }
+            // TODO: Refactor to determine api status
+            // https://ardalis.com/avoid-using-exceptions-determine-api-status/
             catch (TeamNotFoundException)
             {
                 return NotFound();

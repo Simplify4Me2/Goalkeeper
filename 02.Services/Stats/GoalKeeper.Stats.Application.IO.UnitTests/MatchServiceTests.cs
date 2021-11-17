@@ -22,7 +22,7 @@ namespace GoalKeeper.Stats.Application.IO.UnitTests
             int matchday = 5;
             var expected = new Result<MatchdayDTO>(new());
             
-            var client = CreateMockHttpClient(expected, $"/matchday/{matchday}");
+            var client = CreateMockHttpClient(expected, $"/api/match/matchday/{matchday}");
             var service = new MatchService(client);
 
             // Act
