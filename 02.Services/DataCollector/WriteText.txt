@@ -1,0 +1,12 @@
+INSERT INTO [Stats].[Matches]    ([HomeTeamId], [HomeTeamScore], [AwayTeamId], [AwayTeamScore], [Matchday], [DateUtc], CreatedUtc, CreatedBy, ModifiedUtc, ModifiedBy)
+VALUES
+    (@StandardLuik, 1, @Oostende, 0, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@Seraing, 2, @CercleBrugge, 1, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@OHL, 1, @Eupen, 4, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@STVV, 0, @Kortrijk, 2, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@ZulteWaregem, 2, @Charleroi, 2, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@ClubBrugge, 3, @Beerschot, 2, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@Mechelen, 3, @Union, 1, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@Antwerp, 4, @Genk, 2, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+    (@Anderlecht, 1, @Gent, 1, 5, '2020-08-08 16:30:00.0000000', GETDATE(), 'Seed', GETDATE(), 'Seed'),
+
