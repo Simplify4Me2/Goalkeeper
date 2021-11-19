@@ -11,7 +11,10 @@ internal class MatchCollectorProLeague
     {
         List<MatchPlayedModel> matches = new List<MatchPlayedModel>();
 
-        IWebDriver driver = new ChromeDriver();
+        var chromeOptions = new ChromeOptions();
+        chromeOptions.AddArguments("headless");
+
+        IWebDriver driver = new ChromeDriver(chromeOptions);
         driver.Url = $"https://www.proleague.be/nl/jpl/calendar?playDay={matchday}";
 
         var section = driver.FindElement(By.XPath(".//div[contains(@class,'c-match-collection')][1]"));

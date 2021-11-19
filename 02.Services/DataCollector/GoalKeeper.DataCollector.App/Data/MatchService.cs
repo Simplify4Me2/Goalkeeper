@@ -154,7 +154,7 @@
                 },
                 CollectedVersion = new Match
                 {
-                    Date = new DateTime(),
+                    Date = DateTime.Now,
                     HomeTeamName = "KRC Genk",
                     HomeTeamScore = 1,
                     AwayTeamName = "Union",
