@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalKeeper.DataCollector.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.DataCollector.MinimalApi", "GoalKeeper.DataCollector.MinimalApi\GoalKeeper.DataCollector.MinimalApi.csproj", "{14250713-0509-4279-923D-FCE5C91A87FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.DataCollector.Application", "GoalKeeper.DataCollector.Application\GoalKeeper.DataCollector.Application.csproj", "{9B8B67E8-A3E9-4438-A50D-87F3143065EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.DataCollector.Application.IO", "GoalKeeper.DataCollector.Application.IO\GoalKeeper.DataCollector.Application.IO.csproj", "{421C5040-AB25-45A0-981C-4A6E497F6EC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{14250713-0509-4279-923D-FCE5C91A87FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14250713-0509-4279-923D-FCE5C91A87FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14250713-0509-4279-923D-FCE5C91A87FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B8B67E8-A3E9-4438-A50D-87F3143065EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8B67E8-A3E9-4438-A50D-87F3143065EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8B67E8-A3E9-4438-A50D-87F3143065EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8B67E8-A3E9-4438-A50D-87F3143065EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{421C5040-AB25-45A0-981C-4A6E497F6EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421C5040-AB25-45A0-981C-4A6E497F6EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421C5040-AB25-45A0-981C-4A6E497F6EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421C5040-AB25-45A0-981C-4A6E497F6EC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
