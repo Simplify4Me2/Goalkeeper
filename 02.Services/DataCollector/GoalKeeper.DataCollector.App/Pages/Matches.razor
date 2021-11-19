@@ -6,14 +6,15 @@
 
 <button class="btn btn-primary" @onclick="GetMatches">Get Matchday</button>
 
-<input @bind="matchDayInput" type="number" min="1" max="36" />
+@*<input @bind="matchDayInput" type="number" min="1" max="36" />*@
+<input value="@matchDayInput" @onchange="@((ChangeEventArgs __e) => OnChangeMatchdayInput(__e?.Value?.ToString()))" type="number" min="1" max="36" />
 
-@if (buttonClicked && matches == null)
+@if (matches != null)
 {
-    <p><em>Loading...</em></p>
+    <button class="btn btn-primary" @onclick="FormatMatchdayToSQL">Format to SQL</button>
 }
-else if (matches == null){}
-else
+
+@if (matches != null)
 {
     <table class="table">
         <thead>
@@ -38,16 +39,65 @@ else
             }
         </tbody>
     </table>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>From Database</th>
+                <th>From DataCollector</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var match in matches)
+            {
+                <tr>
+                    <td>@match.HomeTeamName <span>vs.</span> @match.AwayTeamName</td>
+                    <td>@match.HomeTeamName <span>vs.</span> @match.AwayTeamName</td>
+                    <td><button class="btn btn-secondary" @onclick="() => ShowComparison(325)">Compare</button></td>
+                    <td><span class="oi oi-warning" aria-hidden="true"></span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (showComparison)
+{
+    <button class="btn btn-primary" @onclick="() => Update(325)">Update</button>
 }
 
 @code {
     private Match[]? matches;
-    private int matchDayInput { get; set; } = 1;
-    private bool buttonClicked = false;
+    private int matchDayInput = 1;
+    private bool showComparison = false;
 
     private async void GetMatches()
     {
-        buttonClicked = true;
         matches = await MatchService.GetMatches(matchDayInput);
+    }
+
+    private void FormatMatchdayToSQL()
+    {
+        Console.WriteLine("Some content logged in Blazor App output window");
+    }
+
+    private void ShowComparison(int matchId)
+    {
+        showComparison = true;
+    }
+
+    private void Update(int matchId)
+    {
+        showComparison = false;
+    }
+
+    private void OnChangeMatchdayInput(string? matchday)
+    {
+        if (matchday != null)
+            this.matchDayInput = int.Parse(matchday);
+        matches = null;
+
     }
 }
