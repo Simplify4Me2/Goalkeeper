@@ -2,22 +2,184 @@
 {
     public class MatchService
     {
-        public Task<Match[]> GetMatches(int matchday)
+        public Task<MatchComparison[]> GetMatches(int matchday)
         {
-            return Task.FromResult(FakeMatches);
+            return Task.FromResult(FakeDBMatches);
         }
 
-        private static Match[] FakeMatches = new Match[]
+        private static MatchComparison[] FakeDBMatches = new MatchComparison[]
         {
-            new Match { Date = new DateTime(), DBHomeTeamName= "RSC Anderlecht", DBHomeTeamScore = 1, DBAwayTeamName = "KV Kortrijk", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "Royal Antwerp FC", DBHomeTeamScore = 1, DBAwayTeamName = "Oud-Heverlee Leuven", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "Beerschot VA", DBHomeTeamScore = 1, DBAwayTeamName = "KV Oostende", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "Cercle Brugge", DBHomeTeamScore = 1, DBAwayTeamName = "RFC Seraing", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "Club Brugge", DBHomeTeamScore = 1, DBAwayTeamName = "Standard Luik", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "Royal Charleroi Sporting Club", DBHomeTeamScore = 1, DBAwayTeamName = "Sint-Truidense VV", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "KAS Eupen", DBHomeTeamScore = 1, DBAwayTeamName = "Zulte Waregem", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "KRC Genk", DBHomeTeamScore = 1, DBAwayTeamName = "Union", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
-            new Match { Date = new DateTime(), DBHomeTeamName= "KAA Gent", DBHomeTeamScore = 1, DBAwayTeamName = "KV Mechelen", DBAwayTeamScore = 0, CollectorHomeTeamName= "RSC Anderlecht", CollectorHomeTeamScore = 1, CollectorAwayTeamName = "KV Kortrijk", CollectorAwayTeamScore = 0 },
+            new MatchComparison {
+                MatchId = 1,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "RSC Anderlecht",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "KV Kortrijk",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "RSC Anderlecht",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "KV Kortrijk",
+                    AwayTeamScore = 0                                    
+                }
+            },
+            new MatchComparison {
+                MatchId = 2,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Royal Antwerp FC",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Oud-Heverlee Leuven",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Royal Antwerp FC",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Oud-Heverlee Leuven",
+                    AwayTeamScore = 0
+                }
+            },
+            new MatchComparison {
+                MatchId = 3,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Beerschot VA",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "KV Oostende",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Beerschot VA",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "KV Oostende",
+                    AwayTeamScore = 0
+                }
+            },
+            new MatchComparison {
+                MatchId = 4,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Cercle Brugge",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "RFC Seraing",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Cercle Brugge",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "RFC Seraing",
+                    AwayTeamScore = 0
+                }
+            },
+            new MatchComparison {
+                MatchId = 5,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Club Brugge",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Standard Luik",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Club Brugge",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Standard Luik",
+                    AwayTeamScore = 0
+                }
+            },
+            new MatchComparison {
+                MatchId = 6,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Royal Charleroi Sporting Club",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Sint-Truidense VV",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "Royal Charleroi Sporting Club",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Sint-Truidense VV",
+                    AwayTeamScore = 0
+                }
+            },
+            new MatchComparison {
+                MatchId = 7,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "KAS Eupen",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Zulte Waregem",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "KAS Eupen",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Zulte Waregem",
+                    AwayTeamScore = 0
+                }
+            },
+            new MatchComparison {
+                MatchId = 8,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "KRC Genk",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Union",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "KRC Genk",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "Union",
+                    AwayTeamScore = 0
+                }
+            },
+            new MatchComparison {
+                MatchId = 9,
+                DatabaseVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "KAA Gent",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "KV Mechelen",
+                    AwayTeamScore = 0
+                },
+                CollectedVersion = new Match
+                {
+                    Date = new DateTime(),
+                    HomeTeamName = "KRC Genk",
+                    HomeTeamScore = 1,
+                    AwayTeamName = "KRC Genk",
+                    AwayTeamScore = 1
+                }
+            }
         };
     }
 }
