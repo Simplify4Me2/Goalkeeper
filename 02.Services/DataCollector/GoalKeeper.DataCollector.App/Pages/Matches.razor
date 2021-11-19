@@ -19,30 +19,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>HomeTeamName</th>
-                <th>HomeTeamScore</th>
-                <th>AwayTeamName</th>
-                <th>AwayTeamScore</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var match in matches)
-            {
-                <tr>
-                    <td>@match.Date.ToShortDateString()</td>
-                    <td>@match.HomeTeamName</td>
-                    <td>@match.HomeTeamScore</td>
-                    <td>@match.AwayTeamName</td>
-                    <td>@match.AwayTeamScore</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <table class="table">
-        <thead>
-            <tr>
                 <th>From Database</th>
                 <th>From DataCollector</th>
                 <th></th>
@@ -53,8 +29,8 @@
             @foreach (var match in matches)
             {
                 <tr>
-                    <td>@match.HomeTeamName <span>vs.</span> @match.AwayTeamName</td>
-                    <td>@match.HomeTeamName <span>vs.</span> @match.AwayTeamName</td>
+                    <td>@match.DBHomeTeamName <span>-</span> @match.DBAwayTeamName</td>
+                    <td>@match.CollectorHomeTeamName <span>-</span> @match.CollectorAwayTeamName</td>
                     <td><button class="btn btn-secondary" @onclick="() => ShowComparison(325)">Compare</button></td>
                     <td><span class="oi oi-warning" aria-hidden="true"></span></td>
                 </tr>
@@ -98,6 +74,6 @@
         if (matchday != null)
             this.matchDayInput = int.Parse(matchday);
         matches = null;
-
+        showComparison = false;
     }
 }

@@ -1,3 +1,8 @@
 ﻿button {
     margin: 0px 3px;
 }
+
+.oi:empty:before {
+    font-size: 32px;
+    color: orange;
+}
