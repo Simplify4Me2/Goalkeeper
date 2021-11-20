@@ -20,7 +20,7 @@ class Program
         IMatchService service = new MatchService(client);
 
         //var foo = Task.Run(() => service.AllMatches(5, new CancellationTokenSource().Token));
-        var foo = service.AllMatches(5, new CancellationTokenSource().Token).Result;
+        //var foo = service.AllMatches(5, new CancellationTokenSource().Token).Result;
 
         //service.get
         //var matches = MatchCollectorSporza.GetMatchesFromMatchday(5);

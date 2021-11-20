@@ -12,7 +12,7 @@ internal class Formatter
 
         foreach (var match in matches)
         {
-            Console.WriteLine($"{match.Date.ToString("f")} - {match.HomeTeamName} vs {match.AwayTeamName}: {match.HomeTeamScore} - {match.AwayTeamScore}");
+            Console.WriteLine($"{match.Date.ToString("g")} - {match.HomeTeamName} vs {match.AwayTeamName}: {match.HomeTeamScore} - {match.AwayTeamScore}");
         }
 
         Console.ForegroundColor = ConsoleColor.White;
