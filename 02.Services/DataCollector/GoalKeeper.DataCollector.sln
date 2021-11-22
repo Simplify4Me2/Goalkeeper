@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.DataCollector.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.DataCollector.Application.IO", "GoalKeeper.DataCollector.Application.IO\GoalKeeper.DataCollector.Application.IO.csproj", "{421C5040-AB25-45A0-981C-4A6E497F6EC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.DataCollector.Domain", "GoalKeeper.DataCollector.Domain\GoalKeeper.DataCollector.Domain.csproj", "{FD775028-BF2B-427F-8A1D-356C7551880F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalKeeper.DataCollector.Infrastructure", "GoalKeeper.DataCollector.Infrastructure\GoalKeeper.DataCollector.Infrastructure.csproj", "{96A76F47-3A02-4604-8D08-80AA3AAD93CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{421C5040-AB25-45A0-981C-4A6E497F6EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{421C5040-AB25-45A0-981C-4A6E497F6EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{421C5040-AB25-45A0-981C-4A6E497F6EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD775028-BF2B-427F-8A1D-356C7551880F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD775028-BF2B-427F-8A1D-356C7551880F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD775028-BF2B-427F-8A1D-356C7551880F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD775028-BF2B-427F-8A1D-356C7551880F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A76F47-3A02-4604-8D08-80AA3AAD93CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A76F47-3A02-4604-8D08-80AA3AAD93CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A76F47-3A02-4604-8D08-80AA3AAD93CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A76F47-3A02-4604-8D08-80AA3AAD93CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

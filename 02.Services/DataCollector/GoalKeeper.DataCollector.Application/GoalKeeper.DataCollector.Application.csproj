@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GoalKeeper.DataCollector.Application.IO\GoalKeeper.DataCollector.Application.IO.csproj" />
+    <ProjectReference Include="..\GoalKeeper.DataCollector.Domain\GoalKeeper.DataCollector.Domain.csproj" />
   </ItemGroup>
 
 </Project>
