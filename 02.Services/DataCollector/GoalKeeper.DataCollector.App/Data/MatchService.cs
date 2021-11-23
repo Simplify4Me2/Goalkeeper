@@ -7,7 +7,7 @@
             return Task.FromResult(FakeDBMatches);
         }
 
-        private static MatchComparison[] FakeDBMatches = new MatchComparison[]
+        private readonly static MatchComparison[] FakeDBMatches = new MatchComparison[]
         {
             new MatchComparison {
                 MatchId = 1,

@@ -12,8 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\01.Common\GoalKeeper.Common\GoalKeeper.Common.Application.IO\GoalKeeper.Common.Application.IO.csproj" />
     <ProjectReference Include="..\GoalKeeper.DataCollector.Application.IO\GoalKeeper.DataCollector.Application.IO.csproj" />
     <ProjectReference Include="..\GoalKeeper.DataCollector.Application\GoalKeeper.DataCollector.Application.csproj" />
+    <ProjectReference Include="..\GoalKeeper.DataCollector.Infrastructure\GoalKeeper.DataCollector.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

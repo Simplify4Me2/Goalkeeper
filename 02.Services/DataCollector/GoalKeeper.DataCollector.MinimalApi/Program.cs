@@ -1,5 +1,11 @@
+using GoalKeeper.Common.Application.IO;
 using GoalKeeper.DataCollector.Application;
 using GoalKeeper.DataCollector.Application.IO;
+using GoalKeeper.DataCollector.Application.IO.DTOs;
+using GoalKeeper.DataCollector.Application.IO.Queries;
+using GoalKeeper.DataCollector.Application.Ports;
+using GoalKeeper.DataCollector.Infrastructure.Repositories;
+using GoalKeeper.DataCollector.Infrastructure.WebScrapers;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(IAmApplication), typeof(IAmApplicationIO), typeof(Program));
+builder.Services.AddTransient<IMatchRepository, SQLRepository>();
+builder.Services.AddTransient<IMatchWebScraper, SeleniumWebScraper>();
 
 var app = builder.Build();
 
@@ -40,6 +48,12 @@ app.MapGet("/weatherforecast", (IMediator mediator) =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+app.MapGet("/match/{matchday}", async (int matchday, IMediator mediator) =>
+{
+    var query = new MatchdayQuery(matchday);
+    return new Result<MatchdayDTO>(await mediator.Send(query));
+}).WithName("GetMatches");
 
 app.Run();
 

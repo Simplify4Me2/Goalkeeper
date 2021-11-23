@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GoalKeeper.DataCollector.Infrastructure.WebScrapers
 {
-    public class MatchWebScraperSelenium : IMatchWebScraper
+    public class SeleniumWebScraper : IMatchWebScraper
     {
         public Task<Match[]> Get(int matchday)
         {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GoalKeeper.DataCollector.Infrastructure.Repositories
 {
-    public class MatchRepositorySQL : IMatchRepository
+    public class SQLRepository : IMatchRepository
     {
         public Task<Match[]> Get(int matchday)
         {
