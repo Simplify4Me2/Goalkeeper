@@ -1,18 +1,31 @@
 ﻿using GoalKeeper.DataCollector.Application.Ports;
-using GoalKeeper.DataCollector.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GoalKeeper.DataCollector.Infrastructure.Repositories
 {
     public class SQLRepository : IMatchRepository
     {
-        public Task<Match[]> Get(int matchday)
+        private readonly MatchDbContext _dbContext;
+
+        public SQLRepository(MatchDbContext dbContext)
         {
-            throw new NotImplementedException();
+            dbContext.Database.EnsureCreated();
+            _dbContext = dbContext;
         }
 
-        public Task Save(Match[] matches)
+        public async Task<Domain.Match[]> Get(int matchday)
+        {
+            var query = from match in _dbContext.Matches
+                        where match.Matchday == matchday
+                        select match;
+
+            return await query.ToArrayAsync();
+        }
+
+        public Task Save(Domain.Match[] matches)
         {
             throw new NotImplementedException();
         }

@@ -2,6 +2,8 @@
 {
     public class Match
     {
+        public int Matchday { get; set; }
+
         public string HomeTeamName { get; set; }
 
         public int HomeTeamScore { get; set; }
