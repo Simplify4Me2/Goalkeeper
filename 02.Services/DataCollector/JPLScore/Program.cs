@@ -1,8 +1,10 @@
-﻿using GoalKeeper.DataCollector.Infrastructure.Repositories;
+﻿using GoalKeeper.DataCollector.Domain;
+using GoalKeeper.DataCollector.Infrastructure.Repositories;
 using GoalKeeper.Stats.Application.IO.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,11 +33,23 @@ class Program
 
         //service.get
         //var matches = MatchCollectorSporza.GetMatchesFromMatchday(5);
+
+        //List<Match> allMatches = new List<Match>();
+        //for (int i = 1; i < 16; i++)
+        //{
+        //    var matches = MatchCollectorProLeague.GetMatchesFromMatchday(i);
+
+        //    repository.Save(matches.ToArray()).ConfigureAwait(false);
+        //    Formatter.ConsoleWrite(matches);
+        //allMatches.Add(matches);
+        //}
+
         var matches = MatchCollectorProLeague.GetMatchesFromMatchday(5);
 
-        repository.Save(matches.ToArray()).ConfigureAwait(false);
+        //repository.Save(matches.ToArray()).ConfigureAwait(false);
 
         Formatter.ConsoleWrite(matches);
+        //Formatter.WriteToFileAsSQL(allMatches);
         Formatter.WriteToFileAsSQL(matches);
 
         //return host.RunAsync();

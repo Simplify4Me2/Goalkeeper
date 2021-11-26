@@ -11,14 +11,10 @@ internal class MatchCollectorProLeague
     {
         List<Match> matches = new List<Match>();
 
-        var chromeOptions = new ChromeOptions();
-        chromeOptions.AddArguments("headless");
-
-        IWebDriver driver = new ChromeDriver(chromeOptions);
+        IWebDriver driver = GetWebDriver();
         driver.Url = $"https://www.proleague.be/nl/jpl/calendar?playDay={matchday}";
 
         var section = driver.FindElement(By.XPath(".//div[contains(@class,'c-match-collection')][1]"));
-
         var children = section.FindElements(By.XPath(".//div[not(@id) and not(@class)]"));
 
         foreach (var item in children)
@@ -45,6 +41,26 @@ internal class MatchCollectorProLeague
 
                     match.HomeTeamScore = int.Parse(homeTeamScoreElement.Text);
                     match.AwayTeamScore = int.Parse(awayTeamScoreElement.Text);
+
+                    //try
+                    //{
+                    //    driver.Navigate().GoToUrl("https://example.com");
+
+                    //    //homeTeamScoreElement.Click();
+                    //    //var fooElement = driver.FindElement(By.XPath(".//div[contains(@class,'date')]"));
+                    //    //Console.WriteLine($"{fooElement.Text} found!!!");
+                        
+                    //    Console.WriteLine($"Switching between pages!!!");
+
+                    //    driver.Navigate().GoToUrl($"https://www.proleague.be/nl/jpl/calendar?playDay={matchday}");
+                    //}
+                    //catch (Exception)
+                    //{
+                    //    Console.ForegroundColor = ConsoleColor.Green;
+                    //    Console.WriteLine($"Something wrong.");
+                    //    Console.ForegroundColor = ConsoleColor.White;
+                    //}
+
 
                     //Console.ForegroundColor = ConsoleColor.Green;
                     //Console.WriteLine($"{match.HomeTeamName} vs {match.AwayTeamName}: {match.HomeTeamScore} - {match.AwayTeamScore}");
@@ -106,5 +122,15 @@ internal class MatchCollectorProLeague
             default:
                 throw new ArgumentException(nameof(monthName));
         }
+    }
+
+    private static IWebDriver GetWebDriver()
+    {
+        var chromeOptions = new ChromeOptions();
+        //chromeOptions.AddArguments("headless");
+        chromeOptions.PageLoadStrategy = PageLoadStrategy.Normal;
+
+        IWebDriver driver = new ChromeDriver(chromeOptions);
+        return driver;
     }
 }

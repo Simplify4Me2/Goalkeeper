@@ -5,7 +5,6 @@ using GoalKeeper.DataCollector.Application.IO.DTOs;
 using GoalKeeper.DataCollector.Application.IO.Queries;
 using GoalKeeper.DataCollector.Application.Ports;
 using GoalKeeper.DataCollector.Infrastructure.Repositories;
-using GoalKeeper.DataCollector.Infrastructure.WebScrapers;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
