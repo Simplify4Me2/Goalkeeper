@@ -1,4 +1,4 @@
-﻿using GoalKeeper.Stats.Application.IO.CommandModels;
+﻿using GoalKeeper.DataCollector.Domain;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Text;
 namespace JPLScore;
 internal class Formatter
 {
-    public static void ConsoleWrite(List<MatchPlayedModel> matches)
+    public static void ConsoleWrite(List<Match> matches)
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
 
@@ -18,7 +18,7 @@ internal class Formatter
         Console.ForegroundColor = ConsoleColor.White;
     }
 
-    public static void WriteToFileAsSQL(List<MatchPlayedModel> matches)
+    public static void WriteToFileAsSQL(List<Match> matches)
     {
         string docPath = "D:\\Git\\Goalkeeper\\02.Services\\DataCollector";
         using StreamWriter writer = new StreamWriter(Path.Combine(docPath, "WriteText.txt"));

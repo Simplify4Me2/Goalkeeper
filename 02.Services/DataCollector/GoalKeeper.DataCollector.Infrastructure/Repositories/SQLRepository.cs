@@ -27,7 +27,8 @@ namespace GoalKeeper.DataCollector.Infrastructure.Repositories
 
         public Task Save(Domain.Match[] matches)
         {
-            throw new NotImplementedException();
+            _dbContext.Matches.AddRangeAsync(matches);
+            return _dbContext.SaveChangesAsync();
         }
     }
 }

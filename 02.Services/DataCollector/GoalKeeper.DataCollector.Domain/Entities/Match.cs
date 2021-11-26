@@ -1,7 +1,11 @@
-﻿namespace GoalKeeper.DataCollector.Domain
+﻿using System;
+
+namespace GoalKeeper.DataCollector.Domain
 {
     public class Match
     {
+        public DateTime Date { get; set; }
+
         public int Matchday { get; set; }
 
         public string HomeTeamName { get; set; }

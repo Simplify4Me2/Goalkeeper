@@ -1,4 +1,4 @@
-﻿using GoalKeeper.Stats.Application.IO.CommandModels;
+﻿using GoalKeeper.DataCollector.Domain;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Collections.Generic;
@@ -8,9 +8,9 @@ namespace JPLScore
 {
     internal class MatchCollectorSporza
     {
-        public static List<MatchPlayedModel> GetMatchesFromMatchday(int matchday)
+        public static List<Match> GetMatchesFromMatchday(int matchday)
         {
-            List<MatchPlayedModel> matches = new List<MatchPlayedModel>();
+            List<Match> matches = new List<Match>();
 
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://sporza.be/nl/categorie/voetbal/jupiler-pro-league/";
@@ -30,7 +30,7 @@ namespace JPLScore
 
             foreach (var item in children)
             {
-                MatchPlayedModel match = new() { Matchday = selectedMatchday };
+                Match match = new() { Matchday = selectedMatchday };
                 IWebElement homeTeamNameElement = null;
                 IWebElement awayTeamNameElement = null;
                 IWebElement homeTeamScoreElement = null;

@@ -17,7 +17,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(IAmApplication), typeof(IAmApplicationIO), typeof(Program));
 builder.Services.AddTransient<IMatchRepository, SQLRepository>();
-builder.Services.AddTransient<IMatchWebScraper, SeleniumWebScraper>();
 //builder.Services.AddDbContext<MatchDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString(""));
 builder.Services.AddDbContext<MatchDbContext>(options => options.UseSqlServer(@"Data Source=.;Initial Catalog=DataCollectorDB;User Id=sqladmin;Password=txCnJqOynDfQaEbHpgNJ;Application Name=DataCollector.Database"));
 

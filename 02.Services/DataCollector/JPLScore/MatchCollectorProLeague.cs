@@ -1,4 +1,4 @@
-﻿using GoalKeeper.Stats.Application.IO.CommandModels;
+﻿using GoalKeeper.DataCollector.Domain;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Linq;
 namespace JPLScore;
 internal class MatchCollectorProLeague
 {
-    public static List<MatchPlayedModel> GetMatchesFromMatchday(int matchday)
+    public static List<Match> GetMatchesFromMatchday(int matchday)
     {
-        List<MatchPlayedModel> matches = new List<MatchPlayedModel>();
+        List<Match> matches = new List<Match>();
 
         var chromeOptions = new ChromeOptions();
         chromeOptions.AddArguments("headless");
@@ -31,7 +31,7 @@ internal class MatchCollectorProLeague
             var matchElements = item.FindElements(By.CssSelector(".c-match"));
             foreach (var element in matchElements)
             {
-                MatchPlayedModel match = new() { Matchday = matchday, Date = date };
+                Match match = new() { Matchday = matchday, Date = date };
 
                 var teamElements = element.FindElements(By.XPath(".//div[contains(@class,'c-match__team')]")).ToList();
                 match.HomeTeamName = teamElements.First().FindElement(By.XPath(".//a[contains(@class,'c-link')]")).Text;
