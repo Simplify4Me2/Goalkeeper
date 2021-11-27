@@ -44,7 +44,7 @@ class Program
         //allMatches.Add(matches);
         //}
 
-        var matches = MatchCollectorProLeague.GetMatchesFromMatchday(5);
+        var matches = MatchCollectorVoetbalkrant.GetMatchesFromMatchday(5);
 
         //repository.Save(matches.ToArray()).ConfigureAwait(false);
 

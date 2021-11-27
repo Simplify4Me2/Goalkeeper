@@ -1,8 +1,10 @@
 ﻿using GoalKeeper.DataCollector.Domain;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace JPLScore;
 internal class MatchCollectorProLeague
@@ -10,6 +12,7 @@ internal class MatchCollectorProLeague
     public static List<Match> GetMatchesFromMatchday(int matchday)
     {
         List<Match> matches = new List<Match>();
+        Dictionary<Match, string> matchLinks = new Dictionary<Match, string>();
 
         IWebDriver driver = GetWebDriver();
         driver.Url = $"https://www.proleague.be/nl/jpl/calendar?playDay={matchday}";
@@ -28,6 +31,7 @@ internal class MatchCollectorProLeague
             foreach (var element in matchElements)
             {
                 Match match = new() { Matchday = matchday, Date = date };
+                string link = string.Empty;
 
                 var teamElements = element.FindElements(By.XPath(".//div[contains(@class,'c-match__team')]")).ToList();
                 match.HomeTeamName = teamElements.First().FindElement(By.XPath(".//a[contains(@class,'c-link')]")).Text;
@@ -42,6 +46,11 @@ internal class MatchCollectorProLeague
                     match.HomeTeamScore = int.Parse(homeTeamScoreElement.Text);
                     match.AwayTeamScore = int.Parse(awayTeamScoreElement.Text);
 
+                    var linkElement = element.FindElement(By.XPath(".//a[contains(@class, 'c-match__link')]"));
+                    link = linkElement.GetAttribute("href");
+
+                    //Console.WriteLine(link);
+
                     //try
                     //{
                     //    driver.Navigate().GoToUrl("https://example.com");
@@ -49,7 +58,7 @@ internal class MatchCollectorProLeague
                     //    //homeTeamScoreElement.Click();
                     //    //var fooElement = driver.FindElement(By.XPath(".//div[contains(@class,'date')]"));
                     //    //Console.WriteLine($"{fooElement.Text} found!!!");
-                        
+
                     //    Console.WriteLine($"Switching between pages!!!");
 
                     //    driver.Navigate().GoToUrl($"https://www.proleague.be/nl/jpl/calendar?playDay={matchday}");
@@ -74,9 +83,49 @@ internal class MatchCollectorProLeague
                 }
 
                 matches.Add(match);
+                matchLinks.Add(match, link);
             }
         }
 
+        // Blocked until I find a way to open the link for the match and locate the date element...
+
+        //var bar = matchLinks.First();
+        //driver.Navigate().GoToUrl(bar.Value);
+        ////var foo2 = driver.FindElement(By.XPath("//*[contains(text(), '')]"));
+        //var foo2 = driver.FindElement(By.Id("ember2101"));
+        //Console.WriteLine(foo2.Text);
+        //foo2.Click();
+
+        //foreach (var item in matchLinks)
+        //{
+        //    driver.Navigate().GoToUrl(item.Value);
+        //    try
+        //    {
+        //        var foo = driver.FindElement(By.XPath("//*[contains(text(), '')]"));
+        //        //var foo = driver.FindElement(By.XPath(".//div[contains(@class, 'pre-header')]"));
+        //        //var foo = driver.FindElement(By.CssSelector(".date"));
+        //        //var foo = driver.FindElement(By.ClassName("pre-header"));
+        //        //pre - header
+        //        Console.WriteLine(foo.Text);
+        //        foo.Click();
+
+        //        //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        //        //var dateElement = wait.Until(driver => driver.FindElement(By.XPath("//div[contains(@class, 'date')]")));
+        //        //var dateElement = wait.Until(driver => driver.FindElement(By.CssSelector("date")));
+        //        //var dateElement = driver.FindElement(By.XPath(".//div[contains(@class, 'date')]"));
+
+        //        //var dateElement = driver.FindElement(By.XPath(".//div[contains(@class, 'date')]"));
+        //        //Console.WriteLine(dateElement.Text);
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //Thread.Sleep(2000);
+        //var dateElement = driver.FindElement(By.XPath(".//div[contains(@class, 'date')]"));
+
+        //}
         driver.Close();
 
         return matches;
