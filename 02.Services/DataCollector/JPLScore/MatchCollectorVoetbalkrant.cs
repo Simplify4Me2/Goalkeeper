@@ -11,7 +11,6 @@ namespace JPLScore
         public static List<Match> GetMatchesFromMatchday(int matchday)
         {
             List<Match> matches = new List<Match>();
-            Dictionary<Match, string> matchLinks = new Dictionary<Match, string>();
 
             IWebDriver driver = GetWebDriver();
             driver.Url = $"https://www.voetbalkrant.com/belgie/jupiler-pro-league/kalender/speeldag-{matchday}";
@@ -83,7 +82,7 @@ namespace JPLScore
         private static IWebDriver GetWebDriver()
         {
             var chromeOptions = new ChromeOptions();
-            //chromeOptions.AddArguments("headless");
+            chromeOptions.AddArguments("headless");
             chromeOptions.PageLoadStrategy = PageLoadStrategy.Normal;
 
             IWebDriver driver = new ChromeDriver(chromeOptions);

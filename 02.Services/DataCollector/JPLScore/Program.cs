@@ -6,8 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace JPLScore;
 class Program
@@ -31,26 +29,17 @@ class Program
         //var foo = Task.Run(() => service.AllMatches(5, new CancellationTokenSource().Token));
         //var foo = service.AllMatches(5, new CancellationTokenSource().Token).Result;
 
-        //service.get
-        //var matches = MatchCollectorSporza.GetMatchesFromMatchday(5);
+        List<Match> allMatches = new List<Match>();
+        for (int i = 1; i < 35; i++)
+        {
+            var matches = MatchCollectorVoetbalkrant.GetMatchesFromMatchday(i);
 
-        //List<Match> allMatches = new List<Match>();
-        //for (int i = 1; i < 16; i++)
-        //{
-        //    var matches = MatchCollectorProLeague.GetMatchesFromMatchday(i);
+            repository.Save(matches.ToArray()).ConfigureAwait(false);
+            Formatter.ConsoleWrite(matches);
+            allMatches.AddRange(matches);
+        }
 
-        //    repository.Save(matches.ToArray()).ConfigureAwait(false);
-        //    Formatter.ConsoleWrite(matches);
-        //allMatches.Add(matches);
-        //}
-
-        var matches = MatchCollectorVoetbalkrant.GetMatchesFromMatchday(5);
-
-        //repository.Save(matches.ToArray()).ConfigureAwait(false);
-
-        Formatter.ConsoleWrite(matches);
-        //Formatter.WriteToFileAsSQL(allMatches);
-        Formatter.WriteToFileAsSQL(matches);
+        Formatter.WriteToFileAsSQL(allMatches);
 
         //return host.RunAsync();
     }

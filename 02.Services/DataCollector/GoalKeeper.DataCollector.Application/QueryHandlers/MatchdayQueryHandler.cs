@@ -11,22 +11,16 @@ namespace GoalKeeper.DataCollector.Application.QueryHandlers
     public class MatchdayQueryHandler : IRequestHandler<MatchdayQuery, MatchdayDTO>
     {
         private readonly IMatchRepository _repository;
-        private readonly IMatchWebScraper _webScraper;
 
-        public MatchdayQueryHandler(IMatchRepository repository, IMatchWebScraper webScraper)
+        public MatchdayQueryHandler(IMatchRepository repository)
         {
             _repository = repository;
-            _webScraper = webScraper;
         }
 
         public async Task<MatchdayDTO> Handle(MatchdayQuery request, CancellationToken cancellationToken)
         {
             var matches = await _repository.Get(request.Matchday);
-            if (matches.Length == 0)
-            {
-                matches = await _webScraper.Get(request.Matchday);
-                await _repository.Save(matches);
-            }
+            
             return new MatchdayDTO
             {
                 Matchday = request.Matchday,
