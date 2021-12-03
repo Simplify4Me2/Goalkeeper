@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoalKeeper.Common.Domain
+namespace GoalKeeper.Common.Application
 {
     public interface IDateTimeProvider
     {

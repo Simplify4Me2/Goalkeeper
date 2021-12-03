@@ -1,4 +1,4 @@
-﻿using GoalKeeper.Common.Domain;
+﻿using GoalKeeper.Common.Application;
 using System;
 
 namespace GoalKeeper.Stats.WebApi.Providers

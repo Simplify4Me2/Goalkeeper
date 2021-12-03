@@ -11,7 +11,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Azure.Cosmos;
 using System.Threading.Tasks;
-using GoalKeeper.Common.Domain;
+using GoalKeeper.Common.Application;
 using GoalKeeper.Stats.WebApi.Providers;
 
 namespace GoalKeeper.Stats.WebApi.Configuration

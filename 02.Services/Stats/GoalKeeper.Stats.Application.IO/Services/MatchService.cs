@@ -1,4 +1,5 @@
 ﻿using GoalKeeper.Common.Application.IO;
+using GoalKeeper.Common.Application.IO.Services;
 using GoalKeeper.Stats.Application.IO.DTOs;
 using System.Net.Http;
 using System.Threading;
@@ -14,7 +15,7 @@ namespace GoalKeeper.Stats.Application.IO.Services
         {
         }
 
-        public MatchService(IHttpClientFactory httpClientFactory)
+        public MatchService(ServiceConfiguration config, IHttpClientFactory httpClientFactory)
             : base(httpClientFactory)
         {
 

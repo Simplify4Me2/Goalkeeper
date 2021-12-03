@@ -1,4 +1,4 @@
-﻿namespace GoalKeeper.Stats.Application.IO.Services
+﻿namespace GoalKeeper.Common.Application.IO.Services
 {
     public class ServiceConfiguration
     {

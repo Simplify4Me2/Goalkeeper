@@ -1,6 +1,5 @@
+using GoalKeeper.DataCollector.App.Configuration;
 using GoalKeeper.DataCollector.App.Data;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<MatchService>();
+IocConfig.ConfigureExternalServices(builder.Services, builder.Configuration);
 
 var app = builder.Build();
 
