@@ -1,4 +1,5 @@
 ﻿using GoalKeeper.Common.Application.IO.Services;
+using GoalKeeper.DataCollector.Application.IO.Services;
 using GoalKeeper.Stats.Application.IO.Services;
 
 namespace GoalKeeper.DataCollector.App.Configuration
@@ -11,6 +12,11 @@ namespace GoalKeeper.DataCollector.App.Configuration
             configuration.Bind("StatsAPI", statsConfiguration);
 
             services.AddScoped<IMatchService, MatchService>(provider => new MatchService(statsConfiguration, provider.GetService<IHttpClientFactory>()));
+
+            var dataCollectorConfiguration = new ServiceConfiguration();
+            configuration.Bind("DataCollectorAPI", dataCollectorConfiguration);
+
+            services.AddScoped<IMatchWebScraperService, MatchWebScraperService>(provider => new MatchWebScraperService(dataCollectorConfiguration, provider.GetService<IHttpClientFactory>()));
         }
     }
 }

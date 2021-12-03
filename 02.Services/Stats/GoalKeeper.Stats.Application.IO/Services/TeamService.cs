@@ -1,6 +1,6 @@
 ﻿using GoalKeeper.Common.Application.IO;
+using GoalKeeper.Common.Application.IO.Services;
 using GoalKeeper.Stats.Application.IO.DTOs;
-using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;

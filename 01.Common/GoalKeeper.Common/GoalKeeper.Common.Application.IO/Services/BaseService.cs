@@ -1,11 +1,9 @@
-﻿using GoalKeeper.Common.Application.IO;
-using GoalKeeper.Common.Application.IO.Services;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GoalKeeper.Stats.Application.IO.Services
+namespace GoalKeeper.Common.Application.IO.Services
 {
     public class BaseService
     {
