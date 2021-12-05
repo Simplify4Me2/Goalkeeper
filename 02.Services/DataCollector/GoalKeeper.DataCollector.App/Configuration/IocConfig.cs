@@ -8,15 +8,15 @@ namespace GoalKeeper.DataCollector.App.Configuration
     {
         public static void ConfigureExternalServices(IServiceCollection services, IConfiguration configuration)
         {
-            var statsConfiguration = new ServiceConfiguration();
-            configuration.Bind("StatsAPI", statsConfiguration);
+            //var statsConfiguration = new ServiceConfiguration();
+            //configuration.Bind("StatsAPI", statsConfiguration);
 
-            services.AddScoped<IMatchService, MatchService>(provider => new MatchService(statsConfiguration, provider.GetService<IHttpClientFactory>()));
+            //services.AddScoped<IMatchService, MatchService>(provider => new MatchService(statsConfiguration, provider.GetService<IHttpClientFactory>()));
 
-            var dataCollectorConfiguration = new ServiceConfiguration();
-            configuration.Bind("DataCollectorAPI", dataCollectorConfiguration);
+            //var dataCollectorConfiguration = new ServiceConfiguration();
+            //configuration.Bind("DataCollectorAPI", dataCollectorConfiguration);
 
-            services.AddScoped<IMatchWebScraperService, MatchWebScraperService>(provider => new MatchWebScraperService(dataCollectorConfiguration, provider.GetService<IHttpClientFactory>()));
+            //services.AddScoped<IMatchWebScraperService, MatchWebScraperService>(provider => new MatchWebScraperService(dataCollectorConfiguration, provider.GetService<IHttpClientFactory>()));
         }
     }
 }

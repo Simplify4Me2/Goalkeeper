@@ -15,11 +15,11 @@ namespace GoalKeeper.Stats.Application.IO.Services
         {
         }
 
-        public MatchService(ServiceConfiguration config, IHttpClientFactory httpClientFactory)
-            : base(httpClientFactory)
-        {
+        //public MatchService(ServiceConfiguration config, IHttpClientFactory httpClientFactory)
+        //    : base(httpClientFactory)
+        //{
 
-        }
+        //}
 
         public async Task<Result<MatchdayDTO>> AllMatches(int matchday, CancellationToken cancellationToken)
         {

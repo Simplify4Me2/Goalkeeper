@@ -1,10 +1,21 @@
-﻿namespace GoalKeeper.DataCollector.App.Data
+﻿using GoalKeeper.Stats.Application.IO.Services;
+
+namespace GoalKeeper.DataCollector.App.Data
 {
     public class MatchService
     {
-        public Task<MatchComparison[]> GetMatches(int matchday)
+        private readonly IMatchService _matchService;
+
+        public MatchService(IMatchService matchService)
+        //public MatchService()
         {
-            return Task.FromResult(FakeDBMatches);
+            _matchService = matchService;
+        }
+
+        public async Task<MatchComparison[]> GetMatches(int matchday)
+        {
+            var foo = await _matchService.AllMatches(matchday, CancellationToken.None);
+            return FakeDBMatches;
         }
 
         private readonly static MatchComparison[] FakeDBMatches = new MatchComparison[]

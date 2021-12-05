@@ -5,8 +5,13 @@ namespace GoalKeeper.DataCollector.Application.IO.Services
 {
     public class MatchWebScraperService : BaseService, IMatchWebScraperService
     {
-        public MatchWebScraperService(ServiceConfiguration config, IHttpClientFactory httpClientFactory) : base(httpClientFactory)
+        //public MatchWebScraperService(ServiceConfiguration config, IHttpClientFactory httpClientFactory) : base(httpClientFactory)
+        //{
+        //}
+
+        public MatchWebScraperService(HttpClient httpClient) : base(httpClient)
         {
+
         }
     }
 }
