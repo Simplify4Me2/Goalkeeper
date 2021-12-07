@@ -58,6 +58,8 @@ app.MapGet("/match/{matchday}", async (int matchday, IMediator mediator) =>
 
 app.Run();
 
+public partial class Program { }
+
 internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);

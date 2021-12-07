@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using GoalKeeper.Stats.Application.IO.Services;
-using GoalKeeper.Stats.WebApi.Controllers;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System;
 using System.Net;
