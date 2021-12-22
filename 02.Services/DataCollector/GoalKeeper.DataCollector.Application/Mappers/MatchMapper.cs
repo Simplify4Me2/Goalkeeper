@@ -9,6 +9,7 @@ namespace GoalKeeper.DataCollector.Application.Mappers
         {
             return new MatchDTO
             {
+                Date = match.Date,
                 HomeTeamName = match.HomeTeamName,
                 HomeTeamScore = match.HomeTeamScore,
                 AwayTeamName = match.AwayTeamName,

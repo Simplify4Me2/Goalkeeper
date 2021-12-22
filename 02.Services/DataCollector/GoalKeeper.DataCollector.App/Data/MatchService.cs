@@ -9,7 +9,6 @@ namespace GoalKeeper.DataCollector.App.Data
         private readonly IMatchWebScraperService _webScraper;
 
         public MatchService(IMatchService matchService, IMatchWebScraperService matchWebScraperService)
-        //public MatchService()
         {
             _matchService = matchService;
             _webScraper = matchWebScraperService;
@@ -17,10 +16,91 @@ namespace GoalKeeper.DataCollector.App.Data
 
         public async Task<MatchComparison[]> GetMatches(int matchday)
         {
-            var foo = await _matchService.AllMatches(matchday, CancellationToken.None);
-            var bar = await _webScraper.AllMatches(matchday, CancellationToken.None);
-            return FakeDBMatches;
+            var savedMatchday = await _matchService.AllMatches(matchday, CancellationToken.None);
+            var webMatchday = await _webScraper.AllMatches(matchday, CancellationToken.None);
+            MatchComparison[] matchComparisons = Merge(savedMatchday.Data, webMatchday.Data);
+            return matchComparisons;
         }
+
+        private MatchComparison[] Merge(Stats.Application.IO.DTOs.MatchdayDTO savedMatchday, Application.IO.DTOs.MatchdayDTO webMatchday)
+        {
+            List<MatchComparison> comparisons = new List<MatchComparison>();
+
+            foreach (var match in savedMatchday.Matches)
+            {
+                int homeScore = 0;
+                int awayScore = 0;
+                MatchComparison comparison = new MatchComparison
+                {
+                    MatchId = (int)match.Id,
+                    DatabaseVersion = new Match {
+                        Date = match.Date,
+                        HomeTeamName = match.HomeTeamName,
+                        HomeTeamScore = int.TryParse(match.HomeTeamScore, out homeScore) ? homeScore : 0,
+                        AwayTeamName = match.AwayTeamName,
+                        AwayTeamScore = int.TryParse(match.AwayTeamScore, out awayScore) ? awayScore : 0
+                    }
+                };
+
+                var comparableMatch = webMatchday.Matches.FirstOrDefault(webMatch => GetComparableName(webMatch.HomeTeamName) == GetComparableName(match.HomeTeamName));
+
+                comparison.CollectedVersion = new Match
+                {
+                    Date = comparableMatch != null ? comparableMatch.Date : new DateTime(),
+                    HomeTeamName = comparableMatch != null ? comparableMatch.HomeTeamName : "",
+                    HomeTeamScore = comparableMatch != null ? comparableMatch.HomeTeamScore ?? 0 : 0,
+                    AwayTeamName = comparableMatch != null ? comparableMatch.AwayTeamName : "",
+                    AwayTeamScore = comparableMatch != null ? comparableMatch.AwayTeamScore ?? 0 : 0
+                };
+
+                comparisons.Add(comparison);
+            }
+
+            return comparisons.ToArray();
+        }
+
+        private string GetComparableName(string teamName)
+        {
+            switch (teamName)
+            {
+                case "Royal Antwerp FC":
+                case "Antwerp":
+                    return "Antwerp";
+                case "STVV":
+                case "Sint-Truidense VV":
+                    return "STVV";
+                case "Beerschot VA":
+                case "Beerschot":
+                    return "Beerschot";
+                case "Standard Luik":
+                case "Standard":
+                    return "Standard";
+                case "Oud-Heverlee Leuven":
+                case "OH Leuven":
+                    return "OHL";
+                case "Royal Charleroi Sporting Club":
+                case "Charleroi":
+                    return "Charleroi";
+                case "RSC Anderlecht":
+                case "Anderlecht":
+                    return "RSC Anderlecht";
+                case "KAS Eupen":
+                case "Eupen":
+                    return "KAS Eupen";
+                case "SV Zulte Waregem":
+                case "Zulte Waregem":
+                    return "Zulte Waregem";
+                case "Union":
+                case "Union SG":
+                    return "Union";
+                case "RFC Seraing":
+                case "Seraing":
+                    return "RFC Seraing";
+                default:
+                    return teamName;
+            }
+        }
+
 
         private readonly static MatchComparison[] FakeDBMatches = new MatchComparison[]
         {

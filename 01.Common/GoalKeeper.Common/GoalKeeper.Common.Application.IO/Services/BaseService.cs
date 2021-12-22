@@ -36,12 +36,12 @@ namespace GoalKeeper.Common.Application.IO.Services
         protected async Task<Result<TResult>> DoQuery<TResult>(string route, CancellationToken cancellationToken)
         {
             var response = await _client
-                .GetAsync(route, cancellationToken)
-                .ConfigureAwait(false);
+                .GetAsync(route, cancellationToken);
+            //.ConfigureAwait(false);
 
             return await response.Content
-                .ReadAsAsync<Result<TResult>>(cancellationToken)
-                .ConfigureAwait(false);
+                .ReadAsAsync<Result<TResult>>(cancellationToken);
+                //.ConfigureAwait(false);
         }
     }
 }
