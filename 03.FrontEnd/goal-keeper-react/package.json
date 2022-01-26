@@ -18,7 +18,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:snow": "snowpack dev",
     "build": "react-scripts build",
+    "build:snow": "snowpack build",
     "test": "set CI=true && react-scripts test",
     "test:watch": "react-scripts test",
     "test:coverage": "set CI=true && react-scripts test --coverage --coverageReporters=cobertura",
