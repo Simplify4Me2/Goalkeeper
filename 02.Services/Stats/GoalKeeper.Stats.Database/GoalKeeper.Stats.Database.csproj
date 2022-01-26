@@ -38,6 +38,9 @@
     <None Update="Migrations\202109271559_CreateCountriesTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Migrations\202201262130_CreatePlayerContractsTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Migrations\202110242129_CreateGoalsTable.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
