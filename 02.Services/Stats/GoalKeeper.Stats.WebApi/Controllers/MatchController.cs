@@ -91,9 +91,6 @@ namespace GoalKeeper.Stats.WebApi.Controllers
             MatchPlayedCommand command = model.ToCommand();
 
             return CreatedAtAction(nameof(AddMatch), new Result<bool>(await _mediator.Send(command)));
-
-            //return Ok(new Result<bool>(await _mediator.Send(command)));
-            //return Created(new Uri("dunno what to put here"), model);
         }
     }
 }

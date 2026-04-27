@@ -9,6 +9,7 @@ namespace GoalKeeper.Stats.Application.IO.Services
 {
     public class TeamService : BaseService, ITeamService
     {
+        // https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests
         public TeamService(HttpClient httpClient) 
             : base(httpClient)
         {
