@@ -1,7 +1,7 @@
 ﻿using Goalkeeper.Server.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Goalkeeper.Server.Application;
+namespace Goalkeeper.Server.Application.Controllers;
 
 [ApiController]
 [Route("api/fixtures")]
