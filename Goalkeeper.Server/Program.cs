@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.HttpResults;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
@@ -8,6 +10,8 @@ builder.Services.AddProblemDetails();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -37,11 +41,13 @@ api.MapGet("weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.MapControllers();
+
 app.MapDefaultEndpoints();
 
 app.UseFileServer();
 
-app.Run();
+await app.RunAsync();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {

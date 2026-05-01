@@ -1,8 +1,10 @@
 <Solution>
-  <Project Path="frontend/frontend.esproj">
-    <Build />
-    <Deploy />
-  </Project>
+  <Folder Name="/src/">
+    <Project Path="frontend/frontend.esproj">
+      <Build />
+      <Deploy />
+    </Project>
+    <Project Path="Goalkeeper.Server/Goalkeeper.Server.csproj" />
+  </Folder>
   <Project Path="Goalkeeper.AppHost/Goalkeeper.AppHost.csproj" />
-  <Project Path="Goalkeeper.Server/Goalkeeper.Server.csproj" />
 </Solution>

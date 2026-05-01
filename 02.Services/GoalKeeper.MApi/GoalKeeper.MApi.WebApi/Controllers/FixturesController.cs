@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GoalKeeper.MApi.Application.IO;
-using GoalKeeper.MApi.Application.IO.DTOs;
-using GoalKeeper.MApi.Application.IO.Queries.Fixtures;
-using GoalKeeper.MApi.Domain.Models;
-using MediatR;
-using Microsoft.AspNetCore.Http;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GoalKeeper.MApi.WebApi.Controllers
 {
@@ -25,13 +19,12 @@ namespace GoalKeeper.MApi.WebApi.Controllers
 
         [HttpGet]
         [Route("")]
-        [ProducesResponseType(typeof(List<FixtureDTO>), 200)]
+        //[ProducesResponseType(typeof(List<FixtureDTO>), 200)]
         [ProducesResponseType(typeof(Exception), 500)]
         [ProducesErrorResponseType(typeof(Exception))]
-        public async Task<Result<List<FixtureDTO>>> GetFixtures()
+        public IActionResult GetFixtures()
         {
-            var query = new GetFixturesQuery();
-            return new Result<List<FixtureDTO>>(await _mediator.Send(query));
+            return Ok();
         }
 
         //[HttpGet]
