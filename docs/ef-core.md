@@ -1,0 +1,1 @@
+dotnet ef migrations add InitialCreateTeams --output-dir Infrastructure/Data/Migrations
