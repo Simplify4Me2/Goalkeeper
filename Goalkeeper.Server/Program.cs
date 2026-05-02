@@ -19,6 +19,12 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+await using (var scope = app.Services.CreateAsyncScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<GoalkeeperDbContext>();
+    await db.Database.MigrateAsync();
+}
+
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
 
