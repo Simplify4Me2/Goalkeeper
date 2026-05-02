@@ -1,7 +1,13 @@
+using Goalkeeper.Server.Infrastructure.Data;
+using Goalkeeper.Server.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
+
+builder.AddSqlServerDbContext<GoalkeeperDbContext>("sqldb");
+builder.Services.AddScoped<ITeamsRepository, TeamsRepository>();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
