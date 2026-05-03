@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import aspireLogo from '/Aspire.png'
+import { Teams } from './components/Teams'
 import './App.css'
 
 interface WeatherForecast {
@@ -158,6 +159,8 @@ function App() {
             )}
           </div>
         </section>
+
+        <Teams />
       </main>
 
       <footer className="app-footer">
