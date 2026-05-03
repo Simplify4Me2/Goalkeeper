@@ -23,6 +23,7 @@ await using (var scope = app.Services.CreateAsyncScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<GoalkeeperDbContext>();
     await db.Database.MigrateAsync();
+    await DbSeeder.SeedTeamsAsync(db);
 }
 
 // Configure the HTTP request pipeline.
