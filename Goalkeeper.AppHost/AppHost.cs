@@ -8,6 +8,10 @@ var server = builder.AddProject<Projects.Goalkeeper_Server>("server")
     .WithReference(sqldb)
     .WithHttpHealthCheck("/health")
     .WithExternalHttpEndpoints();
+    //.WithHttpEndpoint(() =>
+    //{
+        
+    //});
 
 var webfrontend = builder.AddViteApp("webfrontend", "../frontend")
     .WithReference(server)
