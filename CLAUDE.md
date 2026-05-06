@@ -28,6 +28,8 @@ npm run build    # tsc + vite build
 npm run lint     # eslint
 ```
 
+The frontend uses Tailwind CSS for styling
+
 **Tests (legacy services):**
 ```bash
 dotnet test 02.Services/<ServiceName>/<ServiceName>.sln
