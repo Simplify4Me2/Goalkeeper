@@ -1,3 +1,5 @@
+import { Link, useLocation } from "react-router";
+
 const NAV = [
   { to: "/", label: "Dashboard" },
   { to: "/fixtures", label: "Fixtures" },
@@ -6,14 +8,13 @@ const NAV = [
 ] as const;
 
 export default function Header() {
-//   const loc = useLocation();
+  const loc = useLocation();
   return (
     <header className="sticky top-0 z-50 bg-background/85 backdrop-blur border-b border-border">
-        <h1>Hey header</h1>
-      {/* <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
           <div className="h-9 w-9 rounded-md bg-primary text-primary-foreground grid place-items-center shadow-sm">
-            <Trophy className="h-5 w-5" />
+            {/* <Trophy className="h-5 w-5" /> */}
           </div>
           <div className="leading-tight">
             <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-mono">FIFA · 2026</div>
@@ -43,7 +44,7 @@ export default function Header() {
           <span className="h-2 w-2 rounded-full bg-primary animate-pulse-dot" />
           <span>LIVE · 2026</span>
         </div>
-      </div> */}
+      </div>
     </header>
   );
 }

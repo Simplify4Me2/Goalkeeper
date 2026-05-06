@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import aspireLogo from '/Aspire.png'
 import { Teams } from './components/Teams'
 import './App.css'
+import Header from './components/Header'
 
 interface WeatherForecast {
   date: string
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <Header />
       <header className="app-header">
         <a 
           href="https://aspire.dev" 
