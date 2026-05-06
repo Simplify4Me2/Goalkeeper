@@ -33,7 +33,7 @@ export function Teams() {
           <div className="teams-grid">
             {teams.map((team) => (
               <div key={team.id} className="team-card">
-                <h3 className="team-name">{team.name}</h3>
+                <h3 className="team-name bg-red-500">{team.name}</h3>
               </div>
             ))}
           </div>
