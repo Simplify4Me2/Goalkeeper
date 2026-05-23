@@ -24,6 +24,8 @@
   "remoteEnv": {
     "ASPIRE_ALLOW_UNSECURED_TRANSPORT": "true"
   },
+  "postCreateCommand": "dotnet restore Goalkeeper.slnx && dotnet dev-certs https --clean && dotnet dev-certs https && cd frontend && npm install",
+  "postStartCommand": "dotnet dev-certs https",
   "forwardPorts": [5445, 5173, 15888, 18888],
   "portsAttributes": {
     "5445": {
@@ -43,6 +45,5 @@
       "onAutoForward": "silent"
     }
   },
-  "postCreateCommand": "dotnet restore Goalkeeper.slnx && cd frontend && npm install",
   "remoteUser": "vscode"
 }
