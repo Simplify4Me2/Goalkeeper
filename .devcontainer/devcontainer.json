@@ -24,7 +24,9 @@
   "remoteEnv": {
     "ASPIRE_ALLOW_UNSECURED_TRANSPORT": "true"
   },
+  "onCreateCommand": "curl -sSL https://aspire.dev/install.sh | bash",
   "postCreateCommand": "dotnet restore GoalKeeper.slnx && cd frontend && npm install",
+  "postStartCommand": "dotnet dev-certs https --trust",
   "forwardPorts": [5445, 5173, 15888, 18888],
   "portsAttributes": {
     "5445": {
