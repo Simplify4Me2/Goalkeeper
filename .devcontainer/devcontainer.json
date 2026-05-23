@@ -1,0 +1,48 @@
+{
+  "name": "Goalkeeper",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "remoteEnv": {
+    "ASPIRE_ALLOW_UNSECURED_TRANSPORT": "true"
+  },
+  "forwardPorts": [5445, 5173, 15888, 18888],
+  "portsAttributes": {
+    "5445": {
+      "label": "Goalkeeper Server",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Frontend Dev Server",
+      "onAutoForward": "notify"
+    },
+    "15888": {
+      "label": "Aspire Dashboard",
+      "onAutoForward": "openBrowser"
+    },
+    "18888": {
+      "label": "Aspire OTLP",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "dotnet restore Goalkeeper.slnx && cd frontend && npm install",
+  "remoteUser": "vscode"
+}
