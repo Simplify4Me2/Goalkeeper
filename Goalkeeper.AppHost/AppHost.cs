@@ -7,11 +7,14 @@ var server = builder.AddProject<Projects.Goalkeeper_Server>("server")
     .WaitFor(sqldb)
     .WithReference(sqldb)
     .WithHttpHealthCheck("/health")
-    .WithExternalHttpEndpoints();
-    //.WithHttpEndpoint(() =>
-    //{
-        
-    //});
+    //.WithExternalHttpEndpoints()
+    //.WithHttpsEndpoint()
+    .WithUrl("/swagger", "Swagger UI");
+    //.WithUrlForEndpoint("/swagger", url => url.DisplayText = "Swagger UI");
+//.WithHttpEndpoint(() =>
+//{
+
+//});
 
 var webfrontend = builder.AddViteApp("webfrontend", "../frontend")
     .WithReference(server)
