@@ -1,14 +1,9 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var sql = builder.AddSqlServer("sql");
-var sqldb = sql.AddDatabase("sqldb");
-
 var postgres = builder.AddPostgres("postgres");
 var goalkeeperDb = postgres.AddDatabase("goal-keeper-db");
 
 var server = builder.AddProject<Projects.Goalkeeper_Server>("server")
-    .WaitFor(sqldb)
-    .WithReference(sqldb)
     .WaitFor(goalkeeperDb)
     .WithReference(goalkeeperDb)
     .WithHttpHealthCheck("/health")
