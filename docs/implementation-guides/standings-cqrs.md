@@ -99,14 +99,14 @@ public enum MatchStatus
 
 This record encapsulates all standings arithmetic. Points and goal difference are always derived — never stored independently — so they can never diverge.
 
-- [ ] Create folder `Core/ValueObjects/`
-- [ ] Create `Core/ValueObjects/StandingStats.cs`
+- [x] Create folder `Core/ValueObjects/`
+- [x] Create `Core/ValueObjects/StandingStats.cs`
 
 ```csharp
 // Core/ValueObjects/StandingStats.cs
 namespace Goalkeeper.Server.Core.ValueObjects;
 
-public record StandingStats(int Played, int Won, int Drawn, int Lost, int GoalsFor, int GoalsAgainst)
+public class StandingStats(int Played, int Won, int Drawn, int Lost, int GoalsFor, int GoalsAgainst)
 {
     public int Points => (Won * 3) + Drawn;
     public int GoalDifference => GoalsFor - GoalsAgainst;
