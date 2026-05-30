@@ -9,4 +9,6 @@ public class Team
 
     [Required]
     public required string Name { get; set; }
+
+    public string Flag { get; set; } = string.Empty;
 }

@@ -53,8 +53,8 @@ GetGroupStandingsHandler        ← Fast read, no joins, no math
 
 ### Step 1: Add `Flag` to the `Team` entity
 
-- [ ] Open `Core/Team.cs`
-- [ ] Add `public string Flag { get; set; } = string.Empty;`
+- [x] Open `Core/Team.cs`
+- [x] Add `public string Flag { get; set; } = string.Empty;`
 
 ```csharp
 // Core/Team.cs
