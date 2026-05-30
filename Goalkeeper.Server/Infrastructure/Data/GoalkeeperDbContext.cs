@@ -1,5 +1,4 @@
 using Goalkeeper.Server.Core;
-using Microsoft.EntityFrameworkCore;
 
 namespace Goalkeeper.Server.Infrastructure.Data;
 
