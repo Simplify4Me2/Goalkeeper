@@ -78,8 +78,8 @@ public class Team
 
 ### Step 2: Create the `MatchStatus` enum
 
-- [ ] Create folder `Core/Enums/`
-- [ ] Create `Core/Enums/MatchStatus.cs`
+- [x] Create folder `Core/Enums/`
+- [x] Create `Core/Enums/MatchStatus.cs`
 
 ```csharp
 // Core/Enums/MatchStatus.cs
