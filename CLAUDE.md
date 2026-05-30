@@ -56,17 +56,6 @@ The codebase has two distinct layers:
 
 **frontend** is a React 19 + TypeScript Vite app. During development, Vite proxies `/api` calls to the running server. In production the compiled output is embedded in the server's `wwwroot`.
 
-### Legacy microservices (`/02.Services/`)
-
-Four separate .NET services, each with their own solution file. These predate Aspire and use a layered Clean Architecture pattern (Domain → Application → Infrastructure → WebApi) with MediatR for CQRS and xUnit for testing. They are not wired into the Aspire AppHost yet.
-
-- `GoalKeeper.MApi` — main fixture/match API
-- `GoalKeeper.Stats` — statistics with event sourcing
-- `GoalKeeper.DataCollector` — data ingestion
-- `Analytics.MApi` — analytics queries
-
-`run.cmd` in the root shows how to start Stats and DataCollector manually for local legacy development.
-
 ## Key relationships
 
 - `Goalkeeper.Server` depends on `Extensions.cs` for all Aspire plumbing — do not duplicate health check or telemetry registration there.
