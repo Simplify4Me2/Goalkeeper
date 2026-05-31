@@ -1,4 +1,7 @@
-﻿namespace Goalkeeper.Server.Core.Aggregates;
+﻿using Goalkeeper.Server.Core.Entities;
+using Goalkeeper.Server.Core.Enums;
+
+namespace Goalkeeper.Server.Core.Aggregates;
 
 public class Match
 {

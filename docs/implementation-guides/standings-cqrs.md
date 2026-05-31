@@ -195,18 +195,18 @@ public class Match
 
 ---
 
-### Step 5: Create the `TeamStandingReadModel` read model entity
+### Step 5: Create the `TeamStanding` read model entity
 
 This is **not** a domain aggregate. It is a persistence projection — a pre-calculated, denormalized row per team per group optimized for zero-computation reads.
 
-- [ ] Create folder `Core/ReadModels/`
-- [ ] Create `Core/ReadModels/TeamStandingReadModel.cs`
+- [x] Create folder `Core/Models/`
+- [x] Create `Core/Models/TeamStanding.cs`
 
 ```csharp
-// Core/ReadModels/TeamStandingReadModel.cs
-namespace Goalkeeper.Server.Core.ReadModels;
+// Core/Models/TeamStanding.cs
+namespace Goalkeeper.Server.Core.Models;
 
-public class TeamStandingReadModel
+public class TeamStanding
 {
     public int Id { get; set; }
     public string GroupName { get; set; } = string.Empty;

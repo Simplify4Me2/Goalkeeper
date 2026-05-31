@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Goalkeeper.Server.Core;
+namespace Goalkeeper.Server.Core.Entities;
 
 public class Team
 {

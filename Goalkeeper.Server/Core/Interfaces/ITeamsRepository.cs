@@ -1,4 +1,4 @@
-using Goalkeeper.Server.Core;
+using Goalkeeper.Server.Core.Entities;
 
 public interface ITeamsRepository
 {
