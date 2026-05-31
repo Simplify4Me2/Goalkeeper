@@ -238,24 +238,24 @@ Instead of a third-party mediator bus, define two small generic interfaces. This
 
 ### Step 6: Create `IQueryHandler` and `ICommandHandler`
 
-- [ ] Create folder `Application/Abstractions/`
-- [ ] Create `Application/Abstractions/IQueryHandler.cs`
+- [x] Create folder `Application/Interfaces/`
+- [x] Create `Application/Interfaces/IQueryHandler.cs`
 
 ```csharp
 // Application/Abstractions/IQueryHandler.cs
-namespace Goalkeeper.Server.Application.Abstractions;
+namespace Goalkeeper.Server.Application.Interfaces;
 
 public interface IQueryHandler<in TQuery, TResult>
 {
-    Task<TResult> HandleAsync(TQuery query, CancellationToken ct);
+    Task<TResult> HandleAsync(TQuery query, CancellationToken cancellationToken);
 }
 ```
 
-- [ ] Create `Application/Abstractions/ICommandHandler.cs`
+- [x] Create `Application/Interfaces/ICommandHandler.cs`
 
 ```csharp
 // Application/Abstractions/ICommandHandler.cs
-namespace Goalkeeper.Server.Application.Abstractions;
+namespace Goalkeeper.Server.Application.Interfaces;
 
 public interface ICommandHandler<in TCommand>
 {
