@@ -25,4 +25,14 @@ public static class StandingsMappingExtensions
             Pressing = fixture.Pressing
         };
     }
+
+    public static GroupStandingsDto ToGroupStandingsDto(this IEnumerable<TeamStanding> standings)
+    {
+        var groupName = standings.FirstOrDefault()?.GroupName ?? string.Empty;
+        return new GroupStandingsDto
+        {
+            GroupName = groupName,
+            Standings = standings.Select(s => s.ToDto())
+        };
+    }
 }

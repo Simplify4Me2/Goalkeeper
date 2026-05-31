@@ -1,0 +1,3 @@
+﻿namespace Goalkeeper.Server.Application.Queries.GetAllGroupStandings;
+
+public record GetAllGroupStandingsQuery;

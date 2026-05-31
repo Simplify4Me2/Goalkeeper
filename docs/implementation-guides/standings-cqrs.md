@@ -310,8 +310,8 @@ public class GetGroupStandingsHandler(IStandingsReadRepository repository)
 
 ### Step 8: Create `GetAllGroupStandingsQuery` and its handler
 
-- [ ] Create folder `Application/Queries/GetAllGroupStandings/`
-- [ ] Create `Application/Queries/GetAllGroupStandings/GetAllGroupStandingsQuery.cs`
+- [x] Create folder `Application/Queries/GetAllGroupStandings/`
+- [x] Create `Application/Queries/GetAllGroupStandings/GetAllGroupStandingsQuery.cs`
 
 ```csharp
 // Application/Queries/GetAllGroupStandings/GetAllGroupStandingsQuery.cs
@@ -320,7 +320,7 @@ namespace Goalkeeper.Server.Application.Queries.GetAllGroupStandings;
 public record GetAllGroupStandingsQuery;
 ```
 
-- [ ] Create `Application/Queries/GetAllGroupStandings/GetAllGroupStandingsHandler.cs`
+- [x] Create `Application/Queries/GetAllGroupStandings/GetAllGroupStandingsHandler.cs`
 
 ```csharp
 // Application/Queries/GetAllGroupStandings/GetAllGroupStandingsHandler.cs
