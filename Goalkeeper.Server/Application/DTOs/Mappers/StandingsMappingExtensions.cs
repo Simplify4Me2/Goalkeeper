@@ -2,7 +2,7 @@
 
 namespace Goalkeeper.Server.Application.DTOs.Mappers;
 
-public static class TeamStandingMappingExtensions
+public static class StandingsMappingExtensions
 {
     public static TeamStandingDto ToDto(this TeamStanding fixture)
     {

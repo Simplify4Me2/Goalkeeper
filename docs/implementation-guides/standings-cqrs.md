@@ -358,7 +358,7 @@ public class GetAllGroupStandingsHandler(IStandingsReadRepository repository)
 
 ### Step 9: Create the standings DTOs
 
-- [ ] Create `Application/DTOs/TeamStandingDto.cs`
+- [x] Create `Application/DTOs/TeamStandingDto.cs`
 
 ```csharp
 // Application/DTOs/TeamStandingDto.cs
@@ -384,7 +384,7 @@ public class TeamStandingDto
 }
 ```
 
-- [ ] Create `Application/DTOs/GroupStandingsDto.cs`
+- [x] Create `Application/DTOs/GroupStandingsDto.cs`
 
 ```csharp
 // Application/DTOs/GroupStandingsDto.cs
@@ -401,7 +401,7 @@ public class GroupStandingsDto
 
 ### Step 10: Create the standings mapping extension
 
-- [ ] Create `Application/DTOs/Mappers/StandingsMappingExtensions.cs`
+- [x] Create `Application/DTOs/Mappers/StandingsMappingExtensions.cs`
 
 ```csharp
 // Application/DTOs/Mappers/StandingsMappingExtensions.cs
