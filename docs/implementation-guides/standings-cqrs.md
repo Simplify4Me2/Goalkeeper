@@ -130,8 +130,8 @@ public class StandingStats(int Played, int Won, int Drawn, int Lost, int GoalsFo
 
 `Match` is the authoritative write model. It owns result invariants and replaces the thin `Fixture` entity for this domain concept. It uses private setters to protect its state — only its own methods can mutate it.
 
-- [ ] Create folder `Core/Aggregates/`
-- [ ] Create `Core/Aggregates/Match.cs`
+- [x] Create folder `Core/Aggregates/`
+- [x] Create `Core/Aggregates/Match.cs`
 
 ```csharp
 // Core/Aggregates/Match.cs
