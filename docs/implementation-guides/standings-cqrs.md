@@ -269,8 +269,8 @@ public interface ICommandHandler<in TCommand>
 
 ### Step 7: Create `GetGroupStandingsQuery` and its handler
 
-- [ ] Create folder `Application/Queries/GetGroupStandings/`
-- [ ] Create `Application/Queries/GetGroupStandings/GetGroupStandingsQuery.cs`
+- [x] Create folder `Application/Queries/GetGroupStandings/`
+- [x] Create `Application/Queries/GetGroupStandings/GetGroupStandingsQuery.cs`
 
 ```csharp
 // Application/Queries/GetGroupStandings/GetGroupStandingsQuery.cs
@@ -279,7 +279,7 @@ namespace Goalkeeper.Server.Application.Queries.GetGroupStandings;
 public record GetGroupStandingsQuery(string GroupName);
 ```
 
-- [ ] Create `Application/Queries/GetGroupStandings/GetGroupStandingsHandler.cs`
+- [x] Create `Application/Queries/GetGroupStandings/GetGroupStandingsHandler.cs`
 
 ```csharp
 // Application/Queries/GetGroupStandings/GetGroupStandingsHandler.cs
