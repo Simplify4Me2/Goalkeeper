@@ -1,14 +1,32 @@
 {
   "name": "Goalkeeper",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:dev-10.0",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:dev-10.0-noble",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "lts"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
+      "version": "latest",
+      "enableNonRootDocker": true,
+      "moby": true
     }
   },
+  "runArgs": [
+    "--sysctl",
+    "net.ipv6.conf.all.disable_ipv6=0",
+    "--sysctl",
+    "net.ipv6.conf.default.forwarding=1",
+    "--sysctl",
+    "net.ipv6.conf.all.forwarding=1"
+  ],
+  "hostRequirements": {
+    "cpus": 8,
+    "memory": "32gb",
+    "storage": "64gb"
+  },
+  "onCreateCommand": "curl -sSL https://aspire.dev/install.sh | bash",
+  "postCreateCommand": "dotnet restore GoalKeeper.slnx && cd frontend && npm install",
+  "postStartCommand": "dotnet dev-certs https --trust",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -20,31 +38,5 @@
         "ms-azuretools.vscode-docker"
       ]
     }
-  },
-  "remoteEnv": {
-    "ASPIRE_ALLOW_UNSECURED_TRANSPORT": "true"
-  },
-  "onCreateCommand": "curl -sSL https://aspire.dev/install.sh | bash",
-  "postCreateCommand": "dotnet restore GoalKeeper.slnx && cd frontend && npm install",
-  "postStartCommand": "dotnet dev-certs https --trust",
-  "forwardPorts": [5445, 5173, 15888, 18888],
-  "portsAttributes": {
-    "5445": {
-      "label": "Goalkeeper Server",
-      "onAutoForward": "notify"
-    },
-    "5173": {
-      "label": "Frontend Dev Server",
-      "onAutoForward": "notify"
-    },
-    "15888": {
-      "label": "Aspire Dashboard",
-      "onAutoForward": "openBrowser"
-    },
-    "18888": {
-      "label": "Aspire OTLP",
-      "onAutoForward": "silent"
-    }
-  },
-  "remoteUser": "vscode"
+  }
 }
