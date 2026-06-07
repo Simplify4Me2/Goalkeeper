@@ -19,11 +19,6 @@
     "--sysctl",
     "net.ipv6.conf.all.forwarding=1"
   ],
-  "hostRequirements": {
-    "cpus": 8,
-    "memory": "32gb",
-    "storage": "64gb"
-  },
   "onCreateCommand": "curl -sSL https://aspire.dev/install.sh | bash",
   "postCreateCommand": "dotnet restore GoalKeeper.slnx && cd frontend && npm install",
   "postStartCommand": "dotnet dev-certs https --trust",
