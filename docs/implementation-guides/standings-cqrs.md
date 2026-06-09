@@ -440,8 +440,8 @@ public static class StandingsMappingExtensions
 
 The handler is intentionally thin. It delegates domain logic to the aggregate and sync logic to the service — respecting SRP.
 
-- [ ] Create folder `Application/Commands/RecordMatchResult/`
-- [ ] Create `Application/Commands/RecordMatchResult/RecordMatchResultCommand.cs`
+- [x] Create folder `Application/Commands/RecordMatchResult/`
+- [x] Create `Application/Commands/RecordMatchResult/RecordMatchResultCommand.cs`
 
 ```csharp
 // Application/Commands/RecordMatchResult/RecordMatchResultCommand.cs
@@ -450,7 +450,7 @@ namespace Goalkeeper.Server.Application.Commands.RecordMatchResult;
 public record RecordMatchResultCommand(int MatchId, int HomeScore, int AwayScore);
 ```
 
-- [ ] Create `Application/Commands/RecordMatchResult/RecordMatchResultHandler.cs`
+- [x] Create `Application/Commands/RecordMatchResult/RecordMatchResultHandler.cs`
 
 ```csharp
 // Application/Commands/RecordMatchResult/RecordMatchResultHandler.cs
